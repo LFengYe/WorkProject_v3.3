@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/space"
+    tools:context=".MainActivity.CircleShareActivity">
+
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/circle_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+
+
+    <ListView
+        android:id="@+id/circle_hand_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/view_line"
+        android:dividerHeight="1dp"
+        android:listSelector="@color/white"
+        android:scrollbarStyle="outsideOverlay"
+        android:transcriptMode="normal"
+        >
+    </ListView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_size"
+        android:background="@color/view_line">
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <cn.guugoo.jiapeistudent.Views.PullToRefreshLayout
+            android:id="@+id/circle_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/view_refresh_head" />
+            <!-- 支持所有实现Pullable接口的View -->
+
+            <cn.guugoo.jiapeistudent.Views.PullableListView
+                android:id="@+id/circle_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:divider="@color/view_line"
+                android:dividerHeight="1dp" />
+        </cn.guugoo.jiapeistudent.Views.PullToRefreshLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>

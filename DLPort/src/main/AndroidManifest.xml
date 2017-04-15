@@ -1,0 +1,334 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.DLPort">
+
+    <permission
+        android:name="com.DLPort.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <uses-permission android:name="com.DLPort.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application
+        android:name="com.DLPort.app.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.DLPort.myactivity.MainActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.LoginIn"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.DLPort.myactivity.SignIn"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.PositionActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.ShopReqActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.TuiGuangActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.OrderActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.MyOrderActivty"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.NewsPublishActivty"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".myactivity.GrabOrderActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.OrderParticular"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.HuoOrderActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".myactivity.TiXiangActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.DLPort.myactivity.InquireActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.HuoInquireActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.DuichangActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.LuoxiangActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.PayInfoWriteActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.myactivity.PayConfirmActivity"
+            android:screenOrientation="portrait"></activity>
+
+
+        <activity
+            android:name="com.DLPort.OurActivity.AboutUsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.CargoMyAccountActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.CarGoSetActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.CargoStatisticsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.CarOwnerMyAccountActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.CarOwnerSetActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.CarOwnerSetAddCarActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.CarOwnerSetInfoActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.CarOwnerCarList"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.CarOwnerStatisticsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.CarOwnerPickUpCash"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.CarOwnerPickUpRecord"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.HandbookActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.InviterActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.MerchandiseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.MerchandiseExchangeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.PrivilegeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.ModifyPasswordActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.RechargeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.OurActivity.RechargeInfoWriteActivity"
+            android:screenOrientation="portrait"></activity>
+
+
+        <activity
+            android:name="com.DLPort.FindActivity.BaoXianMyActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.FindActivity.twocarActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.FindActivity.baoxianActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.FindActivity.jiuyuanActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.FindActivity.diyaActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.FindActivity.touziActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.FindActivity.TouziContent"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.FindActivity.BaoXianContent"
+            android:screenOrientation="portrait"></activity>
+
+
+        <activity
+            android:name="com.DLPort.NewsActivity.GangKouYujing"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.NewsActivity.gankouActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.NewsActivity.guanyuActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.NewsActivity.jiaotongActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.NewsActivity.TongzhiActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.NewsActivity.ActivityActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.NewsActivity.InformActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.NewsActivity.CarGoBusinessChangeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.NewsActivity.CarOwnerBusinessChangeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.NewsActivity.GangKouZuoye"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.NewsActivity.JiaoTonggaosu"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.DLPort.NewsActivity.JiaoTongguodao"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".myactivity.FangXiangActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+
+
+
+        <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.DLPort" />
+            </intent-filter>
+        </activity>
+        <!-- Required  SDK核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false"></service>
+
+        <!-- Required SDK 核心功能 -->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":service">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+                <!-- Required  显示通知栏 -->
+                <category android:name="com.DLPort" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.DLPort.receiver.MyJPushReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+
+                <category android:name="com.DLPort" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false" />
+
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="2f631346f94c27058124012b" />
+        <!-- </>值来自开发者平台取得的AppKey -->
+
+        <!--百度地图API Key-->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="SnnwPyFjhubVuNsSlthIFB5mO1D59PhV" />
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+</manifest>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+
+    <com.DLPort.myview.TitleView
+        android:id="@+id/car_list_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.DLPort.myview.TitleView>
+
+    <ListView
+        android:id="@+id/car_list_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#00000000"
+        android:dividerHeight="0dp"></ListView>
+</LinearLayout>

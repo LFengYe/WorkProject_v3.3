@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.DLPort.myview.TitleView
+        android:id="@+id/tui_window_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></com.DLPort.myview.TitleView>
+
+    <RelativeLayout
+        android:id="@+id/dui_name"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/writer"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择堆场"
+            android:textSize="16sp"
+            android:textColor="@color/word_hei"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            />
+        <ImageView
+            android:id="@+id/tui_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/faxian_arrow_back"
+            android:layout_marginRight="20dp"
+            />
+
+        <TextView
+            android:id="@+id/dui_StorageYardNmae"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text=""
+
+            android:textSize="12sp"
+            android:textColor="@color/word_hui"
+            android:layout_toLeftOf="@id/tui_one"
+            android:layout_marginRight="5dp"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/writer"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="堆场地址"
+            android:textSize="16sp"
+            android:textColor="@color/word_hei"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            />
+
+        <TextView
+            android:id="@+id/dui_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text=""
+            android:textSize="12sp"
+            android:textColor="@color/word_hui"
+
+            android:layout_marginRight="50dp"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dui_A_price"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/writer"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="场地装箱价格查询"
+            android:textSize="16sp"
+            android:textColor="@color/word_hei"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            />
+        <ImageView
+            android:id="@+id/tui_two"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/faxian_arrow_back"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+        <TextView android:id="@+id/dui_one"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/word_hui"
+            android:textSize="12sp"
+            android:text="元/箱"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tui_two"/>
+
+        <TextView
+            android:id="@+id/dui_Price"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/word_hui"
+            android:textSize="12sp"
+            android:text=""
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/dui_one"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dui_tixiang"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/writer"
+        >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="办理提箱小票"
+            android:textSize="16sp"
+            android:textColor="@color/word_hei"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            />
+        <ImageView
+            android:id="@+id/tui_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/faxian_arrow_back"
+            android:layout_marginRight="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:textSize="12sp"
+            android:textColor="@color/word_hui"
+            android:layout_toLeftOf="@id/tui_four"
+            android:layout_marginRight="5dp"
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/dui_luo"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/writer"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我要落箱"
+            android:textSize="16sp"
+            android:textColor="@color/word_hei"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            />
+        <ImageView
+            android:id="@+id/tui_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/faxian_arrow_back"
+            android:layout_marginRight="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:textSize="12sp"
+            android:textColor="@color/word_hui"
+            android:layout_toLeftOf="@id/tui_five"
+            android:layout_marginRight="5dp"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_White"
+              android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/ll_circle"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@color/color_LightGray"
+        android:orientation="vertical"
+        >
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <cn.guugoo.jiapeiteacher.view.CircleImageView
+                android:id="@+id/civ_head"
+                android:layout_width="@dimen/iv_main_circle"
+                android:layout_height="@dimen/iv_main_circle"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher"
+                app:border_color="@color/color_Blue"
+                app:border_width="2dp"/>
+
+            <TextView
+                android:id="@+id/tv_nickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/color_Dark"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:src="@mipmap/arrow_left"/>
+
+    </RelativeLayout>
+
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_line"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:background="@color/color_White"
+        android:paddingBottom="15dp"
+        android:paddingLeft="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/rightSp"
+            android:textColor="@color/color_Black"
+            android:text="我的评价"
+            />
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/rightSp"
+            android:textColor="@color/color_Black"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35dp"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_line"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/color_LightGray"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_line"/>
+
+    <cn.guugoo.jiapeiteacher.view.XRecyclerView
+        android:id="@+id/rv_my_evaluation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+    </cn.guugoo.jiapeiteacher.view.XRecyclerView>
+
+</LinearLayout>

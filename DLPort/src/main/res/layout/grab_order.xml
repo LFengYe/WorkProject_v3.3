@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.DLPort.myview.TitleView
+        android:id="@+id/grab_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.DLPort.myview.TitleView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/grab_order_info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/writer"
+                android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/Grad_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Grad_Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="230.00"
+                        android:textColor="@color/word_hei"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="元/箱"
+                        android:textColor="@color/word_hei"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/Grad_ChargeType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="自动结算"
+                        android:textColor="@color/word_hui" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/Grad_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Grad_one"
+                    android:layout_marginLeft="20dp"
+                    android:text="剩余/总计"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/Grad_Remain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Grad_one"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/Grad_two"
+                    android:text="4/10" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Grad_one"
+                    android:layout_toRightOf="@id/Grad_Remain"
+
+                    android:text="箱" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/writer"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="装货时间"
+                    android:textColor="@color/word_hei"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/Grad_LoadTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:text="2016-08-08  10:30"
+                    android:textColor="@color/word_hui"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/writer">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="出发地"
+                    android:textColor="@color/word_hei"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/Grad_StartAddres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:text="    辽宁省大连市A区B地"
+                    android:textColor="@color/word_hui"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/writer">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="目的地"
+                    android:textColor="@color/word_hei"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/Grad_Destination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:text="    辽宁省大连市C区D地"
+                    android:textColor="@color/word_hui"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/writer">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="入港时间"
+                    android:textColor="@color/word_hei"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/Grad_InPortTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:text=""
+                    android:textColor="@color/word_hui"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/writer">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="船务公司"
+                    android:textColor="@color/word_hei"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/Grad_ShipCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:text=""
+                    android:textColor="@color/word_hui"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Grad_Button"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/order_button"
+            android:text="@string/Grad_order"
+            android:textColor="@color/writer" />
+
+        <View
+            android:id="@+id/grab_button_line"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_above="@id/Grad_Button"
+            android:background="@color/status_line"></View>
+
+        <ListView
+            android:id="@+id/grab_car_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/grab_button_line"
+            android:layout_below="@id/grab_order_info_layout"
+            android:background="@color/writer"
+            android:layout_marginTop="10dp"
+            android:choiceMode="multipleChoice"
+            android:divider="@color/status_bar"
+            android:dividerHeight="1dp"></ListView>
+    </RelativeLayout>
+</LinearLayout>

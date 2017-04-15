@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/writer"
+        >
+        <Button
+            android:id="@+id/licai_Button"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:text="我要理财"
+            android:textSize="16sp"
+            android:textColor="@color/writer"
+            android:background="@drawable/order_button"
+            android:layout_marginRight="10dp"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/licai_Button"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical"
+            >
+            <TextView
+                android:id="@+id/li_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第六期万利报月月盈 A款"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:textSize="18dp"
+                android:textColor="@color/word_hei"
+                />
+            <TextView
+                android:id="@+id/li_two"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:text="第六期万利报月月盈 A款"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:textSize="12dp"
+                android:textColor="@color/word_hui"
+                android:layout_below="@id/li_one"
+                android:layout_marginTop="10dp"
+                android:singleLine="false"
+                android:maxLines="5"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

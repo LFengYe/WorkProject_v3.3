@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+
+    <com.DLPort.myview.TitleView
+        android:id="@+id/set_inform_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </com.DLPort.myview.TitleView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/status_bar"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/SI_one"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="用户名"
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <TextView
+                android:id="@+id/set_LoginName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/SI_one"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/SetI_Address"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@drawable/list_item_color"
+            android:layout_marginTop="1dp"
+            >
+            <TextView
+                android:id="@+id/SI_two"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="公司名"
+                android:textSize="16sp"
+                android:layout_marginLeft="15dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                />
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/huo_Address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/SI_two"
+
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

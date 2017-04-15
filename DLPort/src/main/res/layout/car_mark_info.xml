@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/car_mark_info"
+    android:paddingBottom="30dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/car_mark_carnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#5e5e5e" />
+
+    <TextView
+        android:id="@+id/car_mark_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#5e5e5e" />
+
+    <TextView
+        android:id="@+id/car_mark_latlng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#5e5e5e" />
+
+    <TextView
+        android:id="@+id/car_mark_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#5e5e5e" />
+</LinearLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/main_above"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="40dp"
+        android:background="@color/title"
+        >
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="6dp"
+            >
+            <Button
+                android:id="@+id/chezhu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button1"
+                android:text="车主"
+
+                android:textColor="@color/writer"
+                 />
+            <Button
+                android:id="@+id/huozhu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button2"
+
+                android:text="货主"
+                android:textColor="@color/writer"
+                />
+            <Button
+                android:id="@+id/youke"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button3"
+
+                android:text="游客"
+                android:textColor="@color/writer"
+                />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <com.DLPort.myview.ImageCycleView
+        android:id="@+id/home_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:layout_below="@id/main_above"
+        android:src="@mipmap/home_guanggao"
+        >
+    </com.DLPort.myview.ImageCycleView>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/image"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="5"-->
+        <!--android:layout_below="@id/main_above"-->
+        <!--android:src="@mipmap/home_guanggao"-->
+        <!--android:scaleType="fitXY"-->
+        <!--/>-->
+
+    <RelativeLayout
+        android:id="@+id/indent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@id/home_image"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/status_line"
+        >
+        <RelativeLayout
+            android:id="@+id/myorder_he"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="left|center_vertical"
+
+            >
+            <ImageView
+                android:id="@+id/dingdan_in"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/all_order"
+                android:layout_alignParentLeft="true"
+
+                />
+            <TextView
+                android:id="@+id/text"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/dingdan_in"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="我的订单"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:id="@+id/grid_view"
+        android:background="@color/writer"
+        >
+    </FrameLayout>
+
+</LinearLayout>

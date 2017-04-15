@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/main_above"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/title"
+        >
+        <TextView
+            android:id="@+id/title_Left_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:textSize="16sp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/writer"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            />
+        <RelativeLayout
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:id="@+id/title_Image_In"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/faxian_arrow_back1"
+                />
+            <TextView
+                android:id="@+id/title_Text_In"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/title_Image_In"
+                android:text="返回"
+                android:textSize="13sp"
+                android:textColor="@color/writer"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订单"
+            android:layout_centerInParent="true"
+            android:textSize="16sp"
+            android:textColor="@color/writer"
+            android:visibility="gone"
+            />
+
+        <LinearLayout
+            android:id="@+id/title_convet"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            android:padding="6dp"
+            android:visibility="gone"
+            >
+
+            <Button
+                android:id="@+id/title_car"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button1"
+                android:text="车主"
+                android:textColor="@color/writer"
+                />
+            <Button
+                android:id="@+id/title_huo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button3"
+                android:text="货主"
+                android:textColor="@color/writer"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title_Right_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:text="返回"
+            android:textSize="16sp"
+            android:textColor="@color/writer"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

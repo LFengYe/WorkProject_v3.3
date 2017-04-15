@@ -1,0 +1,170 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="cn.guugoo.jiapeiteacher.fragment.HomeFragment">
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_home_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_LightGray"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_my_reservation"
+            android:orientation="vertical"
+            style="@style/Main_LinearLayout_Style">
+
+             <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@mipmap/my_reservation"/>
+
+            <TextView
+
+                android:id="@+id/tv_my_reservation"
+
+                style="@style/Main_TextView_Style"
+                android:text="@string/my_reservation"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_workbench"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/main_margin"
+            style="@style/Main_LinearLayout_Style">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/workbench"/>
+
+            <TextView
+
+                android:id="@+id/tv_workbench"
+                style="@style/Main_TextView_Style"
+                android:text="@string/workbench"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_circles_sharing"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/main_margin"
+            style="@style/Main_LinearLayout_Style">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/circles_sharing"/>
+
+            <TextView
+
+                android:id="@+id/tv_circles_sharing"
+                style="@style/Main_TextView_Style"
+                android:text="@string/circles_sharing"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_home_menu"
+        android:background="@color/color_LightGray"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/ll_my_news"
+            android:orientation="vertical"
+
+            android:layout_marginBottom="@dimen/main_margin"
+            android:layout_marginTop="@dimen/main_margin"
+            style="@style/Main_LinearLayout_Style">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/my_news"
+                    android:id="@+id/iv_my_news"/>
+                <ImageView
+                    android:id="@+id/iv_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/point"
+                    android:layout_toRightOf="@+id/iv_my_news"/>
+            </RelativeLayout>
+
+
+            <TextView
+
+                android:id="@+id/tv_my_news"
+                style="@style/Main_TextView_Style"
+                android:text="@string/my_news"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_my_recommend"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/main_margin"
+            android:layout_marginBottom="@dimen/main_margin"
+            android:layout_marginTop="@dimen/main_margin"
+            style="@style/Main_LinearLayout_Style">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my_recommend"/>
+
+            <TextView
+
+                android:id="@+id/tv_my_recommend"
+                style="@style/Main_TextView_Style"
+                android:text="@string/my_recommend"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_laws"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/main_margin"
+            android:layout_marginBottom="@dimen/main_margin"
+            android:layout_marginTop="@dimen/main_margin"
+            style="@style/Main_LinearLayout_Style">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/laws"/>
+
+            <TextView
+
+                android:id="@+id/tv_laws"
+                style="@style/Main_TextView_Style"
+                android:text="@string/laws"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

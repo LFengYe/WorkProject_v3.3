@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+
+    <com.DLPort.myview.TitleView
+        android:id="@+id/title_tixiang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.DLPort.myview.TitleView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/status_bar"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/T_A_ShipName"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/list_item_color"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="船名"
+                    android:textSize="16sp"
+                    android:textColor="@color/word_hei"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/ship_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/faxian_arrow_back"
+                    android:layout_marginRight="20dp"
+                    />
+                <TextView
+                    android:id="@+id/T_ShipName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/word_hui"
+                    android:layout_toLeftOf="@id/ship_four"
+                    android:layout_marginRight="5dp"
+                    />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/T_A_ShipOrder"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="船次"
+                    android:textSize="16sp"
+                    android:textColor="@color/word_hei"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/ship_five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/faxian_arrow_back"
+                    android:layout_marginRight="20dp"
+                    />
+                <TextView
+                    android:id="@+id/T_ShipOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/word_hui"
+                    android:layout_toLeftOf="@id/ship_five"
+                    android:layout_marginRight="5dp"
+                    />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/T_A_BookingNumber"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="提单号"
+                    android:textSize="16sp"
+                    android:textColor="@color/word_hei"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/ship_seven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/faxian_arrow_back"
+                    android:layout_marginRight="20dp"
+                    />
+                <TextView
+                    android:id="@+id/T_BookingNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/word_hui"
+                    android:layout_toLeftOf="@id/ship_seven"
+                    android:layout_marginRight="5dp"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/T_A_BoxType"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/list_item_color"
+                >
+                <TextView
+                    android:id="@+id/_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="箱型"
+                    android:textSize="16sp"
+                    android:textColor="@color/word_hei"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/ship_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/faxian_arrow_back"
+                    android:layout_marginRight="20dp"
+                    />
+                <TextView
+                    android:id="@+id/T_BoxType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/word_hui"
+                    android:layout_toLeftOf="@id/ship_one"
+                    android:layout_marginRight="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/luo_ContainerType_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/T_A_Number"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="箱量"
+                    android:textSize="16sp"
+                    android:textColor="@color/word_hei"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    />
+                <ImageView
+                    android:id="@+id/ship_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/faxian_arrow_back"
+                    android:layout_marginRight="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/T_Number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/word_hui"
+                    android:layout_toLeftOf="@id/ship_two"
+                    android:layout_marginRight="5dp"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/T_A_Amount"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/writer"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="金额"
+                    android:textSize="16sp"
+                    android:textColor="@color/word_hei"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    />
+                <TextView
+                    android:id="@+id/T_Amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/word_hui"
+                    android:layout_marginRight="50dp"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="vertical"
+                >
+                <CheckBox
+                    android:id="@+id/T_Privilege"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="使用优惠券"
+                    android:textSize="18sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    />
+                <CheckBox
+                    android:id="@+id/T_Balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30dp"
+                    android:text="使用余额"
+                    android:textSize="18sp"
+                    />
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/T_Button"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="35dp"
+                android:text="确定办理"
+                android:textColor="@color/writer"
+                android:background="@drawable/order_button"
+                android:layout_marginBottom="15dp"
+                />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+    
+</LinearLayout>

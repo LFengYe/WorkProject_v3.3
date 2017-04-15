@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/writer"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="30dp"
+
+        >
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="用户名"
+            android:textColor="@color/login_zi"
+            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/huo_id"
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/tv_id"
+            android:layout_centerVertical="true"
+            android:inputType="phone"
+            android:hint="请输入用户名"
+            android:gravity="left"
+            android:singleLine="true"
+            android:textSize="18sp"
+            android:textColorHint="#DDDDDD"
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        >
+        <TextView
+            android:id="@+id/tv_password"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="密码     "
+            android:textColor="@color/login_zi"
+            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/huo_password"
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/tv_password"
+            android:layout_centerVertical="true"
+            android:hint="请输入密码"
+            android:gravity="left"
+
+            android:password="true"
+            android:singleLine="true"
+            android:textSize="18sp"
+
+            android:textColorHint="#DDDDDD"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        >
+        <CheckBox
+            android:id="@+id/huo_auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自动登陆"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            />
+        <CheckBox
+            android:id="@+id/huo_remember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:text="记住密码"
+            android:textSize="18sp"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/huo_login"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@mipmap/login_in"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/H_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:text="@string/login"
+            android:gravity="bottom|right"
+            android:background="@null"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:paddingRight="35dp"
+            />
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

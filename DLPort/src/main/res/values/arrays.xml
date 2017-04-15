@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="order1">
+        <item>2015年</item>
+        <item>12月23日</item>
+        <item>中钢</item>
+        <item>太原</item>
+        <item>245公里</item>
+        <item>21</item>
+    </string-array>
+
+    <string-array name="order2">
+        <item>2016年</item>
+        <item>03月01日</item>
+        <item>中钢</item>
+        <item>北京</item>
+        <item>658公里</item>
+        <item>93</item>
+    </string-array>
+
+    <string-array name="order3">
+        <item>2016年</item>
+        <item>03月03日</item>
+        <item>中钢</item>
+        <item>山西太原</item>
+        <item>32公里</item>
+        <item>28</item>
+    </string-array>
+
+    <string-array name="cer_type_array">
+        <item>身份证</item>
+        <item>护照</item>
+        <item>军官证</item>
+        <item>士兵证</item>
+        <item>回乡证</item>
+        <item>户口本</item>
+        <item>其他</item>
+    </string-array>
+</resources>

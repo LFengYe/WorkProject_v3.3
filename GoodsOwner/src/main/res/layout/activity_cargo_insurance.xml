@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_rebuild_psd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_red"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.CargoInsuranceActivity">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/in_head"
+        layout="@layout/action_head"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/color_gary_font"
+            android:text="@string/cargo_insurance_1"/>
+
+        <EditText
+            android:id="@+id/et_goodsValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:background="@null"
+            android:inputType="number"
+            android:textSize="@dimen/small_font"
+            android:hint="@string/hint_cargo"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="@color/color_line"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/color_gary_font"
+            android:text="@string/cargo_insurance_2"/>
+
+        <TextView
+            android:id="@+id/tv_premiums"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:textSize="@dimen/small_font"
+            android:textColor="@color/color_red"
+         />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="@color/color_line"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/bt_ok"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/button_red_style"
+            android:text="@string/ok"/>
+        <TextView
+            android:id="@+id/tv_premiums_rule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="运费险计算规则"/>
+    </LinearLayout>
+
+</LinearLayout>

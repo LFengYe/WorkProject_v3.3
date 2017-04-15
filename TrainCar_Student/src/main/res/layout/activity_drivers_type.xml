@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".MinorActivity.DriversTypeActivity">
+
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/drivers_type_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/drivers_type_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您的报考类型有以下套餐可供选择："
+            android:textSize="16sp"
+            android:textColor="@color/text_black"
+            android:layout_marginLeft="20dp"
+            />
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_size"
+        android:background="@color/view_line"
+        >
+    </View>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+
+        <RelativeLayout
+            android:id="@+id/drivers_type_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_add_line_height"
+            android:background="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            >
+            <Button
+                android:id="@+id/type_button"
+                android:layout_width="@dimen/login_layout_width"
+                android:layout_height="@dimen/login_layout_height"
+                android:background="@drawable/login_layout"
+                android:text="@string/add_text9"
+                android:textColor="@color/text_black"
+                android:layout_centerInParent="true"
+
+                />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/apply_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/view_line"
+            android:dividerHeight="1dp"
+            android:background="@color/white"
+            android:listSelector="@color/white"
+            android:scrollbarStyle="outsideOverlay"
+            android:transcriptMode="normal"
+            android:layout_above="@+id/drivers_type_layout"
+            >
+        </ListView>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</LinearLayout>

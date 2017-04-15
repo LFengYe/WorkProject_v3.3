@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.guugoo.jiapeistudent.MinorActivity.AddMyNewsActivity"
+    android:orientation="vertical">
+
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/my_add_news_titles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        <WebView
+            android:id="@+id/news_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            >
+
+        </WebView>
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>

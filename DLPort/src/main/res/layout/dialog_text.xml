@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/dialog_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="编辑名称"
+            android:textColor="@color/word_hei"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/dialog_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="25dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="left|center"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/select_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"></DatePicker>
+
+            <TimePicker
+                android:id="@+id/timePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"></TimePicker>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/select_xiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone">
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true">
+
+                <RadioGroup
+                    android:id="@+id/RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/Radio_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:paddingLeft="100dp"
+                        android:text="20GP"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+
+                    <RadioButton
+                        android:id="@+id/Radio_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="20OT"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="20灌装"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="20G柜架"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="20冷藏"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_six"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="40GP"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_seven"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="40HT"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_eight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="40冷藏"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_nine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="40高冷"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_ten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="40柜架"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_eleven"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="40灌箱"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_twelve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="45GP"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_thirteen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="45HT"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_fourteen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="45冷藏"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_fifteen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="45高冷"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/Radio_sixteen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="特殊箱型"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                </RadioGroup>
+            </ScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/select_dui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone">
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <RadioGroup
+                    android:id="@+id/dui_RadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/dui_Radio_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:paddingLeft="100dp"
+                        android:text="20Gp"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/dui_Radio_sixteen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="100dp"
+                        android:text="特殊类别"
+                        android:textColor="@color/word_hei"
+                        android:textSize="18dp" />
+                </RadioGroup>
+            </ScrollView>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/dialog_quxiao"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:background="@drawable/basebuttun"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/word_hei"
+            android:textSize="15dp"
+
+
+            />
+
+        <Button
+            android:id="@+id/dialog_OK"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/basebuttun"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/word_hei"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

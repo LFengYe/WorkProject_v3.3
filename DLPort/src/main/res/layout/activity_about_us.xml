@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.DLPort.myview.TitleView
+        android:id="@+id/about_us_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.DLPort.myview.TitleView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/status_bar"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/logo_edition_layout"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/list_item_color"
+                android:clickable="true"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:text="@string/about_logo_edition"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/logo_edition_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/faxian_arrow_pull_down"
+                    android:layout_marginRight="12dp"
+                    android:focusable="false"
+                    android:clickable="false"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/logo_edition_describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:text="@string/about_logo_edition"
+                android:textColor="@color/word_hui"
+                android:visibility="gone"/>
+
+
+            <RelativeLayout
+                android:id="@+id/privacy_layout"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color"
+                android:clickable="true"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:text="@string/about_privacy"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/privacy_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/faxian_arrow_pull_down"
+                    android:layout_marginRight="12dp"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/privacy_describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:text="@string/about_privacy"
+                android:textColor="@color/word_hui"
+                android:visibility="gone"/>
+
+
+            <RelativeLayout
+                android:id="@+id/fun_introduce_layout"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color"
+                android:clickable="true"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:text="@string/about_fun_introduce"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/fun_introduce_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/faxian_arrow_pull_down"
+                    android:layout_marginRight="12dp"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/fun_introduce_describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:text="@string/about_fun_introduce"
+                android:textColor="@color/word_hui"
+                android:visibility="gone"/>
+
+
+            <RelativeLayout
+                android:id="@+id/handbook_layout"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color"
+                android:clickable="true"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:text="@string/about_handbook"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/handbook_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/faxian_arrow_pull_down"
+                    android:layout_marginRight="12dp"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/handbook_describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:text="@string/about_handbook"
+                android:textColor="@color/word_hui"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

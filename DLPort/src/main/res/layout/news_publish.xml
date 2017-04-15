@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/status_bar"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.DLPort.myview.TitleView
+        android:id="@+id/title_news_publish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.DLPort.myview.TitleView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/status_bar"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="12dp">
+
+                <RadioGroup
+                    android:id="@+id/publish_in_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/publish_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:checked="true"
+                        android:text="进口"
+                        android:textColor="@color/word_hei"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/publish_out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="出口"
+                        android:textColor="@color/word_hei"
+                        android:textSize="16sp" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/new_one"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/publish_in_out"
+                    android:text="平台计算(到付)"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <!--<EditText-->
+                <!--android:id="@+id/P_Cycle"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:layout_toRightOf="@id/new_one"-->
+                <!--android:hint="周期"-->
+                <!--android:text=""-->
+                <!--android:textColor="@color/word_hui"-->
+                <!--android:textSize="15sp" />-->
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_GoodsSituation"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/list_item_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="货物基本信息"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_six"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/P_GoodsSituation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_six"
+                    android:text=""
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_ContainerType"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="箱型"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/P_ContainerType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_one"
+                    android:text="20GP"
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_Amount"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="数量"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/qima"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_two"
+                    android:text=" 个"
+
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/P_Amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/qima"
+                    android:text="3"
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_StartAddress"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="出发地"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/P_StartAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_three"
+                    android:text=""
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_Destination"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="目的地"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/P_Destination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_four"
+                    android:text=""
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_Kilometre"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="距离"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_twelve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/P_Kilometre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_twelve"
+                    android:text=""
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_Price"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="每箱价格"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/P_Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_five"
+                    android:text="30"
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_Cycle"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/publish_thirteen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_InPortTime"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/list_item_color">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="入港时间"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_seven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/P_InPortTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_seven"
+                    android:text="2016-03-23 15:27:30"
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_LoadTime"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="装货时间"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_eight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/P_LoadTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_eight"
+                    android:text="2016-03-23 16:30:58"
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_ShipCompany"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="船务公司"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_nine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/P_ShipCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_nine"
+                    android:text="太平洋船务公司"
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_PresentNumber"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color"
+                android:visibility="gone">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="提单号"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_ten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/P_PresentNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_ten"
+                    android:text=""
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/P_A_PutBoxID"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/list_item_color"
+                android:visibility="gone">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="放箱单"
+                    android:textColor="@color/word_hei"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/publish_eleven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/faxian_arrow_back" />
+
+                <TextView
+                    android:id="@+id/P_PutBoxID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/publish_eleven"
+                    android:text=""
+                    android:textColor="@color/word_hui"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/white"
+                android:clickable="true">
+
+                <RadioGroup
+                    android:id="@+id/publish_platform_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/publish_platform"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:checked="true"
+                        android:text="平台结算"
+                        android:textColor="@color/word_hei"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+
+                        android:background="@android:color/white"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+
+                        >
+
+                        <CheckBox
+                            android:id="@+id/use_privilege"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="使用优惠券"
+                            android:textColor="@color/title"
+                            android:textSize="16sp"
+
+                            />
+
+                        <CheckBox
+                            android:id="@+id/use_yue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+
+                            android:text="使用余额"
+                            android:textColor="@color/title"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+
+                    <RadioButton
+                        android:id="@+id/publish_zixing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="自行结算"
+                        android:textColor="@color/word_hei"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/publish_Button"
+                android:layout_width="140dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/order_button"
+                android:text="确认发布"
+                android:textColor="@color/writer" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

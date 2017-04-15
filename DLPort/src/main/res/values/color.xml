@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="status_bar">#EBEBEB</color>
+    <color name="status_line">#EBEBEB</color>
+
+    <color name="login_zi">#FF5353</color>
+    <color name="title">#FF5252</color>
+    <color name="writer">#ffffff</color>
+    <color name="old_order">#938F8E</color>
+    <color name="new_order">#FB971F</color>
+    <color name="word_hei">#353535</color>
+    <color name="word_hui">#999999</color>
+
+</resources>

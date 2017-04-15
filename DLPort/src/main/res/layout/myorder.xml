@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.DLPort.myview.TitleView
+        android:id="@+id/myorder_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.DLPort.myview.TitleView>
+
+    <RelativeLayout
+        android:id="@+id/myorder_above"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/writer"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            >
+            <TextView
+                android:id="@+id/order_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="张进丰"
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+            <TextView
+                android:id="@+id/order_go_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已接订单:"
+                android:textSize="13sp"
+                android:layout_below="@id/order_name"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/word_hui"
+                />
+            <TextView
+                android:id="@+id/order_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="13sp"
+                android:textColor="@color/word_hui"
+                android:layout_below="@id/order_name"
+                android:layout_toRightOf="@id/order_go_out"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="次"
+                android:textSize="13sp"
+                android:textColor="@color/word_hui"
+                android:layout_below="@id/order_name"
+                android:layout_toRightOf="@id/order_no"
+                android:layout_marginTop="5dp"
+                />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <com.DLPort.myview.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/refresh_head" />
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <com.DLPort.myview.PullableListView
+            android:id="@+id/myorder_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/writer"
+            android:divider="@color/status_bar"
+            android:dividerHeight="1dp" />
+    </com.DLPort.myview.PullToRefreshLayout>
+
+
+</LinearLayout>

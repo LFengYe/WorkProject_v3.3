@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.DLPort.myview.TitleView
+        android:id="@+id/pickup_cash_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.DLPort.myview.TitleView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/pickup_cash_promote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/pickup_cash_promote"
+            android:textColor="@color/login_zi"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:id="@+id/pickup_cash_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:text="@string/pickup_cash_record"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pickup_cash_amount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/writer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/pickup_cash_amount"
+            android:textColor="@color/word_hei"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/pickup_cash_amount_img"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/faxian_arrow_back" />
+
+        <TextView
+            android:id="@+id/pickup_cash_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/pickup_cash_amount_img"
+
+            android:textColor="@color/word_hui"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pickup_cash_card_num_layout"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/writer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/pickup_cash_card_num"
+            android:textColor="@color/word_hei"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/pickup_cash_card_num_img"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/faxian_arrow_back" />
+
+        <TextView
+            android:id="@+id/pickup_cash_card_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/pickup_cash_card_num_img"
+            android:textColor="@color/word_hui"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pickup_cash_bank_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/writer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/pickup_cash_bank_name"
+            android:textColor="@color/word_hei"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/pickup_cash_bank_name_img"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/faxian_arrow_back" />
+
+        <TextView
+            android:id="@+id/pickup_cash_bank_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/pickup_cash_bank_name_img"
+
+            android:textColor="@color/word_hui"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/pickup_cash_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/writer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/pickup_cash_name"
+            android:textColor="@color/word_hei"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/pickup_cash_name_img"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/faxian_arrow_back" />
+
+        <TextView
+            android:id="@+id/pickup_cash_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/pickup_cash_name_img"
+            android:textColor="@color/word_hui"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pickup_cash_tel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/writer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/pickup_cash_tel"
+            android:textColor="@color/word_hei"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/pickup_cash_tel_img"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/faxian_arrow_back" />
+
+        <TextView
+            android:id="@+id/pickup_cash_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/pickup_cash_tel_img"
+            android:textColor="@color/word_hui"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/pickup_cash_confirm"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/order_button"
+        android:text="@string/pickup_cash_confirm"
+        android:textColor="@color/writer" />
+
+    <LinearLayout
+        android:id="@+id/pickup_cash_bank_list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="最近"
+            android:textColor="@color/word_hui"/>
+
+        <ListView
+            android:id="@+id/pickup_cash_bank_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/writer"
+            android:divider="@color/status_line"
+            android:dividerHeight="1dp"
+            android:choiceMode="singleChoice">
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

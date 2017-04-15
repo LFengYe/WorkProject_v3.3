@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/handbook_problem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="问:怎样加载车辆信息?"
+        android:textColor="@color/word_hei"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/handbook_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="答:请参考路径:车主-我-设置-加载车辆"
+        android:textColor="@color/word_hui"
+        android:paddingLeft="20dp"/>
+
+</LinearLayout>

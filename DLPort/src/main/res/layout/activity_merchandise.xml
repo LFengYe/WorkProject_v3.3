@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.DLPort.myview.TitleView
+        android:id="@+id/merchandise_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.DLPort.myview.TitleView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:layout_below="@id/merchandise_title">
+
+        <com.DLPort.myview.MyGridView
+            android:id="@+id/my_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="none"
+            android:horizontalSpacing="2dp"
+            android:listSelector="#ffffff00"
+            android:numColumns="2"
+            android:scrollbars="none"
+            android:verticalSpacing="2dp">
+
+        </com.DLPort.myview.MyGridView>
+    </ScrollView>
+</RelativeLayout>

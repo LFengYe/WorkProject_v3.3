@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.DLPort.myview.TitleView
+        android:id="@+id/inquire_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"></com.DLPort.myview.TitleView>
+
+    <LinearLayout
+        android:id="@+id/confirm_BookingNumber_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/S_A_BookingNumber"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/list_item_color">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:text="提单号"
+                android:textColor="@color/word_hei"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/ship_seven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/faxian_arrow_back" />
+
+            <TextView
+                android:id="@+id/S_BookingNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/ship_seven"
+                android:text=""
+                android:textColor="@color/word_hui"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/inquire_Button"
+            android:layout_width="180dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/order_button"
+            android:text="办理放箱单"
+            android:textColor="@color/writer" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/inquire_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@color/writer"
+        android:divider="@color/status_bar"
+        android:dividerHeight="1dp"
+        android:layout_below="@id/inquire_title"
+        android:layout_above="@id/confirm_BookingNumber_layout"
+        android:listSelector="@color/writer"></ListView>
+</RelativeLayout>

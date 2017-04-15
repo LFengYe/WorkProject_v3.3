@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+    <com.DLPort.myview.TitleView
+        android:id="@+id/set_addcar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.DLPort.myview.TitleView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/status_bar"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/status_bar"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:id="@+id/add_A_VehNof"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/A_one"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="车牌号："
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/add_VehNof"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/A_one"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/add_A_CarType"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/A_two"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="车俩类型："
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/add_CarType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/A_two"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/add_A_Tunnage"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/A_three"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="承载吨数："
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/add_Tunnage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/A_three"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/add_A_CarMessage"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/A_four"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="挂车信息："
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/add_CarMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/A_four"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/add_A_UpkeepTime"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/A_five"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="保养日期："
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/add_UpkeepTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/A_five"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/add_A_InsuranceTime"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/A_six"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="保险日期："
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/add_InsuranceTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/A_six"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/add_A_BoxType"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/A_seven"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="承载最大箱型："
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/add_BoxType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/A_seven"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/add_A_GpsNo"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/A_eignt"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="GPS编号："
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/add_GpsNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/A_eignt"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/add_A_GpsExpire"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/A_nine"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="GPS到期时间："
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/add_GpsExpire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/A_nine"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/add_A_Driver"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/A_ten"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="司机："
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/add_Driver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/A_ten"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/add_A_DriTel"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/list_item_color"
+            >
+            <TextView
+                android:id="@+id/A_eleven"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="联系方式"
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/faxian_arrow_back"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:id="@+id/add_DriTel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/A_eleven"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/word_hei"
+                />
+
+        </RelativeLayout>
+        <Button
+            android:id="@+id/add_Button"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:text="确定"
+            android:textColor="@color/writer"
+            android:background="@drawable/order_button"
+            android:layout_marginBottom="15dp"
+            />
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

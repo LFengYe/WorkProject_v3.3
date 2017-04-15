@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <cn.guugoo.jiapeistudent.Views.ImageCycleView
+        android:id="@+id/fragment_home_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_size"
+        android:background="@color/view_line">
+    </View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_line_height"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:id="@+id/home_one"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/home_one"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_text1"
+                    android:layout_marginTop="@dimen/home_image_interval"
+                    android:textSize="@dimen/home_text_size"
+                    android:textColor="@color/text_black"
+                    />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="@dimen/view_size"
+                android:layout_height="match_parent"
+                android:background="@color/view_line">
+
+            </View>
+
+
+
+            <LinearLayout
+                android:id="@+id/home_two"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/home_two"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_text2"
+                    android:layout_marginTop="@dimen/home_image_interval"
+                    android:textSize="@dimen/home_text_size"
+                    android:textColor="@color/text_black"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="@dimen/view_size"
+                android:layout_height="match_parent"
+                android:background="@color/view_line">
+
+            </View>
+            <LinearLayout
+                android:id="@+id/home_three"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/home_three"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_text3"
+                    android:layout_marginTop="@dimen/home_image_interval"
+                    android:textSize="@dimen/home_text_size"
+                    android:textColor="@color/text_black"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_size"
+            android:background="@color/view_line">
+        </View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_line_height"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:id="@+id/home_four"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/home_four"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_text4"
+                    android:layout_marginTop="@dimen/home_image_interval"
+                    android:textSize="@dimen/home_text_size"
+                    android:textColor="@color/text_black"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_width="@dimen/view_size"
+                android:layout_height="match_parent"
+                android:background="@color/view_line">
+
+            </View>
+            <LinearLayout
+                android:id="@+id/home_five"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/home_five"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_text5"
+                    android:layout_marginTop="@dimen/home_image_interval"
+                    android:textSize="@dimen/home_text_size"
+                    android:textColor="@color/text_black"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_width="@dimen/view_size"
+                android:layout_height="match_parent"
+                android:background="@color/view_line">
+
+            </View>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/home_six"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/home_text6"
+                    android:textSize="@dimen/home_text_size"
+                    android:textColor="@color/text_black"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_size"
+                    android:background="@color/view_line">
+
+                </View>
+
+                <RelativeLayout
+                    android:id="@+id/home_seven"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/home_ball"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/information"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="3dp"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_text7"
+                        android:textSize="@dimen/home_text_size"
+                        android:textColor="@color/text_black"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_size"
+            android:background="@color/view_line">
+        </View>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

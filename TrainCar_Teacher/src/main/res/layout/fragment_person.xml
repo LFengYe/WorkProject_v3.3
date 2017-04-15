@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_LightGray"
+              android:orientation="vertical"
+              tools:context="cn.guugoo.jiapeiteacher.fragment.PersonFragment">
+
+    <RelativeLayout
+        style="@style/Person_RelativeLayout_Style">
+
+        <TextView
+            style="@style/Person_TextView_Style"
+            android:text="@string/Teaching_hours"/>
+        <TextView
+            android:id="@+id/tv_teaching_hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_my_evaluation"
+        style="@style/Person_RelativeLayout_Style">
+
+        <TextView
+            style="@style/Person_TextView_Style"
+            android:text="@string/My_evaluation"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/right_light"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_my_score"
+        style="@style/Person_RelativeLayout_Style">
+
+        <TextView
+            style="@style/Person_TextView_Style"
+            android:text="@string/My_score"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/right_light"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+
+        style="@style/Person_RelativeLayout_Style">
+
+        <TextView
+            style="@style/Person_TextView_Style"
+            android:text="@string/My_invitation"/>
+        <TextView
+            android:id="@+id/tv_my_invitation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/Person_RelativeLayout_Style">
+        <TextView
+            style="@style/Person_TextView_Style"
+            android:text="@string/Contact_client"/>
+        <TextView
+            android:id="@+id/tv_contact_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_exit_login"
+        android:layout_marginTop="10dp"
+        style="@style/Person_RelativeLayout_Style">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/color_Black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:text="@string/Exit_login"/>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/color_White"/>
+
+</LinearLayout>

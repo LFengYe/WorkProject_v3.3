@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+    <com.DLPort.myview.TitleView
+        android:id="@+id/xiangqing_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.DLPort.myview.TitleView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:background="@color/writer">
+
+        <LinearLayout
+            android:id="@+id/huo_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            >
+            <TextView
+                android:id="@+id/huo_Price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="230.00"
+                android:textSize="30dp"
+                android:textColor="@color/word_hei"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元/箱"
+                android:textSize="20dp"
+                android:textColor="@color/word_hei"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:id="@+id/huo_ChargeType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自动结算"
+                android:textColor="@color/word_hui"
+                android:layout_marginLeft="10dp"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/Grad_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="剩余/总计"
+            android:textSize="13dp"
+            android:layout_below="@id/huo_one"
+            android:layout_marginLeft="20dp"
+            />
+        <TextView
+            android:id="@+id/huo_Remain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4/10"
+            android:layout_toRightOf="@id/Grad_two"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/huo_one"
+            />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="箱"
+            android:layout_toRightOf="@id/huo_Remain"
+            android:layout_below="@id/huo_one"
+            />
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/huo_one"
+            android:layout_marginRight="10dp"
+            android:text="删除"
+            android:textSize="15dp"
+
+            />
+
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/huo_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@color/writer"
+        android:divider="@color/status_bar"
+        android:dividerHeight="1dp"
+        android:listSelector="@color/writer"
+        android:scrollbarStyle="outsideOverlay"
+        android:transcriptMode="normal"
+        android:paddingTop="20dp"
+        >
+
+    </ListView>
+
+
+
+</LinearLayout>

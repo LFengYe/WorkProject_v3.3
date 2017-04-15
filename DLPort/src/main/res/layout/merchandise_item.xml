@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/writer" >
+
+    <TextView
+        android:id="@+id/merchandise_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="商品名称"
+        android:textColor="@color/word_hui"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/merchandise_describe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="商品描述"
+        android:textColor="@color/word_hei"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/merchandise_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1000"
+        android:textColor="@color/new_order"
+        android:layout_marginLeft="10dp"/>
+
+    <ImageView
+        android:id="@+id/merchandise_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/merchandise"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="10dp"/>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/merchandise_image"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginBottom="10dp">-->
+    <!--</ImageView>-->
+</LinearLayout>

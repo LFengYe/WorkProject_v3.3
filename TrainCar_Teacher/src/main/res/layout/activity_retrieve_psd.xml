@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <include
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        layout="@layout/include_head"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/color_LightGray"
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/signin_line1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/color_White"
+            >
+            <ImageView
+                android:id="@+id/Sign_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/account"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                />
+            <EditText
+                android:id="@+id/sign_user"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:hint="@string/sign_in_user"
+                android:lines="1"
+                android:layout_toRightOf="@+id/Sign_image"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/smallSp"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/signin_line2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/color_White"
+            >
+            <ImageView
+                android:id="@+id/password_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/password"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                />
+            <EditText
+                android:id="@+id/sign_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/sign_in_password"
+                android:layout_toRightOf="@+id/password_image"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/smallSp"
+                android:lines="1"
+                android:inputType="textPassword"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/signin_line3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="@color/color_LightGray"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@color/color_White"
+                >
+                <EditText
+                    android:id="@+id/sign_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:paddingLeft="20dp"
+                    android:hint="@string/sign_in_hint_verify"
+                    android:textSize="@dimen/smallSp"
+
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_line"
+                >
+            </View>
+
+            <TextView
+                android:id="@+id/sign_tv_code"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/sign_in_button_verify"
+                android:gravity="center"
+                android:textColor="@color/color_Blue"
+                android:background="@color/color_White"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_White"
+            >
+            <Button
+                android:id="@+id/sign_button_send"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/et_login_style"
+                android:text="@string/submit"
+                android:textColor="@color/color_Blue"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+
+                />
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

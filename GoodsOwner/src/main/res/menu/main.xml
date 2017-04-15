@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/myOrder"
+        android:title="@string/myOrder"/>
+    <item
+        android:id="@+id/myWallet"
+        android:title="@string/myWallet"/>
+    <item
+        android:id="@+id/myConvoy"
+        android:title="@string/myConvoy"
+        />
+    <item
+        android:id="@+id/common_address"
+        android:title="@string/common_address"/>
+    <item
+        android:id="@+id/myInvoice"
+        android:title="@string/myInvoice"/>
+    <item
+        android:id="@+id/news"
+        android:title="@string/news"
+        app:actionProviderClass="gpw.com.app.view.NumActionProvider"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/benefit_activity"
+        android:title="@string/benefit_activity"/>
+    <item
+        android:id="@+id/setting"
+        android:title="@string/setting"/>
+</menu>

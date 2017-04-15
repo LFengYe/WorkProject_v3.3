@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gpw.app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.REAL_GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.REAL_GET_TASKS" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:name=".base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/GrayTranslucentTheme"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.MyOrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+
+        <activity
+            android:name=".activity.RebuildPsdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.PersonalInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.MyWalletActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.RechargeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.FeedbackActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.QueryRuleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.MyConvoyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.MyInvoiceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.ApplyInvoiceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.FAQActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.ChargeScheduleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.FeeScaleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.CommonAddressActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.BenefitActivityActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.RechargeHintActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.ConfirmOrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.MoneyDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.MyNewsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.InvoiceRuleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.OrderDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.PayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.MapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/GrayTranslucentTheme" />
+        <activity
+            android:name=".activity.AddMapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/GrayTranslucentTheme" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="bYzh1axZzGnBmI17GGmbS8xXFteE29Ud" />
+
+
+        <activity
+            android:name=".activity.ImproveDisclosureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+
+        <activity
+            android:name=".activity.EditAddressActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.CargoInsuranceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme" />
+
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"></activity>
+
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind">
+
+        </activity>
+        <activity
+            android:name=".activity.OrderOffersActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme">
+
+        </activity>
+        <activity
+            android:name=".activity.OrderPayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme">
+
+        </activity>
+        <activity
+            android:name=".activity.CarLocationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme"></activity>
+        <activity
+            android:name=".activity.OrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme"></activity>
+        <activity
+            android:name=".activity.OrderReceiptDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme"></activity>
+    </application>
+
+</manifest>

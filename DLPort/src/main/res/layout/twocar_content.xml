@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+
+
+        >
+
+
+        <LinearLayout
+            android:id="@+id/two_one"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/two_image"
+                android:src="@mipmap/car"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/two_one"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="车辆名称："
+                    android:textSize="15dp"
+                    android:textColor="@color/word_hei"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="车辆类型："
+                    android:textSize="15dp"
+                    android:textColor="@color/word_hei"
+                    android:layout_marginTop="5dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系方式："
+                    android:textSize="15dp"
+                    android:textColor="@color/word_hei"
+                    android:layout_marginTop="5dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="车辆报价："
+                    android:textSize="15dp"
+                    android:textColor="@color/word_hei"
+                    android:layout_marginTop="5dp"
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                >
+                <TextView
+                    android:id="@+id/two_CarBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="东风 HG123"
+                    android:textSize="15dp"
+                    android:textColor="@color/word_hui"
+                    />
+                <TextView
+                    android:id="@+id/two_CarType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="货柜车 20Gp"
+                    android:textSize="15dp"
+                    android:textColor="@color/word_hui"
+                    android:layout_marginTop="5dp"
+                    />
+                <TextView
+                    android:id="@+id/two_Telephone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18712345678"
+                    android:textSize="15dp"
+                    android:textColor="@color/word_hui"
+                    android:layout_marginTop="5dp"
+                    />
+                <TextView
+                    android:id="@+id/two_Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25.6万"
+                    android:textSize="15dp"
+                    android:textColor="@color/word_hui"
+                    android:layout_marginTop="5dp"
+                    />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

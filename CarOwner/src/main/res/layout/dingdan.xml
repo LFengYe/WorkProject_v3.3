@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="8dp"
+    android:orientation="vertical">
+
+    <include layout="@layout/fenge_small2" />
+
+    <LinearLayout
+        android:id="@+id/ll_cong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_cong"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/start" />
+
+        <TextView
+            android:id="@+id/tv_cong"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:textColor="@color/bg_texton"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_visib"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/btn_small"/>
+
+    <LinearLayout
+        android:id="@+id/ll_jing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_jing"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/pass" />
+
+        <TextView
+            android:id="@+id/tv_jing"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:textColor="@color/bg_texton"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_visib2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/btn_small"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/ll_jing2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_jing2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/pass" />
+
+        <TextView
+            android:id="@+id/tv_jing2"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:textColor="@color/bg_texton"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_visib3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/btn_small"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/ll_jing3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_jing3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/pass" />
+
+        <TextView
+            android:id="@+id/tv_jing3"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:textColor="@color/bg_texton"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_visib4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/btn_small"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/ll_jing4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_jing4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/pass" />
+
+        <TextView
+            android:id="@+id/tv_jing4"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:textColor="@color/bg_texton"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_visib5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/btn_small"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/ll_jing5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_jing5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/pass" />
+
+        <TextView
+            android:id="@+id/tv_jing5"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:textColor="@color/bg_texton"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+    <include layout="@layout/fenge_small2" />
+
+    <LinearLayout
+        android:id="@+id/ll_dao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_dao"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/arrive" />
+
+        <TextView
+            android:id="@+id/tv_dao"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:textColor="@color/bg_texton"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

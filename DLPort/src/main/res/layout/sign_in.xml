@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+     
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/title"
+        >
+        <RelativeLayout
+            android:id="@+id/sign_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/title_Image_In"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/faxian_arrow_back1"
+                />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/title_Image_In"
+                android:text="登陆"
+                android:textSize="16sp"
+                android:textColor="@color/writer"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            android:padding="6dp"
+            >
+            <Button
+                android:id="@+id/car_sign_in"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button1"
+                android:text="车主"
+                android:textColor="@color/writer"
+                android:onClick="onSignClicked"
+                />
+            <Button
+                android:id="@+id/huo_sign_in"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button3"
+                android:text="货主"
+                android:textColor="@color/writer"
+                android:onClick="onSignClicked"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/S_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完成"
+            android:textSize="16sp"
+            android:textColor="@color/writer"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="20dp"
+            />
+    </RelativeLayout>
+
+
+
+
+    <FrameLayout
+        android:id="@+id/S_contect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+    </FrameLayout>
+
+</LinearLayout>

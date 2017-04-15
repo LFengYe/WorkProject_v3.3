@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+    <com.DLPort.myview.TitleView
+        android:id="@+id/huo_order_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.DLPort.myview.TitleView>
+
+    <com.DLPort.myview.PullToRefreshLayout
+        android:id="@+id/huoOrder_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/refresh_head" />
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <com.DLPort.myview.PullableListView
+            android:id="@+id/HuoOrder_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/writer"
+            android:divider="@color/status_bar"
+            android:dividerHeight="1dp" />
+    </com.DLPort.myview.PullToRefreshLayout>
+
+
+
+
+</LinearLayout>

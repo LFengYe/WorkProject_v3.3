@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.DLPort.myview.TitleView
+        android:id="@+id/car_positon_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.DLPort.myview.TitleView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/car_positon_title">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/car_positon_title"
+            android:clickable="true" />
+
+        <ListView
+            android:id="@+id/car_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="64dp"
+            android:layout_marginTop="300dp"
+            android:background="@color/writer"
+            android:choiceMode="singleChoice"
+            android:divider="@color/status_line"
+            android:dividerHeight="1dp"
+            android:visibility="gone"></ListView>
+
+        <RelativeLayout
+            android:id="@+id/car_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/list_item_color"
+            android:clickable="true"
+            android:paddingLeft="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:text="车辆列表"
+                android:textColor="@color/word_hei"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/car_list_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:src="@mipmap/faxian_arrow_pull_down" />
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

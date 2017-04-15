@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_rebuild_psd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_red"
+    android:fitsSystemWindows="true"
+    tools:context="cn.com.caronwer.activity.MyWalletActivity">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/in_head"
+        layout="@layout/action_head"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/color_white"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/it_xiangxi1"></include>
+
+                <include layout="@layout/it_xiangxi2"></include>
+
+                <include layout="@layout/it_xiangxi3"></include>
+                <!--<include layout="@layout/it_xiangxi32"></include>-->
+                <!--<include layout="@layout/it_xiangxi33"></include>-->
+                <!--<include layout="@layout/it_xiangxi34"></include>-->
+                <!--<include layout="@layout/it_xiangxi35"></include>-->
+
+                <include layout="@layout/it_xiangxi4"></include>
+
+                <include layout="@layout/it_xiangxi5"></include>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</LinearLayout>

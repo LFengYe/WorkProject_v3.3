@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_deta1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp">
+
+        <View
+            android:id="@+id/view_d1"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/btn_small" />
+
+        <ImageView
+            android:id="@+id/iv_sta"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/heart_gray">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/iv_x1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="3dp"
+            android:src="@mipmap/dow" />
+    </RelativeLayout>
+
+
+    <cn.com.caronwer.view.InputNameView
+        android:id="@+id/inputNameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/tv_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="接单成功，等待发货"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:text="2016-8-16 10:30"
+                android:textSize="13dp" />
+
+        </RelativeLayout>
+
+        <include layout="@layout/fenge_small3" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <cn.com.caronwer.view.WarpLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:grivate="left"
+                app:horizontal_Space="5dp">
+
+                <TextView
+                    android:id="@+id/tv_hujao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="呼叫货主"
+                    android:textColor="@color/back_top" />
+
+                <TextView
+                    android:id="@+id/tv_leixin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="小面包车" />
+
+                <TextView
+                    android:id="@+id/tv_fangshi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="搬运"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_caizuo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="全拆座"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_surcharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="回单"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_toPay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="运费到付"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_collectionPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="代收货款"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/iv_lianxi"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:padding="2dp"
+                    android:src="@mipmap/comment_red"
+                    android:visibility="gone" />
+
+            </cn.com.caronwer.view.WarpLinearLayout>
+
+        </RelativeLayout>
+
+        <include layout="@layout/fenge_small3" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/tv_qian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/back_top"
+                android:textSize="18sp" />
+            <!--android:background="@drawable/shap_selector"-->
+            <Button
+                android:id="@+id/bt_dhqidian"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_qian"
+                android:background="@drawable/shape_button2"
+                android:gravity="center"
+                android:text="导航到起点"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/bt_cedan"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_button2"
+                android:gravity="center"
+                android:text="申请撤单"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+    </cn.com.caronwer.view.InputNameView>
+</LinearLayout>

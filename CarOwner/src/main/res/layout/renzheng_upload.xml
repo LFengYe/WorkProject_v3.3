@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <cn.com.caronwer.view.InputNameView
+                android:id="@+id/pv_sfz"
+                android:layout_width="150dp"
+                android:layout_height="93dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:background="@color/white">
+                <ImageView
+                    android:id="@+id/iv_sfz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/touxiang"
+                    android:visibility="gone"
+                    />
+                <cn.com.caronwer.view.UploadTextView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上传身份证照片"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    />
+            </cn.com.caronwer.view.InputNameView>
+            <ImageView
+                android:id="@+id/iv_sf"
+                android:layout_width="150dp"
+                android:layout_height="93dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:scaleType="fitXY"
+
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <cn.com.caronwer.view.InputNameView
+                android:id="@+id/pv_xsz"
+                android:layout_width="150dp"
+                android:layout_height="93dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:background="@color/white">
+                <ImageView
+                    android:id="@+id/iv_xsz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/touxiang"
+                    android:visibility="gone"
+                    />
+                <cn.com.caronwer.view.UploadTextView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上传行驶证照片"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    />
+            </cn.com.caronwer.view.InputNameView>
+            <ImageView
+                android:id="@+id/iv_xs"
+                android:layout_width="150dp"
+                android:layout_height="93dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:scaleType="fitXY"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <cn.com.caronwer.view.InputNameView
+                android:id="@+id/pv_jsz"
+                android:layout_width="150dp"
+                android:layout_height="93dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:background="@color/white">
+                <ImageView
+                    android:id="@+id/iv_jsz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/touxiang"
+                    android:visibility="gone"
+                    />
+                <cn.com.caronwer.view.UploadTextView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上传驾驶证照片"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    />
+            </cn.com.caronwer.view.InputNameView>
+            <ImageView
+                android:id="@+id/iv_js"
+                android:layout_width="150dp"
+                android:layout_height="93dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:scaleType="fitXY"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <cn.com.caronwer.view.InputNameView
+                android:id="@+id/pv_cl"
+                android:layout_width="150dp"
+                android:layout_height="93dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:background="@color/white">
+                <ImageView
+                    android:id="@+id/iv_cl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/touxiang"
+                    android:visibility="gone"
+                    />
+                <cn.com.caronwer.view.UploadTextView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上传车辆照片"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    />
+            </cn.com.caronwer.view.InputNameView>
+            <ImageView
+                android:id="@+id/iv_che"
+                android:layout_width="150dp"
+                android:layout_height="93dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:scaleType="fitXY"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

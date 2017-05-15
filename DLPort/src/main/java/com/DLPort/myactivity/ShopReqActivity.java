@@ -286,7 +286,7 @@ public class ShopReqActivity extends BaseActivity {
         TitleView titleView = (TitleView) findViewById(R.id.title_ship_inquire);
         titleView.setBackImageVisible(true);
         titleView.setMiddleTextVisible(true);
-        titleView.setMiddleText(R.string.O_pic1);
+        titleView.setMiddleText(R.string.ship_query);
         titleView.setBackImageListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

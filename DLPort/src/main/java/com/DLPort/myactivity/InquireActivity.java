@@ -1,16 +1,13 @@
 package com.DLPort.myactivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.DLPort.R;
 import com.DLPort.myadapter.InquireAdapter;
@@ -18,7 +15,6 @@ import com.DLPort.mydata.inquire;
 import com.DLPort.mytool.MyToast;
 import com.DLPort.myview.MyDialog;
 import com.DLPort.myview.TitleView;
-import com.baidu.platform.comapi.map.B;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -140,7 +136,7 @@ public class InquireActivity  extends BaseActivity {
         titleView.setLeftViewVisible(true);
         titleView.setMiddleTextVisible(true);
 
-        titleView.setWineText(R.string.O_pic1);
+        titleView.setWineText(R.string.ship_query);
         titleView.setMiddleText(R.string.query);
 
         View view =findViewById(R.id.title_back);

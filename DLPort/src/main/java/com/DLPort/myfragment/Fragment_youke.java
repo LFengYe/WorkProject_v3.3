@@ -27,7 +27,7 @@ public class Fragment_youke extends Fragment {
      */
 
     private int[] titles = new int[]{
-            R.string.O_pic1, R.string.O_pic6
+            R.string.ship_query, R.string.O_pic6
 
     };
     /*

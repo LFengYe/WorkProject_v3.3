@@ -51,6 +51,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.DLPort.myactivity.ResourceSelectActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
             android:name="com.DLPort.myactivity.SignIn"
             android:screenOrientation="portrait"></activity>
         <activity

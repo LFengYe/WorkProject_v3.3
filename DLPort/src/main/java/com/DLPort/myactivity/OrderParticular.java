@@ -174,7 +174,7 @@ public class OrderParticular extends BaseActivity {
         TitleView titleView = (TitleView) findViewById(R.id.Par_title);
         titleView.setLeftViewVisible(true);
         titleView.setMiddleTextVisible(true);
-        titleView.setWineText(R.string.Myorder);
+        titleView.setWineText(R.string.my_order);
         titleView.setMiddleText(R.string.order_par);
         View view = findViewById(R.id.title_back);
         view.setOnClickListener(new View.OnClickListener() {

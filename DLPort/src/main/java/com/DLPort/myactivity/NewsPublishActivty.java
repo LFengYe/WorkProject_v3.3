@@ -417,7 +417,7 @@ public class NewsPublishActivty extends BaseActivity {
             TitleView titleView = (TitleView) findViewById(R.id.title_news_publish);
             titleView.setLeftViewVisible(true);
             titleView.setMiddleTextVisible(true);
-            titleView.setWineText(R.string.O_pic32);
+            titleView.setWineText(R.string.public_resource);
             titleView.setMiddleText(R.string.Huo);
             titleView.setLeftViewListener(new View.OnClickListener() {
                 @Override

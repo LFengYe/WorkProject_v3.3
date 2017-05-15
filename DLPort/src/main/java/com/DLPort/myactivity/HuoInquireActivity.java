@@ -104,7 +104,7 @@ public class HuoInquireActivity extends BaseActivity {
         titleView.setLeftViewVisible(true);
         titleView.setMiddleTextVisible(true);
         titleView.setRightTextVisible(true);
-        titleView.setWineText(R.string.Myorder);
+        titleView.setWineText(R.string.my_order);
         titleView.setRightText("刷新");
         titleView.setMiddleText(R.string.order_par);
         View view =findViewById(R.id.title_back);

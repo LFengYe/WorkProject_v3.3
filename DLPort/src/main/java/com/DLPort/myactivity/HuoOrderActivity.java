@@ -1,10 +1,8 @@
 package com.DLPort.myactivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
@@ -170,7 +168,7 @@ public class HuoOrderActivity extends BaseActivity {
         titleView.setLeftViewVisible(true);
         titleView.setMiddleTextVisible(true);
         titleView.setRightTextVisible(true);
-        titleView.setWineText(R.string.Myorder);
+        titleView.setWineText(R.string.my_order);
         titleView.setRightText("刷新");
         titleView.setMiddleText(R.string.Huo);
         titleView.setRightTextListenter(new View.OnClickListener() {

@@ -12,4 +12,17 @@
     <color name="word_hei">#353535</color>
     <color name="word_hui">#999999</color>
 
+    <color name="public_resource">#eb6af1</color>
+    <color name="find_resource">#28a7e8</color>
+    <color name="my_order">#ddd05f</color>
+    <color name="resource_info">#af69f6</color>
+    <color name="ship_query">#77bff6</color>
+    <color name="recharge_cash">#0274A8</color>
+    <color name="recharge_cash_1">#9db883</color>
+
+    <color name="second_import">#2cabec</color>
+    <color name="second_export">#556dda</color>
+    <color name="second_share_car">#2c84ec</color>
+    <color name="second_more">#2cabec</color>
+
 </resources>

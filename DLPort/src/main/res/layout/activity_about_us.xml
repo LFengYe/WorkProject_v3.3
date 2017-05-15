@@ -7,7 +7,9 @@
     <com.DLPort.myview.TitleView
         android:id="@+id/about_us_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.DLPort.myview.TitleView>
+        android:layout_height="wrap_content">
+
+    </com.DLPort.myview.TitleView>
 
 
     <ScrollView

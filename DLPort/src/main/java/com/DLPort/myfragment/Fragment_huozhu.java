@@ -29,7 +29,7 @@ public class Fragment_huozhu extends Fragment {
     private GridView gridView;
     //图片的文字标题
     private int[] titles = new int[]{
-            R.string.O_pic1, R.string.O_pic32,
+            R.string.ship_query, R.string.public_resource,
             R.string.O_pic4, R.string.O_pic5, R.string.O_pic6
     };
     //图片ID数组

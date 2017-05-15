@@ -29,6 +29,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
     compile 'com.android.support:support-v4:23.1.0'
     compile files('libs/library.jar')
     compile files('libs/BaiduLBS_Android.jar')

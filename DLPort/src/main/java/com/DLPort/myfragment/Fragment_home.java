@@ -35,14 +35,19 @@ import java.util.ArrayList;
  */
 public class Fragment_home extends Fragment {
     public static final String TAG = "Fragment_home";
+    /*
     private Fragment_owner fragment_owner;
     private Fragment_huozhu fragment_huozhu;
     private Fragment_youke fragment_youke;
+    */
+    private FragmentGoods fragmentGoods;
+    private FragmentCarOwner fragmentCarOwner;
+
     private Fragment[] fragments;
     private Button[] buttons;
     private int index;
     private int currentTabIndex;
-    private View order;
+//    private View order;
     private int dataType;
     private String[] imageUrls;
     private ImageCycleView mAdView;
@@ -86,10 +91,7 @@ public class Fragment_home extends Fragment {
         View view = inflater.inflate(R.layout.home_fragment, container, false);
         findView(view);
         init();
-
-        Log.i(TAG, "userType:" + getArguments().getInt("Type"));
         String parentTag = getArguments().getString("parentTag");
-        Log.i(TAG, "parentTag:" + parentTag);
         if (null != parentTag &&
                 (parentTag.equalsIgnoreCase("PayConfirm")
                         || parentTag.equalsIgnoreCase("NewsPublish"))) {
@@ -104,21 +106,24 @@ public class Fragment_home extends Fragment {
         buttons = new Button[3];
         buttons[0] = (Button) view.findViewById(R.id.chezhu);
         buttons[1] = (Button) view.findViewById(R.id.huozhu);
-        buttons[2] = (Button) view.findViewById(R.id.youke);
+        /*
         fragment_huozhu = new Fragment_huozhu();
         fragment_owner = new Fragment_owner();
         fragment_youke = new Fragment_youke();
-        fragments = new Fragment[]{fragment_owner, fragment_huozhu, fragment_youke};
-        order = view.findViewById(R.id.myorder_he);
+        */
+
+        fragmentCarOwner = new FragmentCarOwner();
+        fragmentGoods = new FragmentGoods();
+        fragments = new Fragment[]{fragmentCarOwner, fragmentGoods};
+//        order = view.findViewById(R.id.myorder_he);
         mAdView = (ImageCycleView) view.findViewById(R.id.home_image);
+
         JSONObject json = new JSONObject();
-        new MyThread(Constant.URL_UserGETIMAGE, handler, json, getContext()).start();
-
-
+//        new MyThread(Constant.URL_UserGETIMAGE, handler, json, getContext()).start();
     }
 
     private void init() {
-        dataType = getArguments().getInt("Type");
+        dataType = getArguments().getInt("Type", 0);
         index = dataType;
         buttons[dataType].setTextColor(0xFFFF5252);
         buttons[dataType].setSelected(true);
@@ -126,27 +131,17 @@ public class Fragment_home extends Fragment {
         switch (dataType) {
             case 0:
                 getFragmentManager().beginTransaction()
-                        .add(R.id.grid_view, fragment_owner)
-                        .add(R.id.grid_view, fragment_huozhu)
-                        .add(R.id.grid_view, fragment_youke)
-                        .hide(fragment_huozhu).hide(fragment_youke)
-                        .show(fragment_owner).commit();
+                        .add(R.id.grid_view, fragmentCarOwner)
+                        .add(R.id.grid_view, fragmentGoods)
+                        .hide(fragmentGoods)
+                        .show(fragmentCarOwner).commit();
                 break;
             case 1:
                 getFragmentManager().beginTransaction()
-                        .add(R.id.grid_view, fragment_owner)
-                        .add(R.id.grid_view, fragment_huozhu)
-                        .add(R.id.grid_view, fragment_youke)
-                        .hide(fragment_owner).hide(fragment_youke)
-                        .show(fragment_huozhu).commit();
-                break;
-            case 2:
-                getFragmentManager().beginTransaction()
-                        .add(R.id.grid_view, fragment_owner)
-                        .add(R.id.grid_view, fragment_huozhu)
-                        .add(R.id.grid_view, fragment_youke)
-                        .hide(fragment_owner).hide(fragment_huozhu)
-                        .show(fragment_youke).commit();
+                        .add(R.id.grid_view, fragmentCarOwner)
+                        .add(R.id.grid_view, fragmentGoods)
+                        .hide(fragmentCarOwner)
+                        .show(fragmentGoods).commit();
                 break;
         }
 
@@ -166,13 +161,7 @@ public class Fragment_home extends Fragment {
 
             }
         });
-        buttons[2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                index = 2;
-                setButtons();
-            }
-        });
+        /*
         order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -190,8 +179,6 @@ public class Fragment_home extends Fragment {
 
             }
         });
-
-
         fragment_owner.gettype(new Fragment_owner.GetType() {
             @Override
             public boolean getdata() {
@@ -202,7 +189,6 @@ public class Fragment_home extends Fragment {
                 }
             }
         });
-
         fragment_huozhu.gettype(new Fragment_huozhu.GetType() {
             @Override
             public boolean getdata() {
@@ -213,6 +199,7 @@ public class Fragment_home extends Fragment {
                 }
             }
         });
+        */
     }
 
     private void setButtons() {

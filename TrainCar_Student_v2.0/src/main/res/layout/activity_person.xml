@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/mainLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="cn.guugoo.jiapeistudent.MinorActivity.PersonActivity">
+
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/person_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/space">
+
+            <RelativeLayout
+                android:id="@+id/person_line1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/person_height"
+                android:clickable="true"
+                android:background="@drawable/list_item_color"
+                >
+                <TextView
+                    android:id="@+id/person_reminder_text1"
+                    android:layout_width="@dimen/person_text_weight"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/my_text_left_size"
+                    android:text="@string/person_text1"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/person_text" />
+                <ImageView
+                    android:id="@+id/person_image1"
+                    android:layout_width="@dimen/my_image_in"
+                    android:layout_height="@dimen/my_image_in"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/arrows_left"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_text_right_size"
+                    android:textSize="@dimen/my_text_size"
+                    />
+                <cn.guugoo.jiapeistudent.Views.CircleImageView
+                    android:id="@+id/person_hand"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@+id/person_image1"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/people"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="@color/login_color"
+                    />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/person_line2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/person_height"
+                android:clickable="true"
+                android:background="@drawable/list_item_color"
+                android:layout_marginTop="1dp"
+                >
+                <TextView
+                    android:id="@+id/person_reminder_text2"
+                    android:layout_width="@dimen/person_text_weight"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/my_text_left_size"
+                    android:text="@string/person_text2"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/person_text" />
+
+                <TextView
+                    android:id="@+id/person_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/person_reminder_text2"
+                    android:text=""
+                    android:textColor="@color/text_black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_text_right_size"
+                    android:textSize="@dimen/person_text"
+                    />
+
+                <ImageView
+                    android:id="@+id/person_image2"
+                    android:layout_width="@dimen/my_image_in"
+                    android:layout_height="@dimen/my_image_in"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/arrows_left"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_text_right_size"
+                    android:textSize="@dimen/my_text_size"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/person_line3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/person_height"
+                android:clickable="true"
+                android:background="@drawable/list_item_color"
+                android:layout_marginTop="1dp"
+                >
+                <TextView
+                    android:id="@+id/person_reminder_text3"
+                    android:layout_width="@dimen/person_text_weight"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/my_text_left_size"
+                    android:text="@string/person_text3"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/person_text" />
+
+                <TextView
+                    android:id="@+id/person_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/person_reminder_text3"
+                    android:text=""
+                    android:textColor="@color/text_black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_text_right_size"
+                    android:textSize="@dimen/person_text"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/person_line4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/person_height"
+                android:clickable="true"
+                android:background="@drawable/list_item_color"
+                android:layout_marginTop="1dp"
+                >
+                <TextView
+                    android:id="@+id/person_reminder_text4"
+                    android:layout_width="@dimen/person_text_weight"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/my_text_left_size"
+                    android:text="@string/person_text4"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/person_text" />
+
+                <TextView
+                    android:id="@+id/person_text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/person_reminder_text4"
+                    android:text=""
+                    android:textColor="@color/text_black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_text_right_size"
+                    android:textSize="@dimen/person_text"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/person_line5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/person_height"
+                android:clickable="true"
+                android:background="@drawable/list_item_color"
+                android:layout_marginTop="1dp"
+                >
+                <TextView
+                    android:id="@+id/person_reminder_text5"
+                    android:layout_width="@dimen/person_text_weight"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/my_text_left_size"
+                    android:text="@string/person_text5"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/person_text" />
+
+                <TextView
+                    android:id="@+id/person_text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/person_reminder_text5"
+                    android:text=""
+                    android:textColor="@color/text_black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_text_right_size"
+                    android:textSize="@dimen/person_text"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/person_line6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/person_height"
+                android:clickable="true"
+                android:background="@drawable/list_item_color"
+                android:layout_marginTop="1dp"
+                >
+                <TextView
+                    android:id="@+id/person_reminder_text6"
+                    android:layout_width="@dimen/person_text_weight"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/my_text_left_size"
+                    android:text="@string/person_text6"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/person_text" />
+
+                <TextView
+                    android:id="@+id/person_text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/person_reminder_text6"
+                    android:text=""
+                    android:textColor="@color/text_black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_text_right_size"
+                    android:textSize="@dimen/person_text"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/person_line7"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/person_height"
+                android:clickable="true"
+                android:background="@drawable/list_item_color"
+                android:layout_marginTop="1dp"
+                >
+                <TextView
+                    android:id="@+id/person_reminder_text7"
+                    android:layout_width="@dimen/person_text_weight"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/my_text_left_size"
+                    android:text="@string/person_text7"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/person_text" />
+
+                <TextView
+                    android:id="@+id/person_text6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/person_reminder_text7"
+                    android:text=""
+                    android:textColor="@color/text_black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_text_right_size"
+                    android:textSize="@dimen/person_text"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/person_line8"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/person_height"
+                android:clickable="true"
+                android:background="@drawable/list_item_color"
+                android:layout_marginTop="1dp"
+                >
+                <TextView
+                    android:id="@+id/person_reminder_text8"
+                    android:layout_width="@dimen/person_text_weight"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/my_text_left_size"
+                    android:text="@string/person_text8"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/person_text" />
+
+                <ImageView
+                    android:id="@+id/person_image3"
+                    android:layout_width="@dimen/my_image_in"
+                    android:layout_height="@dimen/my_image_in"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/arrows_left"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/my_text_right_size"
+                    android:textSize="@dimen/my_text_size"
+                    />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="login_layout_width">280dp</dimen>
+    <dimen name="login_layout_height">35dp</dimen>
+    <dimen name="login_layout_interval">20dp</dimen>
+    <dimen name="login_sign_interval">15dp</dimen>
+    <dimen name="my_line_height">44dp</dimen>
+    <dimen name="my_text_left_size">24dp</dimen>
+    <dimen name="my_text_right_size">20dp</dimen>
+    <dimen name="my_image_in">23dp</dimen>
+    <dimen name="home_line_height">120dp</dimen>
+    <dimen name="home_image_interval">10dp</dimen>
+    <dimen name="view_size">1dp</dimen>
+    <dimen name="schedule_interval">20dp</dimen>
+    <dimen name="my_add_line_height">44dp</dimen>
+    <dimen name="my_add_news_text_width">100dp</dimen>
+    <dimen name="my_add_text_left">15dp</dimen>
+    <dimen name="pay_line_height">58dp</dimen>
+    <dimen name="reserve_height">55dp</dimen>
+    <dimen name="reserve_details_text_left">20dp</dimen>
+    <dimen name="reserve_details_layout_height">30dp</dimen>
+    <dimen name="reserve_details_text_weight">80dp</dimen>
+    <dimen name="person_height">50dp</dimen>
+    <dimen name="person_text_weight">130dp</dimen>
+    <dimen name="schedule_image_top">28dp</dimen>
+    <dimen name="reserve_text_left">20dp</dimen>
+    <dimen name="reserve_linear_height">30dp</dimen>
+    <dimen name="reserve_verify_text_weight">90dp</dimen>
+    <dimen name="change_password_text_weight">170dp</dimen>
+    <dimen name="select_school_weight">320dp</dimen>
+    <dimen name="select_school_height">35dp</dimen>
+
+
+    <dimen name="login_text_size">15sp</dimen>
+    <dimen name="sign_text_size">14sp</dimen>
+    <dimen name="my_text_size">16sp</dimen>
+    <dimen name="home_text_size">18sp</dimen>
+    <dimen name="apply_train_text">18sp</dimen>
+    <dimen name="schedule_text">15sp</dimen>
+    <dimen name="pay_black_text">16sp</dimen>
+    <dimen name="pay_gray_text">13sp</dimen>
+    <dimen name="reserve_hand_text">16sp</dimen>
+    <dimen name="reserve_details_text">15sp</dimen>
+    <dimen name="comment_pay_text">15sp</dimen>
+    <dimen name="person_text">16sp</dimen>
+    <dimen name="reserve_verify_text">16sp</dimen>
+
+
+</resources>

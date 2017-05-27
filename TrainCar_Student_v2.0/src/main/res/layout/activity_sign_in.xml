@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.guugoo.jiapeistudent.MainActivity.SignInActivity"
+    android:fitsSystemWindows="true"
+    >
+
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/sign_in_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/space"
+        >
+
+        <RelativeLayout
+            android:id="@+id/sign_in_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            >
+            <TextView
+                android:id="@+id/Sign_in_school_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_centerInParent="true"
+                android:textSize="17sp"
+                android:textColor="@color/text_black"
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/signin_line1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:layout_marginTop="10dp"
+            >
+            <ImageView
+                android:id="@+id/Sign_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/user_name"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                />
+            <EditText
+                android:id="@+id/sign_user"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/sign_in_user"
+                android:layout_toRightOf="@+id/Sign_image"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/login_text_size"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:maxLength="11"
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/signin_line2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            >
+            <ImageView
+                android:id="@+id/password_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/pass_word"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                />
+            <LinearLayout
+                android:id="@+id/sign_button"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:id="@+id/sign_button_see"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sign_see"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/sign_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/sign_in_password"
+                android:layout_toRightOf="@+id/password_image"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/login_text_size"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:layout_toLeftOf="@+id/sign_button"
+                android:inputType="textPassword"
+                />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/signin_line3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="@color/space"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@color/white"
+                >
+                <EditText
+                    android:id="@+id/sign_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:paddingLeft="20dp"
+                    android:hint="@string/sign_in_hint_verify"
+                    android:textSize="@dimen/login_text_size"
+
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="@dimen/view_size"
+                android:layout_height="match_parent"
+                android:background="@color/view_line"
+                >
+            </View>
+
+            <TextView
+                android:id="@+id/sign_button_code"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/sign_in_button_verify"
+                android:gravity="center"
+                android:textColor="@color/login_color"
+                android:background="@color/white"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            >
+            <Button
+                android:id="@+id/sign_button_send"
+                android:layout_width="@dimen/login_layout_width"
+                android:layout_height="@dimen/login_layout_height"
+                android:background="@drawable/login_layout"
+                android:text="@string/sign_in_button"
+                android:textColor="@color/login_color"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+
+                />
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

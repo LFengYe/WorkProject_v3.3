@@ -8,7 +8,9 @@
     <com.DLPort.myview.TitleView
         android:id="@+id/resource_select_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.DLPort.myview.TitleView>
+        android:layout_height="wrap_content">
+
+    </com.DLPort.myview.TitleView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,6 +39,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/second_import"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginBottom="5dp"
@@ -48,7 +51,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_marginTop="10dp"
-                        android:layout_weight="2"
+                        android:layout_weight="1"
                         android:src="@mipmap/second_import" />
 
                     <TextView
@@ -63,6 +66,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/second_share_car"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginTop="5dp"
@@ -74,8 +78,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_marginTop="10dp"
-                        android:layout_weight="2"
-                        android:src="@mipmap/main_share_car" />
+                        android:layout_weight="1"
+                        android:src="@mipmap/second_share_car" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -97,6 +101,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/second_export"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginBottom="5dp"
@@ -108,7 +113,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_marginTop="10dp"
-                        android:layout_weight="2"
+                        android:layout_weight="1"
                         android:src="@mipmap/second_export" />
 
                     <TextView
@@ -123,6 +128,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/second_more"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginTop="5dp"
@@ -134,7 +140,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_marginTop="10dp"
-                        android:layout_weight="2"
+                        android:layout_weight="1"
                         android:src="@mipmap/second_more" />
 
                     <TextView

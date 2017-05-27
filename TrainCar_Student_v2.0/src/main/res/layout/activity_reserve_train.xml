@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.guugoo.jiapeistudent.MainActivity.ReserveTrainActivity">
+
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/reserve_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/reserve_time"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/reserve_height"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/reserve_hand_text"
+            android:text="@string/reserve_text1"
+            android:background="@drawable/reserve_text_color"
+            />
+        <View
+            android:layout_width="@dimen/view_size"
+            android:layout_height="match_parent"
+            android:background="@color/view_line"/>
+        <TextView
+            android:id="@+id/reserve_coach"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/reserve_height"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/reserve_hand_text"
+            android:background="@drawable/reserve_text_color"
+            android:text="@string/reserve_text2"/>
+        <View
+            android:layout_width="@dimen/view_size"
+            android:layout_height="match_parent"
+            android:background="@color/view_line"/>
+        <TextView
+            android:id="@+id/reserve_where"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/reserve_height"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/reserve_hand_text"
+            android:background="@drawable/reserve_text_color"
+            android:text="@string/reserve_text3"/>
+        <View
+            android:layout_width="@dimen/view_size"
+            android:layout_height="match_parent"
+            android:background="@color/view_line"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_size"
+        android:background="@color/view_line"/>
+
+    <FrameLayout
+        android:id="@+id/reserve_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

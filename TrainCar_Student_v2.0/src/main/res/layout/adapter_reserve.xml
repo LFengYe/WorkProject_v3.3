@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1.5"
+            >
+            <TextView
+                android:id="@+id/adapter_reserve_text1"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2016年7月24日14：00-15：00"
+                android:textSize="14sp"
+                android:textColor="@color/text_black"
+                android:layout_marginLeft="7dp"
+                />
+            <TextView
+                android:id="@+id/adapter_reserve_text2"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥125"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/login_color"
+                android:visibility="gone"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/adapter_reserve_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="宋教练"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/adapter_reserve_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已预约"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/adapter_reserve_text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1号训练场"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:id="@+id/adapter_reserve_button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="二维码"
+                android:textColor="@color/text_black"
+                android:background="@drawable/login_layout"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/adapter_reserve_text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="科目二"
+                android:textColor="@color/text_black"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp" />
+            <Button
+                android:id="@+id/adapter_reserve_button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_reserve_content_text5"
+                android:textColor="@color/text_black"
+                android:background="@drawable/login_layout"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"/>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

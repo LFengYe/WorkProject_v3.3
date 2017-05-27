@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MinorActivity.SelectSchoolActivity">
+
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/select_school"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/select_school_text"
+            android:layout_width="@dimen/select_school_weight"
+            android:layout_height="@dimen/select_school_height"
+            android:background="@drawable/select_school"
+            android:text=""
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="10dp"
+            android:hint="@string/select_school_text_hint"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <Button
+            android:id="@+id/select_school_button"
+            android:layout_width="@dimen/select_school_weight"
+            android:layout_height="@dimen/select_school_height"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/select_school"
+            android:text="@string/select_school_text"
+            >
+        </Button>
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

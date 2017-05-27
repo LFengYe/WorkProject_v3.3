@@ -7,14 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.DLPort.FindActivity.baoxianActivity;
-import com.DLPort.FindActivity.diyaActivity;
-import com.DLPort.FindActivity.jiuyuanActivity;
-import com.DLPort.FindActivity.twocarActivity;
 import com.DLPort.NewsActivity.TongzhiActivity;
 import com.DLPort.NewsActivity.gankouActivity;
 import com.DLPort.NewsActivity.guanyuActivity;
-import com.DLPort.NewsActivity.jiaotongActivity;
+import com.DLPort.NewsActivity.TrafficActivity;
 import com.DLPort.R;
 import com.DLPort.myview.TitleView;
 
@@ -62,7 +58,7 @@ public class Fragment_news extends Fragment {
         views[1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), jiaotongActivity.class);
+                Intent intent = new Intent(getActivity(), TrafficActivity.class);
                 startActivity(intent);
             }
         });

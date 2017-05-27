@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.guugoo.jiapeistudent.MinorActivity.ChangeNameActivity">
+
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/change_name_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_size"
+        android:background="@color/view_line"
+        android:layout_marginTop="15dp">
+    </View>
+
+    <LinearLayout
+        android:id="@+id/person_line4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/person_height"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        >
+        <TextView
+            android:layout_width="@dimen/person_text_weight"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/change_text1"
+            android:textColor="@color/text_black"
+            android:textSize="18sp" />
+        <View
+            android:layout_width="@dimen/view_size"
+            android:layout_height="wrap_content"
+            android:background="@color/view_line">
+
+        </View>
+
+        <EditText
+            android:id="@+id/et_change_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/text_black"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_size"
+        android:background="@color/view_line"
+        >
+    </View>
+
+
+
+
+
+</LinearLayout>

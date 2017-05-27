@@ -241,7 +241,7 @@ public class PositionActivity extends BaseActivity {
     }
 
     private void initData() {
-        userType = getIntent().getExtras().getInt("Type");
+        userType = getIntent().getExtras().getInt("userType");
         if (userType == 0) {
             preferences = getSharedPreferences("user", MODE_PRIVATE);
         }

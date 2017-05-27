@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".MinorActivity.ReserveVerifyActivity">
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/reserve_verify_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reserve_verify_text1"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                android:layout_marginLeft="15dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reserve_linear_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="@dimen/reserve_verify_text_weight"
+                android:layout_height="wrap_content"
+                android:text="@string/reserve_verify_text2"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                android:layout_marginLeft="@dimen/reserve_text_left"
+                />
+            <TextView
+                android:id="@+id/reserve_verify_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reserve_linear_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="@dimen/reserve_verify_text_weight"
+                android:layout_height="wrap_content"
+                android:text="@string/reserve_verify_text3"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                android:layout_marginLeft="@dimen/reserve_text_left"
+                />
+            <TextView
+                android:id="@+id/reserve_verify_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reserve_linear_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="@dimen/reserve_verify_text_weight"
+                android:layout_height="wrap_content"
+                android:text="@string/reserve_verify_text4"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                android:layout_marginLeft="@dimen/reserve_text_left"
+                />
+            <TextView
+                android:id="@+id/reserve_verify_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                />
+            <TextView
+                android:id="@+id/reserve_verify_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                android:layout_marginLeft="@dimen/reserve_text_left"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reserve_linear_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="@dimen/reserve_verify_text_weight"
+                android:layout_height="wrap_content"
+                android:text="@string/reserve_verify_text5"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                android:layout_marginLeft="@dimen/reserve_text_left"
+                />
+            <TextView
+                android:id="@+id/reserve_verify_text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reserve_linear_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="@dimen/reserve_verify_text_weight"
+                android:layout_height="wrap_content"
+                android:text="@string/reserve_verify_text6"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                android:layout_marginLeft="@dimen/reserve_text_left"
+                />
+            <TextView
+                android:id="@+id/reserve_verify_text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/reserve_verify_text"
+                android:textColor ="@color/text_black"
+                />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_add_line_height"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            >
+            <Button
+                android:id="@+id/reserve_verify_button"
+                android:layout_width="@dimen/login_layout_width"
+                android:layout_height="@dimen/login_layout_height"
+                android:background="@drawable/login_layout"
+                android:text="@string/reserve_verify_text8"
+                android:textColor="@color/text_black"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
+
+                />
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.guugoo.jiapeistudent.MainActivity.MyMessageActivity">
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/my_message_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+
+
+    <cn.guugoo.jiapeistudent.Views.PullToRefreshLayout
+        android:id="@+id/my_message_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/view_refresh_head" />
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <cn.guugoo.jiapeistudent.Views.PullableListView
+            android:id="@+id/my_message_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:divider="@color/view_line"
+            android:dividerHeight="1dp" />
+    </cn.guugoo.jiapeistudent.Views.PullToRefreshLayout>
+
+
+</LinearLayout>

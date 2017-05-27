@@ -58,34 +58,6 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
     private int BranchId=0;
     private Handler handler;
 
-//
-//    Handler handler = new MyHandler(this.getActivity()){
-//        @Override
-//        public void handleMessage(Message msg) {
-//            super.handleMessage(msg);
-//            Log.d(TAG, "handleMessage:7889999 "+getContext());
-//            if(msg.what == 1){
-//                Log.d(TAG, "handleMessage: "+msg.obj);
-//                ReturnData data= JSONObject.parseObject((String) msg.obj,ReturnData.class);
-//                if(data.getStatus()==0){
-//                    Log.d(TAG, "handleMessage: "+data.getData());
-//                    ReserveTime reserveTime = JSONObject.parseObject(data.getData(),ReserveTime.class);
-//                    if(!TextUtils.isEmpty(reserveTime.getColumnTitle())&&!TextUtils.isEmpty(reserveTime.getCrossTitle())
-//                            &&!TextUtils.isEmpty(reserveTime.getBookingList())){
-//                        Log.d(TAG, "handleMessage: "+"in");
-//                        crossTitles = reserveTime.getCrossTitle().split(",");
-//                        columnTitles = reserveTime.getColumnTitle().split(",");
-//                        bookingLists = reserveTime.getBookingList().split("#");
-//                        createView(); //画界面
-//                        AddListener(); // 添加监听
-//                    }
-//                }else {
-//                    MyToast.makeText(getContext(),data.getMessage());
-//                }
-//            }
-//        }
-//    };
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -95,16 +67,14 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                Log.d(TAG, "handleMessage:7889999 "+getContext());
                 if(msg.what == 1){
                     Log.d(TAG, "handleMessage: "+msg.obj);
                     ReturnData data= JSONObject.parseObject((String) msg.obj,ReturnData.class);
                     if(data.getStatus()==0){
-                        Log.d(TAG, "handleMessage: "+data.getData());
+
                         ReserveTime reserveTime = JSONObject.parseObject(data.getData(),ReserveTime.class);
                         if(!TextUtils.isEmpty(reserveTime.getColumnTitle())&&!TextUtils.isEmpty(reserveTime.getCrossTitle())
                                 &&!TextUtils.isEmpty(reserveTime.getBookingList())){
-                            Log.d(TAG, "handleMessage: "+"in");
                             crossTitles = reserveTime.getCrossTitle().split(",");
                             columnTitles = reserveTime.getColumnTitle().split(",");
                             bookingLists = reserveTime.getBookingList().split("#");
@@ -157,19 +127,19 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getActivity(), SelectCoachActivity.class);
-                            Log.d(TAG, "onClick: X"+timeData.getX());
-                            Log.d(TAG, "onClick: Y"+timeData.getY());
-                            Log.d(TAG, "onClick: D"+crossTitles[timeData.getX()-1]);
-                            Log.d(TAG, "onClick: T"+columnTitles[timeData.getY()]);
+//                            Log.d(TAG, "onClick: X"+timeData.getX());
+//                            Log.d(TAG, "onClick: Y"+timeData.getY());
+//                            Log.d(TAG, "onClick: D"+crossTitles[timeData.getX()-1]);
+//                            Log.d(TAG, "onClick: T"+columnTitles[timeData.getY()]);
                             Bundle bundle= new Bundle();
                             String[] str = crossTitles[timeData.getX()-1].split(" ");
-                            Log.d(TAG, "onClick: BookingDay"+str[1]);
+//                            Log.d(TAG, "onClick: BookingDay"+str[1]);
                             bundle.putString("BookingDay",str[1]);
                             bundle.putString("year",timeData.getYear());
                             bundle.putString("TimeSlot",columnTitles[timeData.getY()]);
                             bundle.putFloat("Price",timeData.getPrice());
                             bundle.putInt("BranchId",BranchId);
-                            Log.d(TAG, "onClick: 45646   ++"+BranchId);
+//                            Log.d(TAG, "onClick: 45646   ++"+BranchId);
                             intent.putExtras(bundle);
                             startActivity(intent);
                         }
@@ -179,14 +149,9 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
         }
     }
     private void createView() {
-        Log.d(TAG, "createView: ");
         DisplayMetrics metric = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(metric);
         width = metric.widthPixels;
-
-        Log.d(TAG, "createView: "+columnTitles.length);
-        Log.d(TAG, "createView: "+crossTitles.length);
-        Log.d(TAG, "createView: "+bookingLists.length);
 
         for (int i = 0; i <= crossTitles.length; i++) {
             TextView textView = new TextView(getContext());
@@ -233,11 +198,9 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
 
     private void createContentView(String content, LinearLayout ll_vertical,
                                    LinearLayout.LayoutParams tv_params1,int x,int y) {
-        Log.d(TAG, "createContentView: sdfsdf"+ content);
         String[] Str =content.split(",");
         float price =Float.valueOf(Str[0]);
         int number = Integer.valueOf(Str[1]);
-        Log.d(TAG, "createContentView: "+price);
         String year = Str[2];
         if(number==0){
             TextView text = new TextView(getContext());
@@ -297,6 +260,8 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
             json.put("Subject",sp.getInt("CurrentSubject", 0));
             json.put("SchoolId",sp.getInt("SchoolId",0));
             json.put("TeacherId",0);
+            json.put("BranchId", 0);
+            json.put("QueryTime", "");
             switch (Type){
                 case 0:
                     json.put("BranchId",0);

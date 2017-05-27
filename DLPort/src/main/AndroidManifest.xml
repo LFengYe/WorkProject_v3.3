@@ -61,16 +61,16 @@
             android:name="com.DLPort.myactivity.PositionActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.DLPort.myactivity.ShopReqActivity"
+            android:name="com.DLPort.myactivity.ShipQueryActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name="com.DLPort.myactivity.TuiGuangActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.DLPort.myactivity.OrderActivity"
+            android:name="com.DLPort.myactivity.AttentionOrderActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.DLPort.myactivity.MyOrderActivty"
+            android:name="com.DLPort.myactivity.CarOwnerOrderActivty"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name="com.DLPort.myactivity.NewsPublishActivty"
@@ -82,7 +82,7 @@
             android:name="com.DLPort.myactivity.OrderParticular"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.DLPort.myactivity.HuoOrderActivity"
+            android:name="com.DLPort.myactivity.CarGoOrderActivity"
             android:screenOrientation="portrait"></activity>
 
         <activity android:name=".myactivity.TiXiangActivity"
@@ -207,7 +207,7 @@
             android:name="com.DLPort.NewsActivity.guanyuActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.DLPort.NewsActivity.jiaotongActivity"
+            android:name="com.DLPort.NewsActivity.TrafficActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name="com.DLPort.NewsActivity.TongzhiActivity"
@@ -228,10 +228,10 @@
             android:name="com.DLPort.NewsActivity.GangKouZuoye"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.DLPort.NewsActivity.JiaoTonggaosu"
+            android:name="com.DLPort.NewsActivity.TrafficExpressway"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.DLPort.NewsActivity.JiaoTongguodao"
+            android:name="com.DLPort.NewsActivity.TrafficNationalRoad"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".myactivity.FangXiangActivity"
             android:screenOrientation="portrait">

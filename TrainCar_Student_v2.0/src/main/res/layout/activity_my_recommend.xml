@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.guugoo.jiapeistudent.MainActivity.MyRecommendActivity">
+
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/my_recommend_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/my_recommend_text1"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/text_black"
+            />
+        <TextView
+            android:id="@+id/my_recommend_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textColor="@color/text_black"
+            android:textIsSelectable="true"
+            />
+        <LinearLayout
+            android:id="@+id/recommend_rule"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|right">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/rule"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_recommend_text2"
+                android:textSize="16sp"
+                android:textColor="@color/text_gray"
+                android:layout_marginRight="15dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_size"
+        android:background="@color/view_line">
+
+    </View>
+
+    <ListView
+        android:id="@+id/my_recommend_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/view_line"
+        android:dividerHeight="1dp"
+        android:listSelector="@color/white"
+        android:scrollbarStyle="outsideOverlay"
+        android:transcriptMode="normal"
+        >
+    </ListView>
+</LinearLayout>

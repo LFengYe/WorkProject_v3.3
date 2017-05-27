@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="cn.guugoo.jiapeistudent.MinorActivity.MyScheduleActivity"
+    android:orientation="vertical">
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/Schedule_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+
+    <ListView
+        android:id="@+id/Schedule_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:scrollbarStyle="outsideOverlay"
+        android:transcriptMode="normal"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        >
+    </ListView>
+</LinearLayout>

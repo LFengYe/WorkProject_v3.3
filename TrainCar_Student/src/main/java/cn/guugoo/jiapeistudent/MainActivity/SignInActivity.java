@@ -56,7 +56,6 @@ public class SignInActivity extends BaseActivity {
     protected void processingData(ReturnData data) {
         MyToast.makeText(SignInActivity.this,data.getMessage());
         Code=data.getData();
-        Log.d(TAG, "processingData: "+Code);
         photo=user.getText().toString();
         CountDownTimerUtil mCountDownTimerUtils = new CountDownTimerUtil(code_text, 120000, 1000);
         mCountDownTimerUtils.start();

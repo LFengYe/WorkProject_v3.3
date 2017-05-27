@@ -57,23 +57,6 @@ public class WhereFragment extends Fragment {
     private EditText search_text;
     private LocationService locationService;
     private Handler handler;
-//    protected Handler handler = new MyHandler(getContext()) {
-//        @Override
-//        public void handleMessage(Message msg) {
-//            super.handleMessage(msg);
-//            if (msg.what == 1) {
-//                Log.d(TAG, "handleMessage: " + msg.obj);
-//                ReturnData data = JSONObject.parseObject((String) msg.obj, ReturnData.class);
-//                if (data.getStatus() == 0) {
-//                    List<Site> sites = JSONObject.parseArray(data.getData(), Site.class);
-//                    listData.addAll(sites);
-//                    adapter.notifyDataSetChanged();
-//                } else {
-//                    MyToast.makeText(getContext(), data.getMessage());
-//                }
-//            }
-//        }
-//    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -163,13 +146,10 @@ public class WhereFragment extends Fragment {
     }
 
     private void getSiteData() {
-        Log.d(TAG, "getSiteData: 123456");
         JSONObject json = new JSONObject(true);
         json.put("SchoolId", sp.getInt("SchoolId", 0));
         json.put("StudentId", sp.getInt("Id", 0));
         json.put("Subject", sp.getInt("CurrentSubject", 0));
-        Log.d(TAG, "getSiteData: "+longitude);
-        Log.d(TAG, "getSiteData: "+latitude);
         json.put("Longitude", longitude);
         json.put("Latitude", latitude);
         json.put("AreaName", "");

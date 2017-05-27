@@ -12,9 +12,9 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.DLPort.R;
-import com.DLPort.myactivity.OrderActivity;
+import com.DLPort.myactivity.AttentionOrderActivity;
 import com.DLPort.myactivity.PositionActivity;
-import com.DLPort.myactivity.ShopReqActivity;
+import com.DLPort.myactivity.ShipQueryActivity;
 import com.DLPort.myadapter.PictureAdapter;
 import com.DLPort.mytool.MyToast;
 
@@ -57,7 +57,7 @@ public class Fragment_owner  extends Fragment {
                 if(type.getdata()) {
                 switch (i) {
                     case 0:
-                        Intent intent0 = new Intent(getActivity(), ShopReqActivity.class);
+                        Intent intent0 = new Intent(getActivity(), ShipQueryActivity.class);
                         Bundle bundle0 = new Bundle();
                         bundle0.putInt("Type", 0);//设置用户类型为车主
                         intent0.putExtras(bundle0);
@@ -73,7 +73,7 @@ public class Fragment_owner  extends Fragment {
                         break;
                         */
                     case 1:
-                        Intent intent2 = new Intent(getActivity(), OrderActivity.class);
+                        Intent intent2 = new Intent(getActivity(), AttentionOrderActivity.class);
                         Bundle bundle2 = new Bundle();
                         bundle2.putInt("Type", 0);//设置订单类型为正常订单
                         intent2.putExtras(bundle2);
@@ -87,7 +87,7 @@ public class Fragment_owner  extends Fragment {
                         startActivity(intent3);
                         break;
                     case 3:
-                        Intent intent4 = new Intent(getActivity(), OrderActivity.class);
+                        Intent intent4 = new Intent(getActivity(), AttentionOrderActivity.class);
                         Bundle bundle4 = new Bundle();
                         bundle4.putInt("Type", 1);//设置订单类型为拼车窗口订单
                         intent4.putExtras(bundle4);

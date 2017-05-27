@@ -412,7 +412,7 @@ public class NewsPublishActivty extends BaseActivity {
     private void InitTitle() {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        dataType = bundle.getInt("Type");
+        dataType = bundle.getInt("dataType");
         if (dataType == 0) {
             TitleView titleView = (TitleView) findViewById(R.id.title_news_publish);
             titleView.setLeftViewVisible(true);

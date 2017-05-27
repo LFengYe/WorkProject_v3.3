@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.DLPort.R;
 import com.DLPort.myactivity.NewsPublishActivty;
 import com.DLPort.myactivity.PositionActivity;
-import com.DLPort.myactivity.ShopReqActivity;
+import com.DLPort.myactivity.ShipQueryActivity;
 import com.DLPort.myadapter.PictureAdapter;
 import com.DLPort.mytool.MyToast;
 
@@ -51,7 +51,7 @@ public class Fragment_huozhu extends Fragment {
                 if(type.getdata()) {
                     switch (i) {
                         case 0:
-                            Intent intent0 = new Intent(getActivity(), ShopReqActivity.class);
+                            Intent intent0 = new Intent(getActivity(), ShipQueryActivity.class);
                             Bundle bundle0 = new Bundle();
                             bundle0.putInt("Type", 1);//设置用户类型为货主
                             intent0.putExtras(bundle0);

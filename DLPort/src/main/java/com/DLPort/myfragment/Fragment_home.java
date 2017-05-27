@@ -13,12 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.DLPort.R;
 import com.DLPort.app.Constant;
-import com.DLPort.myactivity.HuoOrderActivity;
-import com.DLPort.myactivity.MyOrderActivty;
+import com.DLPort.myactivity.CarGoOrderActivity;
 import com.DLPort.mydata.ADInfo;
 import com.DLPort.mytool.MyThread;
 import com.DLPort.myview.ImageCycleView;
@@ -96,7 +94,7 @@ public class Fragment_home extends Fragment {
                 (parentTag.equalsIgnoreCase("PayConfirm")
                         || parentTag.equalsIgnoreCase("NewsPublish"))) {
             Intent intent = new Intent();
-            intent.setClass(getActivity(), HuoOrderActivity.class);
+            intent.setClass(getActivity(), CarGoOrderActivity.class);
             startActivity(intent);
         }
         return view;
@@ -119,7 +117,7 @@ public class Fragment_home extends Fragment {
         mAdView = (ImageCycleView) view.findViewById(R.id.home_image);
 
         JSONObject json = new JSONObject();
-//        new MyThread(Constant.URL_UserGETIMAGE, handler, json, getContext()).start();
+        new MyThread(Constant.URL_UserGETIMAGE, handler, json, getContext()).start();
     }
 
     private void init() {
@@ -166,10 +164,10 @@ public class Fragment_home extends Fragment {
             @Override
             public void onClick(View v) {
                 if (dataType == 0 && index == 0) {
-                    Intent intent = new Intent(getActivity(), MyOrderActivty.class);
+                    Intent intent = new Intent(getActivity(), CarOwnerOrderActivty.class);
                     startActivity(intent);
                 } else if (dataType == 1 && index == 1) {
-                    Intent intent = new Intent(getActivity(), HuoOrderActivity.class);
+                    Intent intent = new Intent(getActivity(), CarGoOrderActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getActivity(), "请登陆后点击",

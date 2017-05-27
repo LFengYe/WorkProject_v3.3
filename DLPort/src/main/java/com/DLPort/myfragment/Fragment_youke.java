@@ -12,7 +12,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.DLPort.R;
-import com.DLPort.myactivity.ShopReqActivity;
+import com.DLPort.myactivity.ShipQueryActivity;
 import com.DLPort.myactivity.TuiGuangActivity;
 import com.DLPort.myadapter.PictureAdapter;
 
@@ -51,7 +51,7 @@ public class Fragment_youke extends Fragment {
 
                 switch (i) {
                     case 0:
-                        Intent intent0 = new Intent(getActivity(), ShopReqActivity.class);
+                        Intent intent0 = new Intent(getActivity(), ShipQueryActivity.class);
                         Bundle bundle0 = new Bundle();
                         bundle0.putInt("Type", 2);
                         intent0.putExtras(bundle0);

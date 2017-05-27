@@ -48,6 +48,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/my_order"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="5dp"
@@ -73,6 +74,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/resource_info"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="5dp"
@@ -85,7 +87,8 @@
                     android:layout_height="0dp"
                     android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@mipmap/main_resource_info" />
+                    android:src="@mipmap/main_resource_info"
+                    android:id="@+id/imageView" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -107,6 +110,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/ship_query"
             style="@style/main_back_margin"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -131,7 +135,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/main_layout_alarm_infomation"
+            android:id="@+id/recharge_cash"
             style="@style/main_back_margin"
             android:layout_width="0dp"
             android:layout_height="match_parent"

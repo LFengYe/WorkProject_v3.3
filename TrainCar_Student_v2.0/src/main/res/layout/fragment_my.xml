@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:gravity="center"
+        android:background="@color/title_back"
+        android:orientation="vertical"
+        >
+        <cn.guugoo.jiapeistudent.Views.CircleImageView
+            android:id="@+id/my_hand"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/people"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/login_color"
+            />
+
+        <TextView
+            android:id="@+id/my_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/text_black"
+            android:text="XXX"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:background="@color/view_line"
+            >
+        </View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/space"
+        >
+        <RelativeLayout
+            android:id="@+id/my_line1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_line_height"
+            android:clickable="true"
+            android:background="@drawable/list_item_color"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/my_text_left_size"
+                android:text="@string/my_line1"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/my_text_size" />
+
+            <TextView
+                android:id="@+id/my_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/my_text_right_size"
+                android:textSize="@dimen/my_text_size"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/my_line2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_line_height"
+            android:layout_marginTop="1dp"
+            android:clickable="true"
+            android:background="@drawable/list_item_color"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/my_text_left_size"
+                android:text="@string/my_line2"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/my_text_size" />
+
+            <TextView
+                android:id="@+id/my_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/my_text_right_size"
+                android:textSize="@dimen/my_text_size"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/my_line3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_line_height"
+            android:layout_marginTop="1dp"
+            android:clickable="true"
+            android:background="@drawable/list_item_color"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/my_text_left_size"
+                android:text="@string/my_line3"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/my_text_size" />
+
+
+            <ImageView
+                android:id="@+id/schedule_button"
+                android:layout_width="@dimen/my_image_in"
+                android:layout_height="@dimen/my_image_in"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/arrows_left"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/my_text_right_size"
+                android:textSize="@dimen/my_text_size"
+                />
+            <TextView
+                android:id="@+id/schedule_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/my_text_size"
+                android:layout_toLeftOf="@id/schedule_button"
+                android:text=""
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_line4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_line_height"
+            android:layout_marginTop="1dp"
+            android:clickable="true"
+            android:background="@drawable/list_item_color"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/my_text_left_size"
+                android:text="@string/my_line4"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/my_text_size" />
+
+            <TextView
+                android:id="@+id/my_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/my_text_right_size"
+                android:textSize="@dimen/my_text_size"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_line5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_line_height"
+            android:layout_marginTop="1dp"
+            android:clickable="true"
+            android:background="@drawable/list_item_color"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/my_text_left_size"
+                android:text="@string/my_line5"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/my_text_size" />
+
+            <TextView
+                android:id="@+id/my_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/my_text_right_size"
+                android:textSize="@dimen/my_text_size"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_line6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:background="@color/white"
+            >
+            <TextView
+                android:id="@+id/my_line7"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/my_line_height"
+                android:gravity="center"
+                android:text="@string/my_line6"
+                android:textSize="@dimen/my_text_size"
+                android:background="@drawable/list_item_color"
+                />
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

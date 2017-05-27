@@ -15,12 +15,12 @@ import com.DLPort.NewsActivity.CarOwnerBusinessChangeActivity;
 import com.DLPort.NewsActivity.GangKouYujing;
 import com.DLPort.NewsActivity.GangKouZuoye;
 import com.DLPort.NewsActivity.InformActivity;
-import com.DLPort.NewsActivity.JiaoTonggaosu;
-import com.DLPort.NewsActivity.JiaoTongguodao;
+import com.DLPort.NewsActivity.TrafficExpressway;
+import com.DLPort.NewsActivity.TrafficNationalRoad;
 import com.DLPort.app.Constant;
+import com.DLPort.myactivity.AttentionOrderActivity;
 import com.DLPort.myactivity.HuoInquireActivity;
 import com.DLPort.myactivity.MainActivity;
-import com.DLPort.myactivity.OrderActivity;
 import com.DLPort.mytool.GlobalParams;
 import com.DLPort.mytool.MyHandler;
 import com.DLPort.mytool.MyThread;
@@ -127,7 +127,7 @@ public class MyJPushReceiver extends BroadcastReceiver {
                 {
                     /** type=2表示货主发布了货源，通知所有的车主，id为货源主键*/
                     bundle.putInt("Type", 0);
-                    intent.setClass(context, OrderActivity.class);
+                    intent.setClass(context, AttentionOrderActivity.class);
                     //getCarOrder(context, id);
                     break;
                 }
@@ -176,13 +176,13 @@ public class MyJPushReceiver extends BroadcastReceiver {
                 case 10:
                 {
                     /** type=10表示后台发布高速公路路况信息，id表示后台发布信息编号*/
-                    intent.setClass(context, JiaoTonggaosu.class);
+                    intent.setClass(context, TrafficExpressway.class);
                     break;
                 }
                 case 11:
                 {
                     /** type=11表示后台发布国道信息，id表示信息编号*/
-                    intent.setClass(context, JiaoTongguodao.class);
+                    intent.setClass(context, TrafficNationalRoad.class);
                     break;
                 }
                 default:

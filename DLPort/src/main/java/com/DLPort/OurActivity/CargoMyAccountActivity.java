@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.DLPort.R;
 import com.DLPort.app.Constant;
 import com.DLPort.myactivity.BaseActivity;
-import com.DLPort.myactivity.HuoOrderActivity;
+import com.DLPort.myactivity.CarGoOrderActivity;
 import com.DLPort.mytool.GlobalParams;
 import com.DLPort.mytool.MyHandler;
 import com.DLPort.mytool.MyThread;
@@ -120,7 +120,7 @@ public class CargoMyAccountActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(CargoMyAccountActivity.this, HuoOrderActivity.class);
+                intent.setClass(CargoMyAccountActivity.this, CarGoOrderActivity.class);
                 startActivity(intent);
             }
         });

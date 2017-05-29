@@ -64,6 +64,21 @@ public class WorkbenchActivity extends BaseActivity {
     }
 
     @Override
+    protected void initData() {
+        SharedPreferences prefs = getSharedPreferences(Constants.SHARED_NAME, MODE_PRIVATE);
+        teacherId = prefs.getInt("Id", 0);
+        schoolId = prefs.getInt("SchoolId", 0);
+        token = prefs.getString("token", "");
+        ivs = new ArrayList<>();
+        DisplayMetrics metric = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metric);
+        isNull = false;
+        width = metric.widthPixels;
+        startState = getIntent().getIntExtra("startState", 0);
+        Constants.WorkActivityState = 1;
+    }
+
+    @Override
     protected void initView() {
         RelativeLayout rl_head = (RelativeLayout) findViewById(R.id.head);
         TextView tv_center = (TextView) rl_head.findViewById(R.id.tv_center);
@@ -109,24 +124,12 @@ public class WorkbenchActivity extends BaseActivity {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("TeacherId", teacherId);
         jsonObject.addProperty("SchoolId", schoolId);
+        //jsonObject.addProperty("token",token);
+//        jsonObject.addProperty("TeacherId", "2");
+//        jsonObject.addProperty("SchoolId", "1");
         jsonObject = EncryptUtils.encryptDES(jsonObject.toString());
+        System.out.println(jsonObject.toString());
         new GetSchedulingAsyncTask(WorkbenchActivity.this,HttpUtil.url_scheduling,token).execute(jsonObject);
-    }
-
-
-    @Override
-    protected void initData() {
-        SharedPreferences prefs = getSharedPreferences(Constants.SHARED_NAME, MODE_PRIVATE);
-        teacherId = prefs.getInt("Id", 0);
-        schoolId = prefs.getInt("SchoolId", 0);
-        token = prefs.getString("token", "");
-        ivs = new ArrayList<>();
-        DisplayMetrics metric = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metric);
-        isNull = false;
-        width = metric.widthPixels;
-        startState = getIntent().getIntExtra("startState", 0);
-        Constants.WorkActivityState = 1;
     }
 
 

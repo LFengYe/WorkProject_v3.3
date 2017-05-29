@@ -6,28 +6,28 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.HorizontalScrollView;
 
-import cn.guugoo.jiapeistudent.MainActivity.ReserveTrainActivity;
+import cn.guugoo.jiapeistudent.MinorActivity.CHScrollViewActivity;
 
 public class CHScrollView2 extends HorizontalScrollView {
 
 
-	ReserveTrainActivity activity;
+	CHScrollViewActivity activity;
 	
 	public CHScrollView2(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		activity = (ReserveTrainActivity) context;
+		activity = (CHScrollViewActivity) context;
 
 	}
 
 	
 	public CHScrollView2(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		activity = (ReserveTrainActivity) context;
+		activity = (CHScrollViewActivity) context;
 	}
 
 	public CHScrollView2(Context context) {
 		super(context);
-		activity = (ReserveTrainActivity) context;
+		activity = (CHScrollViewActivity) context;
 	}
 	
 	@Override

@@ -21,15 +21,11 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
-
-    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
     <permission android:name="android.permission.BAIDU_LOCATION_SERVICE">
 
     </permission>
-    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE">
-
-    </uses-permission>
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE"></uses-permission>
     <uses-permission android:name="android.permission.READ_LOGS"/>
     <!-- Required -->
     <uses-permission android:name="cn.guugoo.jiapeistudent.permission.JPUSH_MESSAGE" />
@@ -98,7 +94,8 @@
         <activity android:name=".MinorActivity.ReserveVerifyActivity" />
         <activity android:name=".MinorActivity.SelectCoachActivity" />
         <activity android:name=".MinorActivity.SelectTimeActivity" />
-        <activity android:name=".MinorActivity.WhereSelectTImeActivity" />
+        <activity android:name=".MinorActivity.WhereSelectTimeActivity" />
+        <activity android:name=".MinorActivity.CoachSelectTimeActivity" />
         <activity android:name=".MinorActivity.NoticeDetailsActivity" />
 
         <!--百度地图-->
@@ -113,7 +110,7 @@
         </service>
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="Mf9PBllP7LfEYkhB2Tv14fXcyiA10DU8"
+            android:value="nu4EsMSwjpv3iiiRXCQUIWDQumqxbOg7"
             />
         <!--http://lbsyun.baidu.com/apiconsole/key-->
 

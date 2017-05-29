@@ -4,6 +4,7 @@ package cn.guugoo.jiapeistudent.MainActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -11,11 +12,13 @@ import cn.guugoo.jiapeistudent.Fragment.CoachFragment;
 import cn.guugoo.jiapeistudent.Fragment.TimeFragment;
 import cn.guugoo.jiapeistudent.Fragment.WhereFragment;
 import cn.guugoo.jiapeistudent.Interface.TimeRefreshListenter;
+import cn.guugoo.jiapeistudent.MinorActivity.CHScrollViewActivity;
 import cn.guugoo.jiapeistudent.R;
 import cn.guugoo.jiapeistudent.Views.TitleView;
 
-public class ReserveTrainActivity extends BaseActivity implements View.OnClickListener {
+public class ReserveTrainActivity extends CHScrollViewActivity implements View.OnClickListener {
     private static final String TAG ="ReserveTrainActivity";
+
     private TextView[] textViews;
     private TimeFragment timeFragment;
     private CoachFragment coachFragment;
@@ -26,18 +29,14 @@ public class ReserveTrainActivity extends BaseActivity implements View.OnClickLi
     private  TitleView titleView;
     private TimeRefreshListenter timeRefresh;
 
+    @Override
     public TimeFragment getTimeFragment() {
-        /*
-        switch (index) {
-            case 0:
-                return timeFragment;
-            case 1:
-                return coachFragment;
-            case 2:
-                return whereFragment;
-        }
-        */
         return timeFragment;
+    }
+
+    @Override
+    public void onScrollChanged(int l, int t, int oldl, int oldt) {
+        timeFragment.onScrollChanged(l, t, oldl, oldt);
     }
 
     @Override
@@ -69,7 +68,6 @@ public class ReserveTrainActivity extends BaseActivity implements View.OnClickLi
         });
     }
 
-
     @Override
     protected void findView() {
         textViews = new TextView[3];
@@ -83,7 +81,8 @@ public class ReserveTrainActivity extends BaseActivity implements View.OnClickLi
         timeRefresh=timeFragment;
         Bundle bundle = new Bundle();
         bundle.putInt("type",0);
-        timeFragment.setArguments(bundle);
+        //timeFragment.setArguments(bundle);
+        timeFragment.setBundle(bundle);
     }
 
     @Override
@@ -117,18 +116,49 @@ public class ReserveTrainActivity extends BaseActivity implements View.OnClickLi
                 break;
         }
         BarChange();
+        setTextViewsColor(index);
+    }
+
+    private void setTextViewsColor(int index) {
+        for (int i = 0; i < 3; i++) {
+            if (i == index)
+                textViews[i].setTextColor(getResources().getColor(R.color.login_color));
+            else textViews[i].setTextColor(getResources().getColor(R.color.text_black));
+        }
     }
 
     private void BarChange() {
         if (currentTabIndex != index) {
+            boolean timeIsHidden = timeFragment.isHidden();
+            boolean coachIsHidden = coachFragment.isHidden();
+            boolean whereIsHidden = whereFragment.isHidden();
             FragmentTransaction trx = getSupportFragmentManager()
                     .beginTransaction();
-            trx.hide(fragments[currentTabIndex]);
+            if (currentTabIndex == 2) {//上一个选中为按场地
+                if (!timeIsHidden)
+                    trx.hide(timeFragment);
+                if (!whereIsHidden)
+                    trx.hide(whereFragment);
+            }
+            if (currentTabIndex == 1) {
+                if (!coachIsHidden)
+                    trx.hide(coachFragment);
+                if (!timeIsHidden)
+                    trx.hide(timeFragment);
+            }
+            if (currentTabIndex == 0)
+                trx.hide(timeFragment);
 
             if (!fragments[index].isAdded()) {
-                trx.add(R.id.main_content, fragments[index]);
+                trx.add(R.id.reserve_fragment, fragments[index]);
             }
+            Log.i(TAG, fragments[index].toString());
             trx.show(fragments[index]).commit();
+            if (index == 0) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("type",0);
+                timeFragment.setBundle(bundle);
+            }
         }
         //  把当前tab设为选中状态
         textViews[currentTabIndex].setSelected(false);

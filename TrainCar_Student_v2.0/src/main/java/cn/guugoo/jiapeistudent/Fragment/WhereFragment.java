@@ -1,12 +1,16 @@
 package cn.guugoo.jiapeistudent.Fragment;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -15,13 +19,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
+import com.zhy.m.permission.MPermissions;
+import com.zhy.m.permission.PermissionDenied;
+import com.zhy.m.permission.PermissionGrant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,14 +38,14 @@ import cn.guugoo.jiapeistudent.App.Constant;
 import cn.guugoo.jiapeistudent.App.MyApplication;
 import cn.guugoo.jiapeistudent.Data.ReturnData;
 import cn.guugoo.jiapeistudent.Data.Site;
-import cn.guugoo.jiapeistudent.MinorActivity.WhereSelectTImeActivity;
+import cn.guugoo.jiapeistudent.MainActivity.ReserveTrainActivity;
+import cn.guugoo.jiapeistudent.MinorActivity.WhereSelectTimeActivity;
 import cn.guugoo.jiapeistudent.R;
 import cn.guugoo.jiapeistudent.Tools.DES;
 import cn.guugoo.jiapeistudent.Tools.LocationService;
 import cn.guugoo.jiapeistudent.Tools.MyHandler;
 import cn.guugoo.jiapeistudent.Tools.MyThread;
 import cn.guugoo.jiapeistudent.Tools.MyToast;
-import cn.guugoo.jiapeistudent.Views.CHScrollView2;
 
 
 /**
@@ -46,6 +53,10 @@ import cn.guugoo.jiapeistudent.Views.CHScrollView2;
  */
 public class WhereFragment extends Fragment {
     private static final String TAG = "WhereFragment";
+
+    private FragmentManager manager;
+    private FragmentTransaction ft;
+
     private ListView listView;
     private SharedPreferences sp;
     private List<Site> listData;
@@ -78,18 +89,26 @@ public class WhereFragment extends Fragment {
 //        }
 //    };
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        manager = getFragmentManager();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.i(TAG, "OnCreateView");
         fragmentView = inflater.inflate(R.layout.fragment_where, container, false);
         handler = new MyHandler(getActivity()) {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 if (msg.what == 1) {
-                    Log.d(TAG, "handleMessage: " + msg.obj);
                     ReturnData data = JSONObject.parseObject((String) msg.obj, ReturnData.class);
                     if (data.getStatus() == 0) {
                         List<Site> sites = JSONObject.parseArray(data.getData(), Site.class);
+                        listData.clear();
                         listData.addAll(sites);
                         adapter.notifyDataSetChanged();
                     } else {
@@ -101,6 +120,39 @@ public class WhereFragment extends Fragment {
         findById();
         init();
         return fragmentView;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        MPermissions.requestPermissions(WhereFragment.this, 4, Manifest.permission.ACCESS_FINE_LOCATION);
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden) {
+            init();
+        }
+    }
+
+    @PermissionGrant(4)
+    public void requestContactSuccess()
+    {
+        Toast.makeText(getActivity(), "允许访问位置信息!", Toast.LENGTH_SHORT).show();
+    }
+
+    @PermissionDenied(4)
+    public void requestContactFailed()
+    {
+        Toast.makeText(getActivity(), "拒绝访问位置信息!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
+    {
+        MPermissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     private void findById() {
@@ -116,15 +168,23 @@ public class WhereFragment extends Fragment {
 
     private void init() {
         getWhere();
-//        getSiteData();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Site site = listData.get(position);
-                Intent intent = new Intent(getActivity(), WhereSelectTImeActivity.class);
-                intent.putExtra("BranchId", site.getBid());
-                Log.d(TAG, "onItemClick: " + site.getBid());
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity(), WhereSelectTimeActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("type",1);
+                bundle.putInt("BranchId", site.getBid());
+                TimeFragment timeFragment = ((ReserveTrainActivity)getActivity()).getTimeFragment();
+                //timeFragment.setArguments(bundle);
+                timeFragment.setBundle(bundle);
+
+                ft = manager.beginTransaction();
+                ft.hide(WhereFragment.this);
+                ft.show(timeFragment);
+                ft.addToBackStack(null);
+                ft.commit();
             }
         });
         search_text.addTextChangedListener(new TextWatcher() {
@@ -166,13 +226,10 @@ public class WhereFragment extends Fragment {
     }
 
     private void getSiteData() {
-        Log.d(TAG, "getSiteData: 123456");
         JSONObject json = new JSONObject(true);
         json.put("SchoolId", sp.getInt("SchoolId", 0));
         json.put("StudentId", sp.getInt("Id", 0));
         json.put("Subject", sp.getInt("CurrentSubject", 0));
-        Log.d(TAG, "getSiteData: "+longitude);
-        Log.d(TAG, "getSiteData: "+latitude);
         json.put("Longitude", longitude);
         json.put("Latitude", latitude);
         json.put("AreaName", "");
@@ -186,6 +243,7 @@ public class WhereFragment extends Fragment {
         getLocation();
         locationService.start();// 定位SDK
     }
+
     private void  getLocation(){
         // -----------location config ------------
         locationService = ((MyApplication) getActivity().getApplication()).locationService;
@@ -205,28 +263,25 @@ public class WhereFragment extends Fragment {
 
         @Override
         public void onReceiveLocation(BDLocation location) {
-            Log.d(TAG, "getLocation: ++");
-            // TODO Auto-generated method stub
             if (null != location && location.getLocType() != BDLocation.TypeServerError) {
                 double Latitude = location.getLatitude();// 纬度
                 double Longitude = location.getLongitude();// 经度
                 logMsg(Longitude,Latitude);
-
             }
         }
     };
+
     public void logMsg(final double Longitude, final double Latitude) {
-        if(Latitude!=4.9E-324&&Longitude!=4.9E-324){
+        if(Latitude != 4.9E-324 && Longitude != 4.9E-324){
+            Log.i(TAG, "lat:" + Latitude + ",lon:" + Longitude);
             latitude = Latitude;// 纬度
             longitude = Longitude;// 经度
-            Log.d(TAG, "onReceiveLocation: "+latitude);
-            Log.d(TAG, "onReceiveLocation: "+longitude);
             getSiteData();
         }else {
             Log.d(TAG, "onReceiveLocation:Error "+Latitude);
             Log.d(TAG, "onReceiveLocation:Error "+Longitude);
             MyToast.makeText(getActivity(),"获取地址失败！");
-            getSiteData();
+            //getSiteData();
         }
     }
 }

@@ -64,9 +64,11 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
     private String[] bookingLists; //表格中的内容
     private List<TextView> textViews,contenttextViews;
 
-    private Boolean day=false;
+    private Boolean day = false;
     private int Type;
     private int BranchId = 0;
+    private int teacherId = 0;
+    private Bundle bundle;
     private Handler handler;
     public static Paint BLACK_PAINT = new Paint();
     static {
@@ -84,41 +86,6 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
     private int hourWidth = 200;
 
     HashMap<String, ArrayList<Booking>> data;
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        fragmentView = inflater.inflate(R.layout.fragment_time, container, false);
-        findById();
-        handler = new MyHandler(this.getActivity()) {
-            @Override
-            public void handleMessage(Message msg) {
-                super.handleMessage(msg);
-                Log.d(TAG, "handleMessage: " + msg.obj);
-                if (msg.what == 1) {
-                    ReturnData data = JSONObject.parseObject((String) msg.obj, ReturnData.class);
-                    if (data.getStatus() == 0) {
-                        Log.d(TAG, "handleMessage: " + data.getData());
-                        ReserveTime reserveTime = JSONObject.parseObject(data.getData(), ReserveTime.class);
-                        if (!TextUtils.isEmpty(reserveTime.getTimeCoordinate()) && !TextUtils.isEmpty(reserveTime.getBookingList())) {
-                            Log.d(TAG, "handleMessage: " + "in");
-
-                            crossTitles = reserveTime.getTimeCoordinate().split("#");
-                            bookingLists = reserveTime.getBookingList().split("#");
-                            if(day){
-                                createView(); //画界面
-                                AddListener(); // 添加监听
-                            }
-                            getBookData(bookingLists);
-                        }
-                    } else {
-                        MyToast.makeText(getContext(), data.getMessage());
-                    }
-                }
-            }
-        };
-        init();
-        return fragmentView;
-    }
-
     public void getBookData(String[] bookingLists){
         if (data == null)
             data = new HashMap<>();
@@ -148,39 +115,97 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
             booking.setDateStr(items[14]);
             booking.setStatus(Integer.valueOf(items[15]));
 
-            //判断HashMap中是否存在该教练编号的key(courseItem[5]表示教练编号的值, 这里我随便写的)
-            if (data.containsKey(booking.getTeacherCode())) {
-                data.get(booking.getTeacherCode()).add(booking);
+            if (Type == 2) {
+                if (data.containsKey(booking.getDateStr())) {
+                    data.get(booking.getDateStr()).add(booking);
+                } else {
+                    ArrayList<Booking> bookingList = new ArrayList<Booking>();
+                    bookingList.add(booking);
+                    data.put(booking.getDateStr(), bookingList);
+                }
             } else {
-                ArrayList<Booking> bookingList = new ArrayList<Booking>();
-                bookingList.add(booking);
-                data.put(booking.getTeacherCode(), bookingList);
+                if (data.containsKey(booking.getTeacherCode())) {
+                    data.get(booking.getTeacherCode()).add(booking);
+                } else {
+                    ArrayList<Booking> bookingList = new ArrayList<Booking>();
+                    bookingList.add(booking);
+                    data.put(booking.getTeacherCode(), bookingList);
+                }
             }
         }
 
         mAdapter = new ScrollAdapter(getActivity(), data, R.layout.common_item_my_hlistview);
         listView.setAdapter(mAdapter);
-
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.i(TAG, "OnCreateView");
+        fragmentView = inflater.inflate(R.layout.fragment_time, container, false);
+        findById();
+        handler = new MyHandler(this.getActivity()) {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                if (msg.what == 1) {
+                    ReturnData data = JSONObject.parseObject((String) msg.obj, ReturnData.class);
+                    if (data.getStatus() == 0) {
+                        ReserveTime reserveTime = JSONObject.parseObject(data.getData(), ReserveTime.class);
+                        if (!TextUtils.isEmpty(reserveTime.getTimeCoordinate()) && !TextUtils.isEmpty(reserveTime.getBookingList())) {
+
+                            crossTitles = reserveTime.getTimeCoordinate().split("#");
+                            bookingLists = reserveTime.getBookingList().split("#");
+
+                            if(day && Type != 2){
+                                createView(); //画界面
+                                AddListener(); // 添加监听
+                            }
+
+                            getBookData(bookingLists);
+                        }
+                    } else {
+                        MyToast.makeText(getContext(), data.getMessage());
+                    }
+                }
+            }
+        };
+        init();
+        return fragmentView;
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        Log.i(TAG, "onHiddenChanged");
+        super.onHiddenChanged(hidden);
+        if (!hidden) {
+            findById();
+            init();
+        }
+    }
 
     private void findById() {
 
-        ll_day = (LinearLayout) fragmentView.findViewById(R.id.layout_time_day);
-
         sp = getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
-        Bundle bundle = getArguments();
+        //bundle = getArguments();
         if (bundle != null) {
             Type = bundle.getInt("type");
             switch (Type) {
-                case 0:
+                case 0://按时间
                     break;
-                case 1:
+                case 1://按场地
                     BranchId = bundle.getInt("BranchId");
+                    break;
+                case 2://按教练
+                    teacherId = bundle.getInt("TeacherId");
                     break;
             }
         }
 
+        ll_day = (LinearLayout) fragmentView.findViewById(R.id.layout_time_day);
+        if (Type == 2) {
+            ((TextView) fragmentView.findViewById(R.id.time_title)).setText("");
+            ll_day.setVisibility(View.GONE);
+        }
         CHScrollView2 headerScroll = (CHScrollView2) fragmentView.findViewById(R.id.item_scroll_title);
         LinearLayout layout = (LinearLayout) fragmentView.findViewById(R.id.item_scroll_title_content);
         //layout.removeAllViews();
@@ -202,11 +227,13 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
     private void init() {
         textViews = new ArrayList<TextView>();
         contenttextViews = new ArrayList<TextView>();
+        ll_day.removeAllViews();
         Date d = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String dateNowStr = formatter.format(d);
         getTimeTable(dateNowStr,true);
     }
+
     private void AddListener() {
         final Iterator<TextView> iterator = textViews.iterator();
         while (iterator.hasNext()) {
@@ -226,7 +253,7 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
                     String s[]= textView.getText().toString().split("\n");
                     Time t=new Time();
                     t.setToNow(); // 取得系统时间。
-                    getTimeTable(t.year+"-"+s[0],false);
+                    getTimeTable(t.year + "-" + s[0], false);
 
                 }
             });
@@ -265,7 +292,6 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(metric);
         width = metric.widthPixels;
 
-        Log.d(TAG, "createView: " + crossTitles.length);
         for (int i = 0; i <= crossTitles.length; i++) {
             TextView textView = new TextView(getContext());
             LinearLayout.LayoutParams tv_params = new LinearLayout.LayoutParams(
@@ -282,42 +308,56 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
                 }else {
                     textView.setTextColor(ContextCompat.getColor(getContext(), R.color.text_black));
                 }
-
             }
             textView.setTag(i);
             textViews.add(textView);
             ll_day.addView(textView, tv_params);
-
         }
     }
 
     private void getTimeTable(String QueryTime,boolean today) {
 
-        day=today;
+        day = today;
         if (Utils.isNetworkAvailable(getContext())) {
             JSONObject json = new JSONObject(true);
             switch (Type) {
                 case 0:
                     json.put("BranchId", 0);
+                    json.put("TeacherId", 0);
                     json.put("Type", "SJ");
+                    json.put("QueryTime", QueryTime);
                     break;
                 case 1:
                     json.put("BranchId", BranchId);
+                    json.put("TeacherId", 0);
                     json.put("Type", "CD");
+                    json.put("QueryTime", QueryTime);
+                    break;
+                case 2:
+                    json.put("BranchId", 0);
+                    json.put("TeacherId", teacherId);
+                    json.put("Type", "JL");
+                    json.put("QueryTime", "");
                     break;
             }
             json.put("StudentId", sp.getInt("Id", 0));
             json.put("Subject", sp.getInt("CurrentSubject", 0));
             json.put("SchoolId", sp.getInt("SchoolId", 0));
-            json.put("TeacherId", 0);
-            json.put("QueryTime", QueryTime);
-
+            System.out.println(json.toJSONString());
             new MyThread(Constant.URL_Timetable, handler, DES.encryptDES(json.toString())).start();
 
         } else {
             MyToast.makeText(getContext(), R.string.Toast_internet);
         }
 
+    }
+
+    public Bundle getBundle() {
+        return bundle;
+    }
+
+    public void setBundle(Bundle bundle) {
+        this.bundle = bundle;
     }
 
     @Override
@@ -328,7 +368,6 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
         String dateNowStr = formatter.format(d);
         getTimeTable(dateNowStr,true);
     }
-
 
     class ScrollAdapter extends BaseAdapter {
 
@@ -379,7 +418,12 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
             holder.itemLayout.removeAllViews();
 
             ArrayList<Booking> bookings = data.get(listKey.get(position));
-            holder.itemTitleV.setText(bookings.get(0).getTeacherName());
+            if (Type == 2) {
+                holder.itemTitleV.setText(bookings.get(0).getDateStr() + "\n"
+                        + bookings.get(0).getWeekStr());
+            } else {
+                holder.itemTitleV.setText(bookings.get(0).getTeacherName());
+            }
 
 
             for (Booking booking : bookings) {

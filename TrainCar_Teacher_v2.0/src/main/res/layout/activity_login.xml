@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_background"
+    android:fitsSystemWindows="true"
+    tools:context="cn.guugoo.jiapeiteacher.activity.LoginActivity">
+
+
+    <TextView
+        android:id="@+id/tv_logo"
+        android:layout_width="@dimen/tv_login_logo"
+        android:layout_height="@dimen/tv_login_logo"
+        android:background="@drawable/tv_login_logo_style"
+        android:text="@string/szSchool"
+        android:gravity="center"
+        android:layout_marginTop="85dp"
+        android:textColor="@color/color_Blue"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_account"
+        android:layout_width="@dimen/ll_login_width"
+        android:layout_height="@dimen/ll_login_height"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_logo"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/et_login_style"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:src="@mipmap/account"
+            />
+
+        <EditText
+            android:id="@+id/et_account"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:maxLines="1"
+            android:inputType="number"
+            android:textColorHint="@color/color_Gray"
+            android:layout_marginLeft="15dp"
+            android:textSize="@dimen/smallSp"
+            android:hint="@string/hint_account"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_password"
+        android:layout_width="@dimen/ll_login_width"
+        android:layout_height="@dimen/ll_login_height"
+        android:layout_below="@+id/ll_account"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/et_login_style"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:src="@mipmap/password"/>
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:maxLines="1"
+            android:textColorHint="@color/color_Gray"
+            android:layout_marginLeft="15dp"
+            android:textSize="@dimen/smallSp"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword"/>
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/cb_login"
+        android:layout_width="@dimen/ll_login_width"
+        android:layout_height="@dimen/ll_login_height"
+        android:layout_centerHorizontal="true"
+        android:checked="true"
+        android:layout_below="@+id/ll_password"
+        android:button="@drawable/check_style"
+        android:text="@string/automaticLogin"
+        android:textColor="@color/color_Blue"
+        />
+
+
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="@dimen/ll_login_width"
+        android:layout_height="@dimen/ll_login_height"
+        android:layout_below="@+id/cb_login"
+        android:layout_centerHorizontal="true"
+
+        android:background="@drawable/et_login_style"
+        android:orientation="horizontal"
+        android:text="@string/login"
+        android:textColor="@color/color_Blue"
+        android:textSize="@dimen/bigSp"/>
+
+
+    <TextView
+        android:id="@+id/tv_back_psd"
+        android:layout_width="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_height="@dimen/ll_login_height"
+        android:layout_below="@+id/bt_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/back_psd"
+        android:textColor="@color/color_Blue"/>
+
+</RelativeLayout>

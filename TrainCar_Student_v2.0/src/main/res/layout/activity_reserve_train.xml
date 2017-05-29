@@ -22,7 +22,7 @@
             android:layout_height="@dimen/reserve_height"
             android:layout_weight="1"
             android:gravity="center"
-            android:textColor="@color/text_black"
+            android:textColor="@color/login_color"
             android:textSize="@dimen/reserve_hand_text"
             android:text="@string/reserve_text1"
             android:background="@drawable/reserve_text_color"

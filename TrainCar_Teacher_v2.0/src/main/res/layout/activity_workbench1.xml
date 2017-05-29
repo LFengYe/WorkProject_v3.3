@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_White"
+              android:orientation="vertical">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/include_head"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_White"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_Gray"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/ll_work"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_line"
+            android:orientation="horizontal">
+        </LinearLayout>
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="@color/color_Gray"/>
+
+            <Button
+                android:id="@+id/bt_edit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/color_LightGray"
+                android:text="@string/edit"
+                android:textColor="@color/color_Black"
+                android:textSize="@dimen/rightSp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_select"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/color_line"/>
+
+            <EditText
+                android:id="@+id/et_reason"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="left"
+                android:hint="@string/hint_reason"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:textSize="@dimen/smallerSp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_line"/>
+
+            <Button
+                android:id="@+id/bt_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/et_login_style"
+                android:text="@string/confirm_cancel"
+                android:textColor="@color/color_Black"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

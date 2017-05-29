@@ -1,0 +1,90 @@
+<resources>
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#7b7b7b</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ImageTranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:activityOpenEnterAnimation">@anim/zoomin</item>
+    </style>
+
+    <style name="ColorTranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
+    <style name="Main_TextView_Style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/largeSp</item>
+        <item name="android:textColor">@color/color_Black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+
+    <style name="Main_LinearLayout_Style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">115dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/layout_click</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="Person_RelativeLayout_Style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/layout_click</item>
+        <item name="android:layout_marginBottom">1dp</item>
+    </style>
+
+
+    <style name="Person_TextView_Style">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color_Black</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">25dp</item>
+    </style>
+
+
+    <style name="Student_TextView_Style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/smallerSp</item>
+        <item name="android:textColor">@color/color_Black</item>
+    </style>
+
+
+    <style name="PopupAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+
+    <style name="myDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/color_transparent</item>
+    </style>
+
+    <style name="MyRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/reting_bar</item>
+        <item name="android:minWidth">54px</item>
+        <item name="android:minHeight">51px</item>
+    </style>
+
+
+    <style name="AppSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/color_transparent1</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+</resources>

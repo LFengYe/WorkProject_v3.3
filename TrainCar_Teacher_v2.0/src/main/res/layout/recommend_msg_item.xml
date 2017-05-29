@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <cn.guugoo.jiapeiteacher.view.CircleImageView
+
+            android:id="@+id/civ_head"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/icon_head"
+            app:border_color="@color/color_Blue"
+            app:border_width="2dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:text="阿萨德"
+            android:gravity="left"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_tel"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="183*****321"
+            />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="C1手动档"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/ll_reward"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_reward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已奖励学时券"
+                />
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数量：1"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_line"/>
+
+</LinearLayout>

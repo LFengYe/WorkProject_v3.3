@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_White"
+              android:orientation="vertical">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/include_head"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:padding="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_time"
+            android:textColor="@color/color_Black"
+            android:textSize="@dimen/rightSp"/>
+
+        <EditText
+            android:id="@+id/et_start_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="30dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:focusable="false"
+            android:hint="@string/hint_time"
+            android:textColor="@color/color_Black"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/color_LightGray"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:padding="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/end_time"
+            android:textColor="@color/color_Black"
+            android:textSize="@dimen/rightSp"/>
+
+        <EditText
+            android:id="@+id/et_end_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="30dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:focusable="false"
+            android:hint="@string/hint_time1"
+            android:textColor="@color/color_Black"
+            android:textSize="@dimen/smallSp"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/color_LightGray"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:padding="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_state"
+            android:textColor="@color/color_Black"
+            android:textSize="@dimen/rightSp"/>
+
+        <RadioGroup
+            android:id="@+id/rg_state"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="30dp"
+            android:layout_weight="1"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_leave"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@drawable/radio_style"
+            android:checked="true"
+            android:paddingLeft="5dp"
+            android:text="@string/leave"
+            android:textColor="@color/color_Black"/>
+
+        <RadioButton
+            android:id="@+id/rb0_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@drawable/radio_style"
+            android:paddingLeft="5dp"
+            android:text="@string/cancelLeave"
+            android:textColor="@color/color_Black"/>
+        </RadioGroup>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/color_LightGray"
+        />
+
+    <EditText
+        android:id="@+id/et_reason"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@null"
+        android:gravity="left"
+        android:hint="@string/hint_reason"
+        android:textColor="@color/color_Black"
+        android:paddingTop="7dp"
+        android:textSize="@dimen/smallSp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_LightGray"
+        />
+
+    <Button
+        android:id="@+id/bt_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/et_login_style"
+        android:text="@string/confirm"
+        android:textColor="@color/color_Black"/>
+
+
+</LinearLayout>

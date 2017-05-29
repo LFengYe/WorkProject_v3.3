@@ -1,0 +1,136 @@
+<resources>
+
+    <!-- activity_login -->
+    <string name="app_name">马上学车(教练端)</string>
+    <string name="login">登录</string>
+    <string name="back_psd">找回密码</string>
+    <string name="hint_account">请输入手机号/身份证号</string>
+    <string name="hint_password">请输入密码</string>
+
+    <!-- fragment_home -->
+    <string name="my_reservation">我的预约</string>
+    <string name="workbench">工作台</string>
+    <string name="circles_sharing">圈子分享</string>
+    <string name="my_news">我的消息</string>
+    <string name="my_recommend">我的推荐</string>
+    <string name="laws">政策法规</string>
+    <string name="laws_details">法规详情</string>
+
+    <!-- fragment_person -->
+    <string name="Teaching_hours">授课学时</string>
+    <string name="My_evaluation">我的评价</string>
+    <string name="My_score">我的评分</string>
+    <string name="My_invitation">我的邀请码</string>
+    <string name="Contact_client">联系客户</string>
+    <string name="Exit_login">退出登录</string>
+
+    <!-- activity_my_reservation -->
+    <string name="total">全部</string>
+    <string name="has_reservation">已预约</string>
+    <string name="pending_payment">待付款</string>
+    <string name="has_ended">已结束</string>
+    <string name="has_comment">已评论</string>
+    <string name="has_cancel">已取消</string>
+    <string name="has_finish">已完成</string>
+    <string name="has_running">进行中</string>
+    <string name="teacher_cancel">教练取消</string>
+    <string name="school_cancel">驾校取消</string>
+    <string name="student_cancel">学员取消</string>
+    <string name="break_appointment">爽约</string>
+
+    <string name="money">¥</string>
+
+    <string name="refresh">刷新</string>
+    <string name="select">选择</string>
+    <string name="cancel">取消</string>
+
+
+    <string name="error_network_server_busy">服务器繁忙，请稍后再试</string>
+    <string name="error_network_not_available">网络异常，请检查网络</string>
+    <string name="error_network_time_out">连接超时，请检查网络</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit">编辑</string>
+    <string name="confirm_cancel">确认取消</string>
+    <string name="confirm_use">确认使用</string>
+    <string name="start_time">开始时间</string>
+    <string name="hint_time">请选择开始时间</string>
+    <string name="hint_time1">请选择结束时间</string>
+    <string name="end_time">结束时间</string>
+    <string name="hint_reason">请输入原因</string>
+    <string name="student_name">姓名：</string>
+    <string name="student_sex">性别：</string>
+    <string name="student_tel">电话：</string>
+    <string name="student_cardId">身份证号：</string>
+    <string name="student_driverType">报考类别：</string>
+    <string name="student_bookingCourse">预约课程：</string>
+    <string name="student_bookingTime">预约时间：</string>
+    <string name="rule">本校在册教练均可得到系统分配的邀请码，邀请您的亲友在报名时填入您的邀请码，双方即可获得驾校学时券一张，或其他奖励，多邀请多得，上不封顶。</string>
+    <string name="name">姓名</string>
+    <string name="cardId">身份证号</string>
+    <string name="tel">电话号码</string>
+    <string name="psd">登录密码</string>
+    <string name="nickName">昵称</string>
+    <string name="head">头像</string>
+
+
+    <string name="login_null">用户名或密码为空，请输入用户名或密码</string>
+    <string name="Net_error">网络发生异常，请检查你的网络</string>
+    <string name="servlet_error">网络发生异常或服务器异常</string>
+    <string name="publish">发帖</string>
+
+    <string name="psd_null">密码不能为空，请输入</string>
+    <string name="nick_null">昵称不能为空，请输入</string>
+    <string name="psd_no">两次输入密码不一样，请检查</string>
+    <string name="psd_error">密码格式错误，重新输入</string>
+    <string name="time_null">时间不能为空，请选择时间</string>
+    <string name="time_error">开始时间不能在结束时间的后面</string>
+    <string name="teaching_ability">教学能力</string>
+    <string name="teaching_attitude">教学态度</string>
+    <string name="appearance">仪容仪表</string>
+    <string name="car_condition">车容车况</string>
+    <string name="comment">评论</string>
+    <string name="score">分</string>
+    <string name="bad">较差</string>
+    <string name="so_so">一般</string>
+    <string name="good">较好</string>
+    <string name="better">熟练</string>
+    <string name="comment_1">请勾选本课时学习内容，并给予点评:</string>
+    <string name="confirm">确  定</string>
+    <string name="student_classHour">历史课程：</string>
+    <string name="submit">提交</string>
+    <string name="sign_in_user">请输入你的手机号</string>
+    <string name="sign_in_password">请设置6–16位密码</string>
+    <string name="sign_in_hint_verify">请输入验证码</string>
+    <string name="sign_in_button_verify">发送验证码</string>
+
+    <string name="not_comment">预约还未结束，不能评论</string>
+    <string name="select_state">选择状态</string>
+    <string name="leave">请假</string>
+    <string name="cancelLeave">取消请假</string>
+    <string name="automaticLogin">自动登录</string>
+    <string name="scanStart">扫码开始</string>
+    <string name="doing">进行中</string>
+    <string name="calculate">计时</string>
+    <string name="end">结束</string>
+    <string name="nullData">空,没有数据</string>
+    <string name="szSchool">苏州驾校</string>
+    <string name="old_psd">请输入原始密码</string>
+    <string name="hint_new_psd">请输入新的密码(6-16位)</string>
+    <string name="hint_new_psd1">确认新输入的密码</string>
+    <string name="revise_psd">修改密码</string>
+    <string name="hint_revise_nickname">请输入修改的昵称</string>
+    <string name="revise_nickname">修改昵称</string>
+    <string name="un_end">此非正常结束,</string>
+    <string name="hint_reason1">请输入原因,如车辆故障等</string>
+    <string name="login_ing">正在登录中....</string>
+    <string name="turn">直角转弯</string>
+    <string name="s">S弯道行驶</string>
+    <string name="parking">侧方停车</string>
+    <string name="parkStart">坡道定点停车起步</string>
+    <string name="reverseParking">倒车入库</string>
+
+
+</resources>

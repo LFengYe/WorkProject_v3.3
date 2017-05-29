@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.guugoo.jiapeistudent.MinorActivity.WhereSelectTImeActivity">
+    tools:context="cn.guugoo.jiapeistudent.MinorActivity.WhereSelectTimeActivity">
 
     <cn.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/where_select_title"
@@ -16,8 +16,7 @@
     <FrameLayout
         android:id="@+id/where_select_fragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
     </FrameLayout>
 
 

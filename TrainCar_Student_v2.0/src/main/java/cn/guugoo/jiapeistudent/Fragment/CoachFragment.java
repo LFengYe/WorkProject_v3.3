@@ -6,7 +6,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -22,7 +25,8 @@ import cn.guugoo.jiapeistudent.Adapter.CoachAdapter;
 import cn.guugoo.jiapeistudent.App.Constant;
 import cn.guugoo.jiapeistudent.Data.Coach;
 import cn.guugoo.jiapeistudent.Data.ReturnData;
-import cn.guugoo.jiapeistudent.MinorActivity.SelectTimeActivity;
+import cn.guugoo.jiapeistudent.MainActivity.ReserveTrainActivity;
+import cn.guugoo.jiapeistudent.MinorActivity.CoachSelectTimeActivity;
 import cn.guugoo.jiapeistudent.R;
 import cn.guugoo.jiapeistudent.Tools.DES;
 import cn.guugoo.jiapeistudent.Tools.MyHandler;
@@ -41,6 +45,9 @@ import java.util.List;
 public class CoachFragment extends Fragment{
     private static final String TAG = "CoachFragment";
 
+    private FragmentManager manager;
+    private FragmentTransaction ft;
+
     private View fragmentView;
     private List<Coach> listData ;
     private PullableListView listView;
@@ -54,20 +61,25 @@ public class CoachFragment extends Fragment{
     private EditText search_text;
     private Handler handler;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        manager = getFragmentManager();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.i(TAG, "OnCreateView");
         fragmentView =inflater.inflate(R.layout.fragment_coach,container,false);
         handler = new MyHandler(getActivity()){
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 if(msg.what == 1){
-                    Log.d(TAG, "handleMessage: "+msg.obj);
                     ReturnData data= JSONObject.parseObject((String) msg.obj,ReturnData.class);
                     if(data.getStatus()==0){
                         List<Coach> coachs = JSONObject.parseArray(data.getData(),Coach.class);
-                        Log.d(TAG, "handleMessage: "+coachs.size());
                         if (coachs.size()==0){
                             switch (requestType){
                                 case 1:
@@ -78,7 +90,7 @@ public class CoachFragment extends Fragment{
                                     break;
                             }
                         }else {
-                            if(currentPage==1){
+                            if(currentPage == 1){
                                 listData.clear();
                             }
                             listData.addAll(coachs);
@@ -116,6 +128,22 @@ public class CoachFragment extends Fragment{
         init();
         return fragmentView;
     }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        Log.i(TAG, "onHiddenChanged");
+        super.onHiddenChanged(hidden);
+        if (!hidden) {
+            firstLoaded();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        //ft.hide(timeFragment);
+    }
+
     private void findById() {
         listView  = (PullableListView) fragmentView.findViewById(R.id.coach_list);
         layout = (PullToRefreshLayout) fragmentView.findViewById(R.id.coach_layout);
@@ -130,7 +158,6 @@ public class CoachFragment extends Fragment{
         adapter = new CoachAdapter(R.layout.adapte_coach,getContext(),listData);
         listView.setAdapter(adapter);
         firstLoaded();
-
 
         layout.setOnRefreshListener(new PullToRefreshLayout.OnRefreshListener() {
 
@@ -181,16 +208,24 @@ public class CoachFragment extends Fragment{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Coach coach= listData.get(position);
-                Intent intent = new Intent(getActivity(), SelectTimeActivity.class);
+//                Intent intent = new Intent(getActivity(), CoachSelectTimeActivity.class);
                 Bundle bundle = new Bundle();
+                bundle.putInt("type",2);
                 bundle.putString("Branch",coach.getBranch());
                 bundle.putString("Name",coach.getName());
                 bundle.putInt("TeacherId",coach.getTId());
                 bundle.putString("VehNof",coach.getVehNof());
                 bundle.putString("Tel",coach.getTel());
                 Log.d(TAG, "onItemClick: "+coach.getTId());
-                intent.putExtras(bundle);
-                startActivity(intent);
+                TimeFragment timeFragment = ((ReserveTrainActivity)getActivity()).getTimeFragment();
+                //timeFragment.setArguments(bundle);
+                timeFragment.setBundle(bundle);
+
+                ft = manager.beginTransaction();
+                ft.hide(CoachFragment.this);
+                ft.show(timeFragment);
+                ft.addToBackStack(null);
+                ft.commit();
             }
         });
         search_text.addTextChangedListener(new TextWatcher() {
@@ -248,7 +283,6 @@ public class CoachFragment extends Fragment{
 
     private void getTeacher(){
         JSONObject json= new JSONObject(true);
-        Log.d(TAG, "getTimeTable: "+sp.getInt("CurrentSubject", 0));
         json.put("Subject",sp.getInt("CurrentSubject", 0));
         json.put("SchoolId",sp.getInt("SchoolId",0));
         json.put("PageIndex", currentPage);

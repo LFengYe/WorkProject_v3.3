@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by gpw on 2016/8/3.
  * --加油
  */
-public class Reservation implements Serializable{
+public class Reservation implements Serializable {
 
 
     /**

@@ -10,11 +10,22 @@ import cn.guugoo.jiapeistudent.MainActivity.BaseActivity;
 import cn.guugoo.jiapeistudent.R;
 import cn.guugoo.jiapeistudent.Views.TitleView;
 
-public class WhereSelectTImeActivity extends BaseActivity {
+public class WhereSelectTimeActivity extends CHScrollViewActivity {
 
-    private static final String TAG = "WhereSelectTImeActivity";
+    private static final String TAG = "WhereSelectTimeActivity";
     private TimeFragment timeFragment;
     private TimeRefreshListenter timeRefresh;
+
+    @Override
+    public TimeFragment getTimeFragment() {
+        return timeFragment;
+    }
+
+    @Override
+    public void onScrollChanged(int l, int t, int oldl, int oldt) {
+        timeFragment.onScrollChanged(l, t, oldl, oldt);
+    }
+
     @Override
     protected void initContentView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_where_select_time);

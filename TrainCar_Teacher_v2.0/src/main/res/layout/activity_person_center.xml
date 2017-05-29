@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/mainLayout"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="@color/color_LightGray"
+              android:orientation="vertical">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/include_head"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        style="@style/Person_RelativeLayout_Style">
+
+        <TextView
+            style="@style/Person_TextView_Style"
+            android:text="@string/head"
+            android:id="@+id/textView2"/>
+
+        <cn.guugoo.jiapeiteacher.view.CircleImageView
+            android:id="@+id/civ_head"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_head"
+            app:border_color="@color/color_Blue"
+            app:border_width="1.5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@+id/left_1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="29dp"
+            android:src="@mipmap/right_light"
+            android:id="@+id/left_1"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_nickName"
+        style="@style/Person_RelativeLayout_Style">
+
+        <TextView
+            android:id="@+id/tv_nickName1"
+            style="@style/Person_TextView_Style"
+            android:text="@string/nickName"/>
+
+        <TextView
+            android:id="@+id/tv_nickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_Black"
+            android:textSize="@dimen/rightSp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/left_2"
+            android:layout_marginRight="6dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="29dp"
+            android:src="@mipmap/right_light"
+            android:id="@+id/left_2"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_name"
+        style="@style/Person_RelativeLayout_Style">
+
+        <TextView
+            android:id="@+id/tv_name1"
+            style="@style/Person_TextView_Style"
+            android:text="@string/name"/>
+        <TextView
+            android:id="@+id/tv_name"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_Black"
+            android:textSize="@dimen/rightSp"
+            android:layout_toLeftOf="@+id/left_3"
+            android:layout_marginRight="6dp"
+            android:layout_centerVertical="true"
+
+          />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="29dp"
+            android:src="@mipmap/right_light"
+            android:visibility="invisible"
+            android:id="@+id/left_3"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_cardId"
+        style="@style/Person_RelativeLayout_Style">
+
+        <TextView
+            android:id="@+id/tv_cardId1"
+            style="@style/Person_TextView_Style"
+            android:text="@string/cardId"/>
+        <TextView
+            android:id="@+id/tv_cardId"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_Black"
+            android:textSize="@dimen/rightSp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/left_4"
+            android:layout_marginRight="6dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="29dp"
+            android:src="@mipmap/right_light"
+            android:visibility="invisible"
+            android:id="@+id/left_4"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_tel"
+        style="@style/Person_RelativeLayout_Style">
+
+        <TextView
+            android:id="@+id/tv_tel1"
+            style="@style/Person_TextView_Style"
+            android:text="@string/tel"/>
+        <TextView
+            android:id="@+id/tv_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_Black"
+            android:textSize="@dimen/rightSp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/left_5"
+            android:layout_marginRight="6dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="29dp"
+            android:src="@mipmap/right_light"
+            android:visibility="invisible"
+            android:id="@+id/left_5"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_psd"
+        style="@style/Person_RelativeLayout_Style">
+
+        <TextView
+            style="@style/Person_TextView_Style"
+            android:text="@string/psd"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="29dp"
+            android:src="@mipmap/right_light"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/color_White"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>

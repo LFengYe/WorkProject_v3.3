@@ -32,6 +32,7 @@ import cn.guugoo.jiapeistudent.Data.Recommend;
 import cn.guugoo.jiapeistudent.Data.ReserveTime;
 import cn.guugoo.jiapeistudent.Data.ReturnData;
 import cn.guugoo.jiapeistudent.Data.TimeData;
+import cn.guugoo.jiapeistudent.Fragment.TimeFragment;
 import cn.guugoo.jiapeistudent.MainActivity.BaseActivity;
 import cn.guugoo.jiapeistudent.R;
 import cn.guugoo.jiapeistudent.Tools.DES;
@@ -96,6 +97,7 @@ public class SelectTimeActivity extends BaseActivity {
 
         }
     }
+
     public void getBookData(String[] bookingLists){
 
         for (int i = 0; i < bookingLists.length; i++) {
@@ -138,7 +140,6 @@ public class SelectTimeActivity extends BaseActivity {
 
     }
 
-
     @Override
     protected void initContentView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_select_time);
@@ -172,7 +173,6 @@ public class SelectTimeActivity extends BaseActivity {
         });
         CHScrollView2 headerScroll = (CHScrollView2) findViewById(R.id.item_scroll_title);
         LinearLayout layout = (LinearLayout) findViewById(R.id.item_scroll_title_content);
-        //layout.removeAllViews();
         for (int i = 0; i < cols.length; i++) {
             MyTextView textView = new MyTextView(SelectTimeActivity.this);
             textView.setText(cols[i]);

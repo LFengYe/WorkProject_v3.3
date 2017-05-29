@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@color/color_White"
+              android:layout_height="match_parent"
+               >
+
+
+    <include
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        layout="@layout/include_head"
+        />
+
+    <ListView
+        android:id="@+id/lv_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/color_line"
+        android:dividerHeight="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="15dp"
+        >
+    </ListView>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_line"/>
+
+    <cn.guugoo.jiapeiteacher.view.XRecyclerView
+        android:id="@+id/lv_forum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </cn.guugoo.jiapeiteacher.view.XRecyclerView>
+
+</LinearLayout>

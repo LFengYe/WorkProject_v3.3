@@ -1,6 +1,7 @@
 package cn.guugoo.jiapeistudent.MainActivity;
 
 
+import android.Manifest;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -16,6 +17,7 @@ import cn.guugoo.jiapeistudent.App.ActivityCollector;
 import cn.guugoo.jiapeistudent.Data.ReturnData;
 import cn.guugoo.jiapeistudent.Tools.MyHandler;
 import cn.guugoo.jiapeistudent.Tools.MyToast;
+import cn.guugoo.jiapeistudent.Tools.Utils;
 
 
 /**
@@ -65,6 +67,8 @@ public  abstract class BaseActivity extends FragmentActivity {
         findView();
         init();
         ActivityCollector.addActivty(this);
+        //Utils.applyPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
+        //Utils.applyPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
     }
 
     // 初始化UI，setContentView等

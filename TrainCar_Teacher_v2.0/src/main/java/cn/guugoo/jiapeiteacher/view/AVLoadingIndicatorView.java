@@ -120,7 +120,6 @@ public class AVLoadingIndicatorView extends View{
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        System.out.println("aaaaaa离开页面");
         mIndicatorController.setAnimationStatus(BaseIndicatorController.AnimStatus.CANCEL);
     }
 

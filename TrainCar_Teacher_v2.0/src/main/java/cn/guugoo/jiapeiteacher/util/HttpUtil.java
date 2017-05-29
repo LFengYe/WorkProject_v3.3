@@ -20,6 +20,7 @@ public class HttpUtil {
     public static String url_login = localhost + "T_Basic/TeacherLogin";
     public static String url_bookings= localhost + "T_Work/TeacherBookings";
     public static String url_scheduling= localhost + "T_Work/TeacherScheduling";
+//    public static String url_scheduling= localhost + "T_Work/";
     public static String url_batchCancel= localhost + "T_Work/BatchCancelClass";
     public static String url_cancelClassByTime= localhost + "T_Work/CancelClassByTime";
     public static String url_classStudentDetails= localhost + "T_Work/ClassStudentDetails";

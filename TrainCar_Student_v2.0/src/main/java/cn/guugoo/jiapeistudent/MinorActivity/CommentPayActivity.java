@@ -131,15 +131,6 @@ public class CommentPayActivity extends BaseActivity {
                     req.timeStamp		= json.getString("timeStamp");
                     req.packageValue	= json.getString("package");
                     req.sign			= json.getString("sign");
-                    Log.d(TAG, "processingData: "+json.getString("appId"));
-                    Log.d(TAG, "processingData: "+json.getString("prepayId"));
-                    Log.d(TAG, "processingData: "+json.getString("partnerId"));
-                    Log.d(TAG, "processingData: "+json.getString("nonceStr"));
-                    Log.d(TAG, "processingData: "+json.getString("timeStamp"));
-                    Log.d(TAG, "processingData: "+json.getString("package"));
-                    Log.d(TAG, "processingData: "+json.getString("sign"));
-//                  Toast.makeText(PayActivity.this, "正常调起支付", Toast.LENGTH_SHORT).show();
-//                // 在支付之前，如果应用没有注册到微信，应该先调用IWXMsg.registerApp将应用注册到微信
                     api.registerApp(Constant.APP_ID);
                     api.sendReq(req);
                     break;
@@ -187,23 +178,11 @@ public class CommentPayActivity extends BaseActivity {
         layout = (LinearLayout) findViewById(R.id.pay_comment_content);
         layout2 = (LinearLayout) findViewById(R.id.ll_error_pay);
         BookingId = getIntent().getStringExtra("BookingId");
-        Log.d(TAG, "findView: "+BookingId);
 
         PayAmount = getIntent().getFloatExtra("PayAmount",0);
         ActMinute = getIntent().getIntExtra("ActMinute",0);
         MinuteFee = getIntent().getFloatExtra("MinuteFee",0);
-        Log.d(TAG, "findView: 1"+ ActMinute);
-        Log.d(TAG, "findView:2 "+MinuteFee);
-//        switch (FeeItem){
-//            case 1:
-//                layout.setVisibility(View.VISIBLE);
-//                break;
-//            case 2:
-//                layout.setVisibility(View.GONE);
-//                break;
-//            default:
-//
-//        }
+
         if(FeeItem==1){
             layout.setVisibility(View.VISIBLE);
             layout2.setVisibility(View.GONE);

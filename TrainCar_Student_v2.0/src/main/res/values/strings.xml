@@ -110,6 +110,7 @@
     <string name="details">详情</string>
     <string name="cancel_details">取消预约</string>
     <string name="comment_pay">评分和支付</string>
+    <string name="comment">评分</string>
     <string name="comment_pay2">支付</string>
     <string name="comment_pay3">支付</string>
     <string name="comment_pay_text1">教学能力</string>

@@ -119,8 +119,8 @@ public class ReservationFragment extends Fragment {
         jsonObject.addProperty("Status", status);
         jsonObject.addProperty("PageIndex", PageIndex);
         jsonObject.addProperty("PageSize", 15);
-        //System.out.println("paramter:" + jsonObject.toString());
         jsonObject = EncryptUtils.encryptDES(jsonObject.toString());
+        System.out.println("paramter:" + jsonObject.toString());
         return jsonObject;
     }
 

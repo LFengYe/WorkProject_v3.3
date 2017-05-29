@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="cn.guugoo.jiapeistudent.MinorActivity.CommentActivity">
+
+    <cn.guugoo.jiapeistudent.Views.TitleView
+        android:id="@+id/comment_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </cn.guugoo.jiapeistudent.Views.TitleView>
+
+
+    <LinearLayout
+        android:id="@+id/comment_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/comment_pay_momey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥125"
+                    android:textColor="@color/login_color"
+                    android:textSize="23sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/comment_pay_text1"
+                        android:textSize="@dimen/comment_pay_text"
+                        android:textColor="@color/text_black"/>
+                    <RatingBar
+                        android:id="@+id/RatingBarId1"
+                        android:layout_marginLeft="20dp"
+                        style="@style/MyRatingBar"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:isIndicator="false"
+                        android:rating="0"
+                        android:numStars="5"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/comment_pay_text2"
+                        android:textSize="@dimen/comment_pay_text"
+                        android:textColor="@color/text_black"/>
+
+
+                    <RatingBar
+                        android:id="@+id/RatingBarId2"
+                        android:layout_marginLeft="20dp"
+                        style="@style/MyRatingBar"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:isIndicator="false"
+                        android:rating="0"
+                        android:numStars="5"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/comment_pay_text3"
+                        android:textSize="@dimen/comment_pay_text"
+                        android:textColor="@color/text_black"/>
+
+
+                    <RatingBar
+                        android:id="@+id/RatingBarId3"
+                        android:layout_marginLeft="20dp"
+                        style="@style/MyRatingBar"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:isIndicator="false"
+                        android:rating="0"
+                        android:numStars="5"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/comment_pay_text4"
+                        android:textSize="@dimen/comment_pay_text"
+                        android:textColor="@color/text_black"/>
+
+
+                    <RatingBar
+                        android:id="@+id/RatingBarId4"
+                        android:layout_marginLeft="20dp"
+                        style="@style/MyRatingBar"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:isIndicator="false"
+                        android:rating="0"
+                        android:numStars="5"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_size"
+            android:background="@color/view_line">
+        </View>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comment_pay_text5"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="@dimen/comment_pay_text"
+                    android:textColor="@color/text_black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/comment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/text_black"
+                    android:textSize="13sp"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="@string/comment_pay_hint"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_size"
+        android:background="@color/view_line"
+        >
+    </View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/my_add_line_height"
+        android:layout_marginTop="1dp"
+        android:background="@color/white">
+        <Button
+            android:id="@+id/comment_button"
+            android:layout_width="@dimen/login_layout_width"
+            android:layout_height="@dimen/login_layout_height"
+            android:background="@drawable/login_layout"
+            android:text="@string/sign_in_button"
+            android:textColor="@color/text_black"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp" />
+    </RelativeLayout>
+</LinearLayout>

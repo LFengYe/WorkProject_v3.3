@@ -58,11 +58,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
             viewHolder.tv_click_comment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (reservation.getStatus() == 3 || reservation.getStatus() == 2 || reservation.getStatus() == 5) {
-                        mCommentClickListener.onClick(bookingId, position);
-                    } else {
-                        Toast.makeText(mContext, R.string.not_comment, Toast.LENGTH_SHORT).show();
-                    }
+                    mCommentClickListener.onClick(bookingId, position);
                 }
             });
         } else {
@@ -85,7 +81,6 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
             }
         }
         viewHolder.tv_name.setText(name);
-        System.out.println(reservation.getDriveType());
         viewHolder.tv_driverType.setText(reservation.getDriveType());
         viewHolder.tv_bookingAccount.setText(getStringBookingAccount(reservation.getBookingAccount()));
 

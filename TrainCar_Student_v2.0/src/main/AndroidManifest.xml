@@ -83,6 +83,7 @@
         <activity android:name=".MainActivity.MyReserveActivity" />
         <activity android:name=".MinorActivity.ReserveDetailsActivity" />
         <activity android:name=".MinorActivity.CommentPayActivity" />
+        <activity android:name=".MinorActivity.CommentActivity" />
         <activity android:name=".MainActivity.CircleShareActivity" />
         <activity android:name=".MinorActivity.SendMessageActivity" />
         <activity android:name=".MinorActivity.ForumCommentActivity" />

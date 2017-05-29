@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import cn.guugoo.jiapeistudent.Data.Reserve;
+import cn.guugoo.jiapeistudent.MinorActivity.CommentActivity;
 import cn.guugoo.jiapeistudent.MinorActivity.CommentPayActivity;
 import cn.guugoo.jiapeistudent.MinorActivity.ReserveDetailsActivity;
 import cn.guugoo.jiapeistudent.MinorActivity.TwoDimensionalActivity;
@@ -143,17 +144,12 @@ public class ReserveAdapter extends BaseAdapter {
                             context.startActivity(intent1);
                             break;
                         case 2:
-                            if(list.get(position).getFeeItem()!=-1){
-                                Intent intent = new Intent(context, CommentPayActivity.class);
-                                Log.d(TAG, "onClick: "+list.get(position).getBookingId());
-                                intent.putExtra("BookingId",list.get(position).getBookingId());
-                                intent.putExtra("FeeItem",list.get(position).getFeeItem());
-                                Log.d(TAG, "onClick: "+list.get(position).getActMinute());
-                                Log.d(TAG, "onClick: "+list.get(position).getMinuteFee());
-                                intent.putExtra("ActMinute",list.get(position).getActMinute());
-                                intent.putExtra("MinuteFee",list.get(position).getMinuteFee());
-                                context.startActivity(intent);
-                            }
+                            Intent intent = new Intent(context, CommentActivity.class);
+                            intent.putExtra("BookingId",list.get(position).getBookingId());
+                            intent.putExtra("FeeItem",list.get(position).getFeeItem());
+                            intent.putExtra("ActMinute",list.get(position).getActMinute());
+                            intent.putExtra("MinuteFee",list.get(position).getMinuteFee());
+                            context.startActivity(intent);
                             break;
                     }
 

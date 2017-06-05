@@ -3,22 +3,37 @@ package cn.guugoo.jiapeiteacher.fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
+import cn.guugoo.jiapeiteacher.R;
+import cn.guugoo.jiapeiteacher.activity.StudentDetailsActivity;
 import cn.guugoo.jiapeiteacher.activity.TeacherCommentActivity;
+import cn.guugoo.jiapeiteacher.activity.WorkbenchActivity;
 import cn.guugoo.jiapeiteacher.adapter.ReservationAdapter;
+import cn.guugoo.jiapeiteacher.adapter.StudentAdapter;
+import cn.guugoo.jiapeiteacher.adapter.StudentCommentAdapter;
+import cn.guugoo.jiapeiteacher.bean.Booking;
 import cn.guugoo.jiapeiteacher.bean.Reservation;
+import cn.guugoo.jiapeiteacher.bean.ReservationStudent;
 import cn.guugoo.jiapeiteacher.bean.TotalPaperData;
 import cn.guugoo.jiapeiteacher.base.BaseAsyncTask;
 import cn.guugoo.jiapeiteacher.util.EncryptUtils;
@@ -37,24 +52,38 @@ public class ReservationFragment extends Fragment {
     private XRecyclerView lv_reservation_msg;
     private ArrayList<Reservation> reservations;
     private ReservationAdapter reservationAdapter;
+    private PopupWindow popupWindow;
     private int teacherId;
     private int schoolId;
     private int status;
     private int TotalPage;
     private int CurrentPage = 1;
     private String token;
+    private float alpha;
 
 
     public static ReservationFragment newInstance(int teacherId, int schoolId, int status,String token) {
         ReservationFragment reservationFragment = new ReservationFragment();
         Bundle args = new Bundle();
         args.putInt("teacherId", teacherId);
+        args.putInt("schoolId", schoolId);
         args.putInt("status", status);
         args.putString("token",token);
         reservationFragment.setArguments(args);
         return reservationFragment;
     }
 
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 1:
+                    backgroundAlpha((float)msg.obj);
+                    break;
+            }
+        }
+    };
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -108,7 +137,6 @@ public class ReservationFragment extends Fragment {
             }
         });
 
-
         return view;
     }
 
@@ -120,11 +148,17 @@ public class ReservationFragment extends Fragment {
         jsonObject.addProperty("PageIndex", PageIndex);
         jsonObject.addProperty("PageSize", 15);
         jsonObject = EncryptUtils.encryptDES(jsonObject.toString());
-        System.out.println("paramter:" + jsonObject.toString());
         return jsonObject;
     }
 
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (popupWindow != null && popupWindow.isShowing()) {
+            popupWindow.dismiss();
+            popupWindow = null;
+        }
+    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -134,6 +168,109 @@ public class ReservationFragment extends Fragment {
             new GetRefreshBookAsyncTask(getActivity(),HttpUtil.url_bookings,token).execute(jsonObject);
         }
 
+    }
+
+    private void showPopupWindow(View view, final Reservation reservation) {
+        final ArrayList<ReservationStudent> students = reservation.getStudentList();
+        View contentView = LayoutInflater.from(getContext()).inflate(R.layout.layout_list_popup, null);
+
+        popupWindow = new PopupWindow(contentView, 300,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        ListView listView = (ListView) contentView.findViewById(R.id.list_content);
+        StudentCommentAdapter adapter = new StudentCommentAdapter(students, getContext());
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ReservationStudent student = students.get(position);
+                if (student.getStatus() == 2) {
+                    Intent intent = new Intent(getContext(), TeacherCommentActivity.class);
+                    intent.putExtra("studentId", Integer.valueOf(student.getStudentId()));
+                    intent.putExtra("token", token);
+                    intent.putParcelableArrayListExtra("studentList", students);
+                    intent.putExtra("selectedIndex", position);
+                    intent.putExtra("bookingId", reservation.getBookingId());
+                    startActivityForResult(intent, 48);
+                }
+                //startActivity(intent);
+            }
+        });
+
+        int[] location = new int[2];
+        view.getLocationOnScreen(location);
+
+        popupWindow.update();
+        popupWindow.setFocusable(true);
+        popupWindow.setBackgroundDrawable(new BitmapDrawable());
+        popupWindow.showAtLocation(view, Gravity.NO_GRAVITY, location[0], location[1] + view.getHeight());
+        popupWindow.setOnDismissListener(new ReservationFragment.PopupDismissListener());
+
+        alpha = 1f;
+        backgroundChange();
+    }
+
+    /**
+     * 返回或者点击空白位置的时候将背景透明度改回来
+     */
+    class PopupDismissListener implements PopupWindow.OnDismissListener{
+
+        @Override
+        public void onDismiss() {
+            new Thread(new Runnable(){
+                @Override
+                public void run() {
+                    //此处while的条件alpha不能<= 否则会出现黑屏
+                    while(alpha < 1f){
+                        try {
+                            Thread.sleep(4);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        Message msg = mHandler.obtainMessage();
+                        msg.what = 1;
+                        alpha += 0.01f;
+                        msg.obj = alpha ;
+                        mHandler.sendMessage(msg);
+                    }
+                }
+
+            }).start();
+        }
+    }
+
+    private void backgroundChange() {
+        new Thread(new Runnable(){
+            @Override
+            public void run() {
+                while(alpha > 0.5f){
+                    try {
+                        //4是根据弹出动画时间和减少的透明度计算
+                        Thread.sleep(4);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Message msg = mHandler.obtainMessage();
+                    msg.what = 1;
+                    //每次减少0.01，精度越高，变暗的效果越流畅
+                    alpha -= 0.01f;
+                    msg.obj = alpha ;
+                    mHandler.sendMessage(msg);
+                }
+            }
+
+        }).start();
+    }
+
+    /**
+     * 设置添加屏幕的背景透明度
+     * @param bgAlpha
+     */
+    public void backgroundAlpha(float bgAlpha) {
+        WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
+        lp.alpha = bgAlpha; //0.0-1.0
+        getActivity().getWindow().setAttributes(lp);
+        getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
     }
 
     class GetBookingAsyncTask extends BaseAsyncTask {
@@ -160,12 +297,10 @@ public class ReservationFragment extends Fragment {
                 reservationAdapter = new ReservationAdapter(reservations, getActivity());
                 lv_reservation_msg.setAdapter(reservationAdapter);
                 reservationAdapter.setCommentClickListener(new ReservationAdapter.commentClickListener() {
+
                     @Override
-                    public void onClick(String bookId, int position) {
-                        Intent intent = new Intent(getActivity(), TeacherCommentActivity.class);
-                        intent.putExtra("bookingId", bookId);
-                        intent.putExtra("token", token);
-                        startActivityForResult(intent, 48);
+                    public void onClick(View view, Reservation reservation) {
+                        showPopupWindow(view, reservation);
                     }
                 });
 
@@ -174,7 +309,6 @@ public class ReservationFragment extends Fragment {
             }
         }
     }
-
 
     class GetRefreshBookAsyncTask extends BaseAsyncTask {
 
@@ -209,7 +343,6 @@ public class ReservationFragment extends Fragment {
             }
         }
     }
-
 
     class GetLoadBookAsyncTask extends BaseAsyncTask{
 

@@ -212,11 +212,11 @@ public class EditActivity extends BaseActivity {
         try {
             Calendar c = Calendar.getInstance();
             int year = c.get(Calendar.YEAR);
-            String bookingId = date.substring(date.indexOf(" ") + 1, date.length());
-            String stringtime = year+"-"+bookingId;
-            System.out.println(stringtime);
+            //String bookingId = date.substring(date.indexOf(" ") + 1, date.length());
+            String timeStr = year+"-"+date;
+            System.out.println(timeStr);
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-            time = format.parse(stringtime);
+            time = format.parse(timeStr);
             c.setTime(time);
             c.add(Calendar.DATE, 1); //日期加1天
             time = c.getTime();

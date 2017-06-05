@@ -71,7 +71,6 @@ public class ReserveDetailsActivity extends BaseActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if(msg.what == 1){
-                Log.d(TAG, "handleMessage: "+msg.obj);
                 ReturnData data= JSONObject.parseObject((String) msg.obj,ReturnData.class);
                 if(data.getStatus()==0){
                     JSONObject jsonObject = JSON.parseObject(data.getData());
@@ -115,19 +114,18 @@ public class ReserveDetailsActivity extends BaseActivity {
 
     @Override
     protected void processingData(ReturnData data) {
-        System.out.println(data.getData());
 
-        ReserveDetails reserveDetails = JSONObject.parseObject(data.getData(),ReserveDetails.class);
-        textViews[0].setText(reserveDetails.getTimeSlot());
+        ReserveDetails reserveDetails = JSONObject.parseObject(data.getData(), ReserveDetails.class);
+        textViews[0].setText(Utils.getDateToString(reserveDetails.getBookingTime()) + reserveDetails.getTimeSlot());
         Location = reserveDetails.getBranch();
         textViews[1].setText(reserveDetails.getBranch());
         textViews[2].setText(reserveDetails.getTeacherNmae());
         textViews[3].setText(reserveDetails.getTeacherTel());
         textViews[4].setText(reserveDetails.getVehNof());
-        textViews[5].setText(Utils.getSubject(reserveDetails.getSubject()));
-        textViews[6].setText(String.valueOf(reserveDetails.getAmount())+"元");
-        textViews[7].setText(reserveDetails.getStatus() + "");
-        textViews[8].setText(reserveDetails.getBookingTime());
+        textViews[5].setText(reserveDetails.getAmount() + "元");
+        textViews[6].setText(Utils.getSubject(reserveDetails.getSubject()));
+        textViews[7].setText(Utils.getStatus(reserveDetails.getStatus()));
+        textViews[8].setText(Utils.getDateToStringLong(reserveDetails.getBookingTime()));
         Lat = reserveDetails.getLat();
         Lon = reserveDetails.getLon();
         /*
@@ -188,7 +186,7 @@ public class ReserveDetailsActivity extends BaseActivity {
         titleView.setRightTextListenter(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cancel();
+                ClearBooking();
             }
         });
     }
@@ -223,6 +221,7 @@ public class ReserveDetailsActivity extends BaseActivity {
         findDetails();
 
     }
+
     private void findDetails(){
         if(Utils.isNetworkAvailable(ReserveDetailsActivity.this)) {
             JSONObject json = new JSONObject();

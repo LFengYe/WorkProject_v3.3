@@ -95,6 +95,7 @@
     <string name="my_reserve_content_text5">查看详情</string>
     <string name="my_reserve_content_text6">二维码</string>
     <string name="my_reserve_content_text7">评价</string>
+    <string name="my_reserve_content_text8">已评价</string>
     <string name="reserve_details_text1">预约时段：</string>
     <string name="reserve_details_text2">预约地点：</string>
     <string name="reserve_details_text3">预约教练：</string>

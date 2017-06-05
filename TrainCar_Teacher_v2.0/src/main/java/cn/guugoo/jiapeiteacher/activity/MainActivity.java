@@ -92,12 +92,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .load(loginInfo.getIcon())
                     .crossFade()
                     .skipMemoryCache(false)
+                    .error(R.mipmap.icon_head)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(civ_head);
         }
 
 
-        tv_nickName.setText(loginInfo.getNicKname());
+        tv_nickName.setText(loginInfo.getName());
 
         fManager = getSupportFragmentManager();
 
@@ -176,6 +177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Glide.with(this)
                             .load(loginInfo.getIcon())
                             .crossFade()
+                            .error(R.mipmap.icon_head)
                             .skipMemoryCache(false)
                             .diskCacheStrategy(DiskCacheStrategy.ALL)
                             .into(civ_head);

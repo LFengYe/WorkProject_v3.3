@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/color_White"
-              android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_White"
+    android:orientation="vertical">
 
     <include
         android:id="@+id/head"
         layout="@layout/include_head"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        />
+        android:layout_height="35dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,26 +22,37 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <cn.guugoo.jiapeiteacher.view.CircleImageView
-                android:id="@+id/civ_head"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:layout_marginBottom="6dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="15dp"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/icon_head"
-                app:border_color="@color/color_Blue"
-                app:border_width="2dp"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <cn.guugoo.jiapeiteacher.view.CircleImageView
+                    android:id="@+id/civ_head"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/icon_head"
+                    app:border_color="@color/color_Blue"
+                    app:border_width="2dp" />
+                <ImageView
+                    android:id="@+id/change_student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/civ_head"
+                    android:layout_alignBottom="@id/civ_head"
+                    android:src="@mipmap/change_icon"/>
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/student_name1"
-                android:layout_marginTop="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@color/color_Black"/>
+                android:layout_marginTop="4dp"
+                android:textColor="@color/color_Black" />
         </LinearLayout>
 
 
@@ -61,13 +71,13 @@
                     android:id="@+id/student_name"
                     style="@style/Student_TextView_Style"
                     android:layout_marginLeft="5dp"
-                    android:text="@string/student_name"/>
+                    android:text="@string/student_name" />
 
                 <TextView
                     android:id="@+id/student_sex"
                     style="@style/Student_TextView_Style"
                     android:layout_marginLeft="20dp"
-                    android:text="@string/student_sex"/>
+                    android:text="@string/student_sex" />
 
 
             </LinearLayout>
@@ -77,13 +87,14 @@
                 style="@style/Student_TextView_Style"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="4dp"
-                android:text="@string/student_tel"/>
+                android:text="@string/student_tel" />
+
             <TextView
                 android:id="@+id/student_cardId"
                 style="@style/Student_TextView_Style"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="4dp"
-                android:text="@string/student_cardId"/>
+                android:text="@string/student_cardId" />
 
 
             <LinearLayout
@@ -96,13 +107,13 @@
                     android:id="@+id/student_driverType"
                     style="@style/Student_TextView_Style"
                     android:layout_marginLeft="5dp"
-                    android:text="@string/student_driverType"/>
+                    android:text="@string/student_driverType" />
 
                 <TextView
                     android:id="@+id/student_bookingCourse"
                     style="@style/Student_TextView_Style"
                     android:layout_marginLeft="15dp"
-                    android:text="@string/student_bookingCourse"/>
+                    android:text="@string/student_bookingCourse" />
             </LinearLayout>
 
 
@@ -112,7 +123,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="4dp"
                 android:text="@string/student_bookingTime"
-                android:textSize="@dimen/smallerSp"/>
+                android:textSize="@dimen/smallerSp" />
 
 
         </LinearLayout>
@@ -124,7 +135,7 @@
         android:layout_width="match_parent"
         android:layout_height="15dp"
         android:layout_marginTop="3dp"
-        android:background="@color/color_LightGray"/>
+        android:background="@color/color_LightGray" />
 
     <TextView
         android:layout_width="match_parent"
@@ -132,13 +143,13 @@
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:text="@string/comment_1"
-        android:textColor="@color/color_Gray"/>
+        android:textColor="@color/color_Gray" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginTop="5dp"
-        android:background="@color/color_line"/>
+        android:background="@color/color_line" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -159,7 +170,7 @@
                 android:button="@drawable/check_style"
                 android:paddingLeft="10dp"
                 android:text="@string/turn"
-                android:textColor="@color/color_Black"/>
+                android:textColor="@color/color_Black" />
 
             <RadioGroup
                 android:id="@+id/rg_0"
@@ -177,10 +188,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@drawable/radio_style"
-                    android:checked="true"
                     android:paddingLeft="5dp"
                     android:text="@string/bad"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb0_so_so"
@@ -190,7 +200,7 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/so_so"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb0_good"
@@ -200,7 +210,7 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/good"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb0_better"
@@ -210,14 +220,14 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/better"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
             </RadioGroup>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/color_line"/>
+                android:background="@color/color_line" />
 
 
             <CheckBox
@@ -229,7 +239,7 @@
                 android:button="@drawable/check_style"
                 android:paddingLeft="10dp"
                 android:text="@string/s"
-                android:textColor="@color/color_Black"/>
+                android:textColor="@color/color_Black" />
 
             <RadioGroup
                 android:id="@+id/rg_1"
@@ -247,10 +257,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@drawable/radio_style"
-                    android:checked="true"
                     android:paddingLeft="5dp"
                     android:text="@string/bad"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb1_so_so"
@@ -260,7 +269,7 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/so_so"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb1_good"
@@ -270,7 +279,7 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/good"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb1_better"
@@ -280,14 +289,14 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/better"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
             </RadioGroup>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/color_line"/>
+                android:background="@color/color_line" />
 
 
             <CheckBox
@@ -299,7 +308,7 @@
                 android:button="@drawable/check_style"
                 android:paddingLeft="10dp"
                 android:text="@string/parking"
-                android:textColor="@color/color_Black"/>
+                android:textColor="@color/color_Black" />
 
             <RadioGroup
                 android:id="@+id/rg_2"
@@ -317,10 +326,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@drawable/radio_style"
-                    android:checked="true"
                     android:paddingLeft="5dp"
                     android:text="@string/bad"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb2_so_so"
@@ -330,7 +338,7 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/so_so"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb2_good"
@@ -340,7 +348,7 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/good"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb2_better"
@@ -350,14 +358,14 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/better"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
             </RadioGroup>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/color_line"/>
+                android:background="@color/color_line" />
 
 
             <CheckBox
@@ -369,7 +377,7 @@
                 android:button="@drawable/check_style"
                 android:paddingLeft="10dp"
                 android:text="@string/parkStart"
-                android:textColor="@color/color_Black"/>
+                android:textColor="@color/color_Black" />
 
             <RadioGroup
                 android:id="@+id/rg_3"
@@ -387,10 +395,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@drawable/radio_style"
-                    android:checked="true"
                     android:paddingLeft="5dp"
                     android:text="@string/bad"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb3_so_so"
@@ -400,7 +407,7 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/so_so"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb3_good"
@@ -410,7 +417,7 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/good"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb3_better"
@@ -420,14 +427,14 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/better"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
             </RadioGroup>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/color_line"/>
+                android:background="@color/color_line" />
 
 
             <CheckBox
@@ -439,7 +446,7 @@
                 android:button="@drawable/check_style"
                 android:paddingLeft="10dp"
                 android:text="@string/reverseParking"
-                android:textColor="@color/color_Black"/>
+                android:textColor="@color/color_Black" />
 
             <RadioGroup
                 android:id="@+id/rg_4"
@@ -457,10 +464,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@drawable/radio_style"
-                    android:checked="true"
                     android:paddingLeft="5dp"
                     android:text="@string/bad"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb4_so_so"
@@ -470,7 +476,7 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/so_so"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb4_good"
@@ -480,7 +486,7 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/good"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
                 <RadioButton
                     android:id="@+id/rb4_better"
@@ -490,25 +496,25 @@
                     android:button="@drawable/radio_style"
                     android:paddingLeft="5dp"
                     android:text="@string/better"
-                    android:textColor="@color/color_Black"/>
+                    android:textColor="@color/color_Black" />
 
             </RadioGroup>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/color_line"/>
+                android:background="@color/color_line" />
 
             <EditText
+                android:id="@+id/et_other"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:id="@+id/et_other"
                 android:layout_margin="20dp"
-                android:hint="其他评语"
-                android:textSize="@dimen/smallSp"
-                android:padding="4dp"
+                android:background="@drawable/et_login_style"
                 android:gravity="left"
-                android:background="@drawable/et_login_style"/>
+                android:hint="其他评语"
+                android:padding="4dp"
+                android:textSize="@dimen/smallSp" />
         </LinearLayout>
     </ScrollView>
 
@@ -516,15 +522,15 @@
         android:id="@+id/tv_ok"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/et_login_style"
         android:gravity="center"
-        android:layout_marginBottom="20dp"
         android:text="@string/confirm"
         android:textColor="@color/color_Blue"
-        android:textSize="@dimen/rightSp"/>
+        android:textSize="@dimen/rightSp" />
 
 
 </LinearLayout>

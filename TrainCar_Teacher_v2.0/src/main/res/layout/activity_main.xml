@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/color_White"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context="cn.guugoo.jiapeiteacher.activity.MainActivity">
 
 
@@ -14,80 +13,80 @@
         android:id="@+id/ll_circle"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:orientation="vertical"
-        android:background="@color/color_LightGray">
+        android:background="@color/color_LightGray"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:orientation="vertical"
-            >
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
             <cn.guugoo.jiapeiteacher.view.CircleImageView
                 android:id="@+id/civ_head"
-                android:src="@mipmap/icon_head"
                 android:layout_width="@dimen/iv_main_circle"
                 android:layout_height="@dimen/iv_main_circle"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/icon_head"
                 app:border_color="@color/color_Blue"
-                app:border_width="2dp"
-                android:scaleType="centerCrop"/>
+                app:border_width="2dp" />
+
             <TextView
                 android:id="@+id/tv_nickName"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/color_Dark"
-                />
+                android:textColor="@color/color_Dark" />
 
         </LinearLayout>
 
     </RelativeLayout>
 
 
-
     <View
         android:id="@+id/view_line"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="#dadada"/>
+        android:background="#dadada" />
+
     <FrameLayout
         android:id="@+id/fl_main"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-    </FrameLayout>
+        android:layout_weight="1"></FrameLayout>
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
-        android:background="@color/color_line"/>
+        android:background="@color/color_line" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_LightGray"
         android:orientation="horizontal">
+
         <ImageView
             android:id="@+id/iv_home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:src="@mipmap/home"/>
+            android:paddingTop="5dp"
+            android:src="@mipmap/home" />
+
         <ImageView
             android:id="@+id/iv_person"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:src="@mipmap/account_normal"/>
+            android:paddingTop="5dp"
+            android:src="@mipmap/account_normal" />
     </LinearLayout>
-
 
 
 </LinearLayout>

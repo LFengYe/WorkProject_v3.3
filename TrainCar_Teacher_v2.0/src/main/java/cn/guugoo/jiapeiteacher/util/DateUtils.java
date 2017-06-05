@@ -1,5 +1,7 @@
 package cn.guugoo.jiapeiteacher.util;
 
+import android.util.Log;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,7 +11,6 @@ import java.util.Date;
  * --加油
  */
 public class DateUtils {
-
 
     private static SimpleDateFormat sf = null;
 

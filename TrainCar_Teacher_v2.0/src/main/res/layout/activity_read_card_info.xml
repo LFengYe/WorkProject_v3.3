@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_White">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/include_head"
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="@string/read_card_info"
+        android:textColor="@color/color_line"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:id="@+id/read_status_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/waiting_read"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/bluetooth_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"/>
+</LinearLayout>

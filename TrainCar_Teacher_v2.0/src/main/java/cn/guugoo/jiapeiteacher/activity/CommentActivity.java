@@ -115,7 +115,6 @@ public class CommentActivity extends BaseActivity {
         tv_center.setText("评论详情");
 
 
-
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("DeliverId", forum.getDeliverId());
         jsonObject.addProperty("UserId", teacherId);

@@ -23,33 +23,31 @@ import cn.guugoo.jiapeistudent.Tools.Utils;
 /**
  * Created by Administrator on 2016/7/31.
  */
-public  abstract class BaseActivity extends FragmentActivity {
+public abstract class BaseActivity extends FragmentActivity {
     private static final String TAG = "BaseActivity";
 
-    protected Handler handler = new MyHandler(this){
+    protected Handler handler = new MyHandler(this) {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            if(msg.what == 1){
+            if (msg.what == 1) {
                 try {
-                    Log.d(TAG, "handleMessage: "+msg.obj);
-                    ReturnData data= JSONObject.parseObject((String) msg.obj,ReturnData.class);
-                    if(data.getStatus()==0){
+                    ReturnData data = JSONObject.parseObject((String) msg.obj, ReturnData.class);
+                    if (data.getStatus() == 0) {
                         processingData(data);
-                    }else {
-                        MyToast.makeText(BaseActivity.this,data.getMessage());
+                    } else {
+                        MyToast.makeText(BaseActivity.this, data.getMessage());
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    MyToast.makeText(BaseActivity.this,"数据出错");
+                    MyToast.makeText(BaseActivity.this, "数据出错");
                 }
             }
         }
     };
 
-    protected  void processingData(ReturnData data){
-    };
-
+    protected void processingData(ReturnData data) {
+    }
 
 
     @Override

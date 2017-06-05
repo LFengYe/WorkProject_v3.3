@@ -139,7 +139,7 @@ public class WhereFragment extends Fragment {
     @PermissionGrant(4)
     public void requestContactSuccess()
     {
-        Toast.makeText(getActivity(), "允许访问位置信息!", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), "允许访问位置信息!", Toast.LENGTH_SHORT).show();
     }
 
     @PermissionDenied(4)

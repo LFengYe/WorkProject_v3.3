@@ -1,6 +1,7 @@
 package cn.guugoo.jiapeistudent.Tools;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -21,6 +22,7 @@ import cn.guugoo.jiapeistudent.R;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/8/7.
@@ -49,6 +51,20 @@ public class Utils {
         return false;
     }
 
+    public static boolean isBackground(Context context) {
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> appProcesses = activityManager.getRunningAppProcesses();
+        for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
+            if (appProcess.processName.equals(context.getPackageName())) {
+                if (appProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_BACKGROUND) {
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
 
     /*获取目前时间*/
     public static String getCurrentDate() {
@@ -64,18 +80,6 @@ public class Utils {
         return sf.format(d);
     }
 
-    public static String getDateToString(String timeStr) {
-        try {
-            sf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            Date date = sf.parse(timeStr);
-            sf = new SimpleDateFormat("yyyy年MM月dd日");
-            return sf.format(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     /*将字符串转为时间戳*/
     public static long getStringToDate(String time) {
         sf = new SimpleDateFormat("yyyy年MM月dd日");
@@ -88,14 +92,41 @@ public class Utils {
         return date.getTime();
     }
 
+    public static String getDateToString(String timeStr) {
+        try {
+            sf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date date = sf.parse(timeStr);
+            sf = new SimpleDateFormat("yyyy年MM月dd日");
+            return sf.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String getDateToStringLong(String timeStr) {
+        try {
+            sf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date date = sf.parse(timeStr);
+            sf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+            return sf.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static String getSubject(int i){
         String[] strings = new String[]{"科目一","科目二","科目三","科目四","科目五","科目六"};
         return strings[i-1];
     }
 
+    /**
+     * （-4爽约-3学员取消预约-2驾校取消预约, -1:教练取消，0已预约,1:进行中，2：已完成）
+     */
     public static String getStatus(int i){
-        String[] strings = new String[]{"已预约","待支付","已结束","已取消","待审核"};
-        return strings[i-1];
+        String[] strings = new String[]{"爽约","学员取消预约","驾校取消预约","教练取消","已预约", "进行中", "已完成", "已取消"};
+        return strings[i + 4];
     }
 
     /**

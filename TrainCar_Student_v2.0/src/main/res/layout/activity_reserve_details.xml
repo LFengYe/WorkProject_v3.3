@@ -174,7 +174,7 @@
             android:layout_height="@dimen/reserve_details_layout_height"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            >
+            android:visibility="gone">
             <TextView
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"

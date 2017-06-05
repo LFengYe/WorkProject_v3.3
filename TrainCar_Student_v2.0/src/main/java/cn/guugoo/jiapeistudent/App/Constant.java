@@ -53,6 +53,7 @@ public class Constant {
     public static final String URL_SignOut = LocalHost +"S_Basic/SignOut";
     public static final String URL_CheckClearBooking = LocalHost+"S_Booking/CheckClearBooking";
     public static final String MyStudentinfo = LocalHost+"S_UserInfo/MyStudentinfo";
+    public static final String URL_StudentEvaluate = LocalHost+"S_Booking/StudentEvaluate";
 
 
 

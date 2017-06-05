@@ -30,6 +30,9 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -40,6 +43,7 @@ import cn.guugoo.jiapeistudent.Data.Booking;
 import cn.guugoo.jiapeistudent.Data.ReserveTime;
 import cn.guugoo.jiapeistudent.Data.ReturnData;
 import cn.guugoo.jiapeistudent.Interface.TimeRefreshListenter;
+import cn.guugoo.jiapeistudent.MainActivity.ReserveTrainActivity;
 import cn.guugoo.jiapeistudent.MinorActivity.ReserveVerifyActivity;
 
 import cn.guugoo.jiapeistudent.R;
@@ -169,18 +173,22 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
                 }
             }
         };
-        init();
         return fragmentView;
     }
 
     @Override
     public void onHiddenChanged(boolean hidden) {
-        Log.i(TAG, "onHiddenChanged");
         super.onHiddenChanged(hidden);
         if (!hidden) {
             findById();
             init();
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        init();
     }
 
     private void findById() {
@@ -205,6 +213,9 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
         if (Type == 2) {
             ((TextView) fragmentView.findViewById(R.id.time_title)).setText("");
             ll_day.setVisibility(View.GONE);
+        } else {
+            ((TextView) fragmentView.findViewById(R.id.time_title)).setText("教练");
+            ll_day.setVisibility(View.VISIBLE);
         }
         CHScrollView2 headerScroll = (CHScrollView2) fragmentView.findViewById(R.id.item_scroll_title);
         LinearLayout layout = (LinearLayout) fragmentView.findViewById(R.id.item_scroll_title_content);
@@ -221,10 +232,10 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
         //添加头滑动事件
         mHScrollViews.add(0, headerScroll);
         listView = (ListView) fragmentView.findViewById(R.id.hlistview_scroll_list);
-
     }
 
     private void init() {
+        ((ReserveTrainActivity)getActivity()).setTitleRightTextVisible(true);
         textViews = new ArrayList<TextView>();
         contenttextViews = new ArrayList<TextView>();
         ll_day.removeAllViews();
@@ -375,7 +386,6 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
         private List<String> listKey;
         private Context context;
         private int res;
-        private String maxTime;
 
         public ScrollAdapter(Context context, HashMap<String, ArrayList<Booking>> data, int res) {
             this.context = context;
@@ -386,6 +396,12 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
             while (iterator.hasNext()) {
                 listKey.add(iterator.next());
             }
+            Collections.sort(listKey, new Comparator<String>() {
+                @Override
+                public int compare(String lhs, String rhs) {
+                    return lhs.compareTo(rhs);
+                }
+            });
         }
 
         @Override
@@ -426,6 +442,7 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
             }
 
 
+            String maxTime = null;
             for (Booking booking : bookings) {
                 String[] times = booking.getCourseTime().split("-");
                 if (maxTime == null || times[1].compareTo(maxTime) > 0) {

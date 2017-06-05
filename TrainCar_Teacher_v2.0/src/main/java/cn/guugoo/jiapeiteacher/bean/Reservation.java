@@ -29,7 +29,6 @@ public class Reservation {
     private String BookingAccount;
     private String BookingTime;
     private String BookingId;
-    private int IsComment;
     private ArrayList<ReservationStudent> StudentList;
 /*
     public String getName() {
@@ -105,6 +104,7 @@ public class Reservation {
         this.BookingId = BookingId;
     }
 
+    /*
     public int getIsComment() {
         return IsComment;
     }
@@ -112,4 +112,5 @@ public class Reservation {
     public void setIsComment(int IsComment) {
         this.IsComment = IsComment;
     }
+    */
 }

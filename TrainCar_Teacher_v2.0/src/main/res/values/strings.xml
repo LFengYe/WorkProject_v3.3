@@ -29,7 +29,7 @@
     <string name="has_reservation">已预约</string>
     <string name="pending_payment">待付款</string>
     <string name="has_ended">已结束</string>
-    <string name="has_comment">已评论</string>
+    <string name="has_comment">已点评</string>
     <string name="has_cancel">已取消</string>
     <string name="has_finish">已完成</string>
     <string name="has_running">进行中</string>
@@ -44,7 +44,7 @@
     <string name="select">选择</string>
     <string name="cancel">取消</string>
 
-
+    <string name="network_loading">加载中...</string>
     <string name="error_network_server_busy">服务器繁忙，请稍后再试</string>
     <string name="error_network_not_available">网络异常，请检查网络</string>
     <string name="error_network_time_out">连接超时，请检查网络</string>
@@ -111,7 +111,8 @@
     <string name="leave">请假</string>
     <string name="cancelLeave">取消请假</string>
     <string name="automaticLogin">自动登录</string>
-    <string name="scanStart">扫码开始</string>
+    <string name="scanStart">开始</string>
+    <string name="scanCode">扫码</string>
     <string name="doing">进行中</string>
     <string name="calculate">计时</string>
     <string name="end">结束</string>
@@ -131,6 +132,15 @@
     <string name="parking">侧方停车</string>
     <string name="parkStart">坡道定点停车起步</string>
     <string name="reverseParking">倒车入库</string>
-
-
+    
+    <string name="card_info_verify">身份验证</string>
+    <string name="bluetooth_select">蓝牙</string>
+    <string name="read_card_info">请验证学员身份证</string>
+    <string name="title_other_devices">其他可用设备</string>
+    <string name="title_paired_devices">已配对设备</string>
+    <string name="scanning">搜索设备...</string>
+    <string name="select_device">选择一个设备</string>
+    <string name="button_scan">搜索</string>
+    <string name="none_paired">没有已配对设备</string>
+    <string name="none_found">未发现可用设备</string>
 </resources>

@@ -6,6 +6,8 @@ package cn.guugoo.jiapeiteacher.bean;
  */
 public class WhenLongTime {
     private int WhenLong;
+    private String StartTime;
+    private int CalculationTime;
 
     public int getWhenLong() {
         return WhenLong;
@@ -13,5 +15,21 @@ public class WhenLongTime {
 
     public void setWhenLong(int whenLong) {
         WhenLong = whenLong;
+    }
+
+    public String getStartTime() {
+        return StartTime;
+    }
+
+    public void setStartTime(String startTime) {
+        StartTime = startTime;
+    }
+
+    public int getCalculationTime() {
+        return CalculationTime;
+    }
+
+    public void setCalculationTime(int calculationTime) {
+        CalculationTime = calculationTime;
     }
 }

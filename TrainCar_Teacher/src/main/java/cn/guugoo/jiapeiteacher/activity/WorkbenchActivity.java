@@ -313,8 +313,6 @@ public class WorkbenchActivity extends BaseActivity {
 
         }
         ll_vertical.addView(iv, tv_params1);
-
-
     }
 
 
@@ -407,7 +405,7 @@ public class WorkbenchActivity extends BaseActivity {
                     Toast.makeText(WorkbenchActivity.this, "请先选择时间段", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (restState&&normalState){
+                if (restState && normalState){
                     Toast.makeText(WorkbenchActivity.this, "不能同时选中休息跟可预约课程", Toast.LENGTH_SHORT).show();
                     return;
                 }

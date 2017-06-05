@@ -55,7 +55,6 @@ public class ReserveTrainActivity extends CHScrollViewActivity implements View.O
         titleView.setRightTextListenter(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 timeRefresh.onMainAction();
             }
         });
@@ -117,6 +116,10 @@ public class ReserveTrainActivity extends CHScrollViewActivity implements View.O
         }
         BarChange();
         setTextViewsColor(index);
+    }
+
+    public void setTitleRightTextVisible(boolean isVisible) {
+        titleView.setRightTextVisible(isVisible);
     }
 
     private void setTextViewsColor(int index) {

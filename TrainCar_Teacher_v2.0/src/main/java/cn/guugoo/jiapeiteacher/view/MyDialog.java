@@ -76,7 +76,6 @@ public class MyDialog extends Dialog {
         return nickDialog;
     }
 
-
     public static MyDialog psdDialog(Activity activity) {
         psdDialog = new MyDialog(activity);
         View v = View.inflate(activity, R.layout.dialog_psd, null);
@@ -114,10 +113,6 @@ public class MyDialog extends Dialog {
         });
         return psdDialog;
     }
-
-
-
-
 
     public static MyDialog endDialog(final Activity activity) {
         endDialog = new MyDialog(activity);

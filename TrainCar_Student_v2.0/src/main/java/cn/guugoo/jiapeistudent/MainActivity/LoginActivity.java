@@ -107,6 +107,7 @@ public class LoginActivity extends InstrumentedActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
     }
+
     private void findView() {
 
         user = (EditText) findViewById(R.id.login_user);
@@ -117,10 +118,10 @@ public class LoginActivity extends InstrumentedActivity {
         checkBox = (CheckBox) findViewById(R.id.login_checkbox);
         sp =getSharedPreferences("user", Context.MODE_PRIVATE);
         user.setText(sp.getString("UserName", ""));
+        passWord.setText(sp.getString("PassWord", ""));
         dialog = Utils.loginDialog(LoginActivity.this);
         if(sp.getBoolean("AUTO_ISCHECK",false)) {
             if(sp.getBoolean("LOGINOK",false)) {
-                passWord.setText(sp.getString("PassWord", ""));
                 login();
             }
         }

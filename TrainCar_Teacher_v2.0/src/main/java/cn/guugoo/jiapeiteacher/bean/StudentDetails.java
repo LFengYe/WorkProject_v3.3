@@ -42,9 +42,27 @@ public class StudentDetails implements Parcelable {
     private int StudentId;
     private String BookingDay;
     private String TimeSlot;
+    private String CurrentComment;
+    private String CurrentSubjectItem;
     private int IsComment;
     private int StudyMinutes;
     private int SchoolId;
+
+    public String getCurrentComment() {
+        return CurrentComment;
+    }
+
+    public void setCurrentComment(String currentComment) {
+        CurrentComment = currentComment;
+    }
+
+    public String getCurrentSubjectItem() {
+        return CurrentSubjectItem;
+    }
+
+    public void setCurrentSubjectItem(String currentSubjectItem) {
+        CurrentSubjectItem = currentSubjectItem;
+    }
 
     public int getStatus() {
         return Status;

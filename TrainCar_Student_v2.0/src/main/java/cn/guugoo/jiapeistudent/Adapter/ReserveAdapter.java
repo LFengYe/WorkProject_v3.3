@@ -72,15 +72,11 @@ public class ReserveAdapter extends BaseAdapter {
         final Reserve data = list.get(position);
         if(!TextUtils.isEmpty(data.getTimeSlot())&&!TextUtils.isEmpty(data.getBookingDay())){
             String[] time = data.getBookingDay().split("-");
-//        String[] time = s[0].split("/");
             viewHolder.BookingsTime.setText(time[0]+"年"+time[1]+"月"+time[2]+"日"+"\n"+data.getTimeSlot());
-//        viewHolder.BookingsTime.setText(data.getBookingTime());
         }
-//        viewHolder.Amount.setText(
-//                String.format(context.getString(R.string.pay_money),data.getAmount()));
         viewHolder.Branch.setText(data.getBranch());
         viewHolder.name.setText(data.getTeacher());
-        switch (data.getStatus()){
+        switch (data.getStatus()) {
             case 0:
                 viewHolder.Status.setText(R.string.my_reserve_content_text1);
                 viewHolder.button2.setVisibility(View.VISIBLE);
@@ -99,7 +95,11 @@ public class ReserveAdapter extends BaseAdapter {
             case 2:
                 viewHolder.Status.setText(R.string.my_reserve_content_text4);
                 viewHolder.button2.setVisibility(View.VISIBLE);
-                viewHolder.button2.setText(R.string.my_reserve_content_text7);
+                if (data.getIsEvaluate() == 0) {
+                    viewHolder.button2.setText(R.string.my_reserve_content_text7);
+                } else {
+                    viewHolder.button2.setText(R.string.my_reserve_content_text8);
+                }
                 break;
             case -1:
                 viewHolder.Status.setText(R.string.my_reserve_content_text3_1);
@@ -123,7 +123,6 @@ public class ReserveAdapter extends BaseAdapter {
         viewHolder.button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: "+ data.getBookingId());
                 Intent intent = new Intent(context, ReserveDetailsActivity.class);
                 intent.putExtra("RefId", data.getRefId());
                 intent.putExtra("BookingId", data.getBookingId());

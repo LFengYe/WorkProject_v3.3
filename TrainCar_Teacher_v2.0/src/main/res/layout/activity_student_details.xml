@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/color_White"
-              android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_White"
+    android:orientation="vertical">
 
 
     <include
         android:id="@+id/head"
         layout="@layout/include_head"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        />
+        android:layout_height="35dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,26 +23,37 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <cn.guugoo.jiapeiteacher.view.CircleImageView
-                android:id="@+id/civ_head"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:layout_marginBottom="6dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="15dp"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/icon_head"
-                app:border_color="@color/color_Blue"
-                app:border_width="2dp"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <cn.guugoo.jiapeiteacher.view.CircleImageView
+                    android:id="@+id/civ_head"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/icon_head"
+                    app:border_color="@color/color_Blue"
+                    app:border_width="2dp" />
+                <ImageView
+                    android:id="@+id/change_student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/civ_head"
+                    android:layout_alignBottom="@id/civ_head"
+                    android:src="@mipmap/change_icon"/>
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/student_name1"
-                android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@color/color_Black"/>
+                android:layout_marginTop="3dp"
+                android:textColor="@color/color_Black" />
         </LinearLayout>
 
 
@@ -62,29 +72,30 @@
                     android:id="@+id/student_name"
                     style="@style/Student_TextView_Style"
                     android:layout_marginLeft="5dp"
-                    android:text="@string/student_name"/>
+                    android:text="@string/student_name" />
 
                 <TextView
                     android:id="@+id/student_sex"
                     style="@style/Student_TextView_Style"
                     android:layout_marginLeft="30dp"
-                    android:text="@string/student_sex"/>
+                    android:text="@string/student_sex" />
 
 
             </LinearLayout>
+
             <TextView
                 android:id="@+id/student_tel"
                 style="@style/Student_TextView_Style"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="4dp"
-                android:text="@string/student_tel"/>
+                android:text="@string/student_tel" />
 
             <TextView
                 android:id="@+id/student_cardId"
                 style="@style/Student_TextView_Style"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="4dp"
-                android:text="@string/student_cardId"/>
+                android:text="@string/student_cardId" />
 
 
             <LinearLayout
@@ -97,13 +108,13 @@
                     android:id="@+id/student_driverType"
                     style="@style/Student_TextView_Style"
                     android:layout_marginLeft="5dp"
-                    android:text="@string/student_driverType"/>
+                    android:text="@string/student_driverType" />
 
                 <TextView
                     android:id="@+id/student_bookingCourse"
                     style="@style/Student_TextView_Style"
                     android:layout_marginLeft="15dp"
-                    android:text="@string/student_bookingCourse"/>
+                    android:text="@string/student_bookingCourse" />
             </LinearLayout>
 
 
@@ -113,7 +124,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="4dp"
                 android:text="@string/student_bookingTime"
-                android:textSize="@dimen/smallerSp"/>
+                android:textSize="@dimen/smallerSp" />
 
 
         </LinearLayout>
@@ -124,9 +135,7 @@
         android:layout_width="match_parent"
         android:layout_height="15dp"
         android:layout_marginTop="3dp"
-        android:background="@color/color_LightGray"/>
-
-
+        android:background="@color/color_LightGray" />
 
 
     <TextView
@@ -136,7 +145,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
         android:text="@string/student_classHour"
-        android:textColor="@color/color_Black"/>
+        android:textColor="@color/color_Black" />
 
 
     <ListView
@@ -163,7 +172,7 @@
             android:gravity="center"
             android:text="@string/scanStart"
             android:textColor="@color/color_Blue"
-            android:visibility="visible"/>
+            android:visibility="visible" />
 
 
         <LinearLayout
@@ -180,30 +189,30 @@
                 android:layout_weight="3"
                 android:gravity="center"
                 android:text="@string/doing"
-                android:textColor="@color/color_Black"/>
+                android:textColor="@color/color_Black" />
 
 
             <TextView
-                android:layout_height="match_parent"
                 android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/calculate"
-                android:textColor="@color/color_Black"/>
+                android:textColor="@color/color_Black" />
+
             <Chronometer
                 android:id="@+id/mChronometer"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="3"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/color_Black"/>
+                android:textColor="@color/color_Black" />
 
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/color_Blue"
-                />
+                android:background="@color/color_Blue" />
 
             <TextView
                 android:id="@+id/tv_end"
@@ -212,14 +221,13 @@
                 android:layout_weight="2"
                 android:gravity="center"
                 android:text="@string/end"
-                android:textColor="@color/color_Black"/>
+                android:textColor="@color/color_Black"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
 
     </RelativeLayout>
-
-
 
 
 </LinearLayout>

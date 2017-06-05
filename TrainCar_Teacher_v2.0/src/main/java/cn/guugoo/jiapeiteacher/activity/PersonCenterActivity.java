@@ -145,6 +145,7 @@ public class PersonCenterActivity extends BaseActivity {
             Glide.with(PersonCenterActivity.this)
                     .load(personInfo.getHeadPortrait())
                     .crossFade()
+                    .error(R.mipmap.icon_head)
                     .skipMemoryCache(false)
                     .into(civ_head);
 
@@ -473,6 +474,7 @@ public class PersonCenterActivity extends BaseActivity {
                 Glide.with(PersonCenterActivity.this)
                         .load(personInfo.getHeadPortrait())
                         .crossFade()
+                        .error(R.mipmap.icon_head)
                         .skipMemoryCache(false)
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(civ_head);

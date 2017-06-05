@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import cn.guugoo.jiapeiteacher.R;
 import cn.guugoo.jiapeiteacher.bean.Reservation;
 import cn.guugoo.jiapeiteacher.bean.ReservationStudent;
+import cn.guugoo.jiapeiteacher.util.Utils;
 import cn.guugoo.jiapeiteacher.view.CircleImageView;
 
 /**
@@ -47,18 +48,46 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
         String time = reservation.getBookingTime();
         String hour = time.substring(time.indexOf(" ") + 1, time.length());
         String year = time.substring(0, time.indexOf(" ") + 1);
-//        String money = mContext.getResources().getString(R.string.money) + reservation.getAmount();
         String status = getStringStatus(reservation.getStatus());
-        final String bookingId = reservation.getBookingId();
+        //final String bookingId = reservation.getBookingId();
 
-        if (reservation.getIsComment() == 0 && reservation.getStatus() == 2) {
-            viewHolder.tv_status.setVisibility(View.GONE);
-            viewHolder.ll_status.setVisibility(View.VISIBLE);
-            viewHolder.tv_status1.setText(status);
+        String name = "";
+        boolean isAllIsComment = true;
+        boolean isDisplayComment = false;
+        ArrayList<ReservationStudent> students = reservation.getStudentList();
+        for (ReservationStudent student : students) {
+            if (TextUtils.isEmpty(name)) {
+                name += student.getName();
+            } else {
+                name += "\n" + student.getName();
+            }
+            if (student.getIsComment() == 0 && student.getStatus() == 2 && isAllIsComment)
+                isAllIsComment = false;
+            if (student.getStatus() == 2 && !isDisplayComment) {
+                isDisplayComment = true;
+            }
+        }
+
+        if (reservation.getStatus() == 2) {
+            if (isDisplayComment) {
+                viewHolder.tv_status.setVisibility(View.GONE);
+                viewHolder.ll_status.setVisibility(View.VISIBLE);
+                viewHolder.tv_status1.setText(status);
+            } else {
+                viewHolder.tv_status.setVisibility(View.VISIBLE);
+                viewHolder.ll_status.setVisibility(View.GONE);
+                viewHolder.tv_status.setText(status);
+            }
+            if (isAllIsComment) {
+                viewHolder.tv_click_comment.setText(R.string.has_comment);
+            } else {
+                viewHolder.tv_click_comment.setText(R.string.comment);
+            }
+
             viewHolder.tv_click_comment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mCommentClickListener.onClick(bookingId, position);
+                    mCommentClickListener.onClick(v, reservation);
                 }
             });
         } else {
@@ -67,20 +96,9 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
             viewHolder.tv_status.setText(status);
         }
 
-
+        viewHolder.tv_name.setText(name);
         viewHolder.tv_year.setText(year);
         viewHolder.tv_hour.setText(hour);
-//        viewHolder.tv_amount.setText("money");
-        String name = "";
-        ArrayList<ReservationStudent> students = reservation.getStudentList();
-        for (ReservationStudent student : students) {
-            if (TextUtils.isEmpty(name)) {
-                name += student.getName();
-            } else {
-                name += "\n" + student.getName();
-            }
-        }
-        viewHolder.tv_name.setText(name);
         viewHolder.tv_driverType.setText(reservation.getDriveType());
         viewHolder.tv_bookingAccount.setText(getStringBookingAccount(reservation.getBookingAccount()));
 
@@ -117,26 +135,14 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
     private String getStringStatus(int status) {
         String state = null;
         switch (status) {
-            case 0:
+            case 1:
                 state = mContext.getResources().getString(R.string.has_reservation);
                 break;
-            case 1:
-                state = mContext.getResources().getString(R.string.has_running);
-                break;
             case 2:
-                state = mContext.getResources().getString(R.string.has_finish);
+                state = mContext.getResources().getString(R.string.has_ended);
                 break;
-            case -1:
-                state = mContext.getResources().getString(R.string.teacher_cancel);
-                break;
-            case -2:
-                state = mContext.getResources().getString(R.string.school_cancel);
-                break;
-            case -3:
-                state = mContext.getResources().getString(R.string.student_cancel);
-                break;
-            case -4:
-                state = mContext.getResources().getString(R.string.break_appointment);
+            case 3:
+                state = mContext.getResources().getString(R.string.has_cancel);
                 break;
         }
         return state;
@@ -181,7 +187,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
     }
 
     public interface commentClickListener {
-        void onClick(String bookId, int position);
+        void onClick(View view, Reservation reservation);
     }
 
 

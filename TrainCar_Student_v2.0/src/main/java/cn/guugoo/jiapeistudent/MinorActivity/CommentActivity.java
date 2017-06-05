@@ -37,12 +37,11 @@ public class CommentActivity extends BaseActivity {
     private EditText comment;
     private Button button;
 
-    private int hoursNumber;
     private SharedPreferences sp;
 
     @Override
     protected void processingData(ReturnData data) {
-
+        studentEvaluate();
     }
 
     @Override
@@ -66,7 +65,6 @@ public class CommentActivity extends BaseActivity {
 
     @Override
     protected void findView() {
-        //layout = (LinearLayout) findViewById(R.id.comment_content);
 
         BookingId = getIntent().getStringExtra("BookingId");
 
@@ -82,8 +80,7 @@ public class CommentActivity extends BaseActivity {
 
     @Override
     protected void init() {
-
-        hoursNumber = sp.getInt("Hours", 0);
+        studentEvaluate();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,7 +116,6 @@ public class CommentActivity extends BaseActivity {
             json.put("StudentId", sp.getInt("Id", 0));
             json.put("Comment", comment.getText());
 
-            Log.d(TAG, "Comment: " + json.toString());
             new MyThread(Constant.URL_Comment, handler, DES.encryptDES(json.toString())).start();
 
         } else {
@@ -127,10 +123,11 @@ public class CommentActivity extends BaseActivity {
         }
     }
 
-    private void getinfo() {
-        JSONObject json2 = new JSONObject(true);
-        json2.put("StudentId", sp.getInt("Id", 0));
-        new MyThread(Constant.MyStudentinfo, handler1, DES.encryptDES(json2.toString())).start();
+    private void studentEvaluate() {
+        JSONObject json = new JSONObject(true);
+        json.put("BookingId", BookingId);
+        json.put("StudentId", sp.getInt("Id", 0));
+        new MyThread(Constant.URL_StudentEvaluate, handler1, DES.encryptDES(json.toString())).start();
     }
 
     protected Handler handler1 = new MyHandler(this) {
@@ -138,14 +135,25 @@ public class CommentActivity extends BaseActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == 1) {
+                System.out.println(msg.obj);
                 try {
-                    Log.d(TAG, "handleMessage: " + msg.obj);
                     ReturnData data = JSONObject.parseObject((String) msg.obj, ReturnData.class);
                     if (data.getStatus() == 0) {
                         JSONObject jsonObject = JSON.parseObject(data.getData());
-                        sp.edit().putInt("Hours", jsonObject.getInteger("Coupon")).apply();
-                    } else {
-                        MyToast.makeText(CommentActivity.this, data.getMessage());
+                        ratingBars[0].setRating(jsonObject.getFloat("Technology"));
+                        ratingBars[0].setEnabled(false);
+                        ratingBars[1].setRating(jsonObject.getFloat("Attitude"));
+                        ratingBars[1].setEnabled(false);
+                        ratingBars[2].setRating(jsonObject.getFloat("Appearance"));
+                        ratingBars[2].setEnabled(false);
+                        ratingBars[3].setRating(jsonObject.getFloat("CarCondition"));
+                        ratingBars[3].setEnabled(false);
+
+                        comment.setText(jsonObject.getString("Comment"));
+                        comment.setEnabled(false);
+
+                        button.setEnabled(false);
+                        button.setBackgroundResource(R.drawable.disable_layout);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

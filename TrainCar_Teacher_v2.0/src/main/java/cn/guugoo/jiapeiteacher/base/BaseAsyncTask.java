@@ -18,6 +18,7 @@ import cn.guugoo.jiapeiteacher.activity.LoginActivity;
 import cn.guugoo.jiapeiteacher.base.Constants;
 import cn.guugoo.jiapeiteacher.base.MyApplication;
 import cn.guugoo.jiapeiteacher.util.HttpUtil;
+import cn.guugoo.jiapeiteacher.util.Utils;
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.android.api.TagAliasCallback;
 
@@ -62,26 +63,28 @@ public abstract class BaseAsyncTask extends AsyncTask<JsonObject, String, String
                         }
                     });
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-            builder.setTitle("提示");
-            builder.setMessage("当前账号在另一台设备登录，请重新登录");
-            builder.setCancelable(false);
-            builder.setIcon(R.mipmap.hint);
-            builder.setPositiveButton("重新登录", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(mContext,LoginActivity.class);
-                    mContext.startActivity(intent);
-                    mActivity.finish();
-                }
-            });
-            builder.setNegativeButton("退出", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    MyApplication.getInstance().exit();
-                }
-            });
-            builder.show();
+            if (!Utils.isBackground(mContext)) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                builder.setTitle("提示");
+                builder.setMessage("当前账号在另一台设备登录，请重新登录");
+                builder.setCancelable(false);
+                builder.setIcon(R.mipmap.hint);
+                builder.setPositiveButton("重新登录", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(mContext,LoginActivity.class);
+                        mContext.startActivity(intent);
+                        mActivity.finish();
+                    }
+                });
+                builder.setNegativeButton("退出", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MyApplication.getInstance().exit();
+                    }
+                });
+                builder.show();
+            }
             return;
         }
         dealResults(s);

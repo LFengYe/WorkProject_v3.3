@@ -139,7 +139,7 @@
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     android:paddingTop="3dp"
-                    android:text="评论" />
+                    android:text="点评" />
 
             </LinearLayout>
 

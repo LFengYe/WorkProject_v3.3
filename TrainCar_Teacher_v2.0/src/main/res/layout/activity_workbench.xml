@@ -30,25 +30,61 @@
         android:background="@color/color_Gray"/>
 
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/ll_work"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/color_line"
-            android:orientation="horizontal">
+            android:minHeight="40dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/time_title"
+                android:layout_width="50dp"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:background="@drawable/right_border" />
+
+            <cn.guugoo.jiapeiteacher.view.CHScrollView2
+                android:id="@+id/item_scroll_title"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/color_White"
+                android:scrollbars="none" >
+
+                <LinearLayout
+                    android:id="@+id/item_scroll_title_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </cn.guugoo.jiapeiteacher.view.CHScrollView2>
         </LinearLayout>
-    </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_line"></View>
+
+        <ListView
+            android:id="@+id/hlistview_scroll_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:fadingEdge="none"
+            android:scrollbars="none" >
+        </ListView>
+
+    </LinearLayout>
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        >
+        android:layout_height="130dp">
 
         <LinearLayout
             android:id="@+id/ll_edit"
@@ -70,9 +106,7 @@
                 android:background="@color/color_LightGray"
                 android:text="@string/edit"
                 android:textColor="@color/color_Black"
-                android:textSize="@dimen/rightSp"
-                />
-
+                android:textSize="@dimen/rightSp"/>
         </LinearLayout>
 
         <LinearLayout

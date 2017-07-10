@@ -4,16 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.guugoo.jiapeistudent.MainActivity.MyMessageActivity">
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    tools:context="com.guugoo.jiapeistudent.MainActivity.MyMessageActivity">
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/my_message_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
 
 
-    <cn.guugoo.jiapeistudent.Views.PullToRefreshLayout
+    <com.guugoo.jiapeistudent.Views.PullToRefreshLayout
         android:id="@+id/my_message_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -21,14 +21,14 @@
         <include layout="@layout/view_refresh_head" />
         <!-- 支持所有实现Pullable接口的View -->
 
-        <cn.guugoo.jiapeistudent.Views.PullableListView
+        <com.guugoo.jiapeistudent.Views.PullableListView
             android:id="@+id/my_message_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
             android:divider="@color/view_line"
             android:dividerHeight="1dp" />
-    </cn.guugoo.jiapeistudent.Views.PullToRefreshLayout>
+    </com.guugoo.jiapeistudent.Views.PullToRefreshLayout>
 
 
 </LinearLayout>

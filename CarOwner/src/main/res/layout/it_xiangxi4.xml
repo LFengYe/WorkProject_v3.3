@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_deta4"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:id="@+id/ll_deta4">
+    android:orientation="horizontal">
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="110dp"
         android:layout_marginLeft="10dp">
+
         <View
             android:id="@+id/view_d4"
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
             android:layout_centerHorizontal="true"
-            android:background="@color/btn_small"/>
+            android:layout_marginTop="5dp"
+            android:background="@color/btn_small" />
 
         <ImageView
             android:id="@+id/iv_dao"
@@ -31,9 +31,9 @@
             android:id="@+id/iv_x4"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@mipmap/dow"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="3dp"/>
+            android:layout_marginBottom="3dp"
+            android:src="@mipmap/dow" />
     </RelativeLayout>
 
     <cn.com.caronwer.view.InputNameView
@@ -55,24 +55,24 @@
                 android:id="@+id/tv_jiedan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="到达终点,已卸货"
                 android:layout_marginLeft="5dp"
-                android:textSize="13dp"/>
+                android:text="到达终点,已卸货"
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/jiedandate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2016-8-16 10:30"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
                 android:layout_marginRight="5dp"
-                android:textSize="13dp"/>
+                android:text="2016-8-16 10:30"
+                android:textSize="13dp" />
 
         </RelativeLayout>
 
-        <include layout="@layout/fenge_small3"/>
+        <include layout="@layout/fenge_small3" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -82,65 +82,69 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/tv_jiedandizi"
-                    android:minLines="2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="天虹商场（西丽店）（深圳市南山区留仙大道1380号）刘红 18511111111"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:layout_gravity="center_vertical"/>
+                    android:minLines="2"
+                    android:text="天虹商场（西丽店）（深圳市南山区留仙大道1380号）刘红 18511111111" />
+
                 <TextView
-                    android:visibility="gone"
                     android:id="@+id/tv_daisou3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="代收货款¥200元"
                     android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:text="代收货款¥200元"
                     android:textColor="@color/back_top"
-                    android:layout_marginRight="10dp"/>
+                    android:visibility="gone" />
             </LinearLayout>
 
         </RelativeLayout>
-        <include layout="@layout/fenge_small3"/>
+
+        <include layout="@layout/fenge_small3" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
+
             <TextView
                 android:id="@+id/tv_daofu"
                 android:layout_width="wrap_content"
                 android:layout_height="28dp"
-                android:text="此订单为货到付款，请确保对方完成支付"
                 android:layout_centerVertical="true"
                 android:gravity="center"
-                />
+                android:text="此订单为货到付款，请确保对方完成支付" />
+
             <TextView
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="导"
-                android:layout_toRightOf="@+id/tv_qian"
                 android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/tv_qian"
                 android:background="@drawable/shape_button2"
-                android:visibility="gone"
-                />
+                android:gravity="center"
+                android:text="导"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
             <TextView
                 android:id="@+id/tv_cedan"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="申请撤单"
-                android:gravity="center"
-                android:textColor="@color/white"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/shape_button2"
-                android:visibility="gone"
-                />
+                android:gravity="center"
+                android:text="申请撤单"
+                android:textColor="@color/white"
+                android:visibility="gone" />
         </RelativeLayout>
 
     </cn.com.caronwer.view.InputNameView>

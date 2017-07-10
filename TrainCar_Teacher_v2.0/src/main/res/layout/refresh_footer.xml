@@ -6,7 +6,7 @@
                 android:padding="7dp"
                 android:gravity="center">
 
-    <cn.guugoo.jiapeiteacher.view.AVLoadingIndicatorView
+    <com.guugoo.jiapeiteacher.view.AVLoadingIndicatorView
         android:id="@+id/rv_progressbar"
         android:layout_width="30dp"
         android:layout_height="30dp"

@@ -17,7 +17,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:background="#ffffff"
         android:paddingBottom="6dp"
         android:paddingTop="6dp">
@@ -28,28 +28,40 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:textColor="@color/color_red"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/tv_money"
-            android:layout_marginBottom="2dp"
+            android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/tv_money"
             android:text="@string/yuan"
             android:textColor="@color/color_red"
-            android:textSize="17sp" />
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/money_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="2dp"
+            android:layout_toRightOf="@+id/textView"
+            android:text="@string/money_detail"
+            android:textColor="@color/color_red"
+            android:textSize="13sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:text="@string/money"
             android:textColor="@color/color_red"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
     </RelativeLayout>
 
     <View

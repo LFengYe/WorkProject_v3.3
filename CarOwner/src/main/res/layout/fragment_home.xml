@@ -1,33 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:id="@+id/ll_root"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical">
-    <!--<RelativeLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-        <!--<ycy.com.app.view.RefreshListView-->
-            <!--android:id="@+id/rlv_home"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:listSelector="@android:color/transparent">-->
-        <!--</ycy.com.app.view.RefreshListView>-->
-
-        <!--<include layout="@layout/fenge_big"/>-->
-    <!--</RelativeLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#ffffff"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="#ffffff">
+
         <cn.com.caronwer.view.XRecyclerView
             android:id="@+id/rv_order"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </cn.com.caronwer.view.XRecyclerView>
+            android:layout_height="match_parent"></cn.com.caronwer.view.XRecyclerView>
     </LinearLayout>
 
 

@@ -49,7 +49,7 @@
                 android:gravity="center"
                 android:background="@drawable/right_border" />
 
-            <cn.guugoo.jiapeiteacher.view.CHScrollView2
+            <com.guugoo.jiapeiteacher.view.CHScrollView2
                 android:id="@+id/item_scroll_title"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -62,7 +62,7 @@
                     android:layout_height="fill_parent"
                     android:orientation="horizontal" >
                 </LinearLayout>
-            </cn.guugoo.jiapeiteacher.view.CHScrollView2>
+            </com.guugoo.jiapeiteacher.view.CHScrollView2>
         </LinearLayout>
 
         <View

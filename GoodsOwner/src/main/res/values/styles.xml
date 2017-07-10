@@ -8,9 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="RedTranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
+    <style name="RedTranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
 
-    <style name="GrayTranslucentTheme" parent="AppTheme"></style>
+    <style name="GrayTranslucentTheme" parent="AppTheme">
+    </style>
 
     <style name="ImageTranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--在Android 4.4之前的版本上运行，直接跟随系统主题-->
@@ -65,4 +67,12 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
+
+
+    <style name="AppSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/color_tr</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
 </resources>

@@ -4,15 +4,15 @@
               android:layout_height="match_parent"
               android:background="@color/color_White"
               android:orientation="vertical"
-              tools:context="cn.guugoo.jiapeiteacher.fragment.ReservationFragment">
+              tools:context="com.guugoo.jiapeiteacher.fragment.ReservationFragment">
 
-    <cn.guugoo.jiapeiteacher.view.XRecyclerView
+    <com.guugoo.jiapeiteacher.view.XRecyclerView
         android:id="@+id/lv_reservation_msg"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/color_White">
-    </cn.guugoo.jiapeiteacher.view.XRecyclerView>
+    </com.guugoo.jiapeiteacher.view.XRecyclerView>
 
     <TextView
         android:id="@+id/tv_empty"

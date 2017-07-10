@@ -1,72 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:gravity="center">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <TextView
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:textSize="16sp"
-        android:paddingTop="5dp"
+        android:gravity="center"
         android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:text="温馨提示"
         android:textColor="@color/color_gary_font"
-        android:text="温馨提示"/>
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/tv_no"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:textSize="20sp"
         android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="你确定呼叫18599999999吗？"
         android:textColor="@color/color_gary_font"
-        android:text="你确定呼叫18599999999吗？"/>
+        android:textSize="20sp" />
+
     <TextView
-        android:visibility="gone"
         android:id="@+id/et_reason"
-        android:gravity="left"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/edit_white_style"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:paddingTop="9dp"
-        android:paddingLeft="9dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_white_style"
+        android:gravity="left"
+        android:hint="请输入撤销原因"
         android:lines="1"
+        android:paddingLeft="9dp"
+        android:paddingTop="9dp"
         android:textSize="13sp"
-        android:hint="请输入撤销原因"/>
+        android:visibility="gone" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
         <Button
+            android:id="@+id/bt_cancel"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:background="@drawable/button_login"
-            android:text="取消"
-            android:id="@+id/bt_cancel"
-            />
+            android:text="取消" />
+
         <Button
             android:id="@+id/bt_ok"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:background="@drawable/button_login"
-            android:text="@string/ok"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentTop="true"
+            android:background="@drawable/button_login"
+            android:text="@string/ok" />
 
     </RelativeLayout>
 

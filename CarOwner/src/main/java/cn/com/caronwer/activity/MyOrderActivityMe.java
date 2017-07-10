@@ -110,7 +110,7 @@ public class MyOrderActivityMe extends BaseActivity {
         hideFragments(transaction);
         switch (i) {
             case 1:
-                tv_all.setTextColor(ContextCompat.getColor(MyOrderActivityMe.this, R.color.color_red));
+                tv_all.setTextColor(ContextCompat.getColor(MyOrderActivityMe.this, R.color.color_blue));
                 view_all.setVisibility(View.VISIBLE);
                 if (fg_all == null) {
                     fg_all = new mefragmentall();
@@ -120,7 +120,7 @@ public class MyOrderActivityMe extends BaseActivity {
                 }
                 break;
             case 2:
-                tv_new.setTextColor(ContextCompat.getColor(MyOrderActivityMe.this, R.color.color_red));
+                tv_new.setTextColor(ContextCompat.getColor(MyOrderActivityMe.this, R.color.color_blue));
                 view_new.setVisibility(View.VISIBLE);
                 if (fg_jiedan == null) {
                     fg_jiedan = new mefragmentjiedan();
@@ -130,7 +130,7 @@ public class MyOrderActivityMe extends BaseActivity {
                 }
                 break;
             case 3:
-                tv_doing.setTextColor(ContextCompat.getColor(MyOrderActivityMe.this, R.color.color_red));
+                tv_doing.setTextColor(ContextCompat.getColor(MyOrderActivityMe.this, R.color.color_blue));
                 view_doing.setVisibility(View.VISIBLE);
                 if (fg_doing == null) {
                     fg_doing = new mefragmentjingxin();
@@ -140,7 +140,7 @@ public class MyOrderActivityMe extends BaseActivity {
                 }
                 break;
             case 4:
-                tv_end.setTextColor(ContextCompat.getColor(MyOrderActivityMe.this, R.color.color_red));
+                tv_end.setTextColor(ContextCompat.getColor(MyOrderActivityMe.this, R.color.color_blue));
                 view_end.setVisibility(View.VISIBLE);
                 if (fg_end == null) {
                     fg_end = new mefragmentjiesu();

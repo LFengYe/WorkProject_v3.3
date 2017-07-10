@@ -2,6 +2,7 @@ package cn.com.caronwer.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 
@@ -66,12 +67,17 @@ public class LoginActivity extends BaseActivity {
         String time = DateUtil.getPsdCurrentDate();
         if (account.isEmpty() || password.isEmpty()) {
             showShortToastByString("未登录");
-            Intent intent = new Intent();
-            intent.setClass(LoginActivity.this, MainActivity.class);
-            intent.putExtra("userInfo", "");
-            intent.putExtra("isDenglu", false);
-            startActivity(intent);
-            finish();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent();
+                    intent.setClass(LoginActivity.this, MainActivity.class);
+                    intent.putExtra("userInfo", "");
+                    intent.putExtra("isDenglu", false);
+                    startActivity(intent);
+                    finish();
+                }
+            }, 1500);
             return;
         }
 
@@ -100,16 +106,6 @@ public class LoginActivity extends BaseActivity {
                 editor.putString("UserId", userInfo.getUserId());
                 editor.putString("VehicleNo", userInfo.getVehicleNo());
                 editor.commit();
-                long endTime = System.currentTimeMillis();
-                long timeUsed = endTime - startTime;// 访问网络花费的时间
-                if (timeUsed < 2500) {
-                    // 强制休眠一段时间,保证闪屏页展示2秒钟
-                    try {
-                        Thread.sleep(2500 - timeUsed);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
 
                 JPushInterface.setAliasAndTags(LoginActivity.this, account, null, new TagAliasCallback() {
                     @Override
@@ -117,24 +113,33 @@ public class LoginActivity extends BaseActivity {
                     }
                 });
 
-                Intent intent = new Intent();
-                intent.setClass(LoginActivity.this, MainActivity.class);
-                intent.putExtra("userInfo", userInfo);
-                intent.putExtra("isDenglu", true);
-                startActivity(intent);
-                finish();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent();
+                        intent.setClass(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("userInfo", userInfo);
+                        intent.putExtra("isDenglu", true);
+                        startActivity(intent);
+                        finish();
+                    }
+                }, 1500);
             }
 
             @Override
             public void onError(VolleyError error) {
 //                showShortToastByString("未登录");
-                Intent intent = new Intent();
-                intent.setClass(LoginActivity.this, MainActivity.class);
-                intent.putExtra("userInfo", "");
-                intent.putExtra("isDenglu", false);
-                startActivity(intent);
-                finish();
-
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent();
+                        intent.setClass(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("userInfo", "");
+                        intent.putExtra("isDenglu", false);
+                        startActivity(intent);
+                        finish();
+                    }
+                }, 1500);
             }
 
             @Override
@@ -146,6 +151,18 @@ public class LoginActivity extends BaseActivity {
 
             }
         });
+        /*
+        long endTime = System.currentTimeMillis();
+        long timeUsed = endTime - startTime;
+        if (timeUsed < 2500) {
+            // 强制休眠一段时间,保证闪屏页展示2秒钟
+            try {
+                Thread.sleep(2500 - timeUsed);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        */
     }
 
     @Override

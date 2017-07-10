@@ -25,7 +25,7 @@
             android:orientation="vertical"
             >
 
-            <cn.guugoo.jiapeiteacher.view.CircleImageView
+            <com.guugoo.jiapeiteacher.view.CircleImageView
                 android:id="@+id/civ_head"
                 android:layout_width="@dimen/iv_main_circle"
                 android:layout_height="@dimen/iv_main_circle"

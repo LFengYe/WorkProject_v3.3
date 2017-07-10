@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              android:gravity="bottom" >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/header_content"
         android:layout_width="fill_parent"
         android:layout_height="70dp"
-        android:paddingTop="10dip"
-        >
+        android:paddingTop="10dip">
 
         <LinearLayout
+            android:id="@+id/header_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="100dip"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:orientation="vertical"
-            android:id="@+id/header_text">
+            android:minWidth="100dip"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/refresh_status_textView"
@@ -31,8 +30,8 @@
                 android:id="@+id/ll_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
-                android:layout_marginTop="3dp" >
+                android:layout_marginTop="3dp"
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -55,20 +54,20 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="35dp"
             android:layout_marginRight="10dp"
-            android:visibility="visible"
             android:layout_toLeftOf="@id/header_text"
-            android:src="@mipmap/down" />
+            android:src="@mipmap/down"
+            android:visibility="visible" />
 
         <ProgressBar
             android:id="@+id/header_progressbar"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:indeterminateDrawable="@drawable/progress"
-            android:indeterminateBehavior="repeat"
-            android:layout_toLeftOf="@id/header_text"
             android:layout_centerVertical="true"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/header_text"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDrawable="@drawable/progress"
             android:visibility="invisible" />
 
 
@@ -76,21 +75,23 @@
             android:id="@+id/ll_refresh_end"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
             android:gravity="center"
+            android:orientation="horizontal"
             android:visibility="invisible">
+
             <ImageView
                 android:id="@+id/iv_state"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
-                android:src="@mipmap/refresh_right"/>
+                android:src="@mipmap/refresh_success" />
+
             <TextView
                 android:id="@+id/tv_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:text="刷新完成"/>
+                android:text="刷新完成" />
 
         </LinearLayout>
 

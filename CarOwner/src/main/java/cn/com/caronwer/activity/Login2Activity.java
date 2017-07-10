@@ -52,6 +52,7 @@ public class Login2Activity extends BaseActivity {
     private ImageView iv_login_eye;
     private TextView tv_forget_psd;
     private TextView tv_register;
+    private TextView tv_register_protocol;
     private Button bt_login;
     private SharedPreferences prefs;
     private String password;
@@ -88,7 +89,7 @@ public class Login2Activity extends BaseActivity {
         bt_login = (Button) findViewById(R.id.bt_login);
         mActivity_login = (LinearLayout) findViewById(R.id.activity_login);
         mRl_login = (RelativeLayout) findViewById(R.id.rl_login);
-
+        tv_register_protocol = (TextView) findViewById(R.id.register_protocol);
 
         mRl_login22 = (RelativeLayout) findViewById(R.id.rl_login22);
         et_account22 = (EditText) findViewById(R.id.et_account22);
@@ -98,8 +99,6 @@ public class Login2Activity extends BaseActivity {
 
         iv_login_eye22 = (ImageView) findViewById(R.id.iv_login_eye22);
         bt_ok22 = (Button) findViewById(R.id.bt_ok22);
-
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -136,6 +135,7 @@ public class Login2Activity extends BaseActivity {
         tv_forget_psd.setOnClickListener(this);
         tv_register.setOnClickListener(this);
         bt_login.setOnClickListener(this);
+        tv_register_protocol.setOnClickListener(this);
 
         et_password.addTextChangedListener(new TextWatcher() {
             @Override
@@ -268,11 +268,15 @@ public class Login2Activity extends BaseActivity {
             case R.id.iv_login_eye:
                 if (et_password.getInputType() != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
                     et_password.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    iv_login_eye.setImageResource(R.mipmap.login_eye);
+                    iv_login_eye.setImageResource(R.mipmap.eye_open);
                 } else {
                     et_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    iv_login_eye.setImageResource(R.mipmap.biyan);
+                    iv_login_eye.setImageResource(R.mipmap.eye_close);
                 }
+                break;
+            case R.id.register_protocol:
+                intent.setClass(this, RegisterProtocolActivity.class);
+                startActivity(intent);
                 break;
             case R.id.iv_close:
                 if (mRl_login.getVisibility() == View.VISIBLE) {
@@ -288,13 +292,9 @@ public class Login2Activity extends BaseActivity {
 
                 break;
             case R.id.tv_register://注册
-//                intent.setClass(Login2Activity.this, RegisterActivity.class);
-//                startActivityForResult(intent, 0);
-//                tiaozhuan();
                 mRl_login.setVisibility(View.GONE);
                 mRl_login22.setVisibility(View.VISIBLE);
                 break;
-
 
             case R.id.bt_ok22:
                 if (NetworkUtil.isConnected(Login2Activity.this)) {
@@ -306,10 +306,10 @@ public class Login2Activity extends BaseActivity {
             case R.id.iv_login_eye22:
                 if (et_password22.getInputType() != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
                     et_password22.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    iv_login_eye22.setImageResource(R.mipmap.login_eye);
+                    iv_login_eye22.setImageResource(R.mipmap.eye_open);
                 } else {
                     et_password22.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    iv_login_eye22.setImageResource(R.mipmap.biyan);
+                    iv_login_eye22.setImageResource(R.mipmap.eye_close);
                 }
                 break;
             case R.id.tv_get_code22:

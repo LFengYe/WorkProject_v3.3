@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.guugoo.jiapeistudent.MainActivity.MyRecommendActivity">
+    tools:context="com.guugoo.jiapeistudent.MainActivity.MyRecommendActivity">
 
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/my_recommend_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"

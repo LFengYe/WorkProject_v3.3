@@ -60,12 +60,12 @@
         android:orientation="vertical"
         android:background="@color/color_white">
 
-        <com.gpw.app.view.XRecyclerView
+        <cn.com.goodsowner.view.XRecyclerView
             android:id="@+id/rv_charge_schedule"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </com.gpw.app.view.XRecyclerView>
+        </cn.com.goodsowner.view.XRecyclerView>
 
         <TextView
             android:id="@+id/tv_empty"

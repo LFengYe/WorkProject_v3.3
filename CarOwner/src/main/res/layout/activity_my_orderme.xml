@@ -4,7 +4,7 @@
               android:id="@+id/activity_rebuild_psd"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/color_red"
+              android:background="@color/color_blue"
               android:fitsSystemWindows="true"
               android:orientation="vertical"
               tools:context=".activity.MyOrderActivityMe">
@@ -106,7 +106,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_weight="1"
-                    android:background="@color/color_red" />
+                    android:background="@color/color_blue" />
 
                 <View
                     android:id="@+id/view_new"
@@ -115,7 +115,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_weight="1"
-                    android:background="@color/color_red"
+                    android:background="@color/color_blue"
                     android:visibility="invisible" />
 
                 <View
@@ -125,7 +125,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_weight="1"
-                    android:background="@color/color_red"
+                    android:background="@color/color_blue"
                     android:visibility="invisible" />
 
                 <View
@@ -135,7 +135,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_weight="1"
-                    android:background="@color/color_red"
+                    android:background="@color/color_blue"
                     android:visibility="invisible" />
 
             </LinearLayout>

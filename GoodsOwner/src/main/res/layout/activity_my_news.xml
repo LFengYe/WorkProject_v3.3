@@ -21,10 +21,10 @@
         android:layout_height="0dp"
         android:background="#ffffff"
         android:layout_weight="1">
-        <com.gpw.app.view.XRecyclerView
+        <cn.com.goodsowner.view.XRecyclerView
             android:id="@+id/rv_news"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        </com.gpw.app.view.XRecyclerView>
+        </cn.com.goodsowner.view.XRecyclerView>
     </LinearLayout>
 </LinearLayout>

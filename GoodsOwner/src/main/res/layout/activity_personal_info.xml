@@ -24,7 +24,7 @@
             android:layout_marginTop="13dp"
             android:src="@mipmap/left_white"/>
 
-        <com.gpw.app.view.CircleImageView
+        <cn.com.goodsowner.view.CircleImageView
             android:id="@+id/civ_head"
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -81,7 +81,7 @@
             android:textSize="@dimen/normal_font"/>
 
 
-        <com.gpw.app.view.CircleImageView
+        <cn.com.goodsowner.view.CircleImageView
             android:id="@+id/civ_head1"
             android:layout_width="45dp"
             android:layout_height="45dp"

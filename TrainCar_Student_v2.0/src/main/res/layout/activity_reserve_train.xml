@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.guugoo.jiapeistudent.MainActivity.ReserveTrainActivity">
+    tools:context="com.guugoo.jiapeistudent.MainActivity.ReserveTrainActivity">
 
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/reserve_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,8 +59,16 @@
             android:layout_width="@dimen/view_size"
             android:layout_height="match_parent"
             android:background="@color/view_line"/>
-
-
+        <TextView
+            android:id="@+id/reserve_condition"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/reserve_height"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/reserve_hand_text"
+            android:background="@drawable/reserve_text_color"
+            android:text="@string/reserve_text4"/>
     </LinearLayout>
 
     <View

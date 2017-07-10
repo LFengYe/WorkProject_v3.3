@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_rebuild_psd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/color_red"
+    android:background="@color/color_blue"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="cn.com.caronwer.activity.BenefitActivityActivity">
 
     <include
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
         android:id="@+id/in_head"
-        layout="@layout/action_head"/>
+        layout="@layout/action_head"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
         android:layout_weight="1"
+        android:background="#ffffff"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/iv_car"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/che"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
-            />
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/che" />
+
         <RelativeLayout
             android:id="@+id/rl_cartype"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/layout_click_style"
-            >
+            android:background="@drawable/layout_click_style">
 
             <TextView
                 android:id="@+id/tv_t1"
@@ -47,37 +45,37 @@
                 android:layout_marginLeft="15dp"
                 android:text="车辆类型"
                 android:textColor="@color/color_gary_font"
-                android:textSize="@dimen/normal_font"/>
+                android:textSize="@dimen/normal_font" />
+
             <TextView
                 android:id="@+id/tv_cartype"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_t1"
                 android:text="小面包车"
                 android:textColor="@color/color_gary_font"
-                android:textSize="@dimen/normal_font"
-                android:layout_toRightOf="@id/tv_t1"
-                />
+                android:textSize="@dimen/normal_font" />
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:background="@color/color_white">
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.6dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/color_line"
-                />
+                android:background="@color/color_line" />
         </LinearLayout>
+
         <RelativeLayout
             android:id="@+id/rl_carno"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/layout_click_style"
-            >
+            android:background="@drawable/layout_click_style">
 
             <TextView
                 android:id="@+id/tv_t2"
@@ -87,36 +85,37 @@
                 android:layout_marginLeft="15dp"
                 android:text="车牌号"
                 android:textColor="@color/color_gary_font"
-                android:textSize="@dimen/normal_font"/>
+                android:textSize="@dimen/normal_font" />
+
             <TextView
                 android:id="@+id/tv_carno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_t2"
                 android:text="额B1234214"
                 android:textColor="@color/color_gary_font"
-                android:textSize="@dimen/normal_font"
-                android:layout_toRightOf="@id/tv_t2"
-                />
+                android:textSize="@dimen/normal_font" />
         </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:background="@color/color_white">
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.6dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/color_line"
-                />
+                android:background="@color/color_line" />
         </LinearLayout>
+
         <RelativeLayout
             android:id="@+id/rl_username"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/layout_click_style"
-            >
+            android:background="@drawable/layout_click_style">
 
             <TextView
                 android:id="@+id/tv_t3"
@@ -126,29 +125,30 @@
                 android:layout_marginLeft="15dp"
                 android:text="车主姓名"
                 android:textColor="@color/color_gary_font"
-                android:textSize="@dimen/normal_font"/>
+                android:textSize="@dimen/normal_font" />
+
             <TextView
                 android:id="@+id/tv_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_t3"
                 android:text="李辉"
                 android:textColor="@color/color_gary_font"
-                android:textSize="@dimen/normal_font"
-                android:layout_toRightOf="@id/tv_t3"
-                />
+                android:textSize="@dimen/normal_font" />
         </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:background="@color/color_white">
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.6dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/color_line"
-                />
+                android:background="@color/color_line" />
         </LinearLayout>
 
         <LinearLayout
@@ -157,18 +157,17 @@
             android:background="@color/color_white">
 
             <Button
-                android:visibility="gone"
                 android:id="@+id/bt_huan"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/button_red_style"
+                android:background="@drawable/button_blue_style"
                 android:text="更换车辆"
                 android:textColor="@color/color_gary_font"
                 android:textSize="@dimen/normal_font"
-                />
+                android:visibility="gone" />
         </LinearLayout>
 
     </LinearLayout>

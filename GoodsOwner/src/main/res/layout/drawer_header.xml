@@ -5,7 +5,7 @@
                 android:layout_height="150dp"
                 android:orientation="vertical">
 
-    <com.gpw.app.view.CircleImageView
+    <cn.com.goodsowner.view.CircleImageView
         android:id="@+id/iv"
         android:layout_width="50dp"
         android:layout_height="50dp"

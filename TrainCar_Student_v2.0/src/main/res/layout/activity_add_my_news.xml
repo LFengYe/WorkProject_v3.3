@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cn.guugoo.jiapeistudent.MinorActivity.AddMyNewsActivity"
+    tools:context="com.guugoo.jiapeistudent.MinorActivity.AddMyNewsActivity"
     android:orientation="vertical">
 
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/my_add_news_titles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
 
     <ScrollView
         android:layout_width="match_parent"

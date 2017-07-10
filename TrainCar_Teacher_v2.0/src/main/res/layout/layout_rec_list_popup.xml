@@ -3,11 +3,11 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <cn.guugoo.jiapeiteacher.view.XRecyclerView
+    <com.guugoo.jiapeiteacher.view.XRecyclerView
         android:id="@+id/list_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_White">
 
-    </cn.guugoo.jiapeiteacher.view.XRecyclerView>
+    </com.guugoo.jiapeiteacher.view.XRecyclerView>
 </LinearLayout>

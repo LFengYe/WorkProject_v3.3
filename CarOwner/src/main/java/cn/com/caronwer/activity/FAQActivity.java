@@ -65,6 +65,7 @@ public class FAQActivity extends BaseActivity {
         HttpUtil.doPost(FAQActivity.this, Contants.url_obtainMessage, "obtainMessage", map, new VolleyInterface(FAQActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
             @Override
             public void onSuccess(JsonElement result) {
+                System.out.println("result:" + result);
                 Gson gson = new Gson();
                 MessageInfo messageInfo = gson.fromJson(result, MessageInfo.class);
                 String msgtitle = messageInfo.getTitle();

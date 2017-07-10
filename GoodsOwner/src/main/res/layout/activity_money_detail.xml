@@ -8,7 +8,7 @@
     android:background="@color/color_red"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".activity.RebuildPsdActivity">
+    tools:context=".activity.MoneyDetailActivity">
 
     <include
         android:id="@+id/in_head"
@@ -27,6 +27,7 @@
         android:paddingTop="20dp">
 
         <LinearLayout
+            android:id="@+id/ll_freight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -48,10 +49,41 @@
                 android:id="@+id/tv_freight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/money_0_yuan"
                 />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_surcharge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/surcharge_fee"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="@string/hint_money_detail" />
+s
+            <TextView
+                android:id="@+id/tv_surcharge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/money_0_yuan"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_premiums"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -60,7 +92,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tv_premiums"/>
+                android:text="@string/premiums"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -81,13 +113,14 @@
                 android:id="@+id/tv_premiums"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/money_0_yuan"
                 />
 
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_courier"
+            android:id="@+id/ll_payment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -97,19 +130,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="快递费"/>
+                android:text="@string/payment_fee"/>
 
             <TextView
+
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:maxLines="1"
-                android:text="----------------------------------------------------------------------------------------------------"/>
+                android:text="@string/hint_money_detail"/>
 
             <TextView
+                android:id="@+id/tv_Payment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¥0元"/>
+                android:text="@string/money_0_yuan"
+                />
         </LinearLayout>
 
 

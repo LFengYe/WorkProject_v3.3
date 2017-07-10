@@ -5,7 +5,7 @@
     android:id="@+id/activity_rebuild_psd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_red"
+    android:background="@color/color_blue"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".activity.ImproveDisclosureActivity">
@@ -106,7 +106,7 @@
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:button="@drawable/check1_style"
+            android:button="@drawable/checkbox_style"
             android:paddingLeft="10dp"
             android:text="设置为常用地址"
             android:textColor="@color/color_gary_font"/>
@@ -117,7 +117,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/button_red_style"
+            android:background="@drawable/button_blue_style"
             android:text="@string/ok"
             android:textColor="@color/color_gary_font"/>
     </LinearLayout>

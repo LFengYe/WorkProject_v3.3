@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_setting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_red"
+    android:background="@color/color_blue"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="cn.com.caronwer.activity.SettingActivity">
@@ -14,14 +13,13 @@
         android:id="@+id/in_head"
         layout="@layout/action_head"
         android:layout_width="match_parent"
-        android:layout_height="55dp"/>
+        android:layout_height="55dp" />
 
     <RelativeLayout
         android:id="@+id/rl_account_management"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +28,7 @@
             android:layout_marginLeft="15dp"
             android:text="修改密码"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
         <ImageView
             android:id="@+id/iv_jiantou"
@@ -39,18 +37,18 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
 
         <TextView
             android:id="@+id/tv_sji"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="185111111"
             android:layout_alignRight="@+id/iv_jiantou"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:text="185111111"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"
-            android:layout_marginRight="30dp"/>
+            android:textSize="@dimen/normal_font" />
 
     </RelativeLayout>
 
@@ -58,13 +56,13 @@
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
         android:background="@color/color_white">
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@color/color_line"
-            />
+            android:background="@color/color_line" />
     </LinearLayout>
 
 
@@ -72,8 +70,7 @@
         android:id="@+id/rl_fee_scale"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <TextView
             android:layout_width="wrap_content"
@@ -82,7 +79,7 @@
             android:layout_marginLeft="15dp"
             android:text="@string/fee_scale"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
         <ImageView
             android:layout_width="23dp"
@@ -90,21 +87,22 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
         android:background="@color/color_white">
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@color/color_line"
-            />
+            android:background="@color/color_line" />
     </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/rl_faq"
         android:layout_width="match_parent"
@@ -118,7 +116,7 @@
             android:layout_marginLeft="15dp"
             android:text="@string/faq"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
         <ImageView
             android:layout_width="23dp"
@@ -126,27 +124,27 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
         android:background="@color/color_white">
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@color/color_line"
-            />
+            android:background="@color/color_line" />
     </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/rl_feed_back"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <ImageView
             android:layout_width="23dp"
@@ -154,7 +152,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -164,27 +162,27 @@
             android:layout_marginLeft="15dp"
             android:text="@string/feed_back"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
         android:background="@color/color_white">
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@color/color_line"
-            />
+            android:background="@color/color_line" />
     </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/rl_about_us"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <TextView
             android:layout_width="wrap_content"
@@ -193,7 +191,7 @@
             android:layout_marginLeft="15dp"
             android:text="@string/about_us"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
         <ImageView
             android:layout_width="23dp"
@@ -201,20 +199,18 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="@color/color_gary_bck"
-        />
+        android:background="@color/color_gary_bck" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/color_white"
-        >
+        android:background="@color/color_white">
 
         <TextView
             android:layout_width="wrap_content"
@@ -223,7 +219,7 @@
             android:layout_marginLeft="15dp"
             android:text="@string/vibrates_hint"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
         <CheckBox
             android:id="@+id/cb_vibrates"
@@ -232,27 +228,27 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="23dp"
-            android:background="@drawable/check_style"
-            android:button="@null"/>
+            android:background="@drawable/switch_style"
+            android:button="@null" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
         android:background="@color/color_white">
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@color/color_line"
-            />
+            android:background="@color/color_line" />
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/color_white"
-        >
+        android:background="@color/color_white">
 
         <CheckBox
             android:id="@+id/cb_sound"
@@ -261,8 +257,8 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="23dp"
-            android:background="@drawable/check_style"
-            android:button="@null"/>
+            android:background="@drawable/switch_style"
+            android:button="@null" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -272,20 +268,20 @@
             android:layout_marginLeft="13dp"
             android:text="@string/sound_hint"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
         android:background="@color/color_white">
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@color/color_line"
-            />
+            android:background="@color/color_line" />
     </LinearLayout>
 
     <LinearLayout
@@ -300,18 +296,16 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button_red_style"
+            android:background="@drawable/button_blue_style"
             android:text="@string/exit_login"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"
-            />
+            android:textSize="@dimen/normal_font" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/color_white">
-    </View>
+        android:background="@color/color_white"></View>
 
 </LinearLayout>

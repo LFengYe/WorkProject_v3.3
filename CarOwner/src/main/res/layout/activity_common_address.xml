@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color_red"
+    android:background="@color/color_blue"
     android:fitsSystemWindows="true"
     tools:context="cn.com.caronwer.activiBu.CommonAddressActivity">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:background="@color/color_red">
+                    android:background="@color/color_blue">
 
 
         <TextView

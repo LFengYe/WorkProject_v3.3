@@ -12,7 +12,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <cn.guugoo.jiapeistudent.Views.CircleImageView
+        <com.guugoo.jiapeistudent.Views.CircleImageView
             android:id="@+id/my_hand"
             android:layout_width="50dp"
             android:layout_height="50dp"

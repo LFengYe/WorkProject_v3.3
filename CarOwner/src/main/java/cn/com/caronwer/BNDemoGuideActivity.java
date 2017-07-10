@@ -202,7 +202,7 @@ public class BNDemoGuideActivity extends Activity {
 		CustomizedLayerItem item1 = null;
 		if (mBNRoutePlanNode != null) {
 			item1 = new CustomizedLayerItem(mBNRoutePlanNode.getLongitude(), mBNRoutePlanNode.getLatitude(),
-					mBNRoutePlanNode.getCoordinateType(), getResources().getDrawable(R.drawable.ic_launcher),
+					mBNRoutePlanNode.getCoordinateType(), getResources().getDrawable(R.mipmap.ic_launcher),
 					CustomizedLayerItem.ALIGN_CENTER);
 			items.add(item1);
 

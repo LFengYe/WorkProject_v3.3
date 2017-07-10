@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/color_red"
+        android:background="@color/color_blue"
         android:gravity="center"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"

@@ -135,7 +135,7 @@ public class OrderDetailAdapter extends BaseAdapter {
                 holder.itemImg.setImageResource(R.mipmap.start);
             } else if (TextUtils.isEmpty(nextBean.getDischargeTime())) {
                 holder.itemTime.setVisibility(View.VISIBLE);
-                holder.itemImg.setImageResource(R.mipmap.start_red);
+                holder.itemImg.setImageResource(R.mipmap.start_blue);
                 holder.itemLeftBtn.setClickable(false);
                 holder.itemLeftBtn.setBackgroundResource(R.drawable.shape_button2);
             } else {
@@ -156,7 +156,7 @@ public class OrderDetailAdapter extends BaseAdapter {
             if (TextUtils.isEmpty(bean.getDischargeTime())) {
                 holder.itemImg.setImageResource(R.mipmap.pass);
             } else if (TextUtils.isEmpty(nextBean.getDischargeTime())) {
-                holder.itemImg.setImageResource(R.mipmap.pass_red);
+                holder.itemImg.setImageResource(R.mipmap.pass_blue);
             } else {
                 holder.itemImg.setImageResource(R.mipmap.pass_gray);
             }
@@ -176,7 +176,7 @@ public class OrderDetailAdapter extends BaseAdapter {
             } else if (isComment()) {
                 holder.itemImg.setImageResource(R.mipmap.arrive_gray);
             } else {
-                holder.itemImg.setImageResource(R.mipmap.arrive_red);
+                holder.itemImg.setImageResource(R.mipmap.arrive_blue);
             }
         }
 

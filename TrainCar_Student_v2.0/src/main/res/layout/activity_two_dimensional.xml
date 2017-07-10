@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MinorActivity.TwoDimensionalActivity">
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/Erweima_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
 
     <ImageView
         android:id="@+id/Erweima"

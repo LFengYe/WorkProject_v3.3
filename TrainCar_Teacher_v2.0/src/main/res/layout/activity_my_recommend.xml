@@ -64,12 +64,12 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/color_line"/>
-    <cn.guugoo.jiapeiteacher.view.XRecyclerView
+    <com.guugoo.jiapeiteacher.view.XRecyclerView
         android:id="@+id/lv_recommend"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-    </cn.guugoo.jiapeiteacher.view.XRecyclerView>
+    </com.guugoo.jiapeiteacher.view.XRecyclerView>
 
 
 

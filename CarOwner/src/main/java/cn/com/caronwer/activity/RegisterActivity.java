@@ -155,12 +155,17 @@ public class RegisterActivity extends BaseActivity {
             case R.id.iv_login_eye22:
                 if (et_password22.getInputType() != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD){
                     et_password22.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    iv_login_eye22.setImageResource(R.mipmap.login_eye);
+                    iv_login_eye22.setImageResource(R.mipmap.eye_open);
                 }
                 else {
                     et_password22.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    iv_login_eye22.setImageResource(R.mipmap.biyan);
+                    iv_login_eye22.setImageResource(R.mipmap.eye_close);
                 }
+                break;
+            case R.id.register_protocol:
+                Intent intent = new Intent();
+                intent.setClass(this, RegisterProtocolActivity.class);
+                startActivity(intent);
                 break;
             case R.id.iv_close22:
                 finish();

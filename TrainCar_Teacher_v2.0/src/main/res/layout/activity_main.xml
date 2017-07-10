@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/color_White"
     android:orientation="vertical"
-    tools:context="cn.guugoo.jiapeiteacher.activity.MainActivity">
+    tools:context="com.guugoo.jiapeiteacher.activity.MainActivity">
 
 
     <RelativeLayout
@@ -23,7 +23,7 @@
             android:layout_centerVertical="true"
             android:orientation="vertical">
 
-            <cn.guugoo.jiapeiteacher.view.CircleImageView
+            <com.guugoo.jiapeiteacher.view.CircleImageView
                 android:id="@+id/civ_head"
                 android:layout_width="@dimen/iv_main_circle"
                 android:layout_height="@dimen/iv_main_circle"

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal" >
+    android:orientation="horizontal">
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -10,14 +10,14 @@
         android:layout_gravity="center"
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp" >
+        android:paddingTop="10dp">
 
         <ImageView
             android:id="@+id/iv_pull_list_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/common_listview_headview_red_arrow" />
+            android:src="@mipmap/blue_arrow" />
 
         <ProgressBar
             android:id="@+id/pb_pull_list_header"
@@ -33,14 +33,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_pull_list_header_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="下拉刷新"
-            android:textColor="#ff0000"
+            android:textColor="@color/color_blue"
             android:textSize="18sp" />
 
         <TextView

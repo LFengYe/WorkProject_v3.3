@@ -17,7 +17,7 @@
             android:gravity="center"
             >
 
-            <cn.guugoo.jiapeistudent.Views.CircleImageView
+            <com.guugoo.jiapeistudent.Views.CircleImageView
                 android:id="@+id/teacher_hand"
                 android:layout_width="60dp"
                 android:layout_height="60dp"

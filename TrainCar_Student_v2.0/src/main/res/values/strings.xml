@@ -67,7 +67,7 @@
     <string name="reserve_text1">按时间</string>
     <string name="reserve_text2">按教练</string>
     <string name="reserve_text3">按场地</string>
-    <string name="reserve_text4">按场地(离我最近)</string>
+    <string name="reserve_text4">按条件</string>
     <string name="time_fragment_text1">已过期</string>
     <string name="time_fragment_text2">已约满</string>
     <string name="time_fragment_text3">￥%1$.2f\n%2$d位教练</string>

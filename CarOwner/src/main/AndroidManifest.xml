@@ -48,7 +48,7 @@
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
-        android:icon="@drawable/logo"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -77,6 +77,10 @@
         </activity>
         <activity
             android:name=".activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImageTranslucentTheme" />
+        <activity
+            android:name=".activity.RegisterProtocolActivity"
             android:screenOrientation="portrait"
             android:theme="@style/ImageTranslucentTheme" />
         <activity
@@ -208,6 +212,18 @@
             android:name=".activity.MyCarActivity"
             android:screenOrientation="portrait"
             android:theme="@style/RedTranslucentTheme" />
+        <activity
+            android:name=".activity.AuthFirstActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImageTranslucentTheme" />
+        <activity
+            android:name=".activity.AuthThirdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImageTranslucentTheme" />
+        <activity
+            android:name=".activity.AuthSecondActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImageTranslucentTheme" />
         <activity
             android:name=".activity.Login2Activity"
             android:label=""

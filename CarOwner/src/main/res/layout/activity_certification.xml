@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:id="@+id/activity_rebuild_psd"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/color_red"
-              android:fitsSystemWindows="true"
-              android:orientation="vertical"
-              tools:context="cn.com.caronwer.activity.FAQActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_rebuild_psd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gary_bck"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="cn.com.caronwer.activity.FAQActivity">
 
     <include
         android:id="@+id/in_head"
@@ -15,316 +15,376 @@
         android:layout_width="match_parent"
         android:layout_height="55dp" />
 
-    <LinearLayout
-        android:id="@+id/ll_cer2"
-        android:visibility="gone"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#ffffff"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="30dp"
-            android:text="@string/rengzheng_shuoming"
-            android:textSize="13dp"/>
-
-        <include layout="@layout/renzheng_upload"/>
-        <RelativeLayout
+        <LinearLayout
+            android:id="@+id/ll_cer1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
-            <cn.com.caronwer.view.BorderTextView
-                android:id="@+id/bv_queren"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/btv_selector"
-                android:clickable="true"
-                android:padding="10dp"
-                android:text="完成"
-                android:textSize="18sp"
-                android:gravity="center_horizontal"
-                android:layout_centerHorizontal="true"/>
-
-        </RelativeLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_cer1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/white">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="请完成以下信息的认证"
-            android:textColor="@color/product_detail_common"
-            android:textSize="15dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="可获得官方车主认证身份"
-            android:textSize="15dp"
-            android:layout_marginTop="3dp"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="即享抢单优先权！"
-            android:textSize="15dp"
-            android:layout_marginTop="3dp"
-            />
-
-        <cn.com.caronwer.view.InputNameView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="match_parent"
             android:background="@color/white"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:orientation="vertical">
 
-            <RelativeLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="请完成以下信息的认证"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="可获得官方车主认证身份"
+                android:textColor="@color/product_detail_common"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="即享抢单优先权！"
+                android:textColor="@color/product_detail_common"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <TextView
+                        android:id="@+id/iv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/name"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/et_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sex"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/sex_select"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/radio_style"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:text="男"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:button="@drawable/radio_style"
+                            android:gravity="center"
+                            android:text="女"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <include layout="@layout/divide_small" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp">
 
                 <TextView
-                    android:id="@+id/iv_name"
-                    android:layout_width="70dp"
+                    android:id="@+id/iv_cardNo"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
-                    android:text="姓        名"
+                    android:text="@string/cardNo"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
-                    />
-                <!--android:background="@null"设置无下划线
-                            android:cursorVisible="false"
-                   -->
+                    android:textSize="15sp" />
+
                 <EditText
-                    android:id="@+id/et_name"
+                    android:id="@+id/et_cardNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/iv_name"
                     android:background="@null"
-                    android:hint="请输入您的身份证上的姓名"
-                    android:maxLength="11"
-                    android:textColorHint="@color/button_gray"
-                    android:textSize="15dp"
-                    android:maxLines="1"/>
-            </RelativeLayout>
+                    android:textSize="15sp" />
+            </LinearLayout>
 
-            <include layout="@layout/fenge_small"/>
+            <include layout="@layout/divide_small" />
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp">
 
                 <TextView
-                    android:id="@+id/iv_cardid"
-                    android:layout_width="70dp"
+                    android:id="@+id/iv_phone"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
-                    android:text="身份证号"
+                    android:text="@string/phone"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
-                    />
-                <!--android:background="@null"设置无下划线
-                            android:cursorVisible="false"
-                   -->
+                    android:textSize="15sp" />
+
                 <EditText
-                    android:id="@+id/et_cardid"
-                    android:maxLines="1"
+                    android:id="@+id/et_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:hint="请输入您真实的身份证号"
-                    android:maxLength="19"
-                    android:textColorHint="@color/button_gray"
-                    android:textSize="15dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_toRightOf="@id/iv_cardid"/>
-            </RelativeLayout>
+                    android:textSize="15sp" />
+            </LinearLayout>
 
+            <include layout="@layout/divide_small" />
 
-
-            <include layout="@layout/fenge_small"/>
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp">
 
                 <TextView
-                    android:id="@+id/iv_jiasz"
-                    android:layout_width="70dp"
+                    android:id="@+id/iv_drivingLicense"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
-                    android:text="驾驶证号"
+                    android:text="@string/driving_license"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
-                    />
-                <!--android:background="@null"设置无下划线
-                            android:cursorVisible="false"
-                   -->
+                    android:textSize="15sp" />
+
                 <EditText
-                    android:id="@+id/et_jiasz"
-                    android:maxLines="1"
+                    android:id="@+id/et_drivingLicense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/iv_jiasz"
                     android:background="@null"
-                    android:hint="请输入您的驾驶证号"
-                    android:maxLength="19"
-                    android:textColorHint="@color/button_gray"
-                    android:textSize="15dp"/>
-            </RelativeLayout>
+                    android:textSize="15sp" />
+            </LinearLayout>
 
+            <include layout="@layout/divide_small" />
 
-
-            <include layout="@layout/fenge_small"/>
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp">
 
                 <TextView
-                    android:id="@+id/iv_xingsz"
-                    android:layout_width="70dp"
+                    android:id="@+id/iv_road_transport_permit"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
-                    android:text="行驶证号"
+                    android:text="@string/road_transport_permit"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
-                    />
-                <!--android:background="@null"设置无下划线
-                            android:cursorVisible="false"
-                   -->
+                    android:textSize="15sp" />
+
                 <EditText
-                    android:id="@+id/et_xingsz"
-                    android:maxLines="1"
+                    android:id="@+id/et_road_transport_permit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/iv_xingsz"
                     android:background="@null"
-                    android:hint="请输入您的行驶证号"
-                    android:maxLength="19"
-                    android:textColorHint="@color/button_gray"
-                    android:textSize="15dp"/>
-            </RelativeLayout>
+                    android:textSize="15sp" />
+            </LinearLayout>
 
+            <include layout="@layout/divide_small" />
 
-            <include layout="@layout/fenge_small"/>
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp">
 
                 <TextView
-                    android:id="@+id/iv_cheph"
-                    android:layout_width="70dp"
+                    android:id="@+id/iv_carNumber"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
-                    android:text="车牌号"
+                    android:text="@string/car_number"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
-                    />
-                <!--android:background="@null"设置无下划线
-                            android:cursorVisible="false"
-                   -->
+                    android:textSize="15sp" />
+
                 <EditText
-                    android:id="@+id/et_cheph"
-                    android:maxLines="1"
+                    android:id="@+id/et_carNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/iv_cheph"
                     android:background="@null"
-                    android:hint="请输入您的车牌号"
-                    android:maxLength="11"
-                    android:textColorHint="@color/button_gray"
-                    android:textSize="15dp"/>
-            </RelativeLayout>
+                    android:textSize="15sp" />
+            </LinearLayout>
 
+            <include layout="@layout/divide_small" />
 
-            <include layout="@layout/fenge_small"/>
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp">
 
                 <TextView
-                    android:id="@+id/iv_chelx"
+                    android:id="@+id/iv_carType"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
-                    android:text="车辆类型"
+                    android:text="@string/car_type"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
-                    />
-                <!--android:background="@null"设置无下划线
-                            android:cursorVisible="false"
-                   -->
+                    android:textSize="15sp" />
+
                 <Spinner
                     android:id="@+id/ddlCity"
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_toRightOf="@+id/iv_chelx"
-                    android:layout_centerInParent="true"
-                    android:layout_centerVertical="true"
-                    android:textSize="15dp"/>
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp" />
 
-            </RelativeLayout>
+            </LinearLayout>
 
-            <include layout="@layout/fenge_small"/>
+            <include layout="@layout/divide_small" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/iv_vehicle_width"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/vehicle_width"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/et_vehicle_width"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/iv_vehicle_length"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vehicle_length"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/et_vehicle_length"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/iv_vehicle_height"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vehicle_height"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/et_vehicle_height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <include layout="@layout/divide_small" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/iv_carMaxCapacity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/car_max_capacity"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/et_carMaxCapacity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <include layout="@layout/divide_small" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -333,56 +393,88 @@
                 android:layout_marginTop="8dp">
 
                 <TextView
-                    android:id="@+id/iv_gps"
-                    android:layout_width="70dp"
+                    android:id="@+id/iv_urgentContact"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
-                    android:text="GPS编号"
+                    android:text="@string/urgent_contact"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
-                    />
-                <!--android:background="@null"设置无下划线
-                            android:cursorVisible="false"
-                   -->
+                    android:textSize="15sp" />
+
                 <EditText
-                    android:id="@+id/tV_gps"
+                    android:id="@+id/et_urgentContact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/iv_gps"
-                    android:hint="请输入车辆GPS编号"
-                    android:maxLength="11"
-                    android:textColorHint="@color/button_gray"
-                    android:textSize="15dp"
+                    android:layout_toRightOf="@id/iv_urgentContact"
                     android:background="@null"
-                    android:maxLines="1"/>
+                    android:textSize="15sp" />
+
+                <cn.com.caronwer.view.BorderTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btv_selector"
+                    android:clickable="true"
+                    android:padding="3dp"
+                    android:text="@string/get_verify"
+                    android:textSize="15sp" />
             </RelativeLayout>
 
+            <include layout="@layout/divide_small" />
 
-        </cn.com.caronwer.view.InputNameView>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
-            <cn.com.caronwer.view.BorderTextView
-                android:id="@+id/bv_next"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/btv_selector"
-                android:clickable="true"
-                android:padding="10dp"
-                android:text="下一步"
-                android:textSize="18sp"
-                android:gravity="center_horizontal"
-                android:layout_centerHorizontal="true"/>
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
 
-        </RelativeLayout>
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/iv_phoneVerify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/phone_verify"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/et_phoneVerify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <include layout="@layout/divide_small" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <cn.com.caronwer.view.BorderTextView
+                    android:id="@+id/bv_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/btv_selector"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="下一步"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

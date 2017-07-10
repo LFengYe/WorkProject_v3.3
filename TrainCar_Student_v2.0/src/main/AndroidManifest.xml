@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.guugoo.jiapeistudent">
+    package="com.guugoo.jiapeistudent">
 
     <uses-sdk
         android:minSdkVersion="9"
@@ -28,7 +28,7 @@
     <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE"></uses-permission>
     <uses-permission android:name="android.permission.READ_LOGS"/>
     <!-- Required -->
-    <uses-permission android:name="cn.guugoo.jiapeistudent.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="com.guugoo.jiapeistudent.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -41,7 +41,7 @@
 
     <!-- Required -->
     <permission
-        android:name="cn.guugoo.jiapeistudent.permission.JPUSH_MESSAGE"
+        android:name="com.guugoo.jiapeistudent.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
     <application
@@ -98,6 +98,9 @@
         <activity android:name=".MinorActivity.WhereSelectTimeActivity" />
         <activity android:name=".MinorActivity.CoachSelectTimeActivity" />
         <activity android:name=".MinorActivity.NoticeDetailsActivity" />
+        <activity android:name=".MinorActivity.SelectSchoolActivity" />
+        <activity android:name=".MinorActivity.TwoDimensionalActivity"></activity>
+        <activity android:name=".MinorActivity.MapActivity"></activity>
 
         <!--百度地图-->
         <service
@@ -123,9 +126,6 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".MinorActivity.SelectSchoolActivity" />
-        <activity android:name=".MinorActivity.TwoDimensionalActivity"></activity>
-
         <!-- Required SDK 核心功能 -->
         <!-- option since 2.0.5 可配置PushService，DaemonService,PushReceiver,AlarmReceiver的android:process参数 将JPush相关组件设置为一个独立进程 -->
         <!-- 如：android:process=":remote" -->
@@ -150,7 +150,7 @@
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.DaemonService" />
 
-                <category android:name="cn.guugoo.jiapeistudent" />
+                <category android:name="com.guugoo.jiapeistudent" />
             </intent-filter>
         </service>
 
@@ -161,7 +161,7 @@
             <intent-filter android:priority="1000">
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
 
-                <category android:name="cn.guugoo.jiapeistudent" />
+                <category android:name="com.guugoo.jiapeistudent" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT" />
@@ -184,7 +184,7 @@
                 <action android:name="cn.jpush.android.ui.PushActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="cn.guugoo.jiapeistudent" />
+                <category android:name="com.guugoo.jiapeistudent" />
             </intent-filter>
         </activity>
         <!-- Required SDK核心功能 -->
@@ -214,7 +214,7 @@
                 <!-- 接收网络变化 连接/断开 since 1.6.3 -->
                 <action android:name="cn.jpush.android.intent.CONNECTION" />
 
-                <category android:name="cn.guugoo.jiapeistudent" />
+                <category android:name="com.guugoo.jiapeistudent" />
             </intent-filter>
         </receiver>
 
@@ -230,9 +230,8 @@
         <!-- Required. AppKey copied from Portal -->
         <meta-data
             android:name="JPUSH_APPKEY"
-            android:value="d560a6d6a57dfe478185d9db" />
+            android:value="39ede73322178632042f5fd3" />
 
-        <activity android:name=".MinorActivity.MapActivity"></activity>
     </application>
 
 </manifest>

@@ -22,13 +22,13 @@
         android:background="#ffffff"
         android:orientation="vertical"
         android:layout_weight="1">
-        <com.gpw.app.view.XRecyclerView
+        <cn.com.goodsowner.view.XRecyclerView
             android:id="@+id/rv_invoice"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
 
-        </com.gpw.app.view.XRecyclerView>
+        </cn.com.goodsowner.view.XRecyclerView>
 
         <Button
             android:id="@+id/bt_ok"

@@ -8,7 +8,7 @@
     android:background="#6fd7d7d7"
     android:orientation="horizontal">
 
-    <cn.guugoo.jiapeistudent.Views.AVLoadingIndicatorView
+    <com.guugoo.jiapeistudent.Views.AVLoadingIndicatorView
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:indicator_color="#24bc24"

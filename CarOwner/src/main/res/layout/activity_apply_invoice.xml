@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_red"
+    android:background="@color/color_blue"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="cn.com.caronwer.activity.ApplyInvoiceActivity">
@@ -131,7 +131,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button_red_style"
+            android:background="@drawable/button_blue_style"
             android:text="提交"
             android:textColor="#4d4d4d"
             android:textSize="17sp" />

@@ -5,7 +5,7 @@
         name="RedTranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowTranslucentNavigation">false</item>
-        <item name="android:statusBarColor">#FF4900</item>
+        <item name="android:statusBarColor">@color/color_blue</item>
     </style>
 
 

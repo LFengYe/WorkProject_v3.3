@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context="cn.guugoo.jiapeistudent.MinorActivity.CommentActivity">
+    tools:context="com.guugoo.jiapeistudent.MinorActivity.CommentActivity">
 
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/comment_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
 
 
     <LinearLayout

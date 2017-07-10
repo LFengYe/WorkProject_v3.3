@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">货管家</string>
+    <string name="app_name">华中承运</string>
     <string name="login">登录</string>
     <string name="hint_input_psd">请输入密码</string>
     <string name="hint_input_account">请输入手机号</string>
     <string name="forget_psd">忘记密码</string>
     <string name="register">注册</string>
+    <string name="register_and_agree">同意用户注册协议并注册</string>
+    <string name="register_protocol">《用户注册协议》</string>
+    <string name="register_protocol_title">用户注册协议</string>
     <string name="hint_validate_code">请输入验证码</string>
     <string name="get_validate_code">获取验证码</string>
     <string name="hint_set_psd">请设置登录密码</string>
@@ -20,6 +23,7 @@
     <string name="transport_volume">运输体积:%1$fm³</string>
     <string name="rebuild_psd">重设密码</string>
     <string name="ok">确定</string>
+    <string name="cancel">取消</string>
     <string name="account_management">账户管理</string>
     <string name="fee_scale">收费标准</string>
     <string name="faq">常见问题</string>
@@ -36,6 +40,32 @@
     <string name="tel">电话</string>
     <string name="sex">性别</string>
     <string name="name">姓名</string>
+    <string name="name_hint">请输入您身份证上的姓名</string>
+    <string name="cardNo">身份证号</string>
+    <string name="cardNo_hint">请输入您真实的身份证号</string>
+    <string name="phone">手机号码</string>
+    <string name="phone_hint">请输入您的手机号</string>
+    <string name="driving_license">驾驶证号</string>
+    <string name="driving_license_hint">请输入您的驾驶证号</string>
+    <string name="road_transport_permit">道路运输许可证字号</string>
+    <string name="road_transport_permit_hint">请输入您的道路运输许可证字号</string>
+    <string name="car_number">车牌号码</string>
+    <string name="car_number_hint">请输入您的车牌号码</string>
+    <string name="car_type">车型</string>
+    <string name="vehicle_width">车宽(cm)</string>
+    <string name="vehicle_length">车长(cm)</string>
+    <string name="vehicle_height">车高(cm)</string>
+    <string name="car_max_capacity">车辆最大承载力</string>
+    <string name="urgent_contact">紧急联系人号码</string>
+    <string name="phone_verify">输入短信验证码</string>
+    <string name="get_verify">获取验证码</string>
+    <string name="upload_card_no_photo">上传身份证照片</string>
+    <string name="upload_driving_license_photo">上传驾驶证照片</string>
+    <string name="upload_car_head_photo">上传车头照片</string>
+    <string name="upload_car_tail_photo">上传车尾照片</string>
+    <string name="upload_car_left_photo">上传车身左侧照片</string>
+    <string name="upload_car_right_photo">上传车身右侧照片</string>
+
     <string name="head">头像</string>
     <string name="myOrder">我的订单</string>
     <string name="myWallet">我的钱包</string>
@@ -89,10 +119,13 @@
     <string name="query">询价</string>
     <string name="youCan">您也可以</string>
     <string name="hint_remark">请输入留言</string>
-    <string name="rengzheng_shuoming">为保障市场秩序和您的出行安全，请务必填写和上传本人的身份证及驾驶证资料，驾驶证同时会作为实名信息进行验证；同时上传行驶证和实际使用的车辆一致。</string>
+    <string name="verify_hint">为保障市场秩序和您的出行安全，请务必填写和上传本人的身份证及驾驶证资料，驾驶证同时会作为实名信息进行验证；同时上传行驶证和实际使用的车辆一致。</string>
+    <string name="cash_deposit_hint">此保证金为车主认证之必备条件，交由平台保管，司机接单后应正常完成该订单，若未按约定完成或存在违约现象时由平台直接从保证金中扣除违约金，当保证金不满300元时无法接单。</string>
 
     <string name="app_id">输入您讯飞的appid</string>
-    <string name="guanzhudingdan">关注订单</string>
+    <string name="concern_order">关注订单</string>
+    <string name="my_order">我的订单</string>
+    <string name="my_info">个人中心</string>
     <string name="xiuxi">休息中          </string>
 
     <!--订单详情-->
@@ -125,5 +158,4 @@
     <string name="money_0_yuan">￥00.00元</string>
     <string name="payment_fee">贷款金额</string>
     <string name="surcharge_fee">回单费用</string>
-
 </resources>

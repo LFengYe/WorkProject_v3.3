@@ -261,7 +261,7 @@ public class WithdrawActivity extends BaseActivity {
             }
         });
         //如果不设置PopupWindow的背景，无论是点击外部区域还是Back键都无法dismiss弹框
-        popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.white));
+        popupWindow.setBackgroundDrawable(getResources().getDrawable(R.mipmap.white));
         // 设置好参数之后再show
         popupWindow.showAsDropDown(view, 0, 0);
         popupWindow.setAnimationStyle(R.style.AnimationFade);

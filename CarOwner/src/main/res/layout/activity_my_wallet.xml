@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color_red"
+    android:background="@color/color_blue"
     android:fitsSystemWindows="true"
     tools:context="cn.com.caronwer.activity.MyWalletActivity">
 
@@ -27,7 +27,8 @@
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:src="@mipmap/wallet"/>
+            android:src="@mipmap/my_wallet"/>
+
         <TextView
             android:id="@+id/tv_balance"
             android:layout_width="wrap_content"
@@ -46,7 +47,7 @@
             android:layout_below="@+id/tv_balance"
             android:layout_marginTop="10dp"
             android:text="¥00.00"
-            android:textColor="@color/color_red"
+            android:textColor="@color/color_blue"
             android:textSize="24sp"/>
         <Button
             android:id="@+id/bt_recharge"
@@ -57,7 +58,7 @@
             android:layout_marginRight="10dp"
             android:textSize="18sp"
             android:textColor="#4d4d4d"
-            android:background="@drawable/button_red_style"
+            android:background="@drawable/button_blue_style"
             android:text="提现"
             android:layout_below="@+id/tv_balance_money"/>
 
@@ -70,7 +71,7 @@
             android:layout_marginRight="10dp"
             android:textSize="18sp"
             android:textColor="#4d4d4d"
-            android:background="@drawable/button_red_style"
+            android:background="@drawable/button_blue_style"
             android:text="收支明细"
             android:layout_below="@+id/bt_recharge"/>
 

@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="horizontal"
-              android:paddingLeft="15dp"
-              android:paddingTop="10dp"
-              android:paddingBottom="10dp"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingLeft="15dp"
+    android:paddingTop="10dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color_red"
-            android:textSize="@dimen/normal_font"
-            android:src="@mipmap/arrive"
-            />
-        <TextView
-            android:id="@+id/tv_arrive"
-            android:layout_marginLeft="7dp"
-            android:paddingRight="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/normal_font"
-            android:text="天虹商场西丽店"
-            />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/arrive"
+        android:textColor="@color/color_blue"
+        android:textSize="@dimen/normal_font" />
+
+    <TextView
+        android:id="@+id/tv_arrive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:paddingRight="20dp"
+        android:text="天虹商场西丽店"
+        android:textSize="@dimen/normal_font" />
 
 </LinearLayout>

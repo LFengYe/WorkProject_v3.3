@@ -70,7 +70,7 @@ public class OrderAddressAdapter extends RecyclerView.Adapter<OrderAddressAdapte
 
 
         if (orderAddressInfo.getAction() == 1) {
-            viewHolder.iv_action.setImageResource(R.mipmap.add);
+            viewHolder.iv_action.setImageResource(R.mipmap.add_blue);
             viewHolder.iv_action.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

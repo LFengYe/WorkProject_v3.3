@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_personal_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_red"
+    android:background="@color/color_blue"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="cn.com.caronwer.activity.PersonalInfoActivity">
@@ -14,7 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:background="@color/color_red">
+        android:background="@color/color_blue">
 
         <ImageView
             android:id="@+id/iv_left_white"
@@ -22,7 +21,7 @@
             android:layout_height="21dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="13dp"
-            android:src="@mipmap/left_white"/>
+            android:src="@mipmap/left_white" />
 
         <cn.com.caronwer.view.CircleImageView
             android:id="@+id/civ_head"
@@ -32,8 +31,7 @@
             android:layout_marginTop="10dp"
             android:src="@mipmap/ic_launcher"
             app:border_color="@android:color/transparent"
-            app:border_width="1dp"
-            />
+            app:border_width="1dp" />
 
         <TextView
             android:id="@+id/tv_tel"
@@ -42,50 +40,46 @@
             android:layout_below="@id/civ_head"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
-            android:textSize="@dimen/small_font"
             android:textColor="@color/color_white"
-            />
+            android:textSize="@dimen/small_font" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_below="@+id/tv_tel"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/small_font"
                 android:layout_marginTop="4dp"
                 android:textColor="@color/color_white"
-                />
+                android:textSize="@dimen/small_font" />
+
             <TextView
                 android:id="@+id/tv_rz"
-                android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/small_font"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="4dp"
-                android:textColor="@color/white"
                 android:text="通过认证"
-                />
+                android:textColor="@color/white"
+                android:textSize="@dimen/small_font" />
         </LinearLayout>
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="@color/color_gary_bck"
-        />
+        android:background="@color/color_gary_bck" />
 
     <RelativeLayout
         android:id="@+id/rl_head"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,7 +88,7 @@
             android:layout_marginLeft="15dp"
             android:text="@string/head"
             android:textColor="#2d2d2d"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
 
         <cn.com.caronwer.view.CircleImageView
@@ -106,8 +100,7 @@
             android:layout_toLeftOf="@+id/iv_right"
             android:src="@mipmap/ic_launcher"
             app:border_color="@color/white"
-            app:border_width="1dp"
-            />
+            app:border_width="1dp" />
 
         <ImageView
             android:id="@+id/iv_right"
@@ -116,21 +109,19 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
-        android:background="@color/color_line"
-        />
+        android:background="@color/color_line" />
 
     <RelativeLayout
         android:id="@+id/rl_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <TextView
             android:layout_width="wrap_content"
@@ -139,16 +130,16 @@
             android:layout_marginLeft="15dp"
             android:text="@string/name"
             android:textColor="#2d2d2d"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
         <TextView
             android:id="@+id/tv_name1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/iv_right1"
             android:layout_marginRight="5dp"
-            android:textSize="@dimen/normal_font"/>
+            android:layout_toLeftOf="@+id/iv_right1"
+            android:textSize="@dimen/normal_font" />
 
         <ImageView
             android:id="@+id/iv_right1"
@@ -157,21 +148,19 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
-        android:background="@color/color_line"
-        />
+        android:background="@color/color_line" />
 
     <RelativeLayout
         android:id="@+id/rl_sex"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <TextView
             android:layout_width="wrap_content"
@@ -190,69 +179,65 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
 
         <TextView
             android:id="@+id/tv_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/normal_font"
             android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
-            android:layout_toLeftOf="@+id/iv_right2" />
+            android:layout_toLeftOf="@+id/iv_right2"
+            android:textSize="@dimen/normal_font" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
-        android:background="@color/color_line"
-        />
+        android:background="@color/color_line" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/color_white"
-        >
+        android:background="@color/color_white">
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:text="手机号"
             android:textColor="#2d2d2d"
-            android:textSize="@dimen/normal_font"
-            android:id="@+id/textView2"/>
+            android:textSize="@dimen/normal_font" />
 
         <TextView
             android:id="@+id/tv_tel1"
-            android:text="1811111111"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/normal_font"
-            android:layout_marginRight="23dp"
             android:layout_alignBaseline="@+id/textView2"
             android:layout_alignBottom="@+id/textView2"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="23dp"/>
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
+            android:text="1811111111"
+            android:textSize="@dimen/normal_font" />
     </RelativeLayout>
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
-        android:background="@color/color_line"
-        />
+        android:background="@color/color_line" />
 
     <RelativeLayout
 
-        android:visibility="gone"
+        android:id="@+id/rl_cl"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/rl_cl"
         android:background="@drawable/layout_click_style"
-        >
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -261,29 +246,28 @@
             android:layout_marginLeft="15dp"
             android:text="车辆信息"
             android:textColor="#2d2d2d"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
         <TextView
             android:id="@+id/tv_clxx"
-            android:text="1811111111"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/normal_font"
-            android:layout_marginRight="23dp"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            android:layout_marginEnd="23dp"/>
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
+            android:text="1811111111"
+            android:textSize="@dimen/normal_font" />
     </RelativeLayout>
 
     <RelativeLayout
 
-        android:visibility="gone"
         android:id="@+id/rl_address"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/layout_click_style"
-        >
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -292,7 +276,7 @@
             android:layout_marginLeft="15dp"
             android:text="银行账户"
             android:textColor="#2d2d2d"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
         <ImageView
             android:id="@+id/iv_right3"
@@ -301,23 +285,22 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
 
         <TextView
             android:id="@+id/tv_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/normal_font"
             android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
-            android:layout_toLeftOf="@+id/iv_right3" />
+            android:layout_toLeftOf="@+id/iv_right3"
+            android:textSize="@dimen/normal_font" />
     </RelativeLayout>
-
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/color_white"/>
+        android:background="@color/color_white" />
 </LinearLayout>

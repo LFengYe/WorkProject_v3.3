@@ -8,7 +8,7 @@
     <color name="transparence">#33d2d2d2</color>
 
     <!--<color name="color_red">#ff2500</color>-->
-    <color name="color_red">#FF4900</color>
+    <color name="color_blue">#00a2e3</color>
 
 
     <color name="color_white">#ffffff</color>
@@ -24,7 +24,7 @@
     <color name="back_white">#ffffff</color>
     <color name="back_orange">#F37843</color>
     <color name="swtch_button">#Ff6a4a</color>
-    <color name="back_top">#FF4900</color>
+    <color name="back_top">#00a2e3</color>
     <color name="back_top2">#FFFF4900</color>
 
     <color name="btn_gray">#929292</color>
@@ -77,8 +77,8 @@
 
     <color name="pay_name">#666666</color>
     <color name="divider">#cccccc</color>
-    <color name="lightblack">#202020</color>
-    <color name="ligh">#606060</color>
+    <color name="light_black">#202020</color>
+    <color name="light">#606060</color>
 
     <color name="text_333333">#333333</color>
     <color name="text_666666">#666666</color>

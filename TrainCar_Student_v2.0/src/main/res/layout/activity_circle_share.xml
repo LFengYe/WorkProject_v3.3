@@ -7,12 +7,12 @@
     android:background="@color/space"
     tools:context=".MainActivity.CircleShareActivity">
 
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/circle_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
 
 
     <ListView
@@ -37,7 +37,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <cn.guugoo.jiapeistudent.Views.PullToRefreshLayout
+        <com.guugoo.jiapeistudent.Views.PullToRefreshLayout
             android:id="@+id/circle_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -45,14 +45,14 @@
             <include layout="@layout/view_refresh_head" />
             <!-- 支持所有实现Pullable接口的View -->
 
-            <cn.guugoo.jiapeistudent.Views.PullableListView
+            <com.guugoo.jiapeistudent.Views.PullableListView
                 android:id="@+id/circle_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/white"
                 android:divider="@color/view_line"
                 android:dividerHeight="1dp" />
-        </cn.guugoo.jiapeistudent.Views.PullToRefreshLayout>
+        </com.guugoo.jiapeistudent.Views.PullToRefreshLayout>
 
 
     </LinearLayout>

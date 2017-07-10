@@ -81,6 +81,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
     private TextView tv_car_1;
     private TextView tv_tel;
     private TextView tv_myOrder;
+    private TextView tv_myInfo;
     private TextView tv_myWallet;
     private TextView tv_news;
     private TextView tv_news_num;
@@ -125,7 +126,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
     private SharedPreferences prefs;
     private String password;
     private String account;
-    private ImageView mIv_root;
+    //private ImageView mIv_root;
     private RelativeLayout mRl_xiuxi;
     private LinearLayout mLl_main;
     private MyDialog endDialog;
@@ -149,6 +150,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
         icv_banner = (ImageCycleView) findViewById(R.id.icv_banner);
         tv_tel = (TextView) findViewById(R.id.tv_tel);
         tv_myOrder = (TextView) findViewById(R.id.tv_myOrder);
+        tv_myInfo = (TextView) findViewById(R.id.tv_myInfo);
         tv_myWallet = (TextView) findViewById(R.id.tv_myWallet);
         tv_news = (TextView) findViewById(R.id.tv_news);
         tv_news_num = (TextView) findViewById(R.id.tv_news_num);
@@ -167,7 +169,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
 
         mRv_order = (XRecyclerView) findViewById(R.id.rv_order);
 
-        mIv_root = (ImageView) findViewById(R.id.iv_root);
+        //mIv_root = (ImageView) findViewById(R.id.iv_root);
 
         mRl_xiuxi = (RelativeLayout) findViewById(R.id.rl_xiuxi);
         mLl_main = (LinearLayout) findViewById(R.id.ll_main);
@@ -336,6 +338,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
         iv_cir_head.setOnClickListener(this);
         tv_tel.setOnClickListener(this);
         tv_myOrder.setOnClickListener(this);
+        tv_myInfo.setOnClickListener(this);
         tv_myWallet.setOnClickListener(this);
         tv_news.setOnClickListener(this);
         tv_benefit_activity.setOnClickListener(this);
@@ -674,6 +677,11 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
                     intent.putExtra("selectNo", "1");
                     startActivity(intent);
                     break;
+                case R.id.tv_myInfo:
+                    intent = new Intent(MainActivity.this, PersonalInfoActivity.class);
+                    intent.putExtra("userInfo", userInfo);
+                    startActivityForResult(intent, 3);
+                    break;
                 case R.id.tv_myWallet://我的钱包-
                     intent = new Intent(MainActivity.this, MyWalletActivity.class);
                     startActivity(intent);
@@ -702,7 +710,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
                     if (mTv_rz.getText().equals("通过认证")) {
                         Toast.makeText(this, "用户已认证", Toast.LENGTH_SHORT).show();
                     } else {
-                        intent = new Intent(MainActivity.this, CertificationActivity.class);
+                        intent = new Intent(MainActivity.this, AuthFirstActivity.class);
                         startActivity(intent);
                     }
                     break;
@@ -787,7 +795,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
         }
         if (requestCode == 9) {
             getOrders(CurrentPage, 0);
-            mIv_root.setVisibility(View.GONE);
+            //mIv_root.setVisibility(View.GONE);
         }
         if (requestCode == 10) {
             newsSize = nSize;

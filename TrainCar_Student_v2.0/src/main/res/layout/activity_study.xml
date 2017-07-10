@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.guugoo.jiapeistudent.MainActivity.StudyActivity">
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    tools:context="com.guugoo.jiapeistudent.MainActivity.StudyActivity">
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/study_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
     <WebView
         android:id="@+id/web_view"
         android:layout_width="match_parent"

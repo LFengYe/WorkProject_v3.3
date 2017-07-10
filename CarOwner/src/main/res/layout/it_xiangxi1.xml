@@ -149,7 +149,7 @@
                     android:layout_height="20dp"
                     android:layout_gravity="center_vertical"
                     android:padding="2dp"
-                    android:src="@mipmap/comment_red"
+                    android:src="@mipmap/comment_blue"
                     android:visibility="gone" />
 
             </cn.com.caronwer.view.WarpLinearLayout>

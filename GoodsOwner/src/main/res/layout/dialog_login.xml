@@ -133,6 +133,9 @@
             android:textSize="@dimen/normal_font"
             android:layout_below="@+id/bt_login"
             android:layout_marginLeft="22dp"/>
+
+
+
     </RelativeLayout>
 
 </RelativeLayout>

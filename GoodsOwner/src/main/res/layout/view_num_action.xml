@@ -13,7 +13,7 @@
         android:gravity="center"
         android:text="13"
         android:textStyle="bold"
-        android:textColor="#cfcfcf"
+        android:textColor="#ffffff"
         android:textSize="12sp"/>
 
 

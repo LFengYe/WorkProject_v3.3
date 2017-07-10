@@ -7,7 +7,7 @@
               android:background="#6fd7d7d7"
               android:orientation="horizontal">
 
-    <cn.guugoo.jiapeiteacher.view.AVLoadingIndicatorView
+    <com.guugoo.jiapeiteacher.view.AVLoadingIndicatorView
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:indicator_color="@color/color_Blue"

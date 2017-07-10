@@ -7,7 +7,7 @@
     android:background="@color/color_red"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.gpw.app.activity.OrderReceiptDetailActivity">
+    tools:context=".activity.OrderReceiptDetailActivity">
 
     <include
         android:id="@+id/in_head"
@@ -38,11 +38,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@mipmap/start" />
+
 
                     <ImageView
                         android:layout_width="20dp"
@@ -58,7 +54,12 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="12dp"
                         android:background="@color/color_line" />
-
+                    <ImageView
+                        android:id="@+id/iv_start"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@mipmap/start" />
                 </RelativeLayout>
 
 
@@ -87,7 +88,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="货主已发货，正在路上" />
+                                android:text="到达起点，装货发车" />
 
                             <TextView
                                 android:id="@+id/tv_time"
@@ -145,7 +146,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="10dp"
-                                android:background="@drawable/button_gray_bg"
+                                android:background="@drawable/button_red_bg"
                                 android:text="车辆定位"
                                 android:textColor="@color/color_white"
                                 android:textSize="13sp" />
@@ -180,7 +181,7 @@
                     android:layout_weight="1">
 
                     <ImageView
-
+                        android:id="@+id/iv_arrive"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_centerHorizontal="true"
@@ -215,7 +216,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="货物已到达，请查收" />
+                                android:text="到达终点，已卸货" />
 
                             <TextView
                                 android:id="@+id/tv_time1"
@@ -273,7 +274,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="10dp"
-                                android:background="@drawable/button_gray_bg"
+                                android:background="@drawable/button_red_bg"
                                 android:text="支付"
                                 android:textColor="@color/color_white"
                                 android:textSize="13sp" />

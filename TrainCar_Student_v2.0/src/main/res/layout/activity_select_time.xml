@@ -7,11 +7,11 @@
     android:background="@color/white"
     tools:context=".MinorActivity.SelectTimeActivity">
 
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/select_time_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
 
     <ScrollView
         android:layout_width="match_parent"

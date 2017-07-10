@@ -16,7 +16,7 @@
             android:layout_weight="1.5"
             android:gravity="center"
             >
-            <cn.guugoo.jiapeistudent.Views.CircleImageView
+            <com.guugoo.jiapeistudent.Views.CircleImageView
                 android:id="@+id/iv_recommend"
                 android:layout_width="45dp"
                 android:layout_height="45dp"

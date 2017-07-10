@@ -109,7 +109,7 @@ public class MyCarActivity extends BaseActivity {
                 mTv_username.setText(mMycar.getName());
 
                 HttpUtil.setImageLoader(Contants.imagehost + mMycar.getImages(),
-                        mIv_car, R.drawable.che, R.drawable.che);
+                        mIv_car, R.mipmap.che, R.mipmap.che);
 
             }
 

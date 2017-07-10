@@ -6,13 +6,13 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".MinorActivity.ReserveDetailsActivity">
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/reserve_details_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
 
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
 
 
     <LinearLayout

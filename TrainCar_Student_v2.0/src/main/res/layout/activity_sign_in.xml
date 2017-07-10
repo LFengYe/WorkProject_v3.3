@@ -4,15 +4,15 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cn.guugoo.jiapeistudent.MainActivity.SignInActivity"
+    tools:context="com.guugoo.jiapeistudent.MainActivity.SignInActivity"
     android:fitsSystemWindows="true"
     >
 
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/sign_in_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
 
 
     <LinearLayout

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_rebuild_psd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_red"
+    android:background="@color/color_blue"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="cn.com.caronwer.activiBu.ConfirmOrderActivity">
@@ -14,7 +13,7 @@
         android:id="@+id/in_head"
         layout="@layout/action_head"
         android:layout_width="match_parent"
-        android:layout_height="55dp"/>
+        android:layout_height="55dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,8 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="¥82"
-            android:textColor="@color/color_red"
-            android:textSize="24sp"/>
+            android:textColor="@color/color_blue"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView"
@@ -40,8 +39,8 @@
             android:layout_marginBottom="2dp"
             android:layout_toRightOf="@+id/tv_money"
             android:text="@string/yuan"
-            android:textColor="@color/color_red"
-            android:textSize="17sp"/>
+            android:textColor="@color/color_blue"
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/tv_money_detail"
@@ -52,14 +51,14 @@
 
             android:layout_toRightOf="@+id/textView"
             android:text="@string/money_detail"
-            android:textColor="@color/color_red"
-            android:textSize="15sp"/>
+            android:textColor="@color/color_blue"
+            android:textSize="15sp" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.7dp"
-        android:background="@color/color_line"/>
+        android:background="@color/color_line" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -73,9 +72,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="即"
-            android:textColor="@color/color_red"
-
-            android:textSize="@dimen/normal_font"/>
+            android:textColor="@color/color_blue"
+            android:textSize="@dimen/normal_font" />
 
         <TextView
             android:id="@+id/tv_time"
@@ -83,8 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:text="2016-10-10 10:30"
-            android:textSize="@dimen/normal_font"
-            />
+            android:textSize="@dimen/normal_font" />
 
     </LinearLayout>
 
@@ -100,8 +97,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/start"
-            android:textColor="@color/color_red"
-            android:textSize="@dimen/normal_font"/>
+            android:textColor="@color/color_blue"
+            android:textSize="@dimen/normal_font" />
 
         <TextView
             android:id="@+id/tv_start"
@@ -110,8 +107,7 @@
             android:layout_marginLeft="7dp"
             android:paddingRight="20dp"
             android:text="天虹商场西丽店"
-            android:textSize="@dimen/normal_font"
-            />
+            android:textSize="@dimen/normal_font" />
 
     </LinearLayout>
 
@@ -129,9 +125,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/arrive"
-            android:textColor="@color/color_red"
-            android:textSize="@dimen/normal_font"
-            />
+            android:textColor="@color/color_blue"
+            android:textSize="@dimen/normal_font" />
 
         <TextView
             android:id="@+id/tv_arrive"
@@ -140,27 +135,25 @@
             android:layout_marginLeft="7dp"
             android:paddingRight="20dp"
             android:text="天虹商场西丽店"
-            android:textSize="@dimen/normal_font"
-            />
+            android:textSize="@dimen/normal_font" />
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.7dp"
-        android:background="@color/color_line"/>
+        android:background="@color/color_line" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="@color/color_gary_bck"/>
+        android:background="@color/color_gary_bck" />
 
     <RelativeLayout
         android:id="@+id/rl_wallet"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <ImageView
             android:id="@+id/iv_wallet"
@@ -169,8 +162,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:src="@mipmap/my_wallet"
-            android:textSize="@dimen/normal_font"
-            />
+            android:textSize="@dimen/normal_font" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -178,14 +170,13 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/iv_wallet"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/myWallet"
-                android:textColor="#4b4b4b"/>
+                android:textColor="#4b4b4b" />
 
             <TextView
                 android:id="@+id/tv_balance"
@@ -193,7 +184,7 @@
                 android:layout_height="wrap_content"
                 android:text="可用余额22元"
                 android:textColor="#4b4b4b"
-                android:textSize="@dimen/smallest_font"/>
+                android:textSize="@dimen/smallest_font" />
         </LinearLayout>
 
         <CheckBox
@@ -204,7 +195,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="25dp"
             android:background="@drawable/radio_style"
-            android:button="@null"/>
+            android:button="@null" />
     </RelativeLayout>
 
     <View
@@ -212,15 +203,13 @@
         android:layout_height="0.6dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/color_line"
-        />
+        android:background="@color/color_line" />
 
     <RelativeLayout
         android:id="@+id/rl_wechat"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <ImageView
             android:id="@+id/iv_wechat"
@@ -229,8 +218,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:src="@mipmap/wechat"
-            android:textSize="@dimen/normal_font"
-            />
+            android:textSize="@dimen/normal_font" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -238,21 +226,20 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/iv_wechat"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/wechat_pay"
-                android:textColor="#4b4b4b"/>
+                android:textColor="#4b4b4b" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/wechat_hint"
                 android:textColor="#4b4b4b"
-                android:textSize="@dimen/smallest_font"/>
+                android:textSize="@dimen/smallest_font" />
         </LinearLayout>
 
         <CheckBox
@@ -263,7 +250,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="25dp"
             android:background="@drawable/radio_style"
-            android:button="@null"/>
+            android:button="@null" />
     </RelativeLayout>
 
     <View
@@ -271,15 +258,13 @@
         android:layout_height="0.6dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/color_line"
-        />
+        android:background="@color/color_line" />
 
     <RelativeLayout
         android:id="@+id/rl_alipay"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <ImageView
             android:id="@+id/iv_alipay"
@@ -288,8 +273,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:src="@mipmap/alipay"
-            android:textSize="@dimen/normal_font"
-            />
+            android:textSize="@dimen/normal_font" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -297,21 +281,20 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/iv_alipay"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/alipay"
-                android:textColor="#4b4b4b"/>
+                android:textColor="#4b4b4b" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/alipay_hint"
                 android:textColor="#4b4b4b"
-                android:textSize="@dimen/smallest_font"/>
+                android:textSize="@dimen/smallest_font" />
         </LinearLayout>
 
         <CheckBox
@@ -322,7 +305,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="25dp"
             android:background="@drawable/radio_style"
-            android:button="@null"/>
+            android:button="@null" />
     </RelativeLayout>
 
     <View
@@ -330,15 +313,13 @@
         android:layout_height="0.6dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@color/color_line"
-        />
+        android:background="@color/color_line" />
 
     <RelativeLayout
         android:id="@+id/rl_card"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <ImageView
             android:id="@+id/iv_card"
@@ -347,8 +328,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:src="@mipmap/card"
-            android:textSize="@dimen/normal_font"
-            />
+            android:textSize="@dimen/normal_font" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -358,8 +338,7 @@
             android:layout_toRightOf="@+id/iv_card"
             android:orientation="vertical"
             android:text="@string/card_pay"
-            android:textColor="#4b4b4b"
-            />
+            android:textColor="#4b4b4b" />
 
 
         <CheckBox
@@ -370,14 +349,13 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="25dp"
             android:background="@drawable/radio_style"
-            android:button="@null"/>
+            android:button="@null" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
-        android:background="@color/color_line"
-        />
+        android:background="@color/color_line" />
 
 
     <LinearLayout
@@ -393,10 +371,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button_red_style"
+            android:background="@drawable/button_blue_style"
             android:text="@string/ok"
             android:textColor="@color/color_gary_font"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
     </LinearLayout>
 </LinearLayout>

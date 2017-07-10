@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_rebuild_psd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_red"
+    android:background="@color/color_blue"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".activity.MoneyDetailActivity">
@@ -14,7 +13,7 @@
         android:id="@+id/in_head"
         layout="@layout/action_head"
         android:layout_width="match_parent"
-        android:layout_height="55dp"/>
+        android:layout_height="55dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,22 +34,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/freight"/>
+                android:text="@string/freight" />
 
             <TextView
+                android:id="@+id/textView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:maxLines="1"
-                android:text="@string/hint_money_detail"
-                android:id="@+id/textView2" />
+                android:text="@string/hint_money_detail" />
 
             <TextView
                 android:id="@+id/tv_freight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/money_0_yuan"
-                />
+                android:text="@string/money_0_yuan" />
         </LinearLayout>
 
         <LinearLayout
@@ -58,13 +56,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:visibility="gone"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/surcharge_fee"/>
+                android:text="@string/surcharge_fee" />
 
             <TextView
                 android:layout_width="0dp"
@@ -72,13 +70,13 @@
                 android:layout_weight="1"
                 android:maxLines="1"
                 android:text="@string/hint_money_detail" />
-s
+            s
+
             <TextView
                 android:id="@+id/tv_surcharge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/money_0_yuan"
-                />
+                android:text="@string/money_0_yuan" />
         </LinearLayout>
 
 
@@ -92,29 +90,28 @@ s
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/premiums"/>
+                android:text="@string/premiums" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="@string/protect"
-                android:textColor="@color/color_red"
-                android:textSize="@dimen/small_font"/>
+                android:textColor="@color/color_blue"
+                android:textSize="@dimen/small_font" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:maxLines="1"
-                android:text="@string/hint_money_detail"/>
+                android:text="@string/hint_money_detail" />
 
             <TextView
                 android:id="@+id/tv_premiums"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/money_0_yuan"
-                />
+                android:text="@string/money_0_yuan" />
 
 
         </LinearLayout>
@@ -124,13 +121,13 @@ s
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:visibility="gone"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/payment_fee"/>
+                android:text="@string/payment_fee" />
 
             <TextView
 
@@ -138,14 +135,13 @@ s
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:maxLines="1"
-                android:text="@string/hint_money_detail"/>
+                android:text="@string/hint_money_detail" />
 
             <TextView
                 android:id="@+id/tv_Payment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/money_0_yuan"
-                />
+                android:text="@string/money_0_yuan" />
         </LinearLayout>
 
 
@@ -163,24 +159,25 @@ s
             android:layout_height="0.6dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@color/color_line"/>
+            android:background="@color/color_line" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/allMoney"/>
+                android:text="@string/allMoney" />
+
             <TextView
                 android:id="@+id/tv_total_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
-                />
+                android:layout_marginRight="20dp" />
 
         </RelativeLayout>
 

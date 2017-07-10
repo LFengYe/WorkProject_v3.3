@@ -1,18 +1,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#ffffff"
-              android:orientation="vertical"
-              tools:context=".fragment.DescriptionFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".fragment.DescriptionFragment">
 
 
     <RelativeLayout
         android:id="@+id/rl_volume"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <TextView
             android:layout_width="wrap_content"
@@ -21,7 +20,7 @@
             android:layout_marginLeft="15dp"
             android:text="@string/volume"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
         <ImageView
             android:layout_width="23dp"
@@ -29,7 +28,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
     </RelativeLayout>
 
     <View
@@ -37,15 +36,13 @@
         android:layout_height="0.6dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@color/color_line"
-        />
+        android:background="@color/color_line" />
 
     <RelativeLayout
         android:id="@+id/rl_kg"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,7 +51,7 @@
             android:layout_marginLeft="15dp"
             android:text="@string/kg"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
         <ImageView
             android:layout_width="23dp"
@@ -62,7 +59,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
     </RelativeLayout>
 
     <View
@@ -70,15 +67,13 @@
         android:layout_height="0.6dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@color/color_line"
-        />
+        android:background="@color/color_line" />
 
     <RelativeLayout
         android:id="@+id/rl_amount"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/layout_click_style"
-        >
+        android:background="@drawable/layout_click_style">
 
         <TextView
             android:layout_width="wrap_content"
@@ -87,7 +82,7 @@
             android:layout_marginLeft="15dp"
             android:text="@string/amount"
             android:textColor="@color/color_gary_font"
-            android:textSize="@dimen/normal_font"/>
+            android:textSize="@dimen/normal_font" />
 
         <ImageView
             android:layout_width="23dp"
@@ -95,7 +90,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:src="@mipmap/right_gray"/>
+            android:src="@mipmap/right_gray" />
     </RelativeLayout>
 
     <View
@@ -103,8 +98,7 @@
         android:layout_height="0.6dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@color/color_line"
-        />
+        android:background="@color/color_line" />
 
     <LinearLayout
         android:id="@+id/ll_1"
@@ -123,13 +117,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/transport_volume"/>
+                android:text="@string/transport_volume" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="起步价:55元/6Km"/>
+                android:text="起步价:55元/6Km" />
         </LinearLayout>
 
 
@@ -142,13 +136,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="载重:1000kg"/>
+                android:text="载重:1000kg" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="后续:4元/Km"/>
+                android:text="后续:4元/Km" />
         </LinearLayout>
 
     </LinearLayout>
@@ -158,14 +152,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:text="注：上货卸货免费等候时间：40分钟，后每分钟加收5元，不足10分钟，按10分钟计算，以上价格包含路费和邮费，高速/停车费另计。"
-            />
+            android:text="注：上货卸货免费等候时间：40分钟，后每分钟加收5元，不足10分钟，按10分钟计算，以上价格包含路费和邮费，高速/停车费另计。" />
 
         <View
             android:layout_width="match_parent"
@@ -173,8 +167,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="7dp"
-            android:background="@color/color_line"
-            />
+            android:background="@color/color_line" />
 
     </LinearLayout>
 
@@ -189,7 +182,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="额外要求"/>
+            android:text="额外要求" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -206,57 +199,52 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:button="@drawable/check1_style"
+                    android:button="@drawable/checkbox_style"
                     android:paddingLeft="5dp"
                     android:text="全拆座"
                     android:textColor="@color/color_gary_font"
-                    android:textSize="14sp"
-                    />
+                    android:textSize="14sp" />
 
                 <CheckBox
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:button="@drawable/check1_style"
+                    android:button="@drawable/checkbox_style"
                     android:paddingLeft="5dp"
                     android:text="搬运"
                     android:textColor="@color/color_gary_font"
-                    android:textSize="14sp"
-                    />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:button="@drawable/check1_style"
+                android:button="@drawable/checkbox_style"
                 android:paddingLeft="5dp"
                 android:text="回单"
                 android:textColor="@color/color_gary_font"
-                android:textSize="14sp"
-                />
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                >
+                android:layout_marginTop="5dp">
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:button="@drawable/check1_style"
+                    android:button="@drawable/checkbox_style"
                     android:paddingLeft="5dp"
                     android:text="货到付款"
                     android:textColor="@color/color_gary_font"
-                    android:textSize="14sp"
-                    />
+                    android:textSize="14sp" />
 
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/edit_black_style"/>
+                    android:background="@drawable/edit_black_style" />
             </LinearLayout>
 
             <LinearLayout
@@ -267,30 +255,28 @@
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:button="@drawable/check1_style"
+                    android:button="@drawable/checkbox_style"
                     android:paddingLeft="5dp"
                     android:text="代收付款"
                     android:textColor="@color/color_gary_font"
-                    android:textSize="14sp"
-                    />
+                    android:textSize="14sp" />
 
                 <EditText
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/edit_black_style"/>
+                    android:background="@drawable/edit_black_style" />
             </LinearLayout>
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:button="@drawable/check1_style"
+                android:button="@drawable/checkbox_style"
                 android:paddingLeft="5dp"
                 android:text="优先发送给我的车队"
                 android:textColor="@color/color_gary_font"
-                android:textSize="14sp"
-                />
+                android:textSize="14sp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -302,7 +288,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/button_red_style"/>
+        android:background="@drawable/button_blue_style" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -314,8 +300,8 @@
             android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_centerInParent="true"
-            android:background="@drawable/button_red_style"
-            android:text="确定"/>
+            android:background="@drawable/button_blue_style"
+            android:text="确定" />
 
         <ImageView
             android:layout_width="30dp"
@@ -323,8 +309,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:src="@mipmap/above_gray"
-            />
+            android:src="@mipmap/above_gray" />
     </RelativeLayout>
 
 

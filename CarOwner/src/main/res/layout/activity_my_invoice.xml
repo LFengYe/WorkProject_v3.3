@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color_red"
+    android:background="@color/color_blue"
     android:fitsSystemWindows="true"
     tools:context="cn.com.caronwer.activiBu.MyInvoiceActivity">
 
@@ -39,7 +39,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:textColor="@color/color_gary_font"
-            android:background="@drawable/button_red_style"/>
+            android:background="@drawable/button_blue_style"/>
 
     </LinearLayout>
 </LinearLayout>

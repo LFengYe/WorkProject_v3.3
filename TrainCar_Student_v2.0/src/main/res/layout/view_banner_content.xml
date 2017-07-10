@@ -3,11 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <cn.guugoo.jiapeistudent.Views.CycleViewPager
+    <com.guugoo.jiapeistudent.Views.CycleViewPager
         android:id="@+id/pager_banner"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-    </cn.guugoo.jiapeistudent.Views.CycleViewPager>
+    </com.guugoo.jiapeistudent.Views.CycleViewPager>
 
     <LinearLayout
         android:id="@+id/viewGroup"

@@ -4,12 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragment.OrderFragment">
-    <com.gpw.app.view.XRecyclerView
+    <cn.com.goodsowner.view.XRecyclerView
         android:id="@+id/rv_my_order"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </com.gpw.app.view.XRecyclerView>
+    </cn.com.goodsowner.view.XRecyclerView>
     <TextView
         android:id="@+id/tv_empty"
         android:layout_width="match_parent"

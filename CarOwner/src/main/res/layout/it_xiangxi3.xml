@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_deta3"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:id="@+id/ll_deta3"
-    >
+    android:orientation="horizontal">
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="115dp"
         android:layout_marginLeft="10dp">
+
         <View
             android:id="@+id/view_d3"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
-            android:background="@color/btn_small"/>
+            android:background="@color/btn_small" />
 
         <ImageView
             android:id="@+id/iv_jing"
@@ -31,11 +30,10 @@
             android:id="@+id/iv_x3"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@mipmap/dow"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="3dp"/>
+            android:layout_marginBottom="3dp"
+            android:src="@mipmap/dow" />
     </RelativeLayout>
-
 
 
     <cn.com.caronwer.view.InputNameView
@@ -57,22 +55,23 @@
                 android:id="@+id/tv_zhongtudian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="到达中途点，卸货发车"
                 android:layout_marginLeft="5dp"
-                android:textSize="13dp"/>
+                android:text="到达中途点，卸货发车"
+                android:textSize="13dp" />
+
             <TextView
                 android:id="@+id/zhongtudiandate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2016-8-16 10:30"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="5dp"
-                android:textSize="13dp"/>
+                android:text="2016-8-16 10:30"
+                android:textSize="13dp" />
 
         </RelativeLayout>
 
-        <include layout="@layout/fenge_small3"/>
+        <include layout="@layout/fenge_small3" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -82,67 +81,71 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/tv_zhongtudiandizi"
-                    android:minLines="2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="天虹商场（西丽店）（深圳市南山区留仙大道1380号）刘红 18511111111"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:layout_gravity="center_vertical"/>
+                    android:minLines="2"
+                    android:text="天虹商场（西丽店）（深圳市南山区留仙大道1380号）刘红 18511111111" />
+
                 <TextView
-                    android:visibility="gone"
                     android:id="@+id/tv_daisou2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="代收货款¥200元"
                     android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:text="代收货款¥200元"
                     android:textColor="@color/back_top"
-                    android:layout_marginRight="10dp"/>
+                    android:visibility="gone" />
             </LinearLayout>
 
         </RelativeLayout>
-        <include layout="@layout/fenge_small3"/>
+
+        <include layout="@layout/fenge_small3" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
+
             <TextView
                 android:id="@+id/tv_qian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¥82"
                 android:layout_centerVertical="true"
-                android:textSize="18sp"
-                android:visibility="invisible"
+                android:text="¥82"
                 android:textColor="@color/back_top"
-                />
+                android:textSize="18sp"
+                android:visibility="invisible" />
+
             <TextView
                 android:id="@+id/tv_souhuo"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="确认装货"
-                android:textColor="@color/white"
-                android:layout_toRightOf="@+id/tv_qian"
                 android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_qian"
                 android:background="@drawable/shape_button2"
                 android:gravity="center"
-                android:visibility="gone"
-                />
+                android:text="确认装货"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
             <Button
                 android:id="@+id/bt_dhzhongdian"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="导航到终点"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"
-                android:textColor="@color/white"
-                android:gravity="center"
                 android:background="@drawable/shape_button2"
-                />
+                android:gravity="center"
+                android:text="导航到终点"
+                android:textColor="@color/white" />
         </RelativeLayout>
 
     </cn.com.caronwer.view.InputNameView>

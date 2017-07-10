@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     >
 
-    <cn.guugoo.jiapeistudent.Views.AVLoadingIndicatorView
+    <com.guugoo.jiapeistudent.Views.AVLoadingIndicatorView
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:indicator_color="@color/login_color"

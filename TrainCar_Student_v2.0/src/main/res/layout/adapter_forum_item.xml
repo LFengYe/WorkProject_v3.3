@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="5dp">
-            <cn.guugoo.jiapeistudent.Views.CircleImageView
+            <com.guugoo.jiapeistudent.Views.CircleImageView
                 android:id="@+id/forum_head"
                 android:layout_width="40dp"
                 android:layout_height="40dp"

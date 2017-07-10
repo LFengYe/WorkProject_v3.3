@@ -4,7 +4,7 @@
               android:id="@+id/activity_rebuild_psd"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/color_red"
+              android:background="@color/color_blue"
               android:fitsSystemWindows="true"
               android:orientation="vertical"
               tools:context=".activity.PayActivity">
@@ -27,7 +27,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:text="罚金"
-            android:textColor="@color/color_red"
+            android:textColor="@color/color_blue"
             android:textSize="@dimen/normal_font" />
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
 
-            android:textColor="@color/color_red"
+            android:textColor="@color/color_blue"
             android:text="44"
             android:textSize="18sp" />
         <TextView
@@ -46,7 +46,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/tv_money1"
-            android:textColor="@color/color_red"
+            android:textColor="@color/color_blue"
             android:text="@string/yuan"
             android:textSize="14sp" />
 
@@ -105,6 +105,7 @@
             android:button="@null"
             android:checked="true" />
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0.6dp"
@@ -226,7 +227,8 @@
         android:id="@+id/rl_card"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@drawable/layout_click_style">
+        android:background="@drawable/layout_click_style"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/iv_card"
@@ -277,7 +279,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button_red_style"
+            android:background="@drawable/button_blue_style"
             android:text="@string/ok"
             android:textColor="#4d4d4d"
             android:textSize="17sp" />

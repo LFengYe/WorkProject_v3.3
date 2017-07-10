@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/login_background"
     android:fitsSystemWindows="true"
-    tools:context="cn.guugoo.jiapeiteacher.activity.LoginActivity">
+    tools:context="com.guugoo.jiapeiteacher.activity.LoginActivity">
 
 
     <TextView

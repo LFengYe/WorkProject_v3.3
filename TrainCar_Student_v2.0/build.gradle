@@ -5,7 +5,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion "25.0.0"
     defaultConfig {
-        applicationId "cn.guugoo.jiapeistudent"
+        applicationId "com.guugoo.jiapeistudent"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1

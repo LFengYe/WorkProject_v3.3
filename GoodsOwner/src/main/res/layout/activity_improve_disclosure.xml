@@ -8,7 +8,7 @@
     android:background="@color/color_red"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.gpw.app.activity.ImproveDisclosureActivity">
+    tools:context=".activity.ImproveDisclosureActivity">
 
     <include
         android:id="@+id/in_head"
@@ -97,6 +97,7 @@
             android:inputType="numberDecimal"
             android:hint="@string/hint_loan_money"/>
         <View
+            android:id="@+id/view_line"
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:background="@color/color_line"/>

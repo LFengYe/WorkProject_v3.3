@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="55dp"
-    android:orientation="vertical"
-    android:background="@color/back_big">
+    android:background="@color/back_big"
+    android:orientation="vertical">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="?android:listDivider">
-    </View>
+        android:background="?android:listDivider"></View>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,88 +29,116 @@
                 android:id="@+id/iv_home"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:src="@mipmap/heart_red"/>
+                android:src="@mipmap/heart_blue" />
 
             <TextView
                 android:id="@+id/tv_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="@string/guanzhudingdan"
+                android:text="@string/concern_order"
                 android:textColor="@color/back_top"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/ll_myInfo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="4dp">
 
+            <ImageView
+                android:id="@+id/iv_myInfo"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@mipmap/account_unselected" />
+
+            <TextView
+                android:id="@+id/tv_myInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/my_info"
+                android:textColor="@color/home_back_unselected"
+                android:textSize="14sp" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/ll_switch"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:layout_marginTop="3dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
             <RelativeLayout
-                android:visibility="gone"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/clos"/>
+                        android:src="@mipmap/switch_normal" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:text="休息中"
+                        android:layout_centerVertical="true"
                         android:layout_marginLeft="35dp"
-                        android:textSize="12sp"
-                        android:layout_centerVertical="true"/>
+                        android:text="休息中"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:visibility="gone"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/open"/>
+                        android:src="@mipmap/switch_press" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:text="工作中"
+                        android:layout_centerVertical="true"
                         android:layout_marginLeft="2dp"
-                        android:textSize="12sp"
-                        android:layout_centerVertical="true"/>
+                        android:text="工作中"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
                 </RelativeLayout>
             </RelativeLayout>
+
             <com.kyleduo.switchbutton.SwitchButton
                 android:id="@+id/sb_content"
                 style="@style/SwitchButtonStyle"
                 android:layout_width="60dp"
                 android:layout_height="35dp"
+                android:textColor="@color/white"
+                android:textSize="10dp"
                 app:kswAnimationDuration="300"
                 app:kswBackDrawable="@drawable/switch_drawable"
                 app:kswBackMeasureRatio="1.4"
+                app:kswTextOff="@string/xiuxi"
+                app:kswTextOn="  工作中"
                 app:kswThumbDrawable="@drawable/switch_select1"
                 app:kswThumbMarginBottom="-8dp"
                 app:kswThumbMarginLeft="-5dp"
                 app:kswThumbMarginRight="-5dp"
-                app:kswThumbMarginTop="-3dp"
-                android:textSize="10dp"
-                app:kswTextOff="@string/xiuxi"
-                android:textColor="@color/white"
-                app:kswTextOn="  工作中"
-                />
+                app:kswThumbMarginTop="-3dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -126,16 +153,16 @@
                 android:id="@+id/iv_me"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:src="@mipmap/my"/>
+                android:src="@mipmap/my_order" />
 
             <TextView
                 android:id="@+id/tv_me"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="我的订单"
+                android:text="@string/my_order"
                 android:textColor="@color/home_back_unselected"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -102,32 +102,32 @@ public class XiuMimaPsdActivity extends BaseActivity {
             case R.id.iv1:
                 if (mEt_yuanpassword.getInputType() != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD){
                     mEt_yuanpassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    mIv1.setImageResource(R.mipmap.login_eye);
+                    mIv1.setImageResource(R.mipmap.eye_open);
                 }
                 else {
                     mEt_yuanpassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    mIv1.setImageResource(R.mipmap.biyan);
+                    mIv1.setImageResource(R.mipmap.eye_close);
                 }
 
                 break;
             case R.id.iv2:
                 if (mEt_xinpassword.getInputType() != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD){
                     mEt_xinpassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    mIv2.setImageResource(R.mipmap.login_eye);
+                    mIv2.setImageResource(R.mipmap.eye_open);
                 }
                 else {
                     mEt_xinpassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    mIv2.setImageResource(R.mipmap.biyan);
+                    mIv2.setImageResource(R.mipmap.eye_close);
                 }
                 break;
             case R.id.iv3:
                 if (mEt_zaipassword.getInputType() != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD){
                     mEt_zaipassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    mIv3.setImageResource(R.mipmap.login_eye);
+                    mIv3.setImageResource(R.mipmap.eye_open);
                 }
                 else {
                     mEt_zaipassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    mIv3.setImageResource(R.mipmap.biyan);
+                    mIv3.setImageResource(R.mipmap.eye_close);
                 }
                 break;
             case R.id.bt_exit_xiugai:

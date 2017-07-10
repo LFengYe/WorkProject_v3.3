@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="cn.guugoo.jiapeistudent.MinorActivity.MyScheduleActivity"
+    tools:context="com.guugoo.jiapeistudent.MinorActivity.MyScheduleActivity"
     android:orientation="vertical">
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/Schedule_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
 
     <ListView
         android:id="@+id/Schedule_list"

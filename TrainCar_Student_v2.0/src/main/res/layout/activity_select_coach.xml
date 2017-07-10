@@ -6,11 +6,11 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".MinorActivity.SelectCoachActivity">
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/select_coach_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
 
     <include
         layout="@layout/view_select">

@@ -27,7 +27,7 @@
     <RelativeLayout
         android:id="@+id/rl_login"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="260dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:background="@drawable/login_dialog_bg"
@@ -153,7 +153,7 @@
             android:id="@+id/bt_ok"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="@string/ok"
+            android:text="@string/ok_agreement"
             android:textSize="@dimen/normal_font"
             android:background="@drawable/button_login"
             android:textColor="@color/color_white"
@@ -161,6 +161,20 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/normal_font"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="@string/agreement"
+            android:textColor="@color/color_red"
+            android:layout_below="@+id/bt_ok"
+
             />
 
     </RelativeLayout>

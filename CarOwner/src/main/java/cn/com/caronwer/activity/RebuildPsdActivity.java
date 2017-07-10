@@ -94,12 +94,12 @@ public class RebuildPsdActivity extends BaseActivity {
             case R.id.iv_login_eye:
                 if (et_password.getInputType() != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD){
                     et_password.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    iv_login_eye.setImageResource(R.mipmap.biyan);
+                    iv_login_eye.setImageResource(R.mipmap.eye_close);
                 }
 
                 else {
                     et_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    iv_login_eye.setImageResource(R.mipmap.login_eye);
+                    iv_login_eye.setImageResource(R.mipmap.eye_open);
                 }
                 break;
             case R.id.tv_get_code:

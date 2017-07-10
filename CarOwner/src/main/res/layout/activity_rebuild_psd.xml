@@ -1,142 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_rebuild_psd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/color_red"
+    android:background="@color/color_blue"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="cn.com.caronwer.activity.RebuildPsdActivity">
 
     <include
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
         android:id="@+id/in_head"
-        layout="@layout/action_head"/>
+        layout="@layout/action_head"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="#ffffff"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginLeft="10dp"
             android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
-                android:src="@mipmap/account"
-                />
+                android:src="@mipmap/account" />
 
             <EditText
                 android:id="@+id/et_account"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
                 android:layout_weight="1"
                 android:background="@null"
-                android:maxLines="1"
+                android:hint="@string/hint_input_account1"
                 android:inputType="number"
-                android:layout_marginLeft="15dp"
-                android:textSize="@dimen/small_font"
-                android:hint="@string/hint_input_account1"/>
+                android:maxLines="1"
+                android:textSize="@dimen/small_font" />
 
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:layout_marginLeft="10dp"
-            android:background="@color/color_line"/>
+            android:background="@color/color_line" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
-                android:src="@mipmap/password"
-                />
+                android:src="@mipmap/password" />
 
             <EditText
                 android:id="@+id/et_password"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
                 android:layout_weight="1"
                 android:background="@null"
-                android:maxLines="1"
+                android:hint="@string/hint_input_psd1"
                 android:inputType="textPassword"
-                android:layout_marginLeft="15dp"
-                android:textSize="@dimen/small_font"
-                android:hint="@string/hint_input_psd1"/>
+                android:maxLines="1"
+                android:textSize="@dimen/small_font" />
+
             <ImageView
                 android:id="@+id/iv_login_eye"
                 android:layout_width="23dp"
                 android:layout_height="23dp"
-                android:src="@mipmap/login_eye"
-                android:layout_marginRight="10dp"
                 android:layout_gravity="center"
-                />
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/eye_open" />
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:layout_marginLeft="10dp"
-            android:background="@color/color_line"/>
+            android:background="@color/color_line" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
-                android:src="@mipmap/password"
-                android:visibility="invisible"
-                />
+                android:src="@mipmap/password" />
 
             <EditText
                 android:id="@+id/et_validate_code"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
                 android:layout_weight="1"
                 android:background="@null"
-                android:maxLines="1"
+                android:hint="@string/hint_validate_code"
                 android:inputType="textPassword"
-                android:layout_marginLeft="15dp"
-                android:textSize="@dimen/small_font"
-                android:hint="@string/hint_validate_code"/>
+                android:maxLines="1"
+                android:textSize="@dimen/small_font" />
+
             <View
                 android:layout_width="0.6dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="@color/color_red"/>
+                android:layout_marginTop="5dp"
+                android:background="@color/color_blue" />
+
             <TextView
                 android:id="@+id/tv_get_code"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:text="@string/get_validate_code"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
-                />
+                android:text="@string/get_validate_code" />
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
             android:layout_marginLeft="10dp"
-            android:background="@color/color_line"/>
+            android:background="@color/color_line" />
 
     </LinearLayout>
 </LinearLayout>

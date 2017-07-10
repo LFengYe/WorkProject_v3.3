@@ -3,14 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CarOwner/CarOwner.iml" filepath="$PROJECT_DIR$/CarOwner/CarOwner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DLPort/DLPort.iml" filepath="$PROJECT_DIR$/DLPort/DLPort.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GoodsOwner/GoodsOwner.iml" filepath="$PROJECT_DIR$/GoodsOwner/GoodsOwner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GoodsOwner_v2.0/GoodsOwner_v2.0.iml" filepath="$PROJECT_DIR$/GoodsOwner_v2.0/GoodsOwner_v2.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/Switch_library/Switch_library.iml" filepath="$PROJECT_DIR$/Switch_library/Switch_library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TrainCar_Student/TrainCar_Student.iml" filepath="$PROJECT_DIR$/TrainCar_Student/TrainCar_Student.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrainCar_Student_v2.0/TrainCar_Student_v2.0.iml" filepath="$PROJECT_DIR$/TrainCar_Student_v2.0/TrainCar_Student_v2.0.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TrainCar_Teacher/TrainCar_Teacher.iml" filepath="$PROJECT_DIR$/TrainCar_Teacher/TrainCar_Teacher.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrainCar_Teacher_v2.0/TrainCar_Teacher_v2.0.iml" filepath="$PROJECT_DIR$/TrainCar_Teacher_v2.0/TrainCar_Teacher_v2.0.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TravelGuide/TravelGuide.iml" filepath="$PROJECT_DIR$/TravelGuide/TravelGuide.iml" />
       <module fileurl="file://$PROJECT_DIR$/WorkProjec_v3.3.iml" filepath="$PROJECT_DIR$/WorkProjec_v3.3.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_tv_fullhtml/lib_tv_fullhtml.iml" filepath="$PROJECT_DIR$/lib_tv_fullhtml/lib_tv_fullhtml.iml" />
       <module fileurl="file://$PROJECT_DIR$/libzxing/libzxing.iml" filepath="$PROJECT_DIR$/libzxing/libzxing.iml" />

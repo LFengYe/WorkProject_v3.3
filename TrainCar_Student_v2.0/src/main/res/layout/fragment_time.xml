@@ -34,7 +34,7 @@
             android:background="@drawable/right_border"
             android:text="教练" />
 
-        <cn.guugoo.jiapeistudent.Views.CHScrollView2
+        <com.guugoo.jiapeistudent.Views.CHScrollView2
             android:id="@+id/item_scroll_title"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -47,7 +47,7 @@
                 android:layout_height="fill_parent"
                 android:orientation="horizontal" >
             </LinearLayout>
-        </cn.guugoo.jiapeistudent.Views.CHScrollView2>
+        </com.guugoo.jiapeistudent.Views.CHScrollView2>
     </LinearLayout>
     <View
         android:layout_width="match_parent"

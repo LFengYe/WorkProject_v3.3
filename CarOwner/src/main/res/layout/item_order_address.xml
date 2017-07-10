@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="horizontal"
-              android:layout_marginTop="10dp"
-              >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
 
 
     <ImageView
@@ -12,8 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:src="@mipmap/start"
-        />
+        android:src="@mipmap/start" />
 
     <LinearLayout
         android:id="@+id/ll_address"
@@ -28,8 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="天虹商场西丽店"
-            android:textSize="14sp"
-            />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tv_contact"
@@ -37,16 +34,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:text="ggggg 111111111"
-            android:textSize="14sp"
-            />
+            android:textSize="14sp" />
 
         <View
             android:id="@+id/view_line"
             android:layout_width="match_parent"
-            android:layout_marginRight="10dp"
             android:layout_height="0.6dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:background="@color/color_line"/>
+            android:background="@color/color_line" />
     </LinearLayout>
 
     <ImageView
@@ -55,8 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginRight="20dp"
-        android:paddingLeft="15dp"
-        />
+        android:paddingLeft="15dp" />
 
 
 </LinearLayout>

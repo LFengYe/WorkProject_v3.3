@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="cn.guugoo.jiapeiteacher">
+          package="com.guugoo.jiapeiteacher">
 
     <permission
-        android:name="cn.guugoo.jiapeiteacher.permission.JPUSH_MESSAGE"
+        android:name="com.guugoo.jiapeiteacher.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature"/>
 
-    <uses-permission android:name="cn.guugoo.jiapeiteacher.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="com.guugoo.jiapeiteacher.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -122,11 +122,11 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="cn.com.senter.mobilereader.ReadCardInfoActivity"
+            android:name="com.senter.mobilereader.ReadCardInfoActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="cn.com.senter.mobilereader.DeviceListActivity"
+            android:name="com.senter.mobilereader.DeviceListActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
@@ -163,7 +163,7 @@
                 <action android:name="cn.jpush.android.ui.PushActivity"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="cn.guugoo.jiapeiteacher"/>
+                <category android:name="com.guugoo.jiapeiteacher"/>
             </intent-filter>
         </activity>
         <!-- Required  SDK核心功能 -->
@@ -194,7 +194,7 @@
             <intent-filter android:priority="1000">
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
                 <!-- Required  显示通知栏 -->
-                <category android:name="cn.guugoo.jiapeiteacher"/>
+                <category android:name="com.guugoo.jiapeiteacher"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT"/>
@@ -232,7 +232,7 @@
                 <!-- Optional 用户接受Rich Push Javascript 回调函数的intent -->
                 <action android:name="cn.jpush.android.intent.CONNECTION"/>
                 <!-- 接收网络变化 连接/断开 since 1.6.3 -->
-                <category android:name="cn.guugoo.jiapeiteacher"/>
+                <category android:name="com.guugoo.jiapeiteacher"/>
             </intent-filter>
         </receiver>
         <!-- Required  . Enable it you can get statistics data with channel -->
@@ -241,7 +241,7 @@
             android:value="developer-default"/>
         <meta-data
             android:name="JPUSH_APPKEY"
-            android:value="7d350c5d7c37af9db1b8cfb0"/>
+            android:value="0f33f388e8a2749bee1a2ec2"/>
 
 
 

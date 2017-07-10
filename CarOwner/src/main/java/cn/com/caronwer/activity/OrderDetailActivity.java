@@ -196,7 +196,7 @@ public class OrderDetailActivity extends BaseActivity {
         if (orderInfo.getOrderStatus() != 4 && orderInfo.getOrderStatus() != -1) {
             tv_date.setVisibility(View.VISIBLE);
             mIv_end.setImageResource(R.mipmap.comment);
-            mIv_sta.setImageResource(R.mipmap.heart_red);
+            mIv_sta.setImageResource(R.mipmap.heart_blue);
             bt_cedan.setBackgroundResource(R.drawable.shap_selector2);
             bt_cedan.setClickable(true);
             tv_hujao.setClickable(true);
@@ -242,10 +242,10 @@ public class OrderDetailActivity extends BaseActivity {
             if (orderInfo.getTransporterScore() > 0) {
                 rb_leftdata.setIsIndicator(true);
                 rb_leftdata.setRating(orderInfo.getTransporterScore());
-                mIv_end.setImageResource(R.mipmap.comment_red);
+                mIv_end.setImageResource(R.mipmap.comment_blue);
                 adapter.setIsComment(true);
             } else if (nowTime.getTime() - arriveTime.getTime() >= SEVEN_DAY) {
-                mIv_end.setImageResource(R.mipmap.comment_red);
+                mIv_end.setImageResource(R.mipmap.comment_blue);
                 adapter.setIsComment(true);
             }
         }

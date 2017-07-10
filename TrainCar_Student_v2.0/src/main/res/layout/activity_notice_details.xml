@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.guugoo.jiapeistudent.MinorActivity.NoticeDetailsActivity">
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    tools:context="com.guugoo.jiapeistudent.MinorActivity.NoticeDetailsActivity">
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/notice_details_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
 
     <ScrollView
         android:layout_width="match_parent"

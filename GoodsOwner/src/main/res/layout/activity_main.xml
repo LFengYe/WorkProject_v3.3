@@ -21,7 +21,7 @@
                 android:layout_height="160dp"
                 android:background="@color/color_white">
 
-                <com.gpw.app.view.ImageCycleView
+                <cn.com.goodsowner.view.ImageCycleView
                     android:id="@+id/icv_banner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -30,7 +30,7 @@
                     android:layout_alignParentTop="true" />
 
 
-                <com.gpw.app.view.CircleImageView
+                <cn.com.goodsowner.view.CircleImageView
                     android:id="@+id/iv_cir_head"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
@@ -167,7 +167,7 @@
                             android:layout_marginRight="40dp"
                             android:background="@drawable/check_style"
                             android:button="@null"
-                            android:checked="true" />
+                            android:checked="false" />
                     </RelativeLayout>
 
                     <View
@@ -184,6 +184,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
                         android:layout_marginRight="40dp"
+                        android:visibility="gone"
                         android:background="@drawable/layout_click_style"
                         android:paddingBottom="5dp"
                         android:paddingTop="5dp">
@@ -201,7 +202,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
-
                             android:src="@mipmap/right_gray" />
 
                         <TextView
@@ -466,7 +466,7 @@
                 android:layout_height="150dp"
                 android:background="@color/color_white">
 
-                <com.gpw.app.view.CircleImageView
+                <cn.com.goodsowner.view.CircleImageView
                     android:id="@+id/civ_head"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
@@ -592,8 +592,8 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/num_style"
                     android:gravity="center"
-                    android:text="5"
                     android:textColor="#ffffff"
+                    android:visibility="gone"
                     android:textSize="12sp"
                     android:textStyle="bold" />
             </RelativeLayout>

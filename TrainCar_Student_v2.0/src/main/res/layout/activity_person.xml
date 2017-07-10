@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="cn.guugoo.jiapeistudent.MinorActivity.PersonActivity">
+    tools:context="com.guugoo.jiapeistudent.MinorActivity.PersonActivity">
 
-    <cn.guugoo.jiapeistudent.Views.TitleView
+    <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/person_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </cn.guugoo.jiapeistudent.Views.TitleView>
+    </com.guugoo.jiapeistudent.Views.TitleView>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -50,7 +50,7 @@
                     android:layout_marginRight="@dimen/my_text_right_size"
                     android:textSize="@dimen/my_text_size"
                     />
-                <cn.guugoo.jiapeistudent.Views.CircleImageView
+                <com.guugoo.jiapeistudent.Views.CircleImageView
                     android:id="@+id/person_hand"
                     android:layout_width="38dp"
                     android:layout_height="38dp"

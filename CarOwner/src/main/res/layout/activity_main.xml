@@ -71,7 +71,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:src="@mipmap/shang"
+                    android:src="@mipmap/pull_back"
                     android:visibility="gone" />
 
             </RelativeLayout>
@@ -112,7 +112,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="45dp"
-                        android:src="@mipmap/xiuxi" />
+                        android:src="@mipmap/rest" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -134,13 +134,6 @@
 
             <include layout="@layout/content_bottom" />
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/iv_root"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bgiv"
-            android:visibility="gone" />
     </RelativeLayout>
 
 

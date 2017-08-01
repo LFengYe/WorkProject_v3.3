@@ -83,7 +83,38 @@
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@+id/tv_yinhang"
                     android:background="@null"
-                    android:hint="请输入银行名称及支行名称"
+                    android:hint="请输入银行名称"
+                    android:textColorHint="@color/button_gray"
+                    android:textSize="18dp" />
+            </RelativeLayout>
+
+            <include layout="@layout/divide_small" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/tv_branchBank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:padding="5dp"
+                    android:text="支行名称"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/et_branchBank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/tv_branchBank"
+                    android:background="@null"
+                    android:hint="请输入支行名称"
                     android:textColorHint="@color/button_gray"
                     android:textSize="18dp" />
             </RelativeLayout>

@@ -21,6 +21,12 @@
     <color name="TimeFragment">#d7d7d7</color>
     <color name="loading">#000000</color>
     <color name="table">#999999</color>
+    <color name="color_White">#ffffff</color>
+    <color name="color_line">#b9b9b9</color>
 
 
+    <color name="color_red">#00a2e4</color>
+    <color name="text2">#333333</color>
+    <color name="background">#FFFFFF</color>
+    <color name="split_line">#11112233</color>
 </resources>

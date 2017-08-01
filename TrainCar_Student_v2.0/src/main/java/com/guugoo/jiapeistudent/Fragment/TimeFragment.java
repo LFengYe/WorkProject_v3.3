@@ -236,7 +236,7 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
 
     private void init() {
         ((ReserveTrainActivity)getActivity()).setTitleRightTextVisible(true);
-        textViews = new ArrayList<TextView>();
+        textViews = new ArrayList<>();
         contenttextViews = new ArrayList<TextView>();
         ll_day.removeAllViews();
         Date d = new Date();
@@ -257,7 +257,7 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
                     Iterator<TextView> iterator1 = textViews.iterator();
                     while (iterator1.hasNext()){
                         TextView textView = iterator1.next();
-                        Log.d(TAG,textView.getText().toString());
+                        //Log.d(TAG,textView.getText().toString());
                         textView.setTextColor(ContextCompat.getColor(getContext(), R.color.text_black));
                     }
                     textView.setTextColor(ContextCompat.getColor(getContext(), R.color.login_color));
@@ -265,7 +265,6 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
                     Time t=new Time();
                     t.setToNow(); // 取得系统时间。
                     getTimeTable(t.year + "-" + s[0], false);
-
                 }
             });
         }
@@ -351,10 +350,12 @@ public class TimeFragment extends Fragment implements TimeRefreshListenter {
                     json.put("QueryTime", "");
                     break;
             }
-            json.put("StudentId", sp.getInt("Id", 0));
             json.put("Subject", sp.getInt("CurrentSubject", 0));
+            json.put("ComprehensiveLevelType", 0);
+            json.put("TeacherTimeType", 0);
+            json.put("StudentId", sp.getInt("Id", 0));
             json.put("SchoolId", sp.getInt("SchoolId", 0));
-            System.out.println(json.toJSONString());
+            Log.d(TAG, "getTimeTable: "+json.toString());
             new MyThread(Constant.URL_Timetable, handler, DES.encryptDES(json.toString())).start();
 
         } else {

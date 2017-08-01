@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_charge_schedule"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/color_blue"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="cn.com.caronwer.activity.ChargeScheduleActivity">
 
     <RelativeLayout
@@ -22,8 +21,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="7dp"
             android:paddingBottom="4dp"
-            android:src="@mipmap/left_white"
-            />
+            android:src="@mipmap/left_white" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,14 +31,13 @@
             android:paddingBottom="4dp"
             android:text="收支明细"
             android:textColor="@color/color_white"
-            android:textSize="@dimen/big_font"/>
+            android:textSize="@dimen/big_font" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="15dp"
             android:layout_alignParentBottom="true"
-            android:background="@color/color_gary_bck"
-            />
+            android:background="@color/color_gary_bck" />
 
         <TextView
             android:id="@+id/tv_sumConsum"
@@ -50,7 +47,8 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:text="总收入：¥0元"
-            android:textSize="12sp"/>
+            android:textSize="12sp"
+            android:visibility="gone" />
 
     </RelativeLayout>
 
@@ -58,7 +56,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/color_white">
+        android:background="@color/color_white"
+        android:orientation="vertical">
 
         <cn.com.caronwer.view.XRecyclerView
             android:id="@+id/rv_charge_schedule"
@@ -66,6 +65,13 @@
             android:layout_height="match_parent">
 
         </cn.com.caronwer.view.XRecyclerView>
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/not_charge_schedule" />
     </LinearLayout>
 
 

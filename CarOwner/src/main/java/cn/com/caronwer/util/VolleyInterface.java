@@ -33,13 +33,14 @@ public abstract  class VolleyInterface {
                 result = result.substring(0,result.length()-1);
                 try {
                     result = EncryptUtil.decryptDES(result);
+                    LogUtil.i("服务器返回数据:", result);
                     Gson gson = new Gson();
-                    BaseInfo baseInfo = gson.fromJson(result,BaseInfo.class);
+                    BaseInfo baseInfo = gson.fromJson(result, BaseInfo.class);
 
-                    if (baseInfo.getStatus() != 1){
-                        onStateError(baseInfo.getStatus(),baseInfo.getMessage());
-                    }else {
+                    if (baseInfo.getStatus() == 1) {
                         onSuccess(baseInfo.getData());
+                    } else {
+                        onStateError(baseInfo.getStatus(),baseInfo.getMessage());
                     }
 
                 } catch (Exception e) {

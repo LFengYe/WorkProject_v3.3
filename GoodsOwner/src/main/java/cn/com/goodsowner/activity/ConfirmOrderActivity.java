@@ -128,7 +128,7 @@ public class ConfirmOrderActivity extends BaseActivity {
                 @Override
                 public void onSuccess(JsonElement result) {
                     LogUtil.i(result.toString());
-                    showShortToastByString("货源发布成功");
+                    showShortToastByString("货源发布成功,可查看我的订单");
                     setResult(RESULT_OK,getIntent());
                     finish();
                 }

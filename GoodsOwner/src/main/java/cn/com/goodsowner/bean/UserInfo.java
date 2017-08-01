@@ -10,13 +10,19 @@ import android.os.Parcelable;
 
 public class UserInfo implements Parcelable {
 
+
     /**
-     * UserId : 41b1502f-d151-45ef-a37f-b97dc80c1332
-     * UserName :
-     * Tel : 15635849658
-     * HeadIco :
-     * Sex :
+     * UserId : b6953c0e-7d43-4caa-aa2c-3fe31cbce62a
+     * UserName : ggg
+     * Tel : 15271417050
+     * HeadIco : /SenderHeadPortrait/b6953c0e-7d43-4caa-aa2c-3fe31cbce62a20170707132926.JPEG
+     * Sex : 男
      * Address :
+     * Balance : 9.9999977513E8
+     * Frozen : 0.0
+     * AuthenticateStatus : 0
+     * Token : 82C006A6-A471-4DC2-973C-8A99B986A833
+     * CompanyTel : 4008881234
      */
 
     private String UserId;
@@ -27,6 +33,9 @@ public class UserInfo implements Parcelable {
     private String Address;
     private double Balance;
     private double Frozen;
+    private String AuthenticateStatus;
+    private String Token;
+    private String CompanyTel;
 
     public String getUserId() {
         return UserId;
@@ -80,30 +89,41 @@ public class UserInfo implements Parcelable {
         return Balance;
     }
 
-    public void setBalance(double balance) {
-        Balance = balance;
+    public void setBalance(double Balance) {
+        this.Balance = Balance;
     }
 
     public double getFrozen() {
         return Frozen;
     }
 
-    public void setFrozen(double frozen) {
-        Frozen = frozen;
+    public void setFrozen(double Frozen) {
+        this.Frozen = Frozen;
     }
 
-    @Override
-    public String toString() {
-        return "UserInfo{" +
-                "UserId='" + UserId + '\'' +
-                ", UserName='" + UserName + '\'' +
-                ", Tel='" + Tel + '\'' +
-                ", HeadIco='" + HeadIco + '\'' +
-                ", Sex='" + Sex + '\'' +
-                ", Address='" + Address + '\'' +
-                '}';
+    public String getAuthenticateStatus() {
+        return AuthenticateStatus;
     }
 
+    public void setAuthenticateStatus(String AuthenticateStatus) {
+        this.AuthenticateStatus = AuthenticateStatus;
+    }
+
+    public String getToken() {
+        return Token;
+    }
+
+    public void setToken(String Token) {
+        this.Token = Token;
+    }
+
+    public String getCompanyTel() {
+        return CompanyTel;
+    }
+
+    public void setCompanyTel(String CompanyTel) {
+        this.CompanyTel = CompanyTel;
+    }
 
     @Override
     public int describeContents() {
@@ -120,6 +140,9 @@ public class UserInfo implements Parcelable {
         dest.writeString(this.Address);
         dest.writeDouble(this.Balance);
         dest.writeDouble(this.Frozen);
+        dest.writeString(this.AuthenticateStatus);
+        dest.writeString(this.Token);
+        dest.writeString(this.CompanyTel);
     }
 
     public UserInfo() {
@@ -134,6 +157,9 @@ public class UserInfo implements Parcelable {
         this.Address = in.readString();
         this.Balance = in.readDouble();
         this.Frozen = in.readDouble();
+        this.AuthenticateStatus = in.readString();
+        this.Token = in.readString();
+        this.CompanyTel = in.readString();
     }
 
     public static final Creator<UserInfo> CREATOR = new Creator<UserInfo>() {

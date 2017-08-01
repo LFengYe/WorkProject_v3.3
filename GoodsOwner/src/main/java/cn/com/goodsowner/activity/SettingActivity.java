@@ -16,6 +16,7 @@ import com.google.gson.JsonObject;
 
 import java.util.Map;
 
+import cn.com.goodsowner.R;
 import cn.com.goodsowner.base.BaseActivity;
 import cn.com.goodsowner.base.Contants;
 import cn.com.goodsowner.util.EncryptUtil;
@@ -112,10 +113,10 @@ public class SettingActivity extends BaseActivity {
     public void onClick(View v) {
         Intent intent = new Intent();
         switch (v.getId()) {
-            case cn.com.goodsowner.R.id.iv_left_white:
+            case R.id.iv_left_white:
                 finish();
                 break;
-            case cn.com.goodsowner.R.id.rl_account_management:
+            case R.id.rl_account_management:
                 psdDialog = MyDialog.psdDialog(SettingActivity.this);
                 psdDialog.show();
                 psdDialog.setOnSettingListener(new MyDialog.PsdListener() {

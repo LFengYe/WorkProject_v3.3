@@ -31,7 +31,7 @@ public class OrderAddInfoAdapter extends RecyclerView.Adapter<OrderAddInfoAdapte
         this.mContext = mContext;
         this.size = mOrderAddressInfos.size();
         this.color = color;
-        LogUtil.i("size" + size);
+        //LogUtil.i("size" + size);
     }
 
     @Override

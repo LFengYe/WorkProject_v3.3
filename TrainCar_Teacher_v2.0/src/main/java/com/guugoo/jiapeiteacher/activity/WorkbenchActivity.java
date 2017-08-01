@@ -12,11 +12,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -45,9 +43,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.guugoo.jiapeiteacher.R;
-import com.guugoo.jiapeiteacher.adapter.StatuteAdapter;
 import com.guugoo.jiapeiteacher.adapter.StudentAdapter;
-import com.guugoo.jiapeiteacher.adapter.StudentRecAdapter;
 import com.guugoo.jiapeiteacher.base.BaseAsyncTask;
 import com.guugoo.jiapeiteacher.base.Constants;
 import com.guugoo.jiapeiteacher.bean.Booking;
@@ -59,8 +55,6 @@ import com.guugoo.jiapeiteacher.util.EncryptUtils;
 import com.guugoo.jiapeiteacher.util.HttpUtil;
 import com.guugoo.jiapeiteacher.util.Utils;
 import com.guugoo.jiapeiteacher.view.CHScrollView2;
-import com.guugoo.jiapeiteacher.view.RecycleViewDivider;
-import com.guugoo.jiapeiteacher.view.XRecyclerView;
 
 /**
  * Created by gpw on 2016/8/3.
@@ -132,8 +126,6 @@ public class WorkbenchActivity extends CHScrollViewActivity {
         bt_edit = (Button) findViewById(R.id.bt_edit);
         bt_cancel = (Button) findViewById(R.id.bt_cancel);
         tv_select = (TextView) rl_head.findViewById(R.id.tv_select);
-//        ll_work = (LinearLayout) findViewById(R.id.ll_work);
-//        ll_day = (LinearLayout) findViewById(R.id.ll_day);
         ll_edit = (LinearLayout) findViewById(R.id.ll_edit);
         ll_select = (LinearLayout) findViewById(R.id.ll_select);
         et_reason = (EditText) findViewById(R.id.et_reason);
@@ -157,6 +149,7 @@ public class WorkbenchActivity extends CHScrollViewActivity {
         tv_center.setText(R.string.workbench);
         tv_right.setText(R.string.refresh);
         tv_select.setText(R.string.select);
+        tv_select.setVisibility(View.GONE);
 
 
         tv_select.setOnClickListener(this);
@@ -232,7 +225,7 @@ public class WorkbenchActivity extends CHScrollViewActivity {
                     reservationStudent.setStudentId(stuItem[0]);
                     reservationStudent.setName(stuItem[1]);
                     reservationStudent.setStudentTel(stuItem[2]);
-                    reservationStudent.setStudentCardNo(stuItem[3]);
+                    reservationStudent.setCardNo(stuItem[3]);
                     students.add(reservationStudent);
                 }
                 booking.setStudents(students);
@@ -450,7 +443,7 @@ public class WorkbenchActivity extends CHScrollViewActivity {
                     case -1:
                         textView.setBackgroundColor(ContextCompat.getColor(WorkbenchActivity.this, R.color.color_Gray));
                         textView.setGravity(Gravity.CENTER);
-                        textView.setText("请假");
+                        textView.setText("已结束");
                         textView.setTextColor(ContextCompat.getColor(WorkbenchActivity.this, R.color.color_White));
                         break;
                     case 1:

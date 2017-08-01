@@ -65,7 +65,7 @@ public class MyThread extends Thread {
 
         super.run();
         try {
-            Log.i(TAG, "当前的请求是" + path);
+            //Log.i(TAG, "当前的请求是" + path);
             URL url = new URL(path);
             HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
             //因为这个是post请求,设立需要设置为true

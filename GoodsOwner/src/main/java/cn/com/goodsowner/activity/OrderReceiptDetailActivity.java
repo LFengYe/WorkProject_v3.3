@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +37,7 @@ import java.util.Map;
 public class OrderReceiptDetailActivity extends BaseActivity {
     private TextView tv_title;
     private TextView tv_right;
+    private TextView tv_right1;
     private ImageView iv_left_white;
     private ImageView iv_start;
     private ImageView iv_arrive;
@@ -65,6 +67,7 @@ public class OrderReceiptDetailActivity extends BaseActivity {
         assert rl_head != null;
         tv_title = (TextView) rl_head.findViewById(cn.com.goodsowner.R.id.tv_title);
         tv_right = (TextView) rl_head.findViewById(cn.com.goodsowner.R.id.tv_right);
+        tv_right1 = (TextView) rl_head.findViewById(cn.com.goodsowner.R.id.tv_right1);
         iv_left_white = (ImageView) rl_head.findViewById(cn.com.goodsowner.R.id.iv_left_white);
 
         bt_call = (Button) findViewById(cn.com.goodsowner.R.id.bt_call);
@@ -90,7 +93,8 @@ public class OrderReceiptDetailActivity extends BaseActivity {
     protected void initView() {
 
         tv_title.setText(cn.com.goodsowner.R.string.order_detail1);
-        tv_right.setText("刷新");
+        tv_right.setText("投诉");
+        tv_right1.setText("刷新");
         refresh();
         iv_left_white.setOnClickListener(this);
         bt_call.setOnClickListener(this);
@@ -98,6 +102,7 @@ public class OrderReceiptDetailActivity extends BaseActivity {
         bt_confirm.setOnClickListener(this);
         bt_location.setOnClickListener(this);
         tv_right.setOnClickListener(this);
+        tv_right1.setOnClickListener(this);
 
     }
 
@@ -108,8 +113,17 @@ public class OrderReceiptDetailActivity extends BaseActivity {
             case cn.com.goodsowner.R.id.iv_left_white:
                 finish();
                 break;
-            case cn.com.goodsowner.R.id.tv_right:
+            case cn.com.goodsowner.R.id.tv_right1:
                 refresh();
+                break;
+            case cn.com.goodsowner.R.id.tv_right:
+                if (ContextCompat.checkSelfPermission(OrderReceiptDetailActivity.this, Manifest.permission.CALL_PHONE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(OrderReceiptDetailActivity.this,
+                            new String[]{Manifest.permission.CALL_PHONE}, 100);
+                } else {
+                    call(Contants.CompanyTel);
+                }
                 break;
             case cn.com.goodsowner.R.id.bt_apliy:
                 int type = 0;
@@ -144,7 +158,7 @@ public class OrderReceiptDetailActivity extends BaseActivity {
                 updateOrder();
                 break;
             case cn.com.goodsowner.R.id.bt_call:
-                call();
+                call(receiptOrderDetailInfo.getTransporterTel());
                 break;
             case cn.com.goodsowner.R.id.bt_location:
                 Intent intent = new Intent(OrderReceiptDetailActivity.this, CarLocationActivity.class);
@@ -234,15 +248,15 @@ public class OrderReceiptDetailActivity extends BaseActivity {
     }
 
 
-    private void call() {
+    private void call(final String tel) {
         new AlertDialog.Builder(OrderReceiptDetailActivity.this).
                 setTitle("提示").
-                setMessage("是否拨打电话:" + receiptOrderDetailInfo.getTransporterTel()).
+                setMessage("是否拨打电话:" + tel).
                 setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(Intent.ACTION_CALL);
-                        Uri data = Uri.parse("tel:" + receiptOrderDetailInfo.getTransporterTel());
+                        Uri data = Uri.parse("tel:" + tel);
                         intent.setData(data);
                         if (ActivityCompat.checkSelfPermission(OrderReceiptDetailActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                             return;
@@ -300,7 +314,15 @@ public class OrderReceiptDetailActivity extends BaseActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == 200) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                call();
+                call(receiptOrderDetailInfo.getTransporterTel());
+            } else {
+                Toast.makeText(OrderReceiptDetailActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+            return;
+        }
+        if (requestCode == 100) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                call(Contants.CompanyTel);
             } else {
                 Toast.makeText(OrderReceiptDetailActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }

@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Dialog;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
@@ -27,6 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.com.goodsowner.R;
+import cn.com.goodsowner.activity.RegisterProtocolActivity;
 import cn.com.goodsowner.util.DensityUtil;
 import cn.com.goodsowner.util.FastBlurUtil;
 
@@ -304,9 +306,9 @@ public class MyDialog extends Dialog {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 int size = s.length();
                 if (size != 0) {
-                    bt_login.setBackground(ContextCompat.getDrawable(activity, cn.com.goodsowner.R.drawable.button_red_bg));
+                    bt_login.setBackground(ContextCompat.getDrawable(activity, R.drawable.button_red_bg));
                 } else {
-                    bt_login.setBackground(ContextCompat.getDrawable(activity, cn.com.goodsowner.R.drawable.button_login));
+                    bt_login.setBackground(ContextCompat.getDrawable(activity, R.drawable.button_login));
                 }
             }
 
@@ -383,7 +385,7 @@ public class MyDialog extends Dialog {
         final EditText et_password = (EditText) v.findViewById(cn.com.goodsowner.R.id.et_password);
         final EditText et_validate_code = (EditText) v.findViewById(cn.com.goodsowner.R.id.et_validate_code);
         final TextView tv_get_code = (TextView) v.findViewById(cn.com.goodsowner.R.id.tv_get_code);
-        final TextView tv_protocol = (TextView) v.findViewById(R.id.tv_agreement);
+        final TextView tv_agreement = (TextView) v.findViewById(cn.com.goodsowner.R.id.tv_agreement);
         final Button bt_ok = (Button) v.findViewById(cn.com.goodsowner.R.id.bt_ok);
         CheckBox cb_eye = (CheckBox) v.findViewById(cn.com.goodsowner.R.id.cb_eye);
         ImageView iv_close = (ImageView) v.findViewById(cn.com.goodsowner.R.id.iv_close);
@@ -443,14 +445,13 @@ public class MyDialog extends Dialog {
                 registerListener.onRegisterCode(et_account.getText().toString(),tv_get_code);
             }
         });
-
-        tv_protocol.setOnClickListener(new View.OnClickListener() {
+        tv_agreement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerListener.onRegisterProtocol();
+                Intent intent = new Intent(activity, RegisterProtocolActivity.class);
+                activity.startActivity(intent);
             }
         });
-
 
         register_layout.setBackground(new BitmapDrawable(activity.getResources(), bmp));
         Point size = new Point();
@@ -509,7 +510,6 @@ public class MyDialog extends Dialog {
     public interface RegisterListener {
         void onRegister(String name, String psd,String code);
         void onRegisterCode(String name,TextView textView);
-        void onRegisterProtocol();
         void onRegisterClose();
     }
 

@@ -113,13 +113,13 @@ public class OrderDetailAdapter extends BaseAdapter {
         String address = context.getResources().getString(R.string.item_address, bean.getReceiptAddress(), bean.getReceipter(), bean.getReceiptTel());
         SpannableString spannableString = new SpannableString(context.getResources().getString(R.string.item_address, bean.getReceiptAddress(), bean.getReceipter(), bean.getReceiptTel()));
         spannableString.setSpan(new URLSpan("tel:" + bean.getReceiptTel()), address.length() - bean.getReceiptTel().length(), address.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        spannableString.setSpan(new ForegroundColorSpan(Color.RED), address.length() - bean.getReceiptTel().length(), address.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(new ForegroundColorSpan(context.getResources().getColor(R.color.back_top)), address.length() - bean.getReceiptTel().length(), address.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         holder.itemAddress.setText(spannableString);
         holder.itemAddress.setMovementMethod(LinkMovementMethod.getInstance());
-        if (bean.getPaymentGoods() < 0.0001) {
-            holder.itemPayment.setVisibility(View.GONE);
-        } else {
+        if (bean.getPaymentGoods() > 0 && orderInfo.getIsCollectionPayment()) {
             holder.itemPayment.setText(context.getResources().getString(R.string.item_payment, bean.getPaymentGoods()));
+        } else {
+            holder.itemPayment.setVisibility(View.GONE);
         }
 
         if (position == 0) {
@@ -137,11 +137,13 @@ public class OrderDetailAdapter extends BaseAdapter {
                 holder.itemTime.setVisibility(View.VISIBLE);
                 holder.itemImg.setImageResource(R.mipmap.start_blue);
                 holder.itemLeftBtn.setClickable(false);
+                holder.itemLeftBtn.setEnabled(false);
                 holder.itemLeftBtn.setBackgroundResource(R.drawable.shape_button2);
             } else {
                 holder.itemTime.setVisibility(View.VISIBLE);
                 holder.itemImg.setImageResource(R.mipmap.start_gray);
                 holder.itemLeftBtn.setClickable(false);
+                holder.itemLeftBtn.setEnabled(false);
                 holder.itemLeftBtn.setBackgroundResource(R.drawable.shape_button2);
             }
         } else if (position < getCount() - 1) {
@@ -162,10 +164,13 @@ public class OrderDetailAdapter extends BaseAdapter {
             }
         } else if (position == getCount() - 1) {
             holder.itemInfo.setVisibility(View.VISIBLE);
-            if (orderInfo.getIsCollectionPayment()) {
-                holder.itemInfo.setText(R.string.cash_on_delivery);
+            if (orderInfo.getIsToPay()) {
+                String deliveryAmount = context.getResources().getString(R.string.delivery_amount);
+                holder.itemInfo.setText(String.format(deliveryAmount, orderInfo.getFreight()));
+                //holder.itemInfo.setText(R.string.cash_on_delivery);
             } else {
-                holder.itemInfo.setText(R.string.wait_payment);
+                holder.itemInfo.setVisibility(View.GONE);
+                //holder.itemInfo.setText(R.string.wait_payment);
             }
             holder.itemStatus.setText(R.string.arrive_end_address);
             holder.itemLeftBtn.setVisibility(View.GONE);

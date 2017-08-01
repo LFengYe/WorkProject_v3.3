@@ -35,22 +35,16 @@ public class ChargeScheduleAdapter extends RecyclerView.Adapter<ChargeScheduleAd
         viewHolder.tv_time.setText(listBean.getTime());
         viewHolder.tv_pay_type.setText(listBean.getWay());
         viewHolder.tv_orderId.setText(String.format("订单号:%s", listBean.getSerialNO()));
-        String money = null;
+        viewHolder.tv_more.setText(listBean.getRemark());
+        String money;
         if (listBean.getType() == 1) {
-            money = "+ ¥ ";
+            money = "+¥";
         } else {
-            money = "- ¥ ";
+            money = "-¥";
         }
         money = money + String.valueOf(listBean.getAmount());
 
         viewHolder.tv_money.setText(money);
-
-//                viewHolder.tv_pay_tixian.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //提现
-//            }
-//        });
 
     }
 
@@ -68,6 +62,7 @@ public class ChargeScheduleAdapter extends RecyclerView.Adapter<ChargeScheduleAd
         TextView tv_money;
         TextView tv_orderId;
         TextView tv_pay_tixian;
+        TextView tv_more;
 
         public ViewHolder(View view) {
             super(view);
@@ -76,6 +71,7 @@ public class ChargeScheduleAdapter extends RecyclerView.Adapter<ChargeScheduleAd
             tv_money = (TextView) view.findViewById(R.id.tv_money);
             tv_orderId = (TextView) view.findViewById(R.id.tv_orderId);
             tv_pay_tixian = (TextView) view.findViewById(R.id.tv_pay_tixian);
+            tv_more = (TextView) view.findViewById(R.id.tv_more);
         }
     }
 

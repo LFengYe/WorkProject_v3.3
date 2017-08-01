@@ -20,10 +20,12 @@ public class StudentCommentAdapter extends BaseAdapter {
 
     private List<ReservationStudent> students;
     private Context context;
+    private int type;
 
-    public StudentCommentAdapter(List<ReservationStudent> students, Context context) {
+    public StudentCommentAdapter(int type, List<ReservationStudent> students, Context context) {
         this.students = students;
         this.context = context;
+        this.type = type;
     }
 
     @Override
@@ -59,10 +61,20 @@ public class StudentCommentAdapter extends BaseAdapter {
 
         ReservationStudent student = students.get(position);
         viewHolder.textView.setText(student.getName());
-        if (student.getStatus() == 2) {
-            viewHolder.textView.setTextColor(context.getResources().getColor(R.color.color_Black));
-        } else {
-            viewHolder.textView.setTextColor(context.getResources().getColor(R.color.color_line));
+        if (type == 0) {
+            if (student.getStatus() == 2) {
+                viewHolder.textView.setTextColor(context.getResources().getColor(R.color.color_Black));
+            } else {
+                viewHolder.textView.setTextColor(context.getResources().getColor(R.color.color_line));
+            }
+        }
+        if (type == 1) {
+            if (student.getIssign() == 0 && student.getStatus() == 2) {
+                //已完成并且未签退
+                viewHolder.textView.setTextColor(context.getResources().getColor(R.color.color_Black));
+            } else {
+                viewHolder.textView.setTextColor(context.getResources().getColor(R.color.color_line));
+            }
         }
         return convertView;
     }

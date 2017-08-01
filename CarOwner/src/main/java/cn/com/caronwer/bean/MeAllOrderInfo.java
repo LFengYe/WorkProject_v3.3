@@ -55,7 +55,7 @@ public class MeAllOrderInfo {
     private String IsRemove;
     private String IsMove;
     private String IsSurcharge;
-    private String IsToPay;
+    private boolean IsToPay;
     private String ToPayTel;
     private boolean IsCollectionPayment;
     private double Payment;
@@ -127,11 +127,11 @@ public class MeAllOrderInfo {
         this.IsSurcharge = IsSurcharge;
     }
 
-    public String getIsToPay() {
+    public boolean getIsToPay() {
         return IsToPay;
     }
 
-    public void setIsToPay(String IsToPay) {
+    public void setIsToPay(boolean IsToPay) {
         this.IsToPay = IsToPay;
     }
 

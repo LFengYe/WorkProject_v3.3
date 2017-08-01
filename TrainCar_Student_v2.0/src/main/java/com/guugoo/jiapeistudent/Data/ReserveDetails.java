@@ -36,6 +36,15 @@ public class ReserveDetails {
     private String SubjectItem;
     private String Lon;
     private String Lat;
+    private int BookType;
+
+    public int getBookType() {
+        return BookType;
+    }
+
+    public void setBookType(int bookType) {
+        BookType = bookType;
+    }
 
     public String getBookingTime() {
         return BookingTime;

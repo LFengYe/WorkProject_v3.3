@@ -101,6 +101,7 @@
         <activity android:name=".MinorActivity.SelectSchoolActivity" />
         <activity android:name=".MinorActivity.TwoDimensionalActivity"></activity>
         <activity android:name=".MinorActivity.MapActivity"></activity>
+        <activity android:name=".MinorActivity.MyCouponActivity"></activity>
 
         <!--百度地图-->
         <service

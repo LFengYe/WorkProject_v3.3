@@ -54,8 +54,10 @@ public class Constant {
     public static final String URL_CheckClearBooking = LocalHost+"S_Booking/CheckClearBooking";
     public static final String MyStudentinfo = LocalHost+"S_UserInfo/MyStudentinfo";
     public static final String URL_StudentEvaluate = LocalHost+"S_Booking/StudentEvaluate";
-
-
+    public static final String URL_S_UserInfoGetSubjectSumHours = LocalHost + "S_UserInfo/GetSubjectSumHours";
+    public static final String URL_S_Basic_GetSubjectInfo = LocalHost + "S_Basic/GetSubjectInfo";
+    public static final String URL_Students_GetBlanch = LocalHost + "Students/GetBlanch";
+    public static final String URL_S_Booking_GetTeacherBySame = LocalHost + "S_Booking/GetTeacherBySame";
 
     public static final String APP_ID = "wxe190422c94c94183";
     //绿色的球的状态，

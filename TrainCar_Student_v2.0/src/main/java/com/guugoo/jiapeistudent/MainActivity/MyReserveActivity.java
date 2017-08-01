@@ -30,13 +30,13 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class MyReserveActivity extends BaseActivity implements View.OnClickListener{
-    private static final String TAG ="MyReserveActivity";
+public class MyReserveActivity extends BaseActivity implements View.OnClickListener {
+    private static final String TAG = "MyReserveActivity";
     private TextView[] textViews;
     private int index;
-    private int currentTabIndex=0;
+    private int currentTabIndex = 0;
     private int requestIndex;
-    private List<Reserve> listData ;
+    private List<Reserve> listData;
     private PullableListView listView;
     private PullToRefreshLayout layout;
     private ReserveAdapter adapter;
@@ -45,25 +45,23 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
     private boolean isCompleated = true; //是否正在加载
     private int currentPage = 1;  //页数
     private int requestType = 0;   //请求的种类 0:第一次请求 ，1：下拉刷新，2：上拉加载
-    private List<Reserve>[] reserves ; //缓存四个数据
-    private boolean OK, Wait, End,ALL;
+    private List<Reserve>[] reserves; //缓存四个数据
+    private boolean OK, Wait, End, ALL;
 
-    protected Handler handler = new MyHandler(MyReserveActivity.this){
+    protected Handler handler = new MyHandler(MyReserveActivity.this) {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            if(msg.what == 1){
-                Log.d(TAG, "handleMessage: "+msg.obj);
-                ReturnData data= JSONObject.parseObject((String) msg.obj,ReturnData.class);
-                if(data.getStatus()==0){
-                    List<Reserve> coachs = JSONObject.parseArray(data.getData(),Reserve.class);
-                    Log.d(TAG, "handleMessage: "+coachs.size());
+            if (msg.what == 1) {
+                ReturnData data = JSONObject.parseObject((String) msg.obj, ReturnData.class);
+                if (data.getStatus() == 0) {
+                    List<Reserve> coachs = JSONObject.parseArray(data.getData(), Reserve.class);
                     /**
                      *   判断是否没有切换
                      */
-                    if (requestIndex==index){
-                        if (coachs.size()==0){
-                            switch (requestType){
+                    if (requestIndex == index) {
+                        if (coachs.size() == 0) {
+                            switch (requestType) {
                                 case 1:
                                     layout.refreshFinish(PullToRefreshLayout.SUCCEED);
                                     break;
@@ -71,11 +69,11 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
                                     listView.noMoreLoading();
                                     break;
                             }
-                        }else {
+                        } else {
                             /**
                              * 如果是第一页，则主list刷新，对应的list刷新
                              */
-                            if(currentPage==1){
+                            if (currentPage == 1) {
                                 listData.clear();
                                 Log.d(TAG, "123123handleMessage: ");
                                 reserves[index].clear();
@@ -83,9 +81,9 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
 
                             listData.addAll(coachs);
                             reserves[index].addAll(coachs);
-                            currentPage +=1;
+                            currentPage += 1;
                             adapter.notifyDataSetChanged();
-                            switch (requestType){
+                            switch (requestType) {
                                 case 1:
                                     layout.refreshFinish(PullToRefreshLayout.SUCCEED);
                                     break;
@@ -97,12 +95,12 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
                                     break;
                             }
                         }
-                        isCompleated=true;
+                        isCompleated = true;
                     }
-                }else {
-                    MyToast.makeText(MyReserveActivity.this,data.getMessage());
+                } else {
+                    MyToast.makeText(MyReserveActivity.this, data.getMessage());
                     isCompleated = true;
-                    switch (requestType){
+                    switch (requestType) {
                         case 1:
                             layout.refreshFinish(PullToRefreshLayout.FAIL);
                             break;
@@ -141,7 +139,7 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
         textViews[1] = (TextView) findViewById(R.id.my_reserve_text2);
         textViews[2] = (TextView) findViewById(R.id.my_reserve_text3);
         textViews[3] = (TextView) findViewById(R.id.my_reserve_text4);
-        listView  = (PullableListView) findViewById(R.id.my_reserve_list);
+        listView = (PullableListView) findViewById(R.id.my_reserve_list);
         layout = (PullToRefreshLayout) findViewById(R.id.my_reserve_layout);
         sp = getSharedPreferences("user", Context.MODE_PRIVATE);
         listData = new ArrayList<Reserve>();
@@ -150,7 +148,7 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
         reserves[1] = new ArrayList<>();
         reserves[2] = new ArrayList<>();
         reserves[3] = new ArrayList<>();
-        adapter = new ReserveAdapter(R.layout.adapter_reserve,MyReserveActivity.this,listData);
+        adapter = new ReserveAdapter(R.layout.adapter_reserve, MyReserveActivity.this, listData);
         listView.setAdapter(adapter);
         executorService = Executors.newCachedThreadPool();
     }
@@ -159,7 +157,7 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
     @Override
     protected void init() {
         textViews[0].setSelected(true);
-        ALL =false;
+        ALL = false;
         OK = true;
         Wait = true;
         End = true;
@@ -221,29 +219,29 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
 
         switch (v.getId()) {
             case R.id.my_reserve_text1:
-                if(ALL){
+                if (ALL) {
                     firstLoaded();
-                    ALL=false;
+                    ALL = false;
                 }
                 index = 0;
                 break;
             case R.id.my_reserve_text2:
                 index = 1;
-                if (OK){
+                if (OK) {
                     firstLoaded();
-                    OK =false;
+                    OK = false;
                 }
                 break;
             case R.id.my_reserve_text3:
                 index = 2;
-                if (Wait){
+                if (Wait) {
                     firstLoaded();
-                    Wait =false;
+                    Wait = false;
                 }
                 break;
             case R.id.my_reserve_text4:
                 index = 3;
-                if (End){
+                if (End) {
                     firstLoaded();
                     End = false;
                 }
@@ -254,8 +252,8 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
 
     private void firstLoaded() {
         if (Utils.isNetworkAvailable(MyReserveActivity.this)) {
-            currentPage=1;
-            requestType=0;
+            currentPage = 1;
+            requestType = 0;
             getReserve();
         } else {
             MyToast.makeText(MyReserveActivity.this, R.string.Toast_internet);
@@ -264,7 +262,7 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
 
 
     private void BarChange() {
-        if(currentTabIndex!=index){
+        if (currentTabIndex != index) {
             listData.clear();
             listData.addAll(reserves[index]);
             adapter.notifyDataSetChanged();
@@ -276,16 +274,15 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
     }
 
     public void getReserve() {
-        JSONObject json= new JSONObject(true);
-        Log.d(TAG, "getTimeTable: "+sp.getInt("CurrentSubject", 0));
-        json.put("StudentId",sp.getInt("Id",0));
-        json.put("SchoolId",sp.getInt("SchoolId",0));
+        JSONObject json = new JSONObject(true);
+        Log.d(TAG, "getTimeTable: " + sp.getInt("CurrentSubject", 0));
+        json.put("StudentId", sp.getInt("Id", 0));
+        json.put("SchoolId", sp.getInt("SchoolId", 0));
         json.put("PageIndex", currentPage);
         json.put("PageSize", 10);
-        json.put("Status",index);
-        Log.d(TAG, "getTeacher: "+json.toString());
-        isCompleated=false;
-        requestIndex=index;
+        json.put("Status", index);
+        isCompleated = false;
+        requestIndex = index;
         executorService.execute(new MyThread(Constant.URL_MyBooking, handler, DES.encryptDES(json.toString())));
     }
 
@@ -309,6 +306,6 @@ public class MyReserveActivity extends BaseActivity implements View.OnClickListe
         listData.clear();
         reserves[index].clear();
         adapter.notifyDataSetChanged();
-        ALL=true;
+        ALL = true;
     }
 }

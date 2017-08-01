@@ -1,5 +1,6 @@
 package com.guugoo.jiapeistudent.MainActivity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -9,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -36,6 +39,10 @@ import com.guugoo.jiapeistudent.Tools.MyHandler;
 import com.guugoo.jiapeistudent.Tools.MyThread;
 import com.guugoo.jiapeistudent.Tools.MyToast;
 import com.guugoo.jiapeistudent.Tools.Utils;
+import com.zhy.m.permission.MPermissions;
+import com.zhy.m.permission.PermissionDenied;
+import com.zhy.m.permission.PermissionGrant;
+
 import cn.jpush.android.api.InstrumentedActivity;
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.android.api.TagAliasCallback;
@@ -56,7 +63,6 @@ public class LoginActivity extends InstrumentedActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if(msg.what == 1){
-                Log.d(TAG, "handleMessage: "+msg.obj);
                 ReturnData data=JSONObject.parseObject((String) msg.obj,ReturnData.class);
                 if(data.getStatus() == 0){
                     /**
@@ -100,6 +106,7 @@ public class LoginActivity extends InstrumentedActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
+        MPermissions.requestPermissions(this, 4, Manifest.permission.READ_PHONE_STATE);
         findView();
         init();
         setBarStyle();
@@ -187,6 +194,7 @@ public class LoginActivity extends InstrumentedActivity {
         edit.putString("Tel",student.getTel());
         edit.putInt("CurrentSubject",student.getCurrentSubject());
         edit.putInt("SchoolId",student.getSchoolId());
+        //edit.putInt("SchoolId", 1);
         edit.putInt("Hours",student.getHours());
         edit.putBoolean("IsSign",student.isSign());
         edit.putString("token",student.getToken());
@@ -199,17 +207,22 @@ public class LoginActivity extends InstrumentedActivity {
         edit.putString("Schedule",student.getSchedule());
         edit.putString("UserName",user.getText().toString().trim());
         edit.putString("PassWord",passWord.getText().toString().trim());
+        edit.putString("CardNo", student.getCardNo());
+        edit.putString("BookType", student.getBookType());
         edit.apply();
 
     }
-    private void login(){
+
+    private void login() {
         if(Utils.isNetworkAvailable(LoginActivity.this)){
             if(isEmpty()){
+                TelephonyManager tm = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
                 JSONObject json= new JSONObject(true);
                 json.put("Tel",user.getText());
                 json.put("PassWord",passWord.getText());
-                Log.d(TAG, "onClick: "+DES.encryptDES(json.toString()));
+                json.put("ICCID", tm.getSimSerialNumber());
                 dialog.show();
+                Log.i("登录参数", json.toJSONString());
                 new MyThread(Constant.URL_Login, handler, DES.encryptDES(json.toString()),1).start();
             }
         }else {
@@ -218,5 +231,18 @@ public class LoginActivity extends InstrumentedActivity {
 
     }
 
+    @PermissionGrant(4)
+    public void requestContactSuccess() {
+    }
 
+    @PermissionDenied(4)
+    public void requestContactFailed() {
+        Toast.makeText(this, "拒绝访问手机状态信息!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        MPermissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
 }

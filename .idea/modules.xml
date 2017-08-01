@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CarOwner/CarOwner.iml" filepath="$PROJECT_DIR$/CarOwner/CarOwner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GoodsOwner_v2.0/GoodsOwner_v2.0.iml" filepath="$PROJECT_DIR$/GoodsOwner_v2.0/GoodsOwner_v2.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GoodsOwner_0722/GoodsOwner_0722.iml" filepath="$PROJECT_DIR$/GoodsOwner_0722/GoodsOwner_0722.iml" />
       <module fileurl="file://$PROJECT_DIR$/Switch_library/Switch_library.iml" filepath="$PROJECT_DIR$/Switch_library/Switch_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrainCar_Student_v2.0/TrainCar_Student_v2.0.iml" filepath="$PROJECT_DIR$/TrainCar_Student_v2.0/TrainCar_Student_v2.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrainCar_Teacher_v2.0/TrainCar_Teacher_v2.0.iml" filepath="$PROJECT_DIR$/TrainCar_Teacher_v2.0/TrainCar_Teacher_v2.0.iml" />

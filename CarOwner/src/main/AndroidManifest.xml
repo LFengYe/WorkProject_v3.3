@@ -43,6 +43,7 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
 
     <application
@@ -89,6 +90,10 @@
             android:theme="@style/RedTranslucentTheme" />
         <activity
             android:name=".activity.PersonalInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/GrayTranslucentTheme" />
+        <activity
+            android:name=".activity.PersonalCenterActivity"
             android:screenOrientation="portrait"
             android:theme="@style/GrayTranslucentTheme" />
         <activity

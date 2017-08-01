@@ -1,6 +1,7 @@
 package cn.com.caronwer.activity;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -9,14 +10,23 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
+import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+import com.tencent.mm.sdk.modelpay.PayReq;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
+import java.lang.reflect.Type;
 import java.util.Map;
 
 import cn.com.caronwer.R;
 import cn.com.caronwer.base.BaseActivity;
 import cn.com.caronwer.base.Contants;
+import cn.com.caronwer.bean.MoneyInfo;
+import cn.com.caronwer.bean.PayResult;
+import cn.com.caronwer.bean.WeChatPay;
 import cn.com.caronwer.util.EncryptUtil;
 import cn.com.caronwer.util.HttpUtil;
 import cn.com.caronwer.util.SPtils;
@@ -40,6 +50,25 @@ public class PayActivity extends BaseActivity {
     private int payType;
     private String orderNo;
     private double money;
+
+    private IWXAPI wxApi;
+
+    private void weChatPay(WeChatPay returnData) {
+        wxApi = WXAPIFactory.createWXAPI(this, Contants.weChatAPPID, false);
+        PayReq req = new PayReq();
+        req.appId			= returnData.getAppId();
+        req.partnerId		= returnData.getPartnerId();
+        req.prepayId		= returnData.getPrepayId();
+        req.nonceStr		= returnData.getNonceStr();
+        req.timeStamp		= returnData.getTimeStamp();
+        req.packageValue	= returnData.getPackageValue();
+        req.sign			= returnData.getSign();
+
+        wxApi.registerApp(Contants.weChatAPPID);
+        wxApi.sendReq(req);
+        Gson gson = new Gson();
+        Log.i("调用微信支付", gson.toJson(returnData));
+    }
 
     @Override
     protected int getLayout() {
@@ -69,11 +98,8 @@ public class PayActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
         orderNo =getIntent().getStringExtra("orderNo");
-
         money =getIntent().getDoubleExtra("money",0);
-
     }
 
     @Override
@@ -93,6 +119,31 @@ public class PayActivity extends BaseActivity {
         cb_alipay.setOnClickListener(this);
         cb_card.setOnClickListener(this);
 
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("UserId", SPtils.getString(this, "UserId", ""));
+        jsonObject.addProperty("UserType", 2);
+        Map<String, String> map = EncryptUtil.encryptDES(jsonObject.toString());
+        HttpUtil.doPost(PayActivity.this, Contants.url_getUserBalance, "getUserBalance", map, new VolleyInterface(PayActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
+            @Override
+            public void onSuccess(JsonElement result) {
+                Gson gson = new Gson();
+                Type listType = new TypeToken<MoneyInfo>() {}.getType();
+                MoneyInfo moneyInfo = gson.fromJson(result, listType);
+                tv_balance.setText(String.format(getResources().getString(R.string.available_balance), moneyInfo.getBalance()));
+            }
+
+            @Override
+            public void onError(VolleyError error) {
+                showShortToastByString(getString(R.string.timeoutError));
+            }
+
+            @Override
+            public void onStateError(int sta, String msg) {
+                if (!TextUtils.isEmpty(msg)) {
+                    showShortToastByString(msg);
+                }
+            }
+        });
     }
 
     @Override
@@ -137,10 +188,11 @@ public class PayActivity extends BaseActivity {
         cb_alipay.setChecked(false);
         cb_card.setChecked(false);
     }
+
     private void payOrder() {
 
         JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("UserId", SPtils.getString(this, "UserId", "00000000-0000-0000-0000-000000000000"));
+        jsonObject.addProperty("UserId", SPtils.getString(this, "UserId", ""));
         jsonObject.addProperty("UserType", 2);
         jsonObject.addProperty("Amount", money);
         jsonObject.addProperty("PayWay", payType);
@@ -152,9 +204,16 @@ public class PayActivity extends BaseActivity {
         HttpUtil.doPost(PayActivity.this, Contants.url_payAmount, "payAmount", map, new VolleyInterface(PayActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
             @Override
             public void onSuccess(JsonElement result) {
+                Gson gson = new Gson();
+                PayResult payResult = gson.fromJson(result, PayResult.class);
+                if (payType == 2) {
+                    weChatPay(payResult.getResult());
+                }
+                /*
                 showShortToastByString(getString(R.string.payment_success));
                 setResult(RESULT_OK, getIntent());
                 finish();
+                */
             }
 
             @Override

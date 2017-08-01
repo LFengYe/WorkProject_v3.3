@@ -8,12 +8,18 @@ package cn.com.goodsowner.base;
 public class Contants {
     public static String userId;
     public static String Tel;
+    public static String CompanyTel;
     public static double Balance;
     public static int newsNum = 0;
+
+    public final static String weChatAPPID = "wx1c2aa1319031558f";
     public final static String SHARED_NAME = "GPW";
-    public static String imagehost = "http://101.201.74.192:8018";
-    private static String localhost = "http://101.201.74.192:8018/";
+        public static String imagehost = "http://101.201.74.192:8018";
+//    public static String imagehost = "http://110.53.162.172:7000/";
+        private static String localhost = "http://101.201.74.192:8018/";
+//    private static String localhost = "http://110.53.162.172:7000/";
     public static String url_register = localhost + "Register/Register";
+    public static String url_consignor_register = localhost + "Register/ConsignorRegister";
     public static String url_editPassWord = localhost + "Users/EditPassWord";
     public static String url_updatePassWord = localhost + "Users/UpdatePassWord";
     public static String url_obtainCheckCode = localhost + "Visitors/ObtainCheckCode";

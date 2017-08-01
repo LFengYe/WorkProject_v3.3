@@ -72,11 +72,11 @@ public class MyCarActivity extends BaseActivity {
         iv_left_white.setOnClickListener(this);
         mBt_huan.setOnClickListener(this);
 
-        mTv_cartype.setText(userInfo.getVehicleTypeName());
-        mTv_carno.setText(userInfo.getVehicleNo());
-        mTv_username.setText(userInfo.getUserName());
+        //mTv_cartype.setText(userInfo.getVehicleTypeName());
+        //mTv_carno.setText(userInfo.getVehicleNo());
+        //mTv_username.setText(userInfo.getUserName());
 
-        getDatafromNet();
+        getVehicleInfo();
 
     }
 
@@ -88,17 +88,20 @@ public class MyCarActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.bt_huan://换车
-                startActivity(new Intent(MyCarActivity.this,CertificationActivity.class));
+                if (userInfo.getAuthenticateStatus() == 2) {
+                    showShortToastByString(getResources().getString(R.string.authenticate_already_upload));
+                } else {
+                    startActivity(new Intent(MyCarActivity.this, AuthFirstActivity.class));
+                }
                 break;
         }
     }
 
-    public void getDatafromNet() {
-
+    public void getVehicleInfo() {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("UserId", SPtils.getString(this, "UserId", "00000000-0000-0000-0000-000000000000"));
         Map<String, String> map = EncryptUtil.encryptDES(jsonObject.toString());
-        HttpUtil.doPost(MyCarActivity.this, Contants.url_getvehMsg, "getvehMsg", map, new VolleyInterface(MyCarActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
+        HttpUtil.doPost(MyCarActivity.this, Contants.url_getvehMsg, "getVehicleInfo", map, new VolleyInterface(MyCarActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
             @Override
             public void onSuccess(JsonElement result) {
                 Gson gson = new Gson();

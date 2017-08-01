@@ -8,45 +8,50 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:textColor="@color/color_Black" />
+
+        <TextView
+            android:id="@+id/tv_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/color_Black"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="26dp"
+            android:text="¥120"
+            android:textColor="@color/color_Blue"
+            android:textSize="17sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_year"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:text="2016年8月8日"
-                android:textColor="@color/color_Black" />
-
-            <TextView
-                android:id="@+id/tv_hour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:text="14:00-16:00"
-                android:textColor="@color/color_Black" />
-
-
-            <TextView
-                android:id="@+id/tv_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:paddingLeft="26dp"
-                android:text="¥120"
-                android:textColor="@color/color_Blue"
-                android:textSize="17sp"
-                android:visibility="gone" />
-        </LinearLayout>
-
 
         <LinearLayout
             android:id="@+id/ll_head"
@@ -75,6 +80,19 @@
                 android:textColor="@color/color_Black" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_bookingAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_Black" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -90,13 +108,17 @@
                 android:textColor="@color/color_Black" />
 
             <TextView
-                android:id="@+id/tv_bookingAccount"
+                android:id="@+id/student_logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/color_Black" />
+                android:layout_marginTop="7dp"
+                android:background="@drawable/et_login_style"
+                android:paddingBottom="3dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="3dp"
+                android:text="@string/student_logout" />
         </LinearLayout>
-
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -139,10 +161,9 @@
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     android:paddingTop="3dp"
-                    android:text="点评" />
+                    android:text="@string/comment" />
 
             </LinearLayout>
-
 
         </RelativeLayout>
     </LinearLayout>
@@ -153,6 +174,4 @@
         android:layout_height="0.8dp"
         android:layout_marginTop="5dp"
         android:background="@color/color_line" />
-
-
 </LinearLayout>

@@ -89,7 +89,7 @@
                 android:id="@+id/tv_balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="可用余额22元"
+                android:text="@string/available_balance"
                 android:textColor="#4b4b4b"
                 android:textSize="@dimen/smallest_font" />
         </LinearLayout>

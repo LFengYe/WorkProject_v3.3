@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <include
-        layout="@layout/view_select">
+        layout="@layout/view_coach_select">
     </include>
 
     <com.guugoo.jiapeistudent.Views.PullToRefreshLayout

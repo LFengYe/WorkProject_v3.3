@@ -43,6 +43,7 @@ import cn.com.caronwer.util.HttpUtil;
 import cn.com.caronwer.util.SPtils;
 import cn.com.caronwer.util.VolleyInterface;
 import cn.com.caronwer.view.BorderTextView;
+import cn.com.caronwer.view.InputNameView;
 import cn.com.caronwer.view.SelectPicPopupWindow;
 
 public class CertificationActivity extends BaseActivity {
@@ -66,16 +67,16 @@ public class CertificationActivity extends BaseActivity {
     private ImageView iv_left_white;
 
 
-    //private BorderTextView mBv_queren;
-    //private InputNameView mPv_sfz;
-    //private InputNameView mPv_xsz;
-    //private InputNameView mPv_jsz;
-    //private InputNameView mPv_cl;
+    private BorderTextView mBv_queren;
+    private InputNameView mPv_sfz;
+    private InputNameView mPv_xsz;
+    private InputNameView mPv_jsz;
+    private InputNameView mPv_cl;
 
-    //private ImageView mIv_sf;
-    //private ImageView mIv_js;
-    //private ImageView mIv_xs;
-    //private ImageView mIv_che;
+    private ImageView mIv_sf;
+    private ImageView mIv_js;
+    private ImageView mIv_xs;
+    private ImageView mIv_che;
 
     private BorderTextView mBv_next;
     private EditText mEt_cardNo;
@@ -85,7 +86,7 @@ public class CertificationActivity extends BaseActivity {
     //private TextView mEt_gps;
     private EditText mEt_name;
     private LinearLayout mLl_cer1;
-    //private LinearLayout mLl_cer2;
+    private LinearLayout mLl_cer2;
     private JsonObject mJsonObject;
     private Spinner mDdlCity;
     private String[] items = new String[]{"零担", "小面包车", "中面包车", "小型货车", "中型货车"};
@@ -113,8 +114,6 @@ public class CertificationActivity extends BaseActivity {
         //mEt_gps = (TextView) findViewById(R.id.tV_gps);
         mBv_next = (BorderTextView) findViewById(R.id.bv_next);
 
-
-        /*
         mBv_queren = (BorderTextView) findViewById(R.id.bv_queren);
         mBv_queren.setOnClickListener(this);
 
@@ -128,12 +127,11 @@ public class CertificationActivity extends BaseActivity {
         mIv_js = (ImageView) findViewById(R.id.iv_js);
         mIv_xs = (ImageView) findViewById(R.id.iv_xs);
         mIv_che = (ImageView) findViewById(R.id.iv_che);
-        */
 
         mLl_cer1 = (LinearLayout) findViewById(R.id.ll_cer1);
-        //mLl_cer2 = (LinearLayout) findViewById(R.id.ll_cer2);
+        mLl_cer2 = (LinearLayout) findViewById(R.id.ll_cer2);
 
-        mDdlCity = (Spinner) findViewById(R.id.ddlCity);
+        mDdlCity = (Spinner) findViewById(R.id.vehicleType);
         ArrayAdapter<String> source = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
         mDdlCity.setAdapter(source);
 
@@ -165,12 +163,10 @@ public class CertificationActivity extends BaseActivity {
         tv_title.setText("车主认证");
         tv_right.setVisibility(View.GONE);
         iv_left_white.setOnClickListener(this);
-        /*
         mPv_sfz.setOnClickListener(this);
         mPv_xsz.setOnClickListener(this);
         mPv_jsz.setOnClickListener(this);
         mPv_cl.setOnClickListener(this);
-        */
         mBv_next.setOnClickListener(this);
         mJsonObject = new JsonObject();
 
@@ -182,7 +178,7 @@ public class CertificationActivity extends BaseActivity {
             case R.id.iv_left_white:
                 if (mLl_cer1.getVisibility() == View.GONE) {
                     mLl_cer1.setVisibility(View.VISIBLE);
-                    //mLl_cer2.setVisibility(View.GONE);
+                    mLl_cer2.setVisibility(View.GONE);
                 } else {
                     finish();
                 }
@@ -246,7 +242,7 @@ public class CertificationActivity extends BaseActivity {
                     mJsonObject.addProperty("VehType", chelx);
                     //mJsonObject.addProperty("GpsNo", gps);
                     mLl_cer1.setVisibility(View.GONE);
-                    //mLl_cer2.setVisibility(View.VISIBLE);
+                    mLl_cer2.setVisibility(View.VISIBLE);
 
                 }
                 break;
@@ -455,22 +451,22 @@ public class CertificationActivity extends BaseActivity {
             String HeadPortrait = BitmapUtil.getImgStr(bitmap);
             switch (imgType) {
                 case 0:
-                    //mIv_sf.setImageDrawable(drawable);
+                    mIv_sf.setImageDrawable(drawable);
                     mJsonObject.addProperty("IDNumberImg", HeadPortrait);//身份证
                     isimg0 = true;
                     break;
                 case 1:
-                    //mIv_js.setImageDrawable(drawable);
+                    mIv_js.setImageDrawable(drawable);
                     mJsonObject.addProperty("DriverLicenseImg", HeadPortrait);//驾驶证
                     isimg1 = true;
                     break;
                 case 2:
-                    //mIv_xs.setImageDrawable(drawable);
+                    mIv_xs.setImageDrawable(drawable);
                     mJsonObject.addProperty("TravelCardImg", HeadPortrait);//行驶证
                     isimg2 = true;
                     break;
                 case 3:
-                    //mIv_che.setImageDrawable(drawable);
+                    mIv_che.setImageDrawable(drawable);
                     mJsonObject.addProperty("VehImg", HeadPortrait);//车辆
                     isimg3 = true;
                     break;

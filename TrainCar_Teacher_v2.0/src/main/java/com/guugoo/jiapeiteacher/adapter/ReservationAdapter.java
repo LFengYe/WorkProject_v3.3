@@ -46,14 +46,15 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
         final Reservation reservation = mReservations.get(position);
 
         String time = reservation.getBookingTime();
-        String hour = time.substring(time.indexOf(" ") + 1, time.length());
-        String year = time.substring(0, time.indexOf(" ") + 1);
+        //String hour = time.substring(time.indexOf(" ") + 1, time.length());
+        //String year = time.substring(0, time.indexOf(" ") + 1);
         String status = getStringStatus(reservation.getStatus());
         //final String bookingId = reservation.getBookingId();
 
         String name = "";
         boolean isAllIsComment = true;
         boolean isDisplayComment = false;
+        boolean isDisplayLogout = false;
         ArrayList<ReservationStudent> students = reservation.getStudentList();
         for (ReservationStudent student : students) {
             if (TextUtils.isEmpty(name)) {
@@ -65,6 +66,9 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
                 isAllIsComment = false;
             if (student.getStatus() == 2 && !isDisplayComment) {
                 isDisplayComment = true;
+            }
+            if (student.getStatus() == 2 && !isDisplayLogout) {
+                isDisplayLogout = true;
             }
         }
 
@@ -78,6 +82,11 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
                 viewHolder.ll_status.setVisibility(View.GONE);
                 viewHolder.tv_status.setText(status);
             }
+            if (isDisplayLogout) {
+                viewHolder.tv_studentLogout.setVisibility(View.VISIBLE);
+            } else {
+                viewHolder.tv_studentLogout.setVisibility(View.GONE);
+            }
             if (isAllIsComment) {
                 viewHolder.tv_click_comment.setText(R.string.has_comment);
             } else {
@@ -87,18 +96,26 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
             viewHolder.tv_click_comment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mCommentClickListener.onClick(v, reservation);
+                    mCommentClickListener.onClick(0, v, reservation);
+                }
+            });
+            viewHolder.tv_studentLogout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mCommentClickListener.onClick(1, v, reservation);
                 }
             });
         } else {
             viewHolder.tv_status.setVisibility(View.VISIBLE);
             viewHolder.ll_status.setVisibility(View.GONE);
             viewHolder.tv_status.setText(status);
+
+            viewHolder.tv_studentLogout.setVisibility(View.GONE);
         }
 
         viewHolder.tv_name.setText(name);
-        viewHolder.tv_year.setText(year);
-        viewHolder.tv_hour.setText(hour);
+        viewHolder.tv_year.setText(time);
+        //viewHolder.tv_hour.setText(hour);
         viewHolder.tv_driverType.setText(reservation.getDriveType());
         viewHolder.tv_bookingAccount.setText(getStringBookingAccount(reservation.getBookingAccount()));
 
@@ -165,6 +182,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
         public TextView tv_bookingAccount;
         public TextView tv_status;
         public TextView tv_status1;
+        public TextView tv_studentLogout;
         public TextView tv_click_comment;
         public LinearLayout ll_status;
 
@@ -180,6 +198,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
             tv_bookingAccount = (TextView) view.findViewById(R.id.tv_bookingAccount);
             tv_status = (TextView) view.findViewById(R.id.tv_status);
             tv_status1 = (TextView) view.findViewById(R.id.tv_status1);
+            tv_studentLogout = (TextView) view.findViewById(R.id.student_logout);
             tv_click_comment = (TextView) view.findViewById(R.id.tv_click_comment);
             civ_head = (CircleImageView) view.findViewById(R.id.civ_head);
             ll_status = (LinearLayout) view.findViewById(R.id.ll_status);
@@ -187,7 +206,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
     }
 
     public interface commentClickListener {
-        void onClick(View view, Reservation reservation);
+        void onClick(int type, View view, Reservation reservation);
     }
 
 

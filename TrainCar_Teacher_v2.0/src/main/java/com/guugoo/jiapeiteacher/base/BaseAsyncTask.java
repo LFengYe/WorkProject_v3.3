@@ -51,8 +51,10 @@ public abstract class BaseAsyncTask extends AsyncTask<JsonObject, String, String
 
     @Override
     protected void onPostExecute(String s) {
-        if (s.equals("unAuthorization")) {
-
+        super.onPostExecute(s);
+        if (s == null) {
+            Toast.makeText(mContext, mContext.getString(R.string.servlet_error), Toast.LENGTH_SHORT).show();
+        } else if (s.equals("unAuthorization")) {
             JPushInterface.setAlias(mContext, //上下文对象
                     "", //别名
                     new TagAliasCallback() {//回调接口,i=0表示成功,其它设置失败
@@ -86,9 +88,9 @@ public abstract class BaseAsyncTask extends AsyncTask<JsonObject, String, String
                 builder.show();
             }
             return;
+        } else {
+            dealResults(s);
         }
-        dealResults(s);
-        super.onPostExecute(s);
     }
 
     protected abstract void dealResults(String s);

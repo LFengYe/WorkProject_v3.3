@@ -236,9 +236,9 @@
     <RelativeLayout
         android:id="@+id/rl_card"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="55dp"
-        android:background="@drawable/layout_click_style"
-        android:visibility="gone">
+        android:background="@drawable/layout_click_style">
 
         <ImageView
             android:id="@+id/iv_card"
@@ -247,7 +247,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:src="@mipmap/card"
-            android:textSize="@dimen/normal_font" />
+            android:textSize="@dimen/normal_font"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -257,7 +257,7 @@
             android:layout_toRightOf="@+id/iv_card"
             android:orientation="vertical"
             android:text="@string/card_pay"
-            android:textColor="#4b4b4b" />
+            android:textColor="#4b4b4b"/>
 
 
         <CheckBox
@@ -268,7 +268,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="25dp"
             android:background="@drawable/radio_style"
-            android:button="@null" />
+            android:button="@null"/>
     </RelativeLayout>
 
     <View

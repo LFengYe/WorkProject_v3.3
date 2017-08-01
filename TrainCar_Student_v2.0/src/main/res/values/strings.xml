@@ -26,6 +26,7 @@
     <string name="home_text5">圈子分享</string>
     <string name="home_text6">我的推荐</string>
     <string name="home_text7">我的消息</string>
+    <string name="home_text8">我的学时</string>
     <string name="apply_train_text1">报名须知</string>
     <string name="apply_train_text2">学车流程</string>
     <string name="apply_train_text3">体验须知</string>
@@ -108,6 +109,7 @@
     <string name="reserve_details_text10">支付时间：</string>
     <string name="reserve_details_text11">支付方式：</string>
     <string name="reserve_details_text12">教练评语：</string>
+    <string name="reserve_details_text13">预约方式：</string>
     <string name="details">详情</string>
     <string name="cancel_details">取消预约</string>
     <string name="comment_pay">评分和支付</string>
@@ -187,6 +189,27 @@
     <string name="add_max">已经足够支付学时了</string>
     <string name="text_New_Nickme">请填写新的昵称</string>
     <string name="Toast_select_school">请输入驾校代码！</string>
+    <string name="coach_start_level">星级</string>
+    <string name="coach_teaching_age">教龄</string>
+    <string name="coach_name_input_promote">请输入教练姓名</string>
+    <string name="condition_select_subject">选择科目</string>
+    <string name="condition_select_coach">选择教练</string>
+    <string name="condition_select_time">选择时段</string>
+    <string name="condition_select_space">选择场地</string>
+    <string name="condition_no_filter">不限</string>
+    <string name="condition_select_date">选择日期</string>
+    <string name="condition_query">查询</string>
+    <string name="get_subject_failed">获取科目信息失败</string>
+    <string name="subject_empty">科目信息为空</string>
+    <string name="get_branch_failed">获取场地信息失败</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+    <string name="cancle">取消</string>
+    <string name="title">请选择时间</string>
+    <string name="commit">确定</string>
 
 
 </resources>

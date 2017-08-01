@@ -1,14 +1,11 @@
 <resources>
-    <string name="app_name">吉运通</string>
+    <string name="app_name">华中承运</string>
     <string name="login">登录</string>
     <string name="hint_input_psd">请输入密码</string>
     <string name="hint_input_account">请输入手机号</string>
     <string name="forget_psd">忘记密码</string>
     <string name="register">注册</string>
     <string name="agreement">《用户注册协议》</string>
-    <string name="register_and_agree">同意用户注册协议并注册</string>
-    <string name="register_protocol">《用户注册协议》</string>
-    <string name="register_protocol_title">用户注册协议</string>
     <string name="hint_validate_code">请输入验证码</string>
     <string name="get_validate_code">获取验证码</string>
     <string name="hint_set_psd">请设置登录密码</string>
@@ -64,11 +61,14 @@
     <string name="description">规格说明</string>
     <string name="volume">货物总体积(m³)</string>
     <string name="kg">货物总重量(Kg)</string>
+    <string name="volume1">体积(m³)</string>
+    <string name="kg1">重量(Kg)</string>
     <string name="amount">货物总件数</string>
     <string name="order_detail">订单详情</string>
     <string name="order_detail1">收货订单详情</string>
     <string name="improve_disclosure">完善发货信息</string>
     <string name="confirm_order">确认订单</string>
+    <string name="confirm_goods">确认发货</string>
     <string name="order_pay">订单支付</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -80,7 +80,7 @@
     <string name="hint_isToPayFreight">运费到付</string>
     <string name="hint_isSurcharge">回单(附加30%运费)</string>
     <string name="hint_isRemove">全拆座</string>
-    <string name="hint_isMove">搬运</string>
+    <string name="hint_isMove">有无人员/设备卸载</string>
     <string name="hint_volume">请输入货物体积</string>
     <string name="hint_kg">请输入货物重量</string>
     <string name="hint_amount">请输入货物件数</string>
@@ -158,4 +158,29 @@
     <string name="money_0_yuan">¥00.00元</string>
     <string name="payment_fee">贷款金额</string>
     <string name="surcharge_fee">回单费用</string>
+    <string name="completion_message">请完成以下信息注册</string>
+    <string name="id_number">身份证号</string>
+    <string name="tel_num">电话号码</string>
+    <string name="tel_num2">紧急联系人号码</string>
+    <string name="company">企业名称</string>
+    <string name="hint_up_image">请上传企业营业执照图片</string>
+    <string name="finish">完成</string>
+    <string name="goods_type">货物类型</string>
+    <string name="goods_name">货物名称</string>
+    <string name="goods_pack">包装方式</string>
+    <string name="goods_time">发货时间</string>
+    <string name="have">有</string>
+    <string name="nohave">无</string>
+    <string name="hint_remark1">备注:</string>
+    <string name="hint_message">信息不完整</string>
+    <string name="confirm_hint">温馨提示：请仔细核对以上信息，确保无误再发布订单，订单发布后，不可取消。若产生违约现象将由货主本人承担责任。</string>
+    <string name="hint_name">请输入货物名称</string>
+    <string name="type_pm">泡货</string>
+    <string name="type_zh">重货</string>
+    <string name="hint_pack">请输入包装方式</string>
+    <string name="goods_register">货主注册</string>
+    <string name="register_protocol_title">用户注册协议</string>
+
+    <string name="app_tip">提示</string>
+    <string name="pay_result_callback_msg" formatted="false">微信支付结果：%s</string>
 </resources>

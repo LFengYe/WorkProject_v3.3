@@ -1,7 +1,6 @@
 package cn.com.goodsowner.activity;
 
 
-import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -14,6 +13,7 @@ import com.google.gson.JsonObject;
 
 import java.util.Map;
 
+import cn.com.goodsowner.R;
 import cn.com.goodsowner.base.BaseActivity;
 import cn.com.goodsowner.base.Contants;
 import cn.com.goodsowner.bean.MessageInfo;
@@ -32,7 +32,7 @@ public class FAQActivity extends BaseActivity {
 
     @Override
     protected int getLayout() {
-        return cn.com.goodsowner.R.layout.activity_faq;
+        return R.layout.activity_faq;
     }
 
     @Override
@@ -72,7 +72,7 @@ public class FAQActivity extends BaseActivity {
                 try {
                     msgtitle = EncryptUtil.decryptDES(msgtitle);
                     content = EncryptUtil.decryptDES(content);
-                    tv_content.setText(Html.fromHtml(content));
+                    tv_content.setText(content);
                     tv_msgtitle.setText(msgtitle);
                 } catch (Exception e) {
                     e.printStackTrace();

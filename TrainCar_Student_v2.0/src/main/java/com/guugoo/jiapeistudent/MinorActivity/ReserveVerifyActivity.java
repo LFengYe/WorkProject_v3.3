@@ -94,7 +94,7 @@ public class ReserveVerifyActivity extends BaseActivity {
         textViews[2].setText(Name);
         textViews[3].setText(Tel);
         textViews[4].setText(VehNof);
-        textViews[5].setText(Utils.getSubject(sp.getInt("CurrentSubject", 1)));
+        textViews[5].setText(sp.getString("CurrentSubjectName", ""));
 
 
 

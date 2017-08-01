@@ -47,13 +47,13 @@ public class MyApplication extends Application{
                     try {
                         ReturnData data = JSONObject.parseObject((String) msg.obj, ReturnData.class);
                         if (data.getStatus() == 0) {
-                            Log.d(TAG, "位置信息上传成功!");
+                            //Log.d(TAG, "位置信息上传成功!");
                         } else {
-                            MyToast.makeText(MyApplication.this, data.getMessage());
+                            //MyToast.makeText(MyApplication.this, data.getMessage());
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        MyToast.makeText(MyApplication.this, "数据出错");
+                        //MyToast.makeText(MyApplication.this, "数据出错");
                     }
                     break;
                 }

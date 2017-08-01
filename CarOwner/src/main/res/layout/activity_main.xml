@@ -33,14 +33,6 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true" />
 
-                <!--<ImageView-->
-                <!--android:id="@+id/iv_cir_head"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--android:layout_marginTop="30dp"-->
-                <!--android:src="@mipmap/cir_head" />-->
-
                 <cn.com.caronwer.view.CircleImageView
                     android:id="@+id/iv_cir_head"
                     android:layout_width="45dp"
@@ -49,6 +41,7 @@
                     android:layout_marginTop="35dp"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/cir_head"
+                    android:visibility="gone"
                     app:border_width="0.5dp" />
 
 
@@ -191,7 +184,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/tv_rz"
+                    android:id="@+id/tv_auth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -228,7 +221,7 @@
             android:paddingLeft="30dp"
             android:text="@string/myOrder"
             android:textColor="#3d3d3d"
-            android:textSize="@dimen/bigest_font" />
+            android:textSize="@dimen/biggest_font" />
 
         <TextView
             android:id="@+id/tv_myWallet"
@@ -239,7 +232,7 @@
             android:paddingLeft="30dp"
             android:text="@string/myWallet"
             android:textColor="#3d3d3d"
-            android:textSize="@dimen/bigest_font" />
+            android:textSize="@dimen/biggest_font" />
 
         <TextView
             android:id="@+id/tv_myCar"
@@ -250,7 +243,7 @@
             android:paddingLeft="30dp"
             android:text="我的车辆"
             android:textColor="#3d3d3d"
-            android:textSize="@dimen/bigest_font" />
+            android:textSize="@dimen/biggest_font" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -265,7 +258,7 @@
                 android:paddingLeft="30dp"
                 android:text="@string/news"
                 android:textColor="#3d3d3d"
-                android:textSize="@dimen/bigest_font" />
+                android:textSize="@dimen/biggest_font" />
 
             <TextView
                 android:id="@+id/tv_news_num"
@@ -279,7 +272,8 @@
                 android:text="8"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -295,7 +289,7 @@
                 android:layout_marginLeft="30dp"
                 android:text="我的评分"
                 android:textColor="#3d3d3d"
-                android:textSize="@dimen/bigest_font" />
+                android:textSize="@dimen/biggest_font" />
 
             <RatingBar
                 android:id="@+id/rb_leftdata"
@@ -323,7 +317,7 @@
 
 
         <TextView
-            android:id="@+id/tv_benefit_activity"
+            android:id="@+id/tv_benefit"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/layout_click_style"
@@ -331,7 +325,7 @@
             android:paddingLeft="30dp"
             android:text="@string/benefit_activity"
             android:textColor="#3d3d3d"
-            android:textSize="@dimen/bigest_font" />
+            android:textSize="@dimen/biggest_font" />
 
         <TextView
             android:id="@+id/tv_setting"
@@ -342,7 +336,7 @@
             android:paddingLeft="30dp"
             android:text="设        置"
             android:textColor="#3d3d3d"
-            android:textSize="@dimen/bigest_font" />
+            android:textSize="@dimen/biggest_font" />
 
         <View
             android:layout_width="match_parent"

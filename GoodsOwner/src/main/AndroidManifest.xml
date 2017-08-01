@@ -18,7 +18,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.REAL_GET_TASKS" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name=".base.BaseApplication"
@@ -29,40 +29,29 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.MainActivity"
-            android:screenOrientation="portrait"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@style/GrayTranslucentTheme"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
-
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name=".activity.SplashActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppSplash"
             android:launchMode="standard"
-            >
+            android:screenOrientation="portrait"
+            android:theme="@style/AppSplash">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".activity.RegisterProtocolActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/GrayTranslucentTheme" />
         <activity
             android:name=".activity.SettingActivity"
             android:screenOrientation="portrait"
-
             android:theme="@style/RedTranslucentTheme" />
         <activity
             android:name=".activity.MyOrderActivity"
             android:screenOrientation="portrait"
             android:theme="@style/RedTranslucentTheme" />
-
         <activity
             android:name=".activity.RebuildPsdActivity"
             android:screenOrientation="portrait"
@@ -145,8 +134,8 @@
             android:theme="@style/RedTranslucentTheme" />
         <activity
             android:name=".activity.OrderDetailActivity"
-            android:screenOrientation="portrait"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@style/RedTranslucentTheme" />
         <activity
             android:name=".activity.PayActivity"
@@ -164,7 +153,6 @@
             android:name=".activity.ImproveDisclosureActivity"
             android:screenOrientation="portrait"
             android:theme="@style/RedTranslucentTheme" />
-
         <activity
             android:name=".activity.EditAddressActivity"
             android:screenOrientation="portrait"
@@ -175,52 +163,52 @@
             android:theme="@style/RedTranslucentTheme" />
         <activity
             android:name=".activity.OrderOffersActivity"
-            android:screenOrientation="portrait"
             android:launchMode="singleTask"
-            android:theme="@style/RedTranslucentTheme">
-
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme"></activity>
         <activity
             android:name=".activity.OrderPayActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/RedTranslucentTheme">
+            android:theme="@style/RedTranslucentTheme"></activity>
+        <activity
+            android:name=".activity.OrderPay1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme"></activity>
 
-        </activity>
         <activity
             android:name=".activity.CarLocationActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/RedTranslucentTheme">
-
-        </activity>
+            android:theme="@style/RedTranslucentTheme"></activity>
         <activity
             android:name=".activity.OrderActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/RedTranslucentTheme">
-        </activity>
+            android:theme="@style/RedTranslucentTheme"></activity>
         <activity
             android:name=".activity.OrderReceiptDetailActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/RedTranslucentTheme">
-
-        </activity>
-
-
-
+            android:theme="@style/RedTranslucentTheme"></activity>
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme"></activity>
+        <activity
+            android:name=".activity.ConfirmActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme"></activity>
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind">
-
-        </activity>
-
+            android:screenOrientation="behind"></activity>
         <activity
             android:name="com.alipay.sdk.auth.AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind">
-        </activity>
-
+            android:screenOrientation="behind"></activity>
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"></activity>
 
         <service
             android:name="com.baidu.location.f"
@@ -234,7 +222,7 @@
         <service
             android:name="cn.jpush.android.service.PushService"
             android:enabled="true"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.REGISTER" />
                 <action android:name="cn.jpush.android.intent.REPORT" />
@@ -249,19 +237,21 @@
             android:name="cn.jpush.android.service.DaemonService"
             android:enabled="true"
             android:exported="true">
-            <intent-filter >
+            <intent-filter>
                 <action android:name="cn.jpush.android.intent.DaemonService" />
-                <category android:name="cn.com.goodsowner"/>
+
+                <category android:name="cn.com.goodsowner" />
             </intent-filter>
         </service>
 
-        <!-- Required SDK核心功能-->
+        <!-- Required SDK核心功能 -->
         <receiver
             android:name="cn.jpush.android.service.PushReceiver"
-            android:enabled="true" >
+            android:enabled="true">
             <intent-filter android:priority="1000">
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
-                <category android:name="cn.com.goodsowner"/>
+
+                <category android:name="cn.com.goodsowner" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT" />
@@ -271,54 +261,66 @@
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
 
-        <!-- Required SDK核心功能-->
+        <!-- Required SDK核心功能 -->
         <activity
             android:name="cn.jpush.android.ui.PushActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:exported="false" >
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <action android:name="cn.jpush.android.ui.PushActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="cn.com.goodsowner" />
             </intent-filter>
         </activity>
 
-        <!-- Required SDK核心功能-->
+        <!-- Required SDK核心功能 -->
         <service
             android:name="cn.jpush.android.service.DownloadService"
             android:enabled="true"
-            android:exported="false" >
-        </service>
+            android:exported="false"></service>
 
-        <!-- Required SDK核心功能-->
+        <!-- Required SDK核心功能 -->
         <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
 
-        <!-- User defined. 用户自定义的广播接收器-->
+        <!-- User defined. 用户自定义的广播接收器 -->
         <receiver
             android:name=".receiver.MyReceiver"
             android:enabled="true">
             <intent-filter>
-                <!--Required 用户注册SDK的intent-->
+
+                <!-- Required 用户注册SDK的intent -->
                 <action android:name="cn.jpush.android.intent.REGISTRATION" />
-                <!--Required 用户接收SDK消息的intent-->
+                <!-- Required 用户接收SDK消息的intent -->
                 <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
-                <!--Required 用户接收SDK通知栏信息的intent-->
+                <!-- Required 用户接收SDK通知栏信息的intent -->
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
-                <!--Required 用户打开自定义通知栏的intent-->
+                <!-- Required 用户打开自定义通知栏的intent -->
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
                 <!-- 接收网络变化 连接/断开 since 1.6.3 -->
                 <action android:name="cn.jpush.android.intent.CONNECTION" />
+
                 <category android:name="cn.com.goodsowner" />
             </intent-filter>
         </receiver>
 
-        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
-        <meta-data android:name="JPUSH_APPKEY" android:value="f837a44f04268bc7f530d834"/>
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="f837a44f04268bc7f530d834" />
+
+        <activity
+            android:name=".activity.RegisterProtocolActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedTranslucentTheme"></activity>
     </application>
 
 </manifest>

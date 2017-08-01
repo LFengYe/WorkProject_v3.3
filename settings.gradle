@@ -1,1 +1,1 @@
-include ':libzxing', ':Switch_library', ':lib_tv_fullhtml', ':CarOwner', ':TrainCar_Student_v2.0', ':TrainCar_Teacher_v2.0',':GoodsOwner_v2.0'
+include ':libzxing', ':Switch_library', ':lib_tv_fullhtml', ':CarOwner', ':TrainCar_Student_v2.0', ':TrainCar_Teacher_v2.0', ':GoodsOwner_0722'

@@ -45,6 +45,7 @@ public class WithdrawActivity extends BaseActivity {
 
     private EditText et_jine;  //金额
     private EditText et_yinhnag;   //银行
+    private EditText et_branchBank; //支行
     private EditText et_kahao;      //卡号
     private EditText et_name;      //持卡人
     private EditText et_phone;      //手机号
@@ -77,6 +78,7 @@ public class WithdrawActivity extends BaseActivity {
 
         et_jine = (EditText) findViewById(R.id.et_jine);
         et_yinhnag = (EditText) findViewById(R.id.et_yinhnag);
+        et_branchBank = (EditText) findViewById(R.id.et_branchBank);
         et_kahao = (EditText) findViewById(R.id.et_kahao);
         et_name = (EditText) findViewById(R.id.et_name);
         et_phone = (EditText) findViewById(R.id.et_phone);
@@ -89,7 +91,7 @@ public class WithdrawActivity extends BaseActivity {
     protected void initData() {
         sWithdrawActivity = this;
         //初始化下拉列表中数据，以防getSharedPreferences抛null异常
-        setStr = new HashSet<String>();
+        setStr = new HashSet<>();
     }
 
     @Override
@@ -139,9 +141,10 @@ public class WithdrawActivity extends BaseActivity {
         String jine = et_jine.getText().toString();
         String kahao = et_kahao.getText().toString();
         String name = et_name.getText().toString();
-        String yinhnag[] = et_yinhnag.getText().toString().split(" ");
+        String yinhnag = et_yinhnag.getText().toString();
+        String branchBank = et_branchBank.getText().toString();
 
-        if (phone.isEmpty() || jine.isEmpty() || kahao.isEmpty() || name.isEmpty() || yinhnag[0].isEmpty()) {
+        if (phone.isEmpty() || jine.isEmpty() || kahao.isEmpty() || name.isEmpty() || yinhnag.isEmpty()) {
             Toast.makeText(this, "信息不完整", Toast.LENGTH_SHORT).show();
         } else {
 
@@ -150,15 +153,16 @@ public class WithdrawActivity extends BaseActivity {
             jsonObject.addProperty("UserType", 2);
             jsonObject.addProperty("Tel", phone);
             jsonObject.addProperty("Amount", jine);
-            jsonObject.addProperty("BankName", yinhnag[0]);
-            jsonObject.addProperty("BranchBank", yinhnag[1]);
-            jsonObject.addProperty("BranchBank", name);
+            jsonObject.addProperty("BankName", yinhnag);
+            //jsonObject.addProperty("BranchBank", yinhnag[1]);
+            jsonObject.addProperty("BranchBank", branchBank);
+            jsonObject.addProperty("AccountName", name);
             jsonObject.addProperty("AccountNumber", kahao);
             Map<String, String> map = EncryptUtil.encryptDES(jsonObject.toString());
             HttpUtil.doPost(WithdrawActivity.this, Contants.url_applaywithdrawals, "applaywithdrawals", map, new VolleyInterface(WithdrawActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
                 @Override
                 public void onSuccess(JsonElement result) {
-                    showShortToastByString("提现成功");
+                    showShortToastByString(getResources().getString(R.string.applyWithDraw));
                     finish();
                 }
 

@@ -94,7 +94,8 @@
                 style="@style/Student_TextView_Style"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="4dp"
-                android:text="@string/student_cardId" />
+                android:text="@string/student_cardId"
+                android:visibility="gone"/>
 
 
             <LinearLayout

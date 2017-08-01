@@ -29,14 +29,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-import com.kyleduo.switchbutton.SwitchButton;
 import com.nineoldandroids.view.ViewHelper;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Map;
 
-import cn.com.caronwer.GengxinService;
 import cn.com.caronwer.R;
 import cn.com.caronwer.activiBu.ConfirmOrderActivity;
 import cn.com.caronwer.adapter.OrderAddressAdapter;
@@ -50,7 +48,6 @@ import cn.com.caronwer.bean.OrderAddressInfo;
 import cn.com.caronwer.bean.OrderInfo;
 import cn.com.caronwer.bean.QiangOrderInfo;
 import cn.com.caronwer.bean.UserInfo;
-import cn.com.caronwer.util.DensityUtil;
 import cn.com.caronwer.util.EncryptUtil;
 import cn.com.caronwer.util.ExitUtils;
 import cn.com.caronwer.util.HttpUtil;
@@ -70,7 +67,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
     private DrawerLayout mDrawerLayout;
     private ImageCycleView icv_banner;
     private CircleImageView civ_head;
-    private ImageView iv_cir_head;
+    //private ImageView iv_cir_head;
     private TextView mTv_shuaxin;
     private OrderAddressAdapter mOrderAddressAdapter;
     public UserInfo userInfo;
@@ -81,7 +78,6 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
     private TextView tv_car_1;
     private TextView tv_tel;
     private TextView tv_myOrder;
-    private TextView tv_myInfo;
     private TextView tv_myWallet;
     private TextView tv_news;
     private TextView tv_news_num;
@@ -95,8 +91,9 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
     private OrderInfo orderInfo;
     private double payment;
     private FragmentTransaction ft;
-    private SwitchButton mSb_content;
+    //private SwitchButton mSb_content;
     private LinearLayout mLl_me;
+    private LinearLayout ll_myInfo;
     private TextView mTv_rz;
 
     private QiangOrderInfo mQiangOrderInfo;
@@ -116,8 +113,6 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
     private String mAccount = "";
     private String mPassword = "";
     private boolean isDenglu = false;
-    private UserInfo mUserInfo = new UserInfo("00000000-0000-0000-0000-000000000000", "", "", "", "", "", 0, 0, "", "", "",
-            0, "", 0, "");
 
     private LocationClient mLocationClient = null;
     private BDLocation mLocation = null;
@@ -145,21 +140,19 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
     protected void findById() {
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mSb_content = (SwitchButton) findViewById(R.id.sb_content);
-        iv_cir_head = (ImageView) findViewById(R.id.iv_cir_head);
+        //mSb_content = (SwitchButton) findViewById(R.id.sb_content);
+        //iv_cir_head = (ImageView) findViewById(R.id.iv_cir_head);
         icv_banner = (ImageCycleView) findViewById(R.id.icv_banner);
         tv_tel = (TextView) findViewById(R.id.tv_tel);
         tv_myOrder = (TextView) findViewById(R.id.tv_myOrder);
-        tv_myInfo = (TextView) findViewById(R.id.tv_myInfo);
         tv_myWallet = (TextView) findViewById(R.id.tv_myWallet);
         tv_news = (TextView) findViewById(R.id.tv_news);
         tv_news_num = (TextView) findViewById(R.id.tv_news_num);
-        tv_benefit_activity = (TextView) findViewById(R.id.tv_benefit_activity);
+        tv_benefit_activity = (TextView) findViewById(R.id.tv_benefit);
         tv_setting = (TextView) findViewById(R.id.tv_setting);
         rl_head = (RelativeLayout) findViewById(R.id.rl_head);
         civ_head = (CircleImageView) findViewById(R.id.civ_head);
-        mLl_me = (LinearLayout) findViewById(R.id.ll_me);
-        mTv_rz = (TextView) findViewById(R.id.tv_rz);
+        mTv_rz = (TextView) findViewById(R.id.tv_auth);
         mTv_shuaxin = (TextView) findViewById(R.id.tv_shuaxin);
         mTv_mz = (TextView) findViewById(R.id.tv_mz);
         mTv_myCar = (TextView) findViewById(R.id.tv_myCar);
@@ -173,16 +166,19 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
 
         mRl_xiuxi = (RelativeLayout) findViewById(R.id.rl_xiuxi);
         mLl_main = (LinearLayout) findViewById(R.id.ll_main);
-
+        mLl_me = (LinearLayout) findViewById(R.id.ll_me);
+        ll_myInfo = (LinearLayout) findViewById(R.id.ll_myInfo);
 
         tvs_car = new ArrayList<>();
 
 
+        /*
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(45, 45);
             layoutParams.setMargins(DensityUtil.dip2px(MainActivity.this, 10.0f), DensityUtil.dip2px(MainActivity.this, 15.0f), 0, 0);
             iv_cir_head.setLayoutParams(layoutParams);
         }
+        */
     }
 
     @Override
@@ -203,10 +199,11 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
 
         if (isDenglu) {
             userInfo = getIntent().getParcelableExtra("userInfo");
-            startService(new Intent(MainActivity.this, GengxinService.class));
-            getNews(1);
+            //startService(new Intent(MainActivity.this, GengxinService.class));
+            //getNews(1);
         } else {
-            userInfo = mUserInfo;
+            userInfo = new UserInfo();
+            userInfo.setUserId("00000000-0000-0000-0000-000000000000");
         }
 
         adInfos = getIntent().getParcelableArrayListExtra("adInfos");
@@ -250,15 +247,15 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
     protected void onRestart() {
         super.onRestart();
         isFirstLoading = true;
-        getNews(1);
+        //getNews(1);
     }
 
     @Override
     protected void initView() {
 
         if (isDenglu) {
-            mSb_content.setChecked(true);
-            change(true);//登录后默认开始工作
+            //mSb_content.setChecked(true);
+            //change(true);//登录后默认开始工作
         }
 
         tv_tel.setText(userInfo.getTel());
@@ -269,21 +266,22 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
             SPtils.putString(MainActivity.this, "VehicleNo", userInfo.getVehicleNo());
         }
 
-        String authenticateStatus = userInfo.getAuthenticateStatus();
-
+        int authenticateStatus = userInfo.getAuthenticateStatus();
+        LogUtil.i("authenticateStatus", authenticateStatus + "");
         if (isDenglu == true) {
             switch (authenticateStatus) {
-                case "1":
+                case 1:
                     mTv_rz.setText("未认证");
                     break;
-                case "2":
+                case 2:
                     mTv_rz.setText("审核中");
+                    mTv_rz.setClickable(false);
                     break;
-                case "3":
+                case 3:
                     mTv_rz.setText("通过认证");
                     mTv_rz.setClickable(false);
                     break;
-                case "4":
+                case 4:
                     mTv_rz.setText("审核失败");
                     break;
 
@@ -294,7 +292,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
 
 
         HttpUtil.setImageLoader(Contants.imagehost + userInfo.getHeadIco(), civ_head, R.mipmap.cir_head, R.mipmap.cir_head);
-        HttpUtil.setImageLoader(Contants.imagehost + userInfo.getHeadIco(), iv_cir_head, R.mipmap.cir_head, R.mipmap.cir_head);
+        //HttpUtil.setImageLoader(Contants.imagehost + userInfo.getHeadIco(), iv_cir_head, R.mipmap.cir_head, R.mipmap.cir_head);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setAutoMeasureEnabled(true);
@@ -325,20 +323,20 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
 
             @Override
             public void onDrawerOpened(View drawerView) {
-                iv_cir_head.setVisibility(View.GONE);
+                //iv_cir_head.setVisibility(View.GONE);
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
-                iv_cir_head.setVisibility(View.VISIBLE);
+                //iv_cir_head.setVisibility(View.VISIBLE);
             }
         });
 
         mOrderAddressAdapter.setOnItemClickListener(this);
-        iv_cir_head.setOnClickListener(this);
+        //iv_cir_head.setOnClickListener(this);
         tv_tel.setOnClickListener(this);
         tv_myOrder.setOnClickListener(this);
-        tv_myInfo.setOnClickListener(this);
+        ll_myInfo.setOnClickListener(this);
         tv_myWallet.setOnClickListener(this);
         tv_news.setOnClickListener(this);
         tv_benefit_activity.setOnClickListener(this);
@@ -346,6 +344,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
         mTv_shuaxin.setOnClickListener(this);
         mTv_myCar.setOnClickListener(this);
 
+        /*
         mSb_content.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -359,6 +358,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
                 }
             }
         });
+        */
         mLl_me.setOnClickListener(this);
         civ_head.setOnClickListener(this);
         mTv_rz.setOnClickListener(this);
@@ -388,49 +388,12 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onBtnClick(String time, String no, String viewName) {
-                final String viewName2 = viewName;
-                final String time2 = time;
-                final String no2 = no;
+
+                mNo = no;
+                mTime = time;
 
                 if (isDenglu == true) {
-                    switch (viewName2) {
-                        case "抢单承运":
-                        {
-                            mNo = no2;
-                            mTime = time2;
-                            endDialog = MyDialog.sureDialog(MainActivity.this);
-                            endDialog.show();
-                            endDialog.setOnSettingListener(new MyDialog.EndListener() {
-                                @Override
-                                public void onSetting(String content) {
-                                    endDialog.dismiss();
-                                    qdd();
-                                }
-                            });
-                            break;
-                        }
-                        case "预约抢单":
-                        {
-                            mNo = no2;
-                            mTime = time2;
-                            endDialog = MyDialog.sureDialog(MainActivity.this);
-                            endDialog.show();
-                            endDialog.setOnSettingListener(new MyDialog.EndListener() {
-                                @Override
-                                public void onSetting(String content) {
-                                    endDialog.dismiss();
-                                    qdd();
-                                }
-                            });
-                            break;
-                        }
-                        case "报价抢单":
-                        {
-                            mNo = no2;
-                            baojia();
-                            break;
-                        }
-                    }
+                    alreadyExistingOrder(viewName);
                 } else {
                     tiaozhuan();
                 }
@@ -464,7 +427,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
                 if (bdLocation != null) {
                     //在这里获取当前位置
                     mLocation = bdLocation;
-                    LogUtil.i("MainActivity", "最新定位:lat:" + bdLocation.getLatitude() + ",lng:" + bdLocation.getLongitude());
+                    //LogUtil.i("MainActivity", "最新定位:lat:" + bdLocation.getLatitude() + ",lng:" + bdLocation.getLongitude());
                     if (isFirstLoading) {
                         getOrders(CurrentPage, 0);
                         isFirstLoading = false;
@@ -572,6 +535,84 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
     }
 
 
+    private void alreadyExistingOrder(final String viewName) {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("UserId", SPtils.getString(this, "UserId", ""));
+        Map<String, String> map = EncryptUtil.encryptDES(jsonObject.toString());
+        HttpUtil.doPost(MainActivity.this, Contants.url_AlreadyExistingOrder, "AlreadyExistingOrder", map,
+                new VolleyInterface(MainActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
+                    @Override
+                    public void onSuccess(JsonElement result) {
+                        Gson gson = new Gson();
+                        Type listType = new TypeToken<ArrayList>(){}.getType();
+                        ArrayList list = gson.fromJson(result, listType);
+                        if (list != null && list.size() > 0) {
+                            final MyDialog myDialog = MyDialog.promoteDialog(MainActivity.this,
+                                    getResources().getString(R.string.duplicate_promote));
+                            myDialog.show();
+                            myDialog.setOnSettingListener(new MyDialog.SureListener() {
+                                @Override
+                                public void onSureClick() {
+                                    grabOrder(viewName);
+                                    myDialog.dismiss();
+                                }
+
+                                @Override
+                                public void onCancelClick() {
+                                    myDialog.dismiss();
+                                }
+                            });
+                        } else {
+                            grabOrder(viewName);
+                        }
+                    }
+
+                    @Override
+                    public void onError(VolleyError error) {
+                        showShortToastByString(getString(R.string.timeoutError));
+                        Toast.makeText(MainActivity.this, "网络异常", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onStateError(int sta, String msg) {
+                        grabOrder(viewName);
+                    }
+                });
+    }
+
+    private void grabOrder(String viewName) {
+        switch (viewName) {
+            case "抢单承运": {
+                endDialog = MyDialog.sureDialog(MainActivity.this);
+                endDialog.show();
+                endDialog.setOnSettingListener(new MyDialog.EndListener() {
+                    @Override
+                    public void onSetting(String content) {
+                        endDialog.dismiss();
+                        qdd();
+                    }
+                });
+                break;
+            }
+            case "预约抢单": {
+                endDialog = MyDialog.sureDialog(MainActivity.this);
+                endDialog.show();
+                endDialog.setOnSettingListener(new MyDialog.EndListener() {
+                    @Override
+                    public void onSetting(String content) {
+                        endDialog.dismiss();
+                        qdd();
+                    }
+                });
+                break;
+            }
+            case "报价抢单": {
+                baojia();
+                break;
+            }
+        }
+    }
+
     private void setTuPian() {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("AdvertisingType", 2);
@@ -613,7 +654,6 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
         });
     }
 
-
     /**
      * 修改工作状态
      *
@@ -636,18 +676,18 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
                     mRl_xiuxi.setVisibility(View.VISIBLE);
                     mLl_main.setVisibility(View.GONE);
                 }
-                mSb_content.setChecked(isChecked);
+                //mSb_content.setChecked(isChecked);
             }
 
             @Override
             public void onError(VolleyError error) {
                 showShortToastByString(getString(R.string.timeoutError));
-                mSb_content.setChecked(!isChecked);
+                //mSb_content.setChecked(!isChecked);
             }
 
             @Override
             public void onStateError(int sta, String msg) {
-                mSb_content.setChecked(!isChecked);
+                //mSb_content.setChecked(!isChecked);
                 if (!TextUtils.isEmpty(msg)) {
                     showShortToastByString(msg);
                 }
@@ -677,8 +717,8 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
                     intent.putExtra("selectNo", "1");
                     startActivity(intent);
                     break;
-                case R.id.tv_myInfo:
-                    intent = new Intent(MainActivity.this, PersonalInfoActivity.class);
+                case R.id.ll_myInfo:
+                    intent = new Intent(MainActivity.this, PersonalCenterActivity.class);
                     intent.putExtra("userInfo", userInfo);
                     startActivityForResult(intent, 3);
                     break;
@@ -692,7 +732,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
 
                     startActivityForResult(intent, 10);
                     break;
-                case R.id.tv_benefit_activity://优惠活动
+                case R.id.tv_benefit://优惠活动
                     intent = new Intent(MainActivity.this, BenefitActivityActivity.class);
                     startActivity(intent);
                     break;
@@ -706,12 +746,15 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
                     intent.putExtra("userInfo", userInfo);
                     startActivityForResult(intent, 3);
                     break;
-                case R.id.tv_rz:    //c车主认证
-                    if (mTv_rz.getText().equals("通过认证")) {
-                        Toast.makeText(this, "用户已认证", Toast.LENGTH_SHORT).show();
-                    } else {
+                case R.id.tv_auth:    //c车主认证
+                    if (userInfo.getAuthenticateStatus() == 1
+                            || userInfo.getAuthenticateStatus() == 4) {
                         intent = new Intent(MainActivity.this, AuthFirstActivity.class);
                         startActivity(intent);
+                    } else if (userInfo.getAuthenticateStatus() == 2) {
+                        Toast.makeText(this, R.string.authenticate_already_upload, Toast.LENGTH_SHORT).show();
+                    } else if (userInfo.getAuthenticateStatus() == 3){
+                        Toast.makeText(this, R.string.authenticate_already_success, Toast.LENGTH_SHORT).show();
                     }
                     break;
 
@@ -788,7 +831,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
             userInfo = data.getParcelableExtra("userInfo");
             tv_tel.setText(userInfo.getUserName());
             HttpUtil.setImageLoader(Contants.imagehost + userInfo.getHeadIco(), civ_head, R.mipmap.cir_head, R.mipmap.cir_head);
-            HttpUtil.setImageLoader(Contants.imagehost + userInfo.getHeadIco(), iv_cir_head, R.mipmap.cir_head, R.mipmap.cir_head);
+            //HttpUtil.setImageLoader(Contants.imagehost + userInfo.getHeadIco(), iv_cir_head, R.mipmap.cir_head, R.mipmap.cir_head);
         }
         if (requestCode == 5 || requestCode == 11) {
             getOrders(CurrentPage, 0);
@@ -799,10 +842,9 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
         }
         if (requestCode == 10) {
             newsSize = nSize;
-            getNews(1);
+            //getNews(1);
         }
     }
-
 
     /**
      * 获取抢单列表
@@ -833,7 +875,7 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
             if (!progressDialog.isShowing())
                 progressDialog.show();
         } else {
-            progressDialog =new CustomProgressDialog(this);
+            progressDialog = new CustomProgressDialog(this);
             progressDialog.show();
         }
         progressDialog.setText(getString(R.string.loading));
@@ -977,6 +1019,39 @@ public class MainActivity extends BaseActivity implements OrderAddressAdapter.On
         startActivityForResult(intent, 9);
     }
 
+    private void getUserInfo() {
+        if (!NetworkUtil.isConnected(MainActivity.this)) {
+            showShortToastByString(getString(R.string.Neterror));
+        }
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("UserId", SPtils.getString(this, "UserId", ""));
+        jsonObject.addProperty("UserType", 2);
+        Map<String, String> map = EncryptUtil.encryptDES(jsonObject.toString());
+
+        HttpUtil.doPost(MainActivity.this, Contants.url_getUserInfo, "GetUserInfo", map,
+                new VolleyInterface(MainActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
+                    @Override
+                    public void onSuccess(JsonElement result) {
+                        Gson gson = new Gson();
+                        userInfo = gson.fromJson(result, UserInfo.class);
+                        SPtils.putString(MainActivity.this, "UserId", userInfo.getUserId());
+                        SPtils.putString(MainActivity.this, "VehicleNo", userInfo.getVehicleNo());
+                        SPtils.putString(MainActivity.this, "CompanyTel", userInfo.getCompanyTel());
+
+                        initView();
+                    }
+
+                    @Override
+                    public void onError(VolleyError error) {
+
+                    }
+
+                    @Override
+                    public void onStateError(int sta, String msg) {
+
+                    }
+                });
+    }
 }
 
 

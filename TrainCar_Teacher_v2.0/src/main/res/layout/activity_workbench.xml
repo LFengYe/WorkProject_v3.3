@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/color_White"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_White"
+    android:orientation="vertical">
 
     <include
         android:id="@+id/head"
         layout="@layout/include_head"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        />
+        android:layout_height="35dp" />
 
 
     <LinearLayout
@@ -20,14 +19,13 @@
         android:background="@color/color_White"
         android:orientation="horizontal"
         android:paddingBottom="5dp"
-        android:paddingTop="5dp">
-    </LinearLayout>
+        android:paddingTop="5dp"></LinearLayout>
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/color_Gray"/>
+        android:background="@color/color_Gray" />
 
 
     <LinearLayout
@@ -40,28 +38,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="40dip"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/time_title"
                 android:layout_width="50dp"
                 android:layout_height="fill_parent"
-                android:gravity="center"
-                android:background="@drawable/right_border" />
+                android:background="@drawable/right_border"
+                android:gravity="center" />
 
             <com.guugoo.jiapeiteacher.view.CHScrollView2
                 android:id="@+id/item_scroll_title"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="@color/color_White"
-                android:scrollbars="none" >
+                android:scrollbars="none">
 
                 <LinearLayout
                     android:id="@+id/item_scroll_title_content"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:orientation="horizontal" >
-                </LinearLayout>
+                    android:orientation="horizontal"></LinearLayout>
             </com.guugoo.jiapeiteacher.view.CHScrollView2>
         </LinearLayout>
 
@@ -76,15 +73,15 @@
             android:layout_height="match_parent"
             android:cacheColorHint="@android:color/transparent"
             android:fadingEdge="none"
-            android:scrollbars="none" >
-        </ListView>
+            android:scrollbars="none"></ListView>
 
     </LinearLayout>
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp">
+        android:layout_height="130dp"
+        android:visibility="gone">
 
         <LinearLayout
             android:id="@+id/ll_edit"
@@ -97,7 +94,7 @@
                 android:id="@+id/view_line"
                 android:layout_width="match_parent"
                 android:layout_height="0.8dp"
-                android:background="@color/color_Gray"/>
+                android:background="@color/color_Gray" />
 
             <Button
                 android:id="@+id/bt_edit"
@@ -106,7 +103,7 @@
                 android:background="@color/color_LightGray"
                 android:text="@string/edit"
                 android:textColor="@color/color_Black"
-                android:textSize="@dimen/rightSp"/>
+                android:textSize="@dimen/rightSp" />
         </LinearLayout>
 
         <LinearLayout
@@ -122,7 +119,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/color_line"/>
+                android:background="@color/color_line" />
 
             <EditText
                 android:id="@+id/et_reason"
@@ -134,12 +131,12 @@
                 android:hint="@string/hint_reason"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
-                android:textSize="@dimen/smallerSp"/>
+                android:textSize="@dimen/smallerSp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/color_line"/>
+                android:background="@color/color_line" />
 
             <Button
                 android:id="@+id/bt_cancel"
@@ -150,7 +147,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/et_login_style"
                 android:text="@string/confirm_cancel"
-                android:textColor="@color/color_Black"/>
+                android:textColor="@color/color_Black" />
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

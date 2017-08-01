@@ -43,7 +43,15 @@ public class Student {
     private String PracticeCount;
     private String Schedule;
     private String InvitationCode;
+    private String BookType;
 
+    public String getBookType() {
+        return BookType;
+    }
+
+    public void setBookType(String bookType) {
+        BookType = bookType;
+    }
 
     public int getId() {
         return Id;

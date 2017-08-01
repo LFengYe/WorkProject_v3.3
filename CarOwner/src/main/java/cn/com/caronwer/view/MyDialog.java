@@ -244,6 +244,44 @@ public class MyDialog extends Dialog {
         return sureDialog;
     }
 
+    public static MyDialog promoteDialog(final Activity activity,String promoteMsg) {
+        sureDialog = new MyDialog(activity);
+        View v = View.inflate(activity, R.layout.dialog_promote, null);
+
+        TextView tv_no = (TextView) v.findViewById(R.id.tv_no);
+        Button bt_cancel = (Button) v.findViewById(R.id.bt_cancel);
+        Button bt_ok = (Button) v.findViewById(R.id.bt_ok);
+        tv_no.setText(promoteMsg);
+
+        Point size = new Point();
+        activity.getWindowManager().getDefaultDisplay().getSize(size);
+        int width = (int) (size.x * 0.8);
+        int height = (int) (size.y * 0.3);
+        sureDialog.setContentView(v);
+        sureDialog.setCancelable(true);
+        Window dialogWindow = sureDialog.getWindow();
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes(); // 获取对话框当前的参数值
+        dialogWindow.setGravity(Gravity.CENTER);
+        lp.height = height;
+        lp.width = width;
+        dialogWindow.setAttributes(lp);
+
+        bt_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sureListener.onCancelClick();
+            }
+        });
+        bt_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sureListener.onSureClick();
+            }
+        });
+
+        return sureDialog;
+    }
+
     /**
      * 确认装货dialog
      * @param activity
@@ -304,12 +342,17 @@ public class MyDialog extends Dialog {
     public interface EndListener {
         void onSetting(String content);
     }
-    public interface SureListener {
-        void onSetting();
-    }
 
     public void setOnSettingListener(EndListener listener) {
         endListener = listener;
     }
 
+    public interface SureListener {
+        void onSureClick();
+        void onCancelClick();
+    }
+
+    public void setOnSettingListener(SureListener listener) {
+        sureListener = listener;
+    }
 }

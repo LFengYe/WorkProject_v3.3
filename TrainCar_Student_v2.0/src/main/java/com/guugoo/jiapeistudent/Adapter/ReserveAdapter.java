@@ -127,6 +127,7 @@ public class ReserveAdapter extends BaseAdapter {
                 intent.putExtra("RefId", data.getRefId());
                 intent.putExtra("BookingId", data.getBookingId());
                 intent.putExtra("PayType", data.getFeeItem());
+                intent.putExtra("Status", data.getStatus());
                 activity.startActivityForResult(intent,1);
             }
         });

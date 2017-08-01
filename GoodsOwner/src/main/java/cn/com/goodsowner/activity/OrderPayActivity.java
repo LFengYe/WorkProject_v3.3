@@ -1,6 +1,7 @@
 package cn.com.goodsowner.activity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -21,6 +22,15 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.google.gson.reflect.TypeToken;
+import com.tencent.mm.opensdk.modelpay.PayReq;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+//import com.tencent.mm.sdk.modelpay.PayReq;
+//import com.tencent.mm.sdk.openapi.IWXAPI;
+//import com.tencent.mm.sdk.openapi.WXAPIFactory;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import cn.com.goodsowner.adapter.OrderAddAdapter;
 import cn.com.goodsowner.base.BaseActivity;
@@ -28,6 +38,8 @@ import cn.com.goodsowner.base.Contants;
 import cn.com.goodsowner.bean.OrderAddressBean;
 import cn.com.goodsowner.bean.OrderAddressInfo;
 import cn.com.goodsowner.bean.OrderFeeInfo;
+import cn.com.goodsowner.bean.PayResult;
+import cn.com.goodsowner.bean.WeChatPay;
 import cn.com.goodsowner.util.EncryptUtil;
 import cn.com.goodsowner.util.HttpUtil;
 import cn.com.goodsowner.util.LogUtil;
@@ -66,6 +78,26 @@ public class OrderPayActivity extends BaseActivity {
     private double freight;
     private double premiums;
     private double isSurcharge;
+
+    private IWXAPI wxApi;
+
+    private void weChatPay(JSONObject returnData) throws JSONException {
+        wxApi = WXAPIFactory.createWXAPI(this, Contants.weChatAPPID, false);
+        wxApi.registerApp(Contants.weChatAPPID);
+
+        PayReq req = new PayReq();
+        req.appId			= returnData.getString("appId");
+        req.partnerId		= returnData.getString("partnerId");
+        req.prepayId		= returnData.getString("prepayId");
+        req.nonceStr		= returnData.getString("nonceStr");
+        req.timeStamp		= returnData.getString("timeStamp");
+        req.packageValue	= returnData.getString("package");
+        req.sign			= returnData.getString("sign");
+
+        wxApi.sendReq(req);
+        Gson gson = new Gson();
+        Log.i("调用微信支付", gson.toJson(returnData));
+    }
 
     @Override
     protected int getLayout() {
@@ -210,8 +242,6 @@ public class OrderPayActivity extends BaseActivity {
                         @Override
                         public void onError(VolleyError error) {
                             showShortToastByString(getString(cn.com.goodsowner.R.string.timeoutError));
-//                LogUtil.i("hint",error.networkResponse.headers.toString());
-//                LogUtil.i("hint",error.networkResponse.statusCode+"");
                         }
 
                         @Override
@@ -265,18 +295,17 @@ public class OrderPayActivity extends BaseActivity {
 
     private void publishOrder() {
         jsonObject.addProperty("PayWay", payType);
-        LogUtil.i(jsonObject.toString());
+        //LogUtil.i(jsonObject.toString());
         Map<String, String> map = EncryptUtil.encryptDES(jsonObject.toString());
         if (carType == 1) {
 
             HttpUtil.doPost(OrderPayActivity.this, Contants.url_sendOrder, "sendOrder", map, new VolleyInterface(OrderPayActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
                 @Override
                 public void onSuccess(JsonElement result) {
-                    LogUtil.i(result.toString());
+                    //LogUtil.i(result.toString());
                     showShortToastByString("货源发布成功");
                     setResult(RESULT_OK, getIntent());
                     finish();
-
                 }
 
                 @Override
@@ -295,7 +324,7 @@ public class OrderPayActivity extends BaseActivity {
             HttpUtil.doPost(OrderPayActivity.this, Contants.url_publishCarpool, "publishCarpool", map, new VolleyInterface(OrderPayActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
                 @Override
                 public void onSuccess(JsonElement result) {
-                    LogUtil.i(result.toString());
+                    //LogUtil.i(result.toString());
                     showShortToastByString("货源发布成功");
                     setResult(RESULT_OK, getIntent());
                     finish();
@@ -331,10 +360,14 @@ public class OrderPayActivity extends BaseActivity {
         HttpUtil.doPost(OrderPayActivity.this, Contants.url_payAmount, "payAmount", map, new VolleyInterface(OrderPayActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
             @Override
             public void onSuccess(JsonElement result) {
-                LogUtil.i(result.toString());
-                showShortToastByString("支付成功");
-                setResult(RESULT_OK, getIntent());
-                finish();
+                try {
+                    JSONObject object = new JSONObject(result.toString());
+                    if (payType == 2) {
+                        weChatPay(object.getJSONObject("result"));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
 
             @Override
@@ -354,7 +387,7 @@ public class OrderPayActivity extends BaseActivity {
     public void onBackPressed() {
         if (isAfterPay) {
             setResult(RESULT_OK, getIntent());
-            System.out.println("Asdsad");
+            //System.out.println("Asdsad");
         }
         super.onBackPressed();
 

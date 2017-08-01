@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".MinorActivity.ReserveDetailsActivity">
+
     <com.guugoo.jiapeistudent.Views.TitleView
         android:id="@+id/reserve_details_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
     </com.guugoo.jiapeistudent.Views.TitleView>
 
@@ -24,200 +24,201 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/reserve_details_layout_height"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
             android:layout_marginTop="20dp"
-            >
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text1"
-                android:textSize="@dimen/reserve_details_text"
                 android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:text="@string/reserve_details_text1"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/reserve_details_text"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
 
         </LinearLayout>
+
         <RelativeLayout
             android:id="@+id/map"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
             <TextView
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
                 android:id="@+id/detail1"
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text2"
-                android:textSize="@dimen/reserve_details_text"
-                android:layout_marginLeft="@dimen/reserve_details_text_left"
-                android:textColor="@color/text_black"
                 android:layout_centerVertical="true"
-                />
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:layout_marginTop="5dp"
+                android:text="@string/reserve_details_text2"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="@dimen/reserve_details_text"
-                android:textColor="@color/text_black"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/detail1"
-                />
+                android:text=""
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/reserve_details_text" />
+
             <ImageView
 
                 android:layout_width="63dp"
                 android:layout_height="23dp"
-                android:gravity="center_vertical"
-                android:layout_gravity="right"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:src="@mipmap/arrows_left"
-
+                android:layout_gravity="right"
                 android:layout_marginRight="20dp"
+                android:gravity="center_vertical"
+
                 android:padding="2dp"
+                android:src="@mipmap/arrows_left"
 
                 />
 
         </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/reserve_details_layout_height"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text3"
-                android:textSize="@dimen/reserve_details_text"
                 android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:text="@string/reserve_details_text3"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="@dimen/reserve_details_text"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="@dimen/reserve_details_text"
+                android:layout_marginLeft="20dp"
                 android:textColor="@color/text_black"
-                android:layout_marginLeft="20dp"/>
+                android:textSize="@dimen/reserve_details_text"
+                android:visibility="gone" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/reserve_details_layout_height"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
-            >
+            android:orientation="horizontal"
+            android:visibility="gone">
+
             <TextView
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text4"
-                android:textSize="@dimen/reserve_details_text"
                 android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:text="@string/reserve_details_text4"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/reserve_details_text"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/reserve_details_layout_height"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text5"
-                android:textSize="@dimen/reserve_details_text"
                 android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:text="@string/reserve_details_text5"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/reserve_details_text"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/reserve_details_layout_height"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:visibility="gone">
+
             <TextView
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text6"
-                android:textSize="@dimen/reserve_details_text"
                 android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:text="@string/reserve_details_text6"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/reserve_details_text"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
 
         </LinearLayout>
+
         <LinearLayout
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="horizontal">
 
-            >
             <TextView
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text7"
-                android:textSize="@dimen/reserve_details_text"
+                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:layout_marginTop="5dp"
+                android:text="@string/reserve_details_text7"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/reserve_details_text"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
         </LinearLayout>
 
 
@@ -227,124 +228,145 @@
             android:orientation="horizontal"
 
             >
+
             <TextView
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text12"
-                android:textSize="@dimen/reserve_details_text"
+                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:layout_marginTop="5dp"
+                android:text="@string/reserve_details_text12"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/reserve_details_text"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/reserve_details_layout_height"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text8"
-                android:textSize="@dimen/reserve_details_text"
                 android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:text="@string/reserve_details_text8"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/reserve_details_text"
                 android:textColor="@color/text_black"
-                />
-
+                android:textSize="@dimen/reserve_details_text" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/reserve_details_layout_height"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text9"
-                android:textSize="@dimen/reserve_details_text"
                 android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:text="@string/reserve_details_text13"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
+            <TextView
+                android:id="@+id/reserve_details_text14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/reserve_details_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reserve_details_layout_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/reserve_details_text_weight"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:text="@string/reserve_details_text9"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/reserve_details_text"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/ll_text2"
             android:layout_width="match_parent"
             android:layout_height="@dimen/reserve_details_layout_height"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:visibility="gone"
-            >
+            android:orientation="horizontal"
+            android:visibility="gone">
+
             <TextView
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text10"
-                android:textSize="@dimen/reserve_details_text"
                 android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:text="@string/reserve_details_text10"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/reserve_details_text"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/ll_text1"
             android:layout_width="match_parent"
             android:layout_height="@dimen/reserve_details_layout_height"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:visibility="gone"
-            >
+            android:orientation="horizontal"
+            android:visibility="gone">
+
             <TextView
                 android:layout_width="@dimen/reserve_details_text_weight"
                 android:layout_height="wrap_content"
-                android:text="@string/reserve_details_text11"
-                android:textSize="@dimen/reserve_details_text"
                 android:layout_marginLeft="@dimen/reserve_details_text_left"
+                android:text="@string/reserve_details_text11"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
+
             <TextView
                 android:id="@+id/reserve_details_text11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="@dimen/reserve_details_text"
                 android:textColor="@color/text_black"
-                />
+                android:textSize="@dimen/reserve_details_text" />
 
         </LinearLayout>
 

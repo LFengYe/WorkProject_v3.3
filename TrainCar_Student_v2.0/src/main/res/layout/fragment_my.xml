@@ -57,14 +57,23 @@
                 android:textColor="@color/text_black"
                 android:textSize="@dimen/my_text_size" />
 
+            <ImageView
+                android:id="@+id/schedule_image_1"
+                android:layout_width="@dimen/my_image_in"
+                android:layout_height="@dimen/my_image_in"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/my_text_right_size"
+                android:src="@mipmap/arrows_left"
+                android:textSize="@dimen/my_text_size" />
+
             <TextView
                 android:id="@+id/my_text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/schedule_image_1"
                 android:layout_marginRight="@dimen/my_text_right_size"
-                android:text=""
                 android:textSize="@dimen/my_text_size" />
         </RelativeLayout>
 

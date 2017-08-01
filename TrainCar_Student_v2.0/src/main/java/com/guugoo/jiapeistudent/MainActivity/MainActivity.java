@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected void processingData(ReturnData data) {
-        Log.d(TAG, "processingData: "+data.getData());
+        //Log.d(TAG, "processingData: "+data.getData());
     }
 
     @Override

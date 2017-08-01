@@ -3,6 +3,8 @@ package com.guugoo.jiapeiteacher.util;
 
 
 import android.util.Base64;
+import android.util.Log;
+
 import com.google.gson.JsonObject;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -50,10 +52,15 @@ public class HttpUtil {
     public static String url_recommend= localhost + "T_UserInfo/TeacherRecommend";
     public static String url_gpsStorage= localhost + "Gps/GpsStorage";
     public static String url_exitLogin= localhost + "S_Basic/SignOut";
+    public static String url_CoachLogin = localhost + "T_Work/CoachLogin";
+    public static String url_GetCardCheck = localhost + "T_Work/GetCardCheck";
+    public static String url_CoachLogOut = localhost + "T_Work/CoachLogOut";
+    public static String url_StudentLogOut = localhost + "T_Work/StudentLogOut";
+    public static String url_StudentsGetBlanch = localhost + "Students/GetBlanch";
 
 
     public static String httpPost(String strURL, JsonObject strParam,String token) {
-        System.out.println("url:" + strURL);
+        Log.i("当前请求", strURL);
         String resultData = "";
         try {
             URL url = new URL(strURL);
@@ -88,14 +95,15 @@ public class HttpUtil {
                 out.close();
                 // 获取数据
                 int code = urlConn.getResponseCode();
-                System.out.println("code"+code);
+                System.out.println("code:" + code);
                 if (code == 200) {
                     InputStream in = urlConn.getInputStream();
                     resultData = readStream(in).replace("\"","");
                     resultData= EncryptUtils.decryptDES(resultData);
-                }
-                if (code == 401) {
+                } else if (code == 401) {
                     resultData= "unAuthorization";
+                } else {
+                    resultData = null;
                 }
 
             } catch (Exception e) {

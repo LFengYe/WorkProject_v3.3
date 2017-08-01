@@ -1,7 +1,11 @@
 package cn.com.caronwer.activity;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +23,9 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
+import com.mylhyl.acp.Acp;
+import com.mylhyl.acp.AcpListener;
+import com.mylhyl.acp.AcpOptions;
 
 import java.lang.reflect.Type;
 import java.text.ParsePosition;
@@ -49,6 +56,7 @@ public class OrderDetailActivity extends BaseActivity {
 
     private TextView tv_title;
     private TextView tv_right;
+    private TextView tv_right_second;
     private ImageView iv_left_white;
     private ListView orderDetailList;
 
@@ -96,6 +104,7 @@ public class OrderDetailActivity extends BaseActivity {
         assert rl_head != null;
         tv_title = (TextView) rl_head.findViewById(R.id.tv_title);
         tv_right = (TextView) rl_head.findViewById(R.id.tv_right);
+        tv_right_second = (TextView) rl_head.findViewById(R.id.tv_right_second);
         iv_left_white = (ImageView) rl_head.findViewById(R.id.iv_left_white);
         orderDetailList = (ListView) findViewById(R.id.order_detail_list);
 
@@ -131,6 +140,9 @@ public class OrderDetailActivity extends BaseActivity {
 
         tv_title.setText(R.string.order_detail);
         tv_right.setText("刷新");
+        tv_right_second.setText("投诉");
+        tv_right_second.setVisibility(View.VISIBLE);
+        tv_right_second.setOnClickListener(this);
         tv_right.setVisibility(View.VISIBLE);
         tv_right.setOnClickListener(this);
         iv_left_white.setOnClickListener(this);
@@ -185,7 +197,7 @@ public class OrderDetailActivity extends BaseActivity {
             }
         }
         tv_surcharge.setVisibility(orderInfo.getIsSurcharge().equals("True") ? View.VISIBLE : View.GONE);
-        tv_toPay.setVisibility(orderInfo.getIsToPay().equals("True") ? View.VISIBLE : View.GONE);
+        tv_toPay.setVisibility(orderInfo.getIsToPay()? View.VISIBLE : View.GONE);
         tv_collectionPayment.setVisibility(orderInfo.getIsCollectionPayment() ? View.VISIBLE : View.GONE);
         iv_lianxi.setVisibility(TextUtils.isEmpty(orderInfo.getRemark()) ? View.GONE : View.VISIBLE);
 
@@ -289,6 +301,7 @@ public class OrderDetailActivity extends BaseActivity {
 
     /**
      * 取消订单前确认是否可以取消
+     *
      * @param orderNo
      * @param name
      */
@@ -418,7 +431,8 @@ public class OrderDetailActivity extends BaseActivity {
                         progressDialog.dismiss();
                         //LogUtil.i("订单详情:", result.toString());
                         Gson gson = new Gson();
-                        Type listType = new TypeToken<MeAllOrderInfo>() {}.getType();
+                        Type listType = new TypeToken<MeAllOrderInfo>() {
+                        }.getType();
                         orderInfo = gson.fromJson(result, listType);
                         orderAddressList = orderInfo.getOrderAddress();
 
@@ -476,6 +490,18 @@ public class OrderDetailActivity extends BaseActivity {
             case R.id.tv_right:
                 getOrderDetails();
                 break;
+            case R.id.tv_right_second:
+                //intentToCall(OrderDetailActivity.this, SPtils.getString(this, "CompanyTel", ""));
+                playDialog = MyDialog.playDialog(OrderDetailActivity.this, SPtils.getString(OrderDetailActivity.this, "CompanyTel", ""));
+                playDialog.show();
+                playDialog.setOnSettingListener(new MyDialog.EndListener() {
+                    @Override
+                    public void onSetting(String content) {
+                        playDialog.dismiss();
+                        intentToCall(OrderDetailActivity.this, SPtils.getString(OrderDetailActivity.this, "CompanyTel", ""));
+                    }
+                });
+                break;
             case R.id.iv_left_white:
                 finish();
                 break;
@@ -486,10 +512,13 @@ public class OrderDetailActivity extends BaseActivity {
                     @Override
                     public void onSetting(String content) {
                         playDialog.dismiss();
+                        intentToCall(OrderDetailActivity.this, orderInfo.getSenderTel());
+                        /*
                         Intent intent = new Intent();
                         intent.setAction(Intent.ACTION_CALL);
                         intent.setData(Uri.parse("tel:" + orderInfo.getSenderTel()));
                         startActivity(intent);
+                        */
                     }
                 });
 
@@ -526,5 +555,29 @@ public class OrderDetailActivity extends BaseActivity {
                 daohang(0);
                 break;
         }
+    }
+
+    public static boolean intentToCall(final Context context, final String phoneNumber) {
+        if (context == null || TextUtils.isEmpty(phoneNumber)) {
+            return false;
+        }
+        //6.0权限处理
+        Acp.getInstance(context).request(new AcpOptions.Builder().setPermissions(
+                Manifest.permission.CALL_PHONE).build(), new AcpListener() {
+            @Override
+            public void onGranted() {
+                Uri u = Uri.parse("tel:" + phoneNumber);
+                Intent it = new Intent(Intent.ACTION_CALL, u);
+                context.startActivity(it);
+            }
+
+
+            @Override
+            public void onDenied(List<String> permissions) {
+
+            }
+        });
+
+        return true;
     }
 }

@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/color_blue"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    tools:context="cn.com.caronwer.activity.BenefitActivityActivity">
+    android:orientation="vertical">
 
     <include
         android:id="@+id/in_head"
@@ -28,8 +27,7 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="30dp"
-            android:src="@mipmap/che" />
+            android:layout_marginTop="30dp" />
 
         <RelativeLayout
             android:id="@+id/rl_cartype"
@@ -53,7 +51,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/tv_t1"
-                android:text="小面包车"
                 android:textColor="@color/color_gary_font"
                 android:textSize="@dimen/normal_font" />
         </RelativeLayout>
@@ -93,7 +90,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/tv_t2"
-                android:text="额B1234214"
                 android:textColor="@color/color_gary_font"
                 android:textSize="@dimen/normal_font" />
         </RelativeLayout>
@@ -133,7 +129,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/tv_t3"
-                android:text="李辉"
                 android:textColor="@color/color_gary_font"
                 android:textSize="@dimen/normal_font" />
         </RelativeLayout>
@@ -166,8 +161,7 @@
                 android:background="@drawable/button_blue_style"
                 android:text="更换车辆"
                 android:textColor="@color/color_gary_font"
-                android:textSize="@dimen/normal_font"
-                android:visibility="gone" />
+                android:textSize="@dimen/biggest_font" />
         </LinearLayout>
 
     </LinearLayout>

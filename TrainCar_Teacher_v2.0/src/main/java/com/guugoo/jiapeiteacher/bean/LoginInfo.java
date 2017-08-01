@@ -32,7 +32,16 @@ public class LoginInfo implements Parcelable {
     private int ComprehensiveLevel;
     private String CardNo;
     private String InvitationCode;
+    private String SchoolName;
     private String token;
+
+    public String getSchoolName() {
+        return SchoolName;
+    }
+
+    public void setSchoolName(String schoolName) {
+        SchoolName = schoolName;
+    }
 
     public int getId() {
         return Id;
@@ -146,6 +155,7 @@ public class LoginInfo implements Parcelable {
         dest.writeInt(this.ComprehensiveLevel);
         dest.writeString(this.CardNo);
         dest.writeString(this.InvitationCode);
+        dest.writeString(this.SchoolName);
         dest.writeString(this.token);
     }
 
@@ -162,6 +172,7 @@ public class LoginInfo implements Parcelable {
         this.ComprehensiveLevel = in.readInt();
         this.CardNo = in.readString();
         this.InvitationCode = in.readString();
+        this.SchoolName = in.readString();
         this.token = in.readString();
     }
 

@@ -24,6 +24,8 @@
             android:layout_marginTop="13dp"
             android:src="@mipmap/left_white"/>
 
+
+
         <cn.com.goodsowner.view.CircleImageView
             android:id="@+id/civ_head"
             android:layout_width="70dp"

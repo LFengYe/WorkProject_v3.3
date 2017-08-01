@@ -74,11 +74,6 @@ public class OrderAddressAdapter extends RecyclerView.Adapter<OrderAddressAdapte
             viewHolder.iv_action.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    Intent intent = new Intent(mActivity, MapActivity.class);
-//                    intent.putExtra("position",position);
-//                    intent.putExtra("orderAddressInfo",orderAddressInfo);
-//                    intent.putExtra("type",2);
-//                    mActivity.startActivityForResult(intent,1);
                 }
             });
         } else if (orderAddressInfo.getState() == 2) {

@@ -42,6 +42,7 @@
     <dimen name="pay_black_text">16sp</dimen>
     <dimen name="pay_gray_text">13sp</dimen>
     <dimen name="reserve_hand_text">16sp</dimen>
+    <dimen name="reserve_second_text">10sp</dimen>
     <dimen name="reserve_details_text">15sp</dimen>
     <dimen name="comment_pay_text">15sp</dimen>
     <dimen name="person_text">16sp</dimen>

@@ -2,6 +2,7 @@ package com.guugoo.jiapeiteacher.activity;
 
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -10,15 +11,20 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+
 import java.util.Set;
+
 import com.guugoo.jiapeiteacher.R;
 import com.guugoo.jiapeiteacher.base.BaseActivity;
 import com.guugoo.jiapeiteacher.base.Constants;
@@ -29,6 +35,8 @@ import com.guugoo.jiapeiteacher.util.EncryptUtils;
 import com.guugoo.jiapeiteacher.util.HttpUtil;
 import com.guugoo.jiapeiteacher.util.NetUtil;
 import com.guugoo.jiapeiteacher.view.MyDialog;
+import com.zhy.m.permission.MPermissions;
+
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.android.api.TagAliasCallback;
 
@@ -56,9 +64,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         MyApplication.getInstance().addActivity(this);
-        startState = getIntent().getIntExtra("startState",0);
+        startState = getIntent().getIntExtra("startState", 0);
         initView();
-
     }
 
 
@@ -69,15 +76,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         tv_back_psd = (TextView) findViewById(R.id.tv_back_psd);
         cb_login = (CheckBox) findViewById(R.id.cb_login);
         prefs = getSharedPreferences(Constants.SHARED_NAME, MODE_PRIVATE);
-        account = prefs.getString("account","");
-        password = prefs.getString("password","");
-        autoState = prefs.getBoolean("autoState",false);
+        account = prefs.getString("account", "");
+        password = prefs.getString("password", "");
+        autoState = prefs.getBoolean("autoState", false);
 
-        if (autoState||startState!=0){
+        if (autoState || startState != 0) {
             et_account.setText(account);
             et_password.setText(password);
             loginLogic();
-        }else {
+        } else {
             if (!account.isEmpty()) {
                 et_account.setText(account);
                 et_account.setSelection(account.length());
@@ -111,14 +118,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         if (v.getId() == R.id.bt_login) {
             if (ContextCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    != PackageManager.PERMISSION_GRANTED)
-            {
+                    != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(LoginActivity.this,
                         new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                                Manifest.permission.READ_EXTERNAL_STORAGE},
+                                Manifest.permission.READ_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_PHONE_STATE},
                         100);
-            } else
-            {
+            } else {
                 loginLogic();
             }
 
@@ -129,7 +135,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void backPsdLogic() {
-        Intent intent = new Intent(LoginActivity.this,RetrievePsdActivity.class);
+        Intent intent = new Intent(LoginActivity.this, RetrievePsdActivity.class);
         startActivity(intent);
     }
 
@@ -144,9 +150,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Toast.makeText(LoginActivity.this, R.string.Net_error, Toast.LENGTH_SHORT).show();
             return;
         }
+        TelephonyManager tm = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("Tel", account);
         jsonObject.addProperty("PassWord", password);
+        jsonObject.addProperty("ICCID", tm.getSimSerialNumber());
         jsonObject = EncryptUtils.encryptDES(jsonObject.toString());
         new LoginAsyncTask().execute(jsonObject);
 
@@ -180,8 +188,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(LoginActivity.this, R.string.servlet_error, Toast.LENGTH_SHORT).show();
                 return;
             }
-            System.out.println(s);
+
             Gson gson = new Gson();
+            ///Log.i("登录返回数据", s);
             TotalData totalData = gson.fromJson(s, TotalData.class);
             if (totalData.getStatus() == 0) {
                 LoginInfo loginInfo = gson.fromJson(totalData.getData(), LoginInfo.class);
@@ -189,15 +198,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 editor.putString("account", account);
                 editor.putString("password", password);
                 editor.putInt("Id", loginInfo.getId());
+                editor.putString("CardNo", loginInfo.getCardNo());
                 editor.putString("NicKname", loginInfo.getNicKname());
                 editor.putInt("SchoolId", loginInfo.getSchoolId());
                 editor.putString("Icon", loginInfo.getIcon());
                 editor.putString("invitationCode", loginInfo.getInvitationCode());
                 editor.putString("token", loginInfo.getToken());
                 editor.putString("tel", loginInfo.getTel());
-                if (cb_login.isChecked()){
+                if (cb_login.isChecked()) {
                     editor.putBoolean("autoState", true);
-                }else {
+                } else {
                     editor.putBoolean("autoState", false);
                 }
                 editor.apply();  //存入
@@ -206,14 +216,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         new TagAliasCallback() {//回调接口,i=0表示成功,其它设置失败
                             @Override
                             public void gotResult(int i, String s, Set<String> set) {
-                                if(i==0){
-                                    System.out.println("绑定成功");}
+                                if (i == 0) {
+                                    System.out.println("绑定成功");
+                                }
                             }
                         });
 
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 intent.putExtra("loginInfo", loginInfo);
-                intent.putExtra("startState",startState);
+                intent.putExtra("startState", startState);
                 startActivity(intent);
                 finish();
 
@@ -223,6 +234,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         }
     }
+
     @Override
     protected void onResume() {
         JPushInterface.onResume(this);

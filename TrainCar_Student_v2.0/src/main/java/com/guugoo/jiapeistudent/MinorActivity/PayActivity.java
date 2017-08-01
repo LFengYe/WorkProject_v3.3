@@ -99,7 +99,7 @@ public class PayActivity extends BaseActivity {
                 break;
             case 1:
                 api = WXAPIFactory.createWXAPI(this,Constant.APP_ID,false);
-                Log.d(TAG, "processingData: "+Constant.APP_ID);
+                //Log.d(TAG, "processingData: "+Constant.APP_ID);
                 JSONObject json = (JSONObject) JSONObject.parse(data.getData());
                 PayReq req = new PayReq();
                 req.appId			= json.getString("appId");
@@ -109,6 +109,7 @@ public class PayActivity extends BaseActivity {
                 req.timeStamp		= json.getString("timeStamp");
                 req.packageValue	= json.getString("package");
                 req.sign			= json.getString("sign");
+                /*
                 Log.d(TAG, "processingData: "+json.getString("appId"));
                 Log.d(TAG, "processingData: "+json.getString("prepayId"));
                 Log.d(TAG, "processingData: "+json.getString("partnerId"));
@@ -116,6 +117,7 @@ public class PayActivity extends BaseActivity {
                 Log.d(TAG, "processingData: "+json.getString("timeStamp"));
                 Log.d(TAG, "processingData: "+json.getString("package"));
                 Log.d(TAG, "processingData: "+json.getString("sign"));
+                */
 //                Toast.makeText(PayActivity.this, "正常调起支付", Toast.LENGTH_SHORT).show();
 //                // 在支付之前，如果应用没有注册到微信，应该先调用IWXMsg.registerApp将应用注册到微信
                 api.registerApp(Constant.APP_ID);
@@ -185,7 +187,7 @@ public class PayActivity extends BaseActivity {
             }
         });
     }
-    private void signUp(){
+    private void signUp() {
         if(Utils.isNetworkAvailable(PayActivity.this)) {
                 JSONObject json = new JSONObject(true);
                 json.put("Name", Name);

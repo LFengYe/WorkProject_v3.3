@@ -194,7 +194,6 @@ public class RegisterActivity extends BaseActivity {
                 if (et_validate_code22 != null)
                     Toast.makeText(RegisterActivity.this,
                             "获取验证码成功", Toast.LENGTH_SHORT).show();
-//                et_validate_code.setText(result.toString().substring(1,result.toString().length()-1));
             }
 
             @Override
@@ -210,8 +209,6 @@ public class RegisterActivity extends BaseActivity {
                 }
             }
         });
-
-
     }
 
     private void register() {
@@ -222,11 +219,7 @@ public class RegisterActivity extends BaseActivity {
             showShortToastByString("信息不完整");
             return;
         }
-
         zhuce(account, password, validateCode);
-
-
-
     }
 
     private void zhuce(final String account, final String password, String validateCode) {

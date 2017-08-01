@@ -9,6 +9,7 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import cn.com.caronwer.activity.AuthFirstActivity;
 import cn.com.caronwer.activity.CertificationActivity;
 import cn.com.caronwer.activity.MainActivity;
 import cn.com.caronwer.activity.OrderDetailActivity;
@@ -118,7 +119,7 @@ public class MyJPushReceiver extends BroadcastReceiver {
                 }
                 case 10: {
                     //10认证未通过向车主推送消息
-                    intent.setClass(context, CertificationActivity.class);
+                    intent.setClass(context, AuthFirstActivity.class);
                     break;
                 }
             }

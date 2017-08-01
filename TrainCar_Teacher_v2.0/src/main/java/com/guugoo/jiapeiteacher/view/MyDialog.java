@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.guugoo.jiapeiteacher.R;
@@ -171,6 +172,52 @@ public class MyDialog extends Dialog {
         lp.width = width;
         dialogWindow.setAttributes(lp);
         return loginDialog;
+    }
+
+    public static MyDialog promoteDialog(Activity activity, String promoteMessage,
+                                         String promoteTitle, final PromoteListener promoteListener) {
+        final MyDialog promoteDialog = new MyDialog(activity);
+        View v = View.inflate(activity, R.layout.dialog_promote, null);
+
+        TextView titleView = (TextView) v.findViewById(R.id.promote_title);
+        titleView.setText(promoteTitle);
+        TextView messageView = (TextView) v.findViewById(R.id.promote_message);
+        messageView.setText(promoteMessage);
+
+        Button bt_cancel = (Button) v.findViewById(R.id.bt_cancel);
+        bt_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                promoteDialog.dismiss();
+            }
+        });
+        Button bt_ok = (Button) v.findViewById(R.id.bt_ok);
+        bt_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                promoteListener.okBtnClick();
+                promoteDialog.dismiss();
+            }
+        });
+
+        Point size = new Point();
+        activity.getWindowManager().getDefaultDisplay().getSize(size);
+        int width = (int) (size.x * 0.9);
+        int height = (int) (size.y * 0.3);
+        promoteDialog.setContentView(v);
+        promoteDialog.setCancelable(true);
+        Window dialogWindow = promoteDialog.getWindow();
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes(); // 获取对话框当前的参数值
+        dialogWindow.setGravity(Gravity.CENTER);
+        lp.height = height;
+        lp.width = width;
+        dialogWindow.setAttributes(lp);
+
+        return promoteDialog;
+    }
+
+    public interface PromoteListener {
+        void okBtnClick();
     }
 
     public interface NickListener {

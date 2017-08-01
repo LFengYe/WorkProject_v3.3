@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 iv_home.setImageResource(R.mipmap.home);
                 if (mHomeFragment == null) {
                     // 如果fg1为空，则创建一个并添加到界面上
-                    mHomeFragment = HomeFragment.newInstance(startState);
+                    mHomeFragment = HomeFragment.newInstance(startState, loginInfo);
                     transaction.add(R.id.fl_main, mHomeFragment, "HomeTag");
                 } else {
                     // 如果MessageFragment不为空，则直接将它显示出来
@@ -256,7 +256,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     civ_head.setImageBitmap(photo);
                 }
                 String NewnNickme = data.getStringExtra("NewnNickme");
-                System.out.println(NewnNickme);
                 tv_nickName.setText(NewnNickme);
             }
             mHomeFragment.setBallState(Constants.ballState);

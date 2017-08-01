@@ -59,7 +59,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/tv_rz"
+                    android:id="@+id/tv_auth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -96,7 +96,7 @@
             android:paddingLeft="30dp"
             android:text="@string/myOrder"
             android:textColor="#3d3d3d"
-            android:textSize="@dimen/bigest_font" />
+            android:textSize="@dimen/biggest_font" />
 
         <TextView
             android:id="@+id/tv_myWallet"
@@ -107,7 +107,7 @@
             android:paddingLeft="30dp"
             android:text="@string/myWallet"
             android:textColor="#3d3d3d"
-            android:textSize="@dimen/bigest_font" />
+            android:textSize="@dimen/biggest_font" />
 
         <TextView
             android:id="@+id/tv_myCar"
@@ -118,7 +118,7 @@
             android:paddingLeft="30dp"
             android:text="我的车辆"
             android:textColor="#3d3d3d"
-            android:textSize="@dimen/bigest_font" />
+            android:textSize="@dimen/biggest_font" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -133,7 +133,7 @@
                 android:paddingLeft="30dp"
                 android:text="@string/news"
                 android:textColor="#3d3d3d"
-                android:textSize="@dimen/bigest_font" />
+                android:textSize="@dimen/biggest_font" />
 
             <TextView
                 android:id="@+id/tv_news_num"
@@ -163,7 +163,7 @@
                 android:layout_marginLeft="30dp"
                 android:text="我的评分"
                 android:textColor="#3d3d3d"
-                android:textSize="@dimen/bigest_font" />
+                android:textSize="@dimen/biggest_font" />
 
             <RatingBar
                 android:id="@+id/rb_leftdata"
@@ -191,7 +191,7 @@
 
 
         <TextView
-            android:id="@+id/tv_benefit_activity"
+            android:id="@+id/tv_benefit"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/layout_click_style"
@@ -199,7 +199,7 @@
             android:paddingLeft="30dp"
             android:text="@string/benefit_activity"
             android:textColor="#3d3d3d"
-            android:textSize="@dimen/bigest_font" />
+            android:textSize="@dimen/biggest_font" />
 
         <TextView
             android:id="@+id/tv_setting"
@@ -210,7 +210,7 @@
             android:paddingLeft="30dp"
             android:text="设        置"
             android:textColor="#3d3d3d"
-            android:textSize="@dimen/bigest_font" />
+            android:textSize="@dimen/biggest_font" />
 
         <View
             android:layout_width="match_parent"

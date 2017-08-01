@@ -73,7 +73,6 @@ public class CommonAddressActivity extends BaseActivity {
             @Override
             public void onItemClick(int position) {
                 if (type == 2) {
-
 //                    Intent intent = new Intent(CommonAddressActivity.this, AddMapActivity.class);
 //                    intent.putExtra("userId", userId);
 //                    intent.putExtra("position", position);

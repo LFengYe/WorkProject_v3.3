@@ -25,24 +25,17 @@ public class UserInfo implements Parcelable {
     private String HeadIco;
     private String Sex;
     private String Address;
-
-    public UserInfo(String userId, String userName, String tel, String headIco, String sex, String address, double balance, double frozen, String authenticateStatus, String isWork, String vehicleNo, int vehicleType, String vehicleTypeName, int score, String token) {
-        UserId = userId;
-        UserName = userName;
-        Tel = tel;
-        HeadIco = headIco;
-        Sex = sex;
-        Address = address;
-        Balance = balance;
-        Frozen = frozen;
-        AuthenticateStatus = authenticateStatus;
-        IsWork = isWork;
-        VehicleNo = vehicleNo;
-        VehicleType = vehicleType;
-        VehicleTypeName = vehicleTypeName;
-        Score = score;
-        Token = token;
-    }
+    private double Balance;
+    private double Frozen;
+    private int AuthenticateStatus;
+    private String IsWork;
+    private String VehicleNo;
+    private int VehicleType;
+    private String VehicleTypeName;
+    private int Score;
+    private String Token;
+    private int AuthenticateStep;
+    private String CompanyTel;
 
     /**
      * Balance : 0.0
@@ -57,19 +50,13 @@ public class UserInfo implements Parcelable {
      * Token : 01806E2D-E55E-4172-8139-D41DE60B5955
      */
 
-    private double Balance;
-    private double Frozen;
-    private String AuthenticateStatus;
-    private String IsWork;
-    private String VehicleNo;
-    private int VehicleType;
-    private String VehicleTypeName;
-    private int Score;
-    private String Token;
+    public int getAuthenticateStep() {
+        return AuthenticateStep;
+    }
 
-
-
-
+    public void setAuthenticateStep(int authenticateStep) {
+        AuthenticateStep = authenticateStep;
+    }
 
     public String getUserId() {
         return UserId;
@@ -120,11 +107,6 @@ public class UserInfo implements Parcelable {
     }
 
     @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
     public String toString() {
         return "UserInfo{" +
                 "UserId='" + UserId + '\'' +
@@ -145,69 +127,8 @@ public class UserInfo implements Parcelable {
                 '}';
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.UserId);
-        dest.writeString(this.UserName);
-        dest.writeString(this.Tel);
-        dest.writeString(this.HeadIco);
-        dest.writeString(this.Sex);
-        dest.writeString(this.Address);
-
-
-
-
-        dest.writeDouble(this.Balance);
-        dest.writeDouble(this.Frozen);
-        dest.writeString(this.AuthenticateStatus);
-        dest.writeString(this.IsWork);
-        dest.writeString(this.VehicleNo);
-        dest.writeInt(this.VehicleType);
-        dest.writeString(this.VehicleTypeName);
-        dest.writeInt(this.Score);
-        dest.writeString(this.Token);
-
-
-
-    }
-
     public UserInfo() {
     }
-
-    protected UserInfo(Parcel in) {
-        this.UserId = in.readString();
-        this.UserName = in.readString();
-        this.Tel = in.readString();
-        this.HeadIco = in.readString();
-        this.Sex = in.readString();
-        this.Address = in.readString();
-
-
-        this.Balance = in.readDouble();
-        this.Frozen = in.readDouble();
-        this.AuthenticateStatus = in.readString();
-        this.IsWork = in.readString();
-        this.VehicleNo = in.readString();
-        this.VehicleType = in.readInt();
-        this.VehicleTypeName = in.readString();
-        this.Score = in.readInt();
-        this.Token = in.readString();
-
-
-
-    }
-
-    public static final Creator<UserInfo> CREATOR = new Creator<UserInfo>() {
-        @Override
-        public UserInfo createFromParcel(Parcel source) {
-            return new UserInfo(source);
-        }
-
-        @Override
-        public UserInfo[] newArray(int size) {
-            return new UserInfo[size];
-        }
-    };
 
     public double getBalance() {
         return Balance;
@@ -225,11 +146,11 @@ public class UserInfo implements Parcelable {
         this.Frozen = Frozen;
     }
 
-    public String getAuthenticateStatus() {
+    public int getAuthenticateStatus() {
         return AuthenticateStatus;
     }
 
-    public void setAuthenticateStatus(String AuthenticateStatus) {
+    public void setAuthenticateStatus(int AuthenticateStatus) {
         this.AuthenticateStatus = AuthenticateStatus;
     }
 
@@ -280,4 +201,70 @@ public class UserInfo implements Parcelable {
     public void setToken(String Token) {
         this.Token = Token;
     }
+
+    public String getCompanyTel() {
+        return CompanyTel;
+    }
+
+    public void setCompanyTel(String companyTel) {
+        CompanyTel = companyTel;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.UserId);
+        dest.writeString(this.UserName);
+        dest.writeString(this.Tel);
+        dest.writeString(this.HeadIco);
+        dest.writeString(this.Sex);
+        dest.writeString(this.Address);
+        dest.writeDouble(this.Balance);
+        dest.writeDouble(this.Frozen);
+        dest.writeInt(this.AuthenticateStatus);
+        dest.writeString(this.IsWork);
+        dest.writeString(this.VehicleNo);
+        dest.writeInt(this.VehicleType);
+        dest.writeString(this.VehicleTypeName);
+        dest.writeInt(this.Score);
+        dest.writeString(this.Token);
+        dest.writeInt(this.AuthenticateStep);
+        dest.writeString(this.CompanyTel);
+    }
+
+    protected UserInfo(Parcel in) {
+        this.UserId = in.readString();
+        this.UserName = in.readString();
+        this.Tel = in.readString();
+        this.HeadIco = in.readString();
+        this.Sex = in.readString();
+        this.Address = in.readString();
+        this.Balance = in.readDouble();
+        this.Frozen = in.readDouble();
+        this.AuthenticateStatus = in.readInt();
+        this.IsWork = in.readString();
+        this.VehicleNo = in.readString();
+        this.VehicleType = in.readInt();
+        this.VehicleTypeName = in.readString();
+        this.Score = in.readInt();
+        this.Token = in.readString();
+        this.AuthenticateStep = in.readInt();
+        this.CompanyTel = in.readString();
+    }
+
+    public static final Creator<UserInfo> CREATOR = new Creator<UserInfo>() {
+        @Override
+        public UserInfo createFromParcel(Parcel source) {
+            return new UserInfo(source);
+        }
+
+        @Override
+        public UserInfo[] newArray(int size) {
+            return new UserInfo[size];
+        }
+    };
 }

@@ -98,17 +98,18 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/male"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:button="@drawable/radio_style"
-                            android:checked="true"
                             android:gravity="center"
                             android:text="男"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
                         <RadioButton
+                            android:id="@+id/female"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -133,18 +134,20 @@
 
                 <TextView
                     android:id="@+id/iv_cardNo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:text="@string/cardNo"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <EditText
                     android:id="@+id/et_cardNo"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
                     android:background="@null"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -159,18 +162,20 @@
 
                 <TextView
                     android:id="@+id/iv_phone"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:text="@string/phone"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <EditText
                     android:id="@+id/et_phone"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
                     android:background="@null"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -185,18 +190,54 @@
 
                 <TextView
                     android:id="@+id/iv_drivingLicense"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:text="@string/driving_license"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <EditText
                     android:id="@+id/et_drivingLicense"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@null"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <include layout="@layout/divide_small" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
+
+                <cn.com.caronwer.view.AlwaysMarqueeTextView
+                    android:id="@+id/iv_road_transport_permit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/road_transport_permit"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/et_road_transport_permit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
                     android:background="@null"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -210,19 +251,21 @@
                 android:layout_marginTop="8dp">
 
                 <TextView
-                    android:id="@+id/iv_road_transport_permit"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/iv_gps_system_no"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
-                    android:text="@string/road_transport_permit"
+                    android:layout_weight="1"
+                    android:text="@string/gps_system_no"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <EditText
-                    android:id="@+id/et_road_transport_permit"
-                    android:layout_width="match_parent"
+                    android:id="@+id/et_gps_system_no"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
                     android:background="@null"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -232,8 +275,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp">
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp">
 
                 <TextView
                     android:id="@+id/iv_carNumber"
@@ -248,14 +291,16 @@
                 <cn.com.caronwer.view.BorderTextView
                     android:id="@+id/select_carNumber"
                     android:layout_width="60dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="33dp"
                     android:gravity="center"></cn.com.caronwer.view.BorderTextView>
 
                 <EditText
                     android:id="@+id/et_carNumber"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_blue_style"
+                    android:gravity="center"
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -278,7 +323,7 @@
                     android:textSize="15sp" />
 
                 <Spinner
-                    android:id="@+id/ddlCity"
+                    android:id="@+id/vehicleType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15sp" />
@@ -312,6 +357,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
+                        android:gravity="center"
                         android:textSize="15sp" />
 
                 </LinearLayout>
@@ -334,6 +380,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
+                        android:gravity="center"
                         android:textSize="15sp" />
 
                 </LinearLayout>
@@ -356,6 +403,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@null"
+                        android:gravity="center"
                         android:textSize="15sp" />
 
                 </LinearLayout>
@@ -370,17 +418,17 @@
                 android:layout_marginTop="8dp">
 
                 <TextView
-                    android:id="@+id/iv_carMaxCapacity"
+                    android:id="@+id/iv_vehicleMaxCapacity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
-                    android:text="@string/car_max_capacity"
+                    android:text="@string/vehicle_max_capacity"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <EditText
-                    android:id="@+id/et_carMaxCapacity"
+                    android:id="@+id/et_vehicleMaxCapacity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
@@ -408,18 +456,25 @@
 
                 <EditText
                     android:id="@+id/et_urgentContact"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/get_verify"
+                    android:layout_toStartOf="@+id/get_verify"
                     android:layout_toRightOf="@id/iv_urgentContact"
+                    android:layout_toEndOf="@id/iv_urgentContact"
                     android:background="@null"
                     android:textSize="15sp" />
 
                 <cn.com.caronwer.view.BorderTextView
+                    android:id="@+id/get_verify"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="33dp"
+                    android:gravity="center"
                     android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:background="@drawable/btv_selector"
                     android:clickable="true"
                     android:padding="3dp"

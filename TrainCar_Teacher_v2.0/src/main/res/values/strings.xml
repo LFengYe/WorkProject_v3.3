@@ -15,6 +15,21 @@
     <string name="my_recommend">我的推荐</string>
     <string name="laws">政策法规</string>
     <string name="laws_details">法规详情</string>
+    <string name="coach_login">签到</string>
+    <string name="coach_logout">签退</string>
+    <string name="coach_logout_confirm">确认签退?</string>
+    <string name="promote">温馨提示</string>
+    <string name="coach_login_confirm">确认签到</string>
+    <string name="student_logout">签退</string>
+    <string name="student_logout_already">该学员已签退</string>
+
+    <string name="coach_name">教练姓名</string>
+    <string name="coach_cardId">身份证号</string>
+    <string name="coach_phone">电话号码</string>
+    <string name="coach_school">所属驾校</string>
+    <string name="coach_carNo">车牌号码</string>
+    <string name="coach_space_select">选择场地</string>
+    <string name="space_select_hint">请选择场地</string>
 
     <!-- fragment_person -->
     <string name="Teaching_hours">授课学时</string>
@@ -132,10 +147,14 @@
     <string name="parking">侧方停车</string>
     <string name="parkStart">坡道定点停车起步</string>
     <string name="reverseParking">倒车入库</string>
+    <string name="scan_code_failed">获取扫描信息失败!</string>
+    <string name="scan_code_error">扫描信息错误!</string>
+    <string name="coach_auth_failed">教练身份不匹配!</string>
     
     <string name="card_info_verify">身份验证</string>
     <string name="bluetooth_select">蓝牙</string>
-    <string name="read_card_info">请验证学员身份证</string>
+    <string name="read_student_card_info">请验证学员身份证</string>
+    <string name="read_coach_card_info">请验证教练身份证</string>
     <string name="title_other_devices">其他可用设备</string>
     <string name="title_paired_devices">已配对设备</string>
     <string name="scanning">搜索设备...</string>
@@ -143,4 +162,5 @@
     <string name="button_scan">搜索</string>
     <string name="none_paired">没有已配对设备</string>
     <string name="none_found">未发现可用设备</string>
+    <string name="empty_data">服务器返回数据为空</string>
 </resources>

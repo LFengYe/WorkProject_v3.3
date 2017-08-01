@@ -1,15 +1,20 @@
 package cn.com.caronwer.base;
 
 public class Contants {
-    public static String userId;
+    //public static String userId;
     public static String Tel;
     public static double Balance;
+
+    //位置支付app Id
+    public final static String weChatAPPID = "wx1c2aa1319031558f";
 
     public final static String SHARED_NAME = "itheima";
 //    public static String imagehost = "http://121.40.212.89:8009";
     public static String imagehost = "http://101.201.74.192:8018";
+//    public static String imagehost = "http://110.53.162.172:7000/";
 //    private static String localhost = "http://121.40.212.89:8009/";
     private static String localhost = "http://101.201.74.192:8018/";
+//    private static String localhost = "http://110.53.162.172:7000/";
     public static String url_register = localhost + "Register/Register";
     public static String url_obtainCheckCode = localhost + "Visitors/ObtainCheckCode";
     public static String url_userLogin = localhost + "Register/UserLogin";
@@ -20,6 +25,7 @@ public class Contants {
     public static String url_saveSuggest = localhost + "Users/SaveSuggest";
 
     public static String url_editUserInfo = localhost + "Users/EditUserInfo";
+    public static String url_getUserInfo = localhost + "Users/GetUserInfo";
 
     public static String url_updateHeadPortrait = localhost + "Transporter/UpdateHeadPortrait";
 
@@ -39,7 +45,6 @@ public class Contants {
     public static String url_gettransporterorderlist = localhost + "Transporter/GetTransporterOrderList";
     public static String url_getorders = localhost + "Visitors/GetOrders";
     public static String url_addbankcard = localhost + "Basic/AddBankCard";
-    public static String url_alreadyexistingorder = localhost + "Transporter/AlreadyExistingOrder";
     public static String url_graborder = localhost + "Transporter/GrabOrder";
     public static String url_gettransporterorderList = localhost + "Transporter/GetTransporterOrderList";
     public static String url_savevehicleinfo = localhost + "Transporter/SaveVehicleInfo";
@@ -56,4 +61,11 @@ public class Contants {
 
     public static String url_TransporterGetOrderDetails = localhost + "Transporter/GetOrderDetails";
 
+
+    public static String url_AlreadyExistingOrder = localhost + "Transporter/AlreadyExistingOrder";
+    public static String url_TransporterVehicleCheck1 = localhost + "Transporter/VehicleCheck1";
+    public static String url_TransporterVehicleCheck2 = localhost + "Transporter/VehicleCheck2";
+    public static String url_TransporterVehicleCheck3 = localhost + "Transporter/VehicleCheck3";
+    public static String url_TransporterGetVehicleCheck1 = localhost + "Transporter/GetVehicleCheck1";
+    public static String url_TransporterGetVehicleCheck2 = localhost + "Transporter/GetVehicleCheck2";
 }

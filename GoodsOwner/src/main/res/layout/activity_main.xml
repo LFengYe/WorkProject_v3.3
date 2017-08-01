@@ -38,7 +38,7 @@
                     android:layout_marginTop="35dp"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/account1"
-                    app:border_color="#ff0000"
+                    app:border_color="@color/color_red"
                     app:border_width="1.5dp" />
 
             </RelativeLayout>
@@ -268,7 +268,6 @@
                             android:id="@+id/tv_hint"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
@@ -329,6 +328,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_alignParentBottom="true"
+
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -336,6 +336,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+
                         android:background="@color/color_white"
                         android:clickable="true"
                         android:gravity="center"
@@ -356,6 +357,10 @@
                             android:textSize="@dimen/smallest_font" />
                     </LinearLayout>
 
+                    <View
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        />
                     <LinearLayout
                         android:id="@+id/ll_booking_delivery"
                         android:layout_width="0dp"
@@ -438,7 +443,7 @@
                 android:id="@+id/dialog_car"
                 layout="@layout/dialog_main"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="500dp"
                 android:layout_below="@+id/ll_total_car"
                 android:background="@color/color_white"
                 android:visibility="gone" />
@@ -474,7 +479,7 @@
                     android:layout_marginTop="30dp"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/account1"
-                    app:border_color="#ff0000"
+                    app:border_color="@color/color_red"
                     app:border_width="1.5dp" />
 
                 <TextView

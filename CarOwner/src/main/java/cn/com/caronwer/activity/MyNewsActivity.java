@@ -110,8 +110,7 @@ public class MyNewsActivity extends BaseActivity {
             @Override
             public void onSuccess(JsonElement result) {
                 Gson gson = new Gson();
-                Type listType = new TypeToken<ArrayList<NewsInfo>>() {
-                }.getType();
+                Type listType = new TypeToken<ArrayList<NewsInfo>>() {}.getType();
                 ArrayList<NewsInfo> newNewsInfo = gson.fromJson(result, listType);
                 if (ways == 0) {
                     rv_news.refreshComplete("success");

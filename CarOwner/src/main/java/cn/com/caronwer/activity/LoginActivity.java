@@ -87,7 +87,6 @@ public class LoginActivity extends BaseActivity {
         jsonObject.addProperty("Time", time);
         jsonObject.addProperty("Password", finalPassword);
 
-
         jsonObject.addProperty("UserType", 2);//货主
 
         Map<String, String> map = EncryptUtil.encryptDES(jsonObject.toString());
@@ -95,40 +94,55 @@ public class LoginActivity extends BaseActivity {
         HttpUtil.doPost(LoginActivity.this, Contants.url_userLogin, "login", map, new VolleyInterface(LoginActivity.this, VolleyInterface.mListener, VolleyInterface.mErrorListener) {
             @Override
             public void onSuccess(JsonElement result) {
-//                customProgressDialog.dismiss();
-                showShortToastByString("登录成功");
-                Gson gson = new Gson();
-                final UserInfo userInfo = gson.fromJson(result, UserInfo.class);
                 SharedPreferences.Editor editor = prefs.edit();
-                Contants.userId = userInfo.getUserId();
-                editor.putString("account", account);
-                editor.putString("password", password);
-                editor.putString("UserId", userInfo.getUserId());
-                editor.putString("VehicleNo", userInfo.getVehicleNo());
-                editor.commit();
+                try {
+                    showShortToastByString("登录成功");
+                    Gson gson = new Gson();
+                    final UserInfo userInfo = gson.fromJson(result, UserInfo.class);
+                    editor.putString("account", account);
+                    editor.putString("password", password);
+                    editor.putString("UserId", userInfo.getUserId());
+                    editor.putString("VehicleNo", userInfo.getVehicleNo());
+                    editor.putString("CompanyTel", userInfo.getCompanyTel());
+                    editor.commit();
 
-                JPushInterface.setAliasAndTags(LoginActivity.this, account, null, new TagAliasCallback() {
-                    @Override
-                    public void gotResult(int arg0, String arg1, Set<String> arg2) {
-                    }
-                });
+                    JPushInterface.setAliasAndTags(LoginActivity.this, account, null, new TagAliasCallback() {
+                        @Override
+                        public void gotResult(int arg0, String arg1, Set<String> arg2) {
+                        }
+                    });
 
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent intent = new Intent();
-                        intent.setClass(LoginActivity.this, MainActivity.class);
-                        intent.putExtra("userInfo", userInfo);
-                        intent.putExtra("isDenglu", true);
-                        startActivity(intent);
-                        finish();
-                    }
-                }, 1500);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent();
+                            intent.setClass(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("userInfo", userInfo);
+                            intent.putExtra("isDenglu", true);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }, 1500);
+
+                } catch (Exception e) {
+                    showShortToastByString("服务器返回数据异常");
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent();
+                            intent.setClass(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("userInfo", "");
+                            intent.putExtra("isDenglu", false);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }, 1500);
+                }
             }
 
             @Override
             public void onError(VolleyError error) {
-//                showShortToastByString("未登录");
+                showShortToastByString("未登录");
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -147,8 +161,17 @@ public class LoginActivity extends BaseActivity {
                 if (!TextUtils.isEmpty(msg)) {
                     showShortToastByString(msg);
                 }
-//                customProgressDialog.dismiss();
-
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent();
+                        intent.setClass(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("userInfo", "");
+                        intent.putExtra("isDenglu", false);
+                        startActivity(intent);
+                        finish();
+                    }
+                }, 1500);
             }
         });
         /*

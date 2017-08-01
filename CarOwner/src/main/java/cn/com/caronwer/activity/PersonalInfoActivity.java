@@ -89,7 +89,7 @@ public class PersonalInfoActivity extends BaseActivity {
         tv_tel1 = (TextView) findViewById(R.id.tv_tel1);
         tv_name = (TextView) findViewById(R.id.tv_name);
         tv_name1 = (TextView) findViewById(R.id.tv_name1);
-        mTv_rz = (TextView) findViewById(R.id.tv_rz);
+        mTv_rz = (TextView) findViewById(R.id.tv_auth);
         tv_sex = (TextView) findViewById(R.id.tv_sex);
         mTv_clxx = (TextView) findViewById(R.id.tv_clxx);
         tv_address = (TextView) findViewById(R.id.tv_address);
@@ -111,18 +111,18 @@ public class PersonalInfoActivity extends BaseActivity {
         tv_name.setText(userInfo.getUserName());
         tv_name1.setText(userInfo.getUserName());
         mTv_clxx.setText("车牌号:"+userInfo.getVehicleNo()+"  车辆类型:"+userInfo.getVehicleTypeName());
-        String authenticateStatus = userInfo.getAuthenticateStatus();
+        int authenticateStatus = userInfo.getAuthenticateStatus();
         switch (authenticateStatus) {
-            case "1":
+            case 1:
                 mTv_rz.setText("未认证");
                 break;
-            case "2":
+            case 2:
                 mTv_rz.setText("审核中");
                 break;
-            case "3":
+            case 3:
                 mTv_rz.setText("通过认证");
                 break;
-            case "4":
+            case 4:
                 mTv_rz.setText("审核失败");
                 break;
         }
@@ -387,7 +387,6 @@ public class PersonalInfoActivity extends BaseActivity {
                 File temp = new File(Environment.getExternalStorageDirectory() + "/" + IMAGE_FILE_NAME);
                 uri = Uri.fromFile(temp);
 
-                System.out.println(uri);
                 if (uri != null) {
                     startPhotoZoom(uri);
                 }

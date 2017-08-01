@@ -4,65 +4,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity.MainActivity"
-    >
+    tools:context=".MainActivity.MainActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/main_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_alignParentBottom="true"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:background="@color/title_back"
-        >
-        <RelativeLayout
-            android:id="@+id/home"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/main_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/title_back"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/ib_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_centerInParent="true"
+                    android:focusable="false"
+                    android:src="@drawable/main_home" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/myself"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/ib_myself"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_centerInParent="true"
+                    android:focusable="false"
+                    android:src="@drawable/main_myself" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="3dp"
-            >
-            <ImageView
-                android:id="@+id/ib_home"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/main_home"
-                android:focusable="false"
-                />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/myself"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="3dp"
-            >
-            <ImageView
-                android:id="@+id/ib_myself"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/main_myself"
-                android:focusable="false"
-                />
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/main_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/main_bottom"
-        >
-    </FrameLayout>
+            android:layout_above="@id/main_bottom"></FrameLayout>
 
     </RelativeLayout>
 

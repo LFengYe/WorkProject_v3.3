@@ -12,12 +12,13 @@
         android:layout_height="35dp" />
 
     <TextView
+        android:id="@+id/read_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="@string/read_card_info"
+        android:text="@string/read_coach_card_info"
         android:textColor="@color/color_line"
         android:textSize="18dp" />
 

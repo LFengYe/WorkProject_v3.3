@@ -59,7 +59,7 @@
                 android:textSize="@dimen/small_font" />
 
             <TextView
-                android:id="@+id/tv_rz"
+                android:id="@+id/tv_auth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

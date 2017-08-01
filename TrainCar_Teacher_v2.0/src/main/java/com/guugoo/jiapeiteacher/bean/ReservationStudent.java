@@ -12,8 +12,9 @@ public class ReservationStudent implements Parcelable {
     private String Name;
     private String StudentId;
     private String StudentTel;
-    private String StudentCardNo;
+    private String CardNo;
     private int IsComment;
+    private int Issign;
     private int Status;
 
     public String getStudentTel() {
@@ -24,12 +25,12 @@ public class ReservationStudent implements Parcelable {
         StudentTel = studentTel;
     }
 
-    public String getStudentCardNo() {
-        return StudentCardNo;
+    public String getCardNo() {
+        return CardNo;
     }
 
-    public void setStudentCardNo(String studentCardNo) {
-        StudentCardNo = studentCardNo;
+    public void setCardNo(String cardNo) {
+        CardNo = cardNo;
     }
 
     public String getName() {
@@ -64,6 +65,14 @@ public class ReservationStudent implements Parcelable {
         Status = status;
     }
 
+    public int getIssign() {
+        return Issign;
+    }
+
+    public void setIssign(int issign) {
+        Issign = issign;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -74,9 +83,10 @@ public class ReservationStudent implements Parcelable {
         dest.writeString(this.Name);
         dest.writeString(this.StudentId);
         dest.writeString(this.StudentTel);
-        dest.writeString(this.StudentCardNo);
+        dest.writeString(this.CardNo);
         dest.writeInt(this.IsComment);
         dest.writeInt(this.Status);
+        dest.writeInt(this.Issign);
     }
 
     public ReservationStudent() {
@@ -86,9 +96,10 @@ public class ReservationStudent implements Parcelable {
         this.Name = in.readString();
         this.StudentId = in.readString();
         this.StudentTel = in.readString();
-        this.StudentCardNo = in.readString();
+        this.CardNo = in.readString();
         this.IsComment = in.readInt();
         this.Status = in.readInt();
+        this.Issign = in.readInt();
     }
 
     public static final Parcelable.Creator<ReservationStudent> CREATOR = new Parcelable.Creator<ReservationStudent>() {

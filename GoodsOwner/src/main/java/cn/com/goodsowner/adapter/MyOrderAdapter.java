@@ -107,7 +107,7 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.ViewHold
                         viewHolder.tv_addMoney.setVisibility(View.GONE);
                         viewHolder.tv_money.setVisibility(View.GONE);
                     } else {
-                        viewHolder.bt_query.setText("取消订单");
+                        viewHolder.bt_query.setText("加点小费");
                         viewHolder.tv_state.setVisibility(View.GONE);
                         viewHolder.bt_query.setVisibility(View.VISIBLE);
                         viewHolder.tv_noDriver.setVisibility(View.VISIBLE);

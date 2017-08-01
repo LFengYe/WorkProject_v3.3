@@ -2,6 +2,7 @@ package cn.com.caronwer.activity;
 
 import android.text.Html;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ public class RegisterProtocolActivity extends BaseActivity {
     private TextView tv_msgtitle;
     private TextView tv_content;
 
+    private WebView webView;
     @Override
     protected int getLayout() {
         return R.layout.activity_register_protocol;
@@ -36,6 +38,8 @@ public class RegisterProtocolActivity extends BaseActivity {
 
         tv_content = (TextView) findViewById(R.id.tv_content);
         tv_msgtitle = (TextView) findViewById(R.id.tv_msgtitle);
+
+        webView = (WebView) findViewById(R.id.webView);
     }
 
     @Override

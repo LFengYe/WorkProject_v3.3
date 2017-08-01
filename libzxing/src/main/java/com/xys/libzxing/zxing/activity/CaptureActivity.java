@@ -32,6 +32,7 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.zxing.Result;
 import com.xys.libzxing.R;
@@ -85,6 +86,15 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_capture);
+
+        int type = getIntent().getIntExtra("scanType", 0);
+        TextView scanTitle = (TextView) findViewById(R.id.scan_title);
+        if (type == 1) {
+            scanTitle.setText(R.string.scan_student_title);
+        }
+        if (type == 2) {
+            scanTitle.setText(R.string.scan_car_title);
+        }
 
         scanPreview = (SurfaceView) findViewById(R.id.capture_preview);
         scanContainer = (RelativeLayout) findViewById(R.id.capture_container);

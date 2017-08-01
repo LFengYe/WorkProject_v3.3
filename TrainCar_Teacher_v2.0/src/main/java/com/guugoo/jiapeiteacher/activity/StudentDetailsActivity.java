@@ -20,6 +20,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -102,9 +103,9 @@ public class StudentDetailsActivity extends BaseActivity implements Chronometer.
     private Dialog dialog;
     private Chronometer mChronometer;
     private final static int REQUEST_CODE = 45;
-    private final static int CARD_INFO_VERIFY = 55;
-    private final static int CODE_SCAN_RES = 54;
-    private final static int GET_STUDENT_IMAGE = 56;
+    private final static int CARD_INFO_VERIFY = 55;//验证身份证
+    private final static int CODE_SCAN_RES = 54;//扫码
+    private final static int GET_STUDENT_IMAGE = 56;//学员拍照
     private int CalculationTime;
     private int Whenlong;
     private boolean isCardInfoVerify;//身份证信息是否验证成功
@@ -189,11 +190,12 @@ public class StudentDetailsActivity extends BaseActivity implements Chronometer.
             Toast.makeText(StudentDetailsActivity.this, R.string.Net_error, Toast.LENGTH_SHORT).show();
             return;
         }
+        Log.i("状态", String.valueOf(status));
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("BookingId", bookingId);
         jsonObject.addProperty("StudentId", StudentId);
-        jsonObject.addProperty("BookingStatus", (-1 == status) ? (-1) : (1));
-
+        jsonObject.addProperty("BookingStatus", (4 == status) ? (-1) : (1));
+        Log.i("学员详情", jsonObject.toString());
         jsonObject = EncryptUtils.encryptDES(jsonObject.toString());
         dialog.show();
         new ClassStudentDetailsAsyncTask(StudentDetailsActivity.this, HttpUtil.url_classStudentDetails, token).execute(jsonObject);
@@ -216,35 +218,43 @@ public class StudentDetailsActivity extends BaseActivity implements Chronometer.
         mLocationClient.setLocOption(option);
     }
 
+    private void startClass() {
+        if (!NetUtil.checkNetworkConnection(StudentDetailsActivity.this)) {
+            Toast.makeText(StudentDetailsActivity.this, R.string.Net_error, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (ContextCompat.checkSelfPermission(StudentDetailsActivity.this, Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(StudentDetailsActivity.this,
+                    new String[]{Manifest.permission.CAMERA,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION},
+                    100);
+        } else {
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.addProperty("StudentId", StudentId);
+            jsonObject.addProperty("BookingId", bookingId);
+            jsonObject.addProperty("SchoolId", SchoolId);
+            jsonObject = EncryptUtils.encryptDES(jsonObject.toString());
+            dialog.show();
+            new CheckCalssStartAsyncTask(StudentDetailsActivity.this, HttpUtil.url_checkCalssStart, token).execute(jsonObject);
+        }
+    }
     @Override
     public void onClick(View v) {
 
         if (v.getId() == R.id.tv_start) {
+
             if (!isCardInfoVerify) {
-                Intent intent = new Intent(StudentDetailsActivity.this, ReadCardInfoActivity.class);
-                intent.putExtra("studentCardId", studentDetails.getCardId());
-                startActivityForResult(intent, CARD_INFO_VERIFY);
+                JsonObject json = new JsonObject();
+                json.addProperty("BookingId", bookingId);
+                json.addProperty("StudentId", StudentId);
+                Log.i("检查身份证验证", json.toString());
+                json = EncryptUtils.encryptDES(json.toString());
+                dialog.show();
+                new GetCardCheck(StudentDetailsActivity.this, HttpUtil.url_GetCardCheck, token).execute(json);
             } else {
-                if (!NetUtil.checkNetworkConnection(StudentDetailsActivity.this)) {
-                    Toast.makeText(StudentDetailsActivity.this, R.string.Net_error, Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (ContextCompat.checkSelfPermission(StudentDetailsActivity.this, Manifest.permission.CAMERA)
-                        != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(StudentDetailsActivity.this,
-                            new String[]{Manifest.permission.CAMERA,
-                                    Manifest.permission.ACCESS_FINE_LOCATION,
-                                    Manifest.permission.ACCESS_COARSE_LOCATION},
-                            100);
-                } else {
-                    JsonObject jsonObject = new JsonObject();
-                    jsonObject.addProperty("StudentId", StudentId);
-                    jsonObject.addProperty("BookingId", bookingId);
-                    jsonObject.addProperty("SchoolId", SchoolId);
-                    jsonObject = EncryptUtils.encryptDES(jsonObject.toString());
-                    dialog.show();
-                    new CheckCalssStartAsyncTask(StudentDetailsActivity.this, HttpUtil.url_checkCalssStart, token).execute(jsonObject);
-                }
+                startClass();
             }
         } else if (v.getId() == R.id.tv_end) {
             endDialog = MyDialog.endDialog(StudentDetailsActivity.this);
@@ -307,7 +317,6 @@ public class StudentDetailsActivity extends BaseActivity implements Chronometer.
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
 
         if (requestCode == CARD_INFO_VERIFY && resultCode == RESULT_OK) {
             isCardInfoVerify = true;
@@ -456,7 +465,7 @@ public class StudentDetailsActivity extends BaseActivity implements Chronometer.
                 JsonObject jsonObject = new JsonObject();
                 jsonObject.addProperty("BookingId", bookingId);
                 jsonObject.addProperty("StudentId", Integer.valueOf(student.getStudentId()));
-                jsonObject.addProperty("BookingStatus", (-1 == status) ? (-1) : (1));
+                jsonObject.addProperty("BookingStatus", (4 == status) ? (-1) : (1));
                 jsonObject = EncryptUtils.encryptDES(jsonObject.toString());
                 dialog.show();
                 new ClassStudentDetailsAsyncTask(StudentDetailsActivity.this, HttpUtil.url_classStudentDetails, token).execute(jsonObject);
@@ -594,6 +603,11 @@ public class StudentDetailsActivity extends BaseActivity implements Chronometer.
             Gson gson = new Gson();
             TotalData totalData = gson.fromJson(s, TotalData.class);
             if (totalData.getStatus() == 0) {
+                if (!totalData.getData().isJsonObject()) {
+                    Toast.makeText(StudentDetailsActivity.this, R.string.empty_data, Toast.LENGTH_SHORT).show();
+                    tv_start.setClickable(false);
+                    return;
+                }
                 studentDetails = gson.fromJson(totalData.getData(), StudentDetails.class);
                 mEvaluateListBeen = studentDetails.getEvaluateList();
                 student_name.setText(getResources().getText(R.string.student_name) + studentDetails.getName());
@@ -722,6 +736,7 @@ public class StudentDetailsActivity extends BaseActivity implements Chronometer.
                 Start start = gson.fromJson(totalData.getData(), Start.class);
                 if (("true").equals(start.getIsStart())) {
                     Intent intent = new Intent(StudentDetailsActivity.this, CaptureActivity.class);
+                    intent.putExtra("scanType", 1);
                     startActivityForResult(intent, CODE_SCAN_RES);
                 } else {
                     isCardInfoVerify = false;
@@ -773,6 +788,36 @@ public class StudentDetailsActivity extends BaseActivity implements Chronometer.
             } else {
                 isCardInfoVerify = false;
                 tv_start.setText(R.string.scanStart);
+                Toast.makeText(StudentDetailsActivity.this, totalData.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    class GetCardCheck extends BaseAsyncTask {
+
+        public GetCardCheck(Context mContext, String url, String token) {
+            super(mContext, url, token);
+        }
+
+        @Override
+        protected void dealResults(String s) {
+            dialog.dismiss();
+            Log.i("判断是否需要验证身份证返回", s);
+            Gson gson = new Gson();
+            TotalData totalData = gson.fromJson(s, TotalData.class);
+            if (totalData.getStatus() == 0) {
+                if (totalData.getData().getAsJsonObject().get("rst").getAsInt() == 0) {
+                    String needCheck = totalData.getData().getAsJsonObject().get("NeedCheck").getAsString();
+                    if (!TextUtils.isEmpty(needCheck) && Integer.valueOf(needCheck) == 1) {
+                        Intent intent = new Intent(StudentDetailsActivity.this, ReadCardInfoActivity.class);
+                        intent.putExtra("studentCardId", studentDetails.getCardId());
+                        intent.putExtra("readType", 1);
+                        startActivityForResult(intent, CARD_INFO_VERIFY);
+                    } else {
+                        startClass();
+                    }
+                }
+            } else {
                 Toast.makeText(StudentDetailsActivity.this, totalData.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
@@ -847,7 +892,7 @@ public class StudentDetailsActivity extends BaseActivity implements Chronometer.
                 mLocationClient.stop();
             } else {
                 //  Toast.makeText(StudentDetailsActivity.this, totalData.getMessage(), Toast.LENGTH_SHORT).show();
-                System.out.println("上传错误！");
+                //System.out.println("上传错误！");
                 mLocationClient.stop();
             }
         }

@@ -56,10 +56,10 @@ public class HomeFragment extends Fragment {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if(msg.what == 1){
-                Log.d(TAG, "handleMessage: "+msg.obj);
+                //Log.d(TAG, "handleMessage: "+msg.obj);
                 ReturnData data= JSONObject.parseObject((String) msg.obj,ReturnData.class);
                 if(data.getStatus()==0){
-                    Log.d(TAG, "handleMessage: "+data.getData());
+                    //Log.d(TAG, "handleMessage: "+data.getData());
                     getIamge(data.getData());
                 }else {
                     MyToast.makeText(getContext(),data.getMessage());

@@ -129,12 +129,16 @@ public class Utils {
         return strings[i + 4];
     }
 
+    public static String getBookType(int i) {
+        String[] strings = {"学员自约", "驾校代约"};
+        return strings[i];
+    }
+
     /**
      *
      * @param i :0:人物，1：场地
      * @return
      */
-
     public static DisplayImageOptions getOption(int i){
         DisplayImageOptions  options;
         if(i==0){

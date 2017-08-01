@@ -26,6 +26,7 @@ import com.guugoo.jiapeistudent.Data.MyInformation;
 import com.guugoo.jiapeistudent.Data.ReturnData;
 import com.guugoo.jiapeistudent.MainActivity.BaseActivity;
 import com.guugoo.jiapeistudent.MainActivity.LoginActivity;
+import com.guugoo.jiapeistudent.MinorActivity.MyCouponActivity;
 import com.guugoo.jiapeistudent.MinorActivity.MyScheduleActivity;
 import com.guugoo.jiapeistudent.MinorActivity.PersonActivity;
 import com.guugoo.jiapeistudent.R;
@@ -61,7 +62,7 @@ public class MyFragment extends Fragment {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if(msg.what == 1){
-                Log.d(TAG, "handleMessage: "+msg.obj);
+                //Log.d(TAG, "handleMessage: "+msg.obj);
                 ReturnData data= JSONObject.parseObject((String) msg.obj,ReturnData.class);
                 if(data.getStatus()==0){
                     MyInformation myInformation =JSONObject.parseObject(data.getData(),MyInformation.class);
@@ -82,13 +83,14 @@ public class MyFragment extends Fragment {
             }
         }
     };
+
     protected Handler handler1 = new MyHandler(getActivity()){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if(msg.what == 1){
                 try {
-                    Log.d(TAG, "handleMessage: "+msg.obj);
+                    //Log.d(TAG, "handleMessage: "+msg.obj);
                     ReturnData data= JSONObject.parseObject((String) msg.obj,ReturnData.class);
                     if(data.getStatus()==0){
                         ActivityCollector.finishAll();
@@ -124,10 +126,11 @@ public class MyFragment extends Fragment {
     }
 
     private void findById() {
-        views = new View[2];
+        views = new View[3];
         textViews = new TextView[5];
         views[0] = fragmentView.findViewById(R.id.my_line3);
         views[1] = fragmentView.findViewById(R.id.my_line7);
+        views[2] = fragmentView.findViewById(R.id.my_line1);
         sp = getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
         textViews[0] = (TextView) fragmentView.findViewById(R.id.my_text1);
         textViews[1] = (TextView) fragmentView.findViewById(R.id.my_text2);
@@ -178,6 +181,14 @@ public class MyFragment extends Fragment {
 
             }
         });
+        views[2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MyCouponActivity.class);
+                startActivity(intent);
+            }
+        });
+
         my_head.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

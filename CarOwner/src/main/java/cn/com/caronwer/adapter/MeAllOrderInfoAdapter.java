@@ -169,27 +169,23 @@ public class MeAllOrderInfoAdapter extends RecyclerView.Adapter<MeAllOrderInfoAd
                     viewHolder.mTvZhuangtai.setText("已到达");
                     viewHolder.mBtvChakan.setText("查看详情");
                     viewHolder.mBtvChakan.setVisibility(View.VISIBLE);
-                    viewHolder.mTvZhuangtai.setTextColor(0xff96a19b);
-                    viewHolder.mTvJiage.setTextColor(0xff96a19b);
-//                    viewHolder.mLlJing.setVisibility(View.GONE);//隐藏经过
-//                    viewHolder.view_visib.setVisibility(View.GONE);
+                    viewHolder.mTvZhuangtai.setTextColor(0xff00a2e3);
+                    viewHolder.mTvJiage.setTextColor(0xff00a2e3);
                     break;
                 case 4:
                     viewHolder.mTvZhuangtai.setText("已结束");
                     viewHolder.mBtvChakan.setText("查看详情");
                     viewHolder.mBtvChakan.setVisibility(View.VISIBLE);
-                    viewHolder.mTvZhuangtai.setTextColor(0xff96a19b);
-                    viewHolder.mTvJiage.setTextColor(0xff96a19b);
-//                    viewHolder.mLlJing.setVisibility(View.GONE);//隐藏经过
-//                    viewHolder.view_visib.setVisibility(View.GONE);
+                    viewHolder.mTvZhuangtai.setTextColor(0xff00a2e3);
+                    viewHolder.mTvJiage.setTextColor(0xff00a2e3);
                     break;
                 case -1:
                     if (newsInfo.getCancelFee() <= 0) {
                         viewHolder.mTvZhuangtai.setText("已取消");
-                        viewHolder.mTvZhuangtai.setTextColor(0xff96a19b);
+                        viewHolder.mTvZhuangtai.setTextColor(0xff00a2e3);
                         viewHolder.mBtvChakan.setVisibility(View.GONE);
                         viewHolder.mLlJing.setVisibility(View.GONE);//隐藏经过
-                        viewHolder.mTvJiage.setTextColor(0xff96a19b);
+                        viewHolder.mTvJiage.setTextColor(0xff00a2e3);
 //                        viewHolder.view_visib.setVisibility(View.GONE);
                     } else {
                         viewHolder.mTvZhuangtai.setText("违约金");
@@ -230,8 +226,8 @@ public class MeAllOrderInfoAdapter extends RecyclerView.Adapter<MeAllOrderInfoAd
                 viewHolder.mTvJing4.setTextColor(0xff4e4e4e);
                 viewHolder.mTvJing5.setTextColor(0xff4e4e4e);
 
-                viewHolder.mTvJiage.setTextColor(0xffFF4900);
-                viewHolder.mTvZhuangtai.setTextColor(0xffFF4900);
+                viewHolder.mTvJiage.setTextColor(0xff00a2e3);
+                viewHolder.mTvZhuangtai.setTextColor(0xff00a2e3);
             }
 
 

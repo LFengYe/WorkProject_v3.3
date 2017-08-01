@@ -47,13 +47,14 @@ public class ReserveDetailsActivity extends BaseActivity {
     private String Location; //场地名
     private String RefId;
     private int PayType;
+    private int Status;
 
     protected Handler handler2 = new MyHandler(this){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if(msg.what == 1){
-                Log.d(TAG, "handleMessage: "+msg.obj);
+                //Log.d(TAG, "handleMessage: "+msg.obj);
                 ReturnData data= JSONObject.parseObject((String) msg.obj,ReturnData.class);
                 if(data.getStatus()==0){
                     MyToast.makeText(ReserveDetailsActivity.this,data.getMessage());
@@ -126,6 +127,7 @@ public class ReserveDetailsActivity extends BaseActivity {
         textViews[6].setText(Utils.getSubject(reserveDetails.getSubject()));
         textViews[7].setText(Utils.getStatus(reserveDetails.getStatus()));
         textViews[8].setText(Utils.getDateToStringLong(reserveDetails.getBookingTime()));
+        textViews[13].setText(Utils.getBookType(reserveDetails.getBookType()));
         Lat = reserveDetails.getLat();
         Lon = reserveDetails.getLon();
         /*
@@ -213,7 +215,7 @@ public class ReserveDetailsActivity extends BaseActivity {
     @Override
     protected void findView() {
         sp = getSharedPreferences("user", Context.MODE_PRIVATE);
-        textViews = new TextView[13];
+        textViews = new TextView[14];
         textViews[0] = (TextView) findViewById(R.id.reserve_details_text1);
         textViews[1] = (TextView) findViewById(R.id.reserve_details_text2);
         textViews[2] = (TextView) findViewById(R.id.reserve_details_text3);
@@ -227,6 +229,7 @@ public class ReserveDetailsActivity extends BaseActivity {
         textViews[10] = (TextView) findViewById(R.id.reserve_details_text11);
         textViews[11] = (TextView) findViewById(R.id.reserve_details_text12);
         textViews[12] = (TextView) findViewById(R.id.reserve_details_text13);
+        textViews[13] = (TextView) findViewById(R.id.reserve_details_text14);
         layout1 = (LinearLayout) findViewById(R.id.ll_text1);
         layout2 = (LinearLayout) findViewById(ll_text2);
         map = (RelativeLayout) findViewById(R.id.map);
@@ -237,6 +240,7 @@ public class ReserveDetailsActivity extends BaseActivity {
         BookingId = getIntent().getStringExtra("BookingId");
         RefId = getIntent().getStringExtra("RefId");
         PayType = getIntent().getIntExtra("PayType",0);
+        Status = getIntent().getIntExtra("Status", 0);
         findDetails();
 
     }
@@ -246,8 +250,8 @@ public class ReserveDetailsActivity extends BaseActivity {
             JSONObject json = new JSONObject();
             json.put("StudentId", sp.getInt("Id",0));
             json.put("BookingId", BookingId);
-//            json.put("RefId",RefId);
-            System.out.println(json.toJSONString());
+            json.put("BookingStatus", (-1 == Status || -2 == Status || -3 == Status) ? (-1) : (1));
+            Log.i("获取预约详情", json.toJSONString());
             new MyThread(Constant.URL_BookingDetails, handler, DES.encryptDES(json.toString())).start();
 
         }else {

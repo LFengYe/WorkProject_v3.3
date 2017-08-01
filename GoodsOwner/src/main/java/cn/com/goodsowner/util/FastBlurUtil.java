@@ -40,12 +40,10 @@ public class FastBlurUtil {
     }
 
     private static Bitmap startBlurBackground(Bitmap bkg) {
-        long startMs = System.currentTimeMillis();
         float radius = 2; //模糊程度
 
         Bitmap overlay = fastblur(small(bkg), (int) radius);
 
-        LogUtil.i("=====blur time:" + (System.currentTimeMillis() - startMs));
         return big(overlay);
     }
 
@@ -58,8 +56,6 @@ public class FastBlurUtil {
     private static Bitmap big(Bitmap bitmap) {
         Matrix matrix = new Matrix();
         matrix.postScale(2f, 2f);
-        LogUtil.i("aaa"+bitmap.getWidth());
-        LogUtil.i("aaa"+bitmap.getHeight());
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
 
     }
@@ -73,8 +69,6 @@ public class FastBlurUtil {
     private static Bitmap small(Bitmap bitmap) {
         Matrix matrix = new Matrix();
         matrix.postScale(0.5f, 0.5f);
-        LogUtil.i("aaa"+bitmap.getWidth());
-        LogUtil.i("aaa"+bitmap.getHeight());
         Bitmap resizeBmp = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
         return resizeBmp;
     }

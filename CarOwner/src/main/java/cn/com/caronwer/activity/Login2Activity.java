@@ -346,15 +346,14 @@ public class Login2Activity extends BaseActivity {
             @Override
             public void onSuccess(JsonElement result) {
                 customProgressDialog.dismiss();
-                showShortToastByString("登录成功");
                 Gson gson = new Gson();
                 final UserInfo userInfo = gson.fromJson(result, UserInfo.class);
                 SharedPreferences.Editor editor = prefs.edit();
-                Contants.userId = userInfo.getUserId();
                 editor.putString("account", account);
                 editor.putString("password", password);
                 editor.putString("UserId", userInfo.getUserId());
                 editor.putString("VehicleNo", userInfo.getVehicleNo());
+                editor.putString("CompanyTel", userInfo.getCompanyTel());
                 editor.commit();
 
                 JPushInterface.setAliasAndTags(Login2Activity.this, account, null, new TagAliasCallback() {
@@ -362,6 +361,8 @@ public class Login2Activity extends BaseActivity {
                     public void gotResult(int arg0, String arg1, Set<String> arg2) {
                     }
                 });
+
+                showShortToastByString("登录成功");
 
                 Intent intent = new Intent();
                 intent.setClass(Login2Activity.this, MainActivity.class);

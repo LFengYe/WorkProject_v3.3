@@ -672,7 +672,7 @@ public class DetailsActivity extends BaseActivity {
 
 
 
-        if (mInfo1.getIsToPay().equals("true") == true) {
+        if (mInfo1.getIsToPay() == true) {
             tv_daofu.setText("此订单为货到付款，请确保对方完成支付");
         } else {
             tv_daofu.setText("请等待对方完成支付");

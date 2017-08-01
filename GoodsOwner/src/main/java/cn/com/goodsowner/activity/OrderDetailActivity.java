@@ -44,6 +44,7 @@ import cn.com.goodsowner.view.MyDialog;
 public class OrderDetailActivity extends BaseActivity implements RatingBar.OnRatingBarChangeListener {
     private TextView tv_title;
     private TextView tv_right;
+    private TextView tv_right1;
     private ImageView iv_left_white;
     private ImageView iv_state;
     private ImageView iv_comment;
@@ -65,7 +66,6 @@ public class OrderDetailActivity extends BaseActivity implements RatingBar.OnRat
     private TextView tv_start_time;
     private TextView tv_startState;
     private Button bt_call;
-    private Button bt_cancel;
     private Button bt_keepConvey;
     private MyDialog remarkDialog;
 
@@ -80,7 +80,10 @@ public class OrderDetailActivity extends BaseActivity implements RatingBar.OnRat
         assert rl_head != null;
         tv_title = (TextView) rl_head.findViewById(R.id.tv_title);
         tv_right = (TextView) rl_head.findViewById(R.id.tv_right);
+        tv_right1 = (TextView) rl_head.findViewById(R.id.tv_right1);
         iv_left_white = (ImageView) rl_head.findViewById(R.id.iv_left_white);
+
+
         rv_order_detail = (RecyclerView) findViewById(R.id.rv_order_detail);
         tv_money = (TextView) findViewById(R.id.tv_money);
         tv_name = (TextView) findViewById(R.id.tv_name);
@@ -93,7 +96,6 @@ public class OrderDetailActivity extends BaseActivity implements RatingBar.OnRat
         rb_score1 = (RatingBar) findViewById(R.id.rb_score1);
         bt_call = (Button) findViewById(R.id.bt_call);
         bt_keepConvey = (Button) findViewById(R.id.bt_keepConvey);
-        bt_cancel = (Button) findViewById(R.id.bt_cancel);
         iv_state = (ImageView) findViewById(R.id.iv_state);
         iv_comment = (ImageView) findViewById(R.id.iv_comment);
         iv_comment1 = (ImageView) findViewById(R.id.iv_comment1);
@@ -169,8 +171,6 @@ public class OrderDetailActivity extends BaseActivity implements RatingBar.OnRat
 
                 if (!orderDetailInfo.getOrderAddress().get(0).getDischargeTime().equals("")) {
                     iv_state.setImageResource(R.mipmap.heart_gray);
-                    bt_cancel.setBackgroundResource(R.drawable.button_gray_bg);
-                    bt_cancel.setClickable(false);
                 } else {
                     iv_state.setImageResource(R.mipmap.heart_red);
                 }
@@ -225,12 +225,13 @@ public class OrderDetailActivity extends BaseActivity implements RatingBar.OnRat
             public void onStateError() {
             }
         });
-        tv_right.setText("刷新");
+        tv_right.setText("投诉");
+        tv_right1.setText("刷新");
         iv_left_white.setOnClickListener(this);
         bt_call.setOnClickListener(this);
-        bt_cancel.setOnClickListener(this);
         bt_keepConvey.setOnClickListener(this);
         tv_right.setOnClickListener(this);
+        tv_right1.setOnClickListener(this);
         iv_comment1.setOnClickListener(this);
 
 
@@ -243,11 +244,20 @@ public class OrderDetailActivity extends BaseActivity implements RatingBar.OnRat
             case R.id.iv_left_white:
                 finish();
                 break;
-            case R.id.bt_cancel:
-                confirmCancel();
+//            case R.id.bt_cancel:
+//                confirmCancel();
+//                break;
+            case R.id.tv_right1:
+                refresh();
                 break;
             case R.id.tv_right:
-                refresh();
+                if (ContextCompat.checkSelfPermission(OrderDetailActivity.this, Manifest.permission.CALL_PHONE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(OrderDetailActivity.this,
+                            new String[]{Manifest.permission.CALL_PHONE}, 100);
+                } else {
+                    call(Contants.CompanyTel);
+                }
                 break;
             case R.id.iv_comment1:
                 remarkDialog =MyDialog.remarkDialog(OrderDetailActivity.this,orderDetailInfo.getRemark());
@@ -259,7 +269,7 @@ public class OrderDetailActivity extends BaseActivity implements RatingBar.OnRat
                     ActivityCompat.requestPermissions(OrderDetailActivity.this,
                             new String[]{Manifest.permission.CALL_PHONE}, 200);
                 } else {
-                    call();
+                    call(orderDetailInfo.getTransporterTel());
                 }
                 break;
             case R.id.bt_keepConvey:
@@ -285,8 +295,6 @@ public class OrderDetailActivity extends BaseActivity implements RatingBar.OnRat
                 orderDetailAdapter.setOrderDetailInfo(orderDetailInfo);
                 if (!orderDetailInfo.getOrderAddress().get(0).getDischargeTime().equals("")) {
                     iv_state.setImageResource(R.mipmap.heart_gray);
-                    bt_cancel.setBackgroundResource(R.drawable.button_gray_bg);
-                    bt_cancel.setClickable(false);
                 } else {
                     iv_state.setImageResource(R.mipmap.heart_red);
                 }
@@ -315,15 +323,15 @@ public class OrderDetailActivity extends BaseActivity implements RatingBar.OnRat
         });
     }
 
-    private void call() {
+    private void call(final String tel) {
         new AlertDialog.Builder(OrderDetailActivity.this).
                 setTitle("提示").
-                setMessage("是否拨打电话:" + orderDetailInfo.getTransporterTel()).
+                setMessage("是否拨打电话:" + tel).
                 setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(Intent.ACTION_CALL);
-                        Uri data = Uri.parse("tel:" + orderDetailInfo.getTransporterTel());
+                        Uri data = Uri.parse("tel:" + tel);
                         intent.setData(data);
                         if (ActivityCompat.checkSelfPermission(OrderDetailActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                             return;
@@ -343,7 +351,15 @@ public class OrderDetailActivity extends BaseActivity implements RatingBar.OnRat
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == 200) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                call();
+                call(orderDetailInfo.getTransporterTel());
+            } else {
+                Toast.makeText(OrderDetailActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+            return;
+        }
+        if (requestCode == 100) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                call(Contants.CompanyTel);
             } else {
                 Toast.makeText(OrderDetailActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }

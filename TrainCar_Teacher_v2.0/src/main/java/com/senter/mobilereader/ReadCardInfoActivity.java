@@ -67,7 +67,7 @@ public class ReadCardInfoActivity extends BaseActivity {
     private static final String BLUE_ADDRESSKEY = "CN.GUUGOO.TEACHER.BLUEADDRESS";
     private MyHandler myHandler;
     private String studentCardId;
-
+    private int type;
 
     @Override
     protected int getLayout() {
@@ -88,6 +88,12 @@ public class ReadCardInfoActivity extends BaseActivity {
         tv_right.setText(R.string.bluetooth_select);
         tv_right.setTextColor(getResources().getColor(R.color.color_Blue));
 
+        TextView readInfo = (TextView) findViewById(R.id.read_info);
+        if (type == 1)
+            readInfo.setText(R.string.read_student_card_info);
+        if (type == 2)
+            readInfo.setText(R.string.read_coach_card_info);
+
         iv_back.setOnClickListener(this);
         tv_right.setOnClickListener(this);
     }
@@ -102,6 +108,7 @@ public class ReadCardInfoActivity extends BaseActivity {
         MPermissions.requestPermissions(this, 4, Manifest.permission.READ_PHONE_STATE);
         prefs = getSharedPreferences(Constants.SHARED_NAME, MODE_PRIVATE);
         studentCardId = getIntent().getStringExtra("studentCardId");
+        type = getIntent().getIntExtra("readType", 1);
         myHandler = new MyHandler();
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();

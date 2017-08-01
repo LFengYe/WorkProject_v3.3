@@ -75,4 +75,9 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+
+    <style name="RadioBtnMyIcon">
+        <item name="android:button">@drawable/radio_style</item>
+    </style>
+
 </resources>
